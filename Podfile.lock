@@ -1,3 +1,30 @@
-PODFILE CHECKSUM: 11a7f2572e0de7411ab2eabae5754b73197883d6
+PODS:
+  - Alamofire (5.0.5)
+  - FittedSheets (1.4.6)
+  - Kingfisher (5.13.4):
+    - Kingfisher/Core (= 5.13.4)
+  - Kingfisher/Core (5.13.4)
+  - SwiftyJSON (4.3.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0.0-rc.3)
+  - FittedSheets
+  - Kingfisher
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - FittedSheets
+    - Kingfisher
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  FittedSheets: 7f37fee2567d15dcde391f31eccbffb660ddebf0
+  Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+
+PODFILE CHECKSUM: d927e86e1a045df5020a17f6d236f5dcbd481bcb
 
 COCOAPODS: 1.9.1
