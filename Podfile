@@ -6,5 +6,9 @@ target 'TurboTech' do
   use_frameworks!
 
   # Pods for TurboTech
+  pod 'FittedSheets'
+  pod 'Alamofire', '~> 5.0.0-rc.3'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'Kingfisher'
 
 end

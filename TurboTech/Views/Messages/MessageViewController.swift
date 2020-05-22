@@ -12,19 +12,32 @@ class MessageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let myView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        myView.backgroundColor = .blue
+        self.view.addSubview(myView)
+        
+        let myView2 = UIView(frame: CGRect(x: 50, y: 50, width: 100, height: 100))
+        myView2.backgroundColor = .green
+        self.view.addSubview(myView2)
+        
+        let btn = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        btn.tintColor = .black
+        btn.setTitle("Hello", for: .normal)
+        btn.addTarget(self, action: #selector(hello), for: .touchUpInside)
+        self.view.addSubview(btn)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            btn.widthAnchor.constraint(equalToConstant: 100),
+            btn.heightAnchor.constraint(equalToConstant: 100),
+            btn.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            btn.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+            ])
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc
+    func hello(_ : UIButton){
+        print("Hello")
+        
     }
-    */
 
 }
