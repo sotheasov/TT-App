@@ -21,6 +21,9 @@
 		10BE73F3247372BF001EFD43 /* AboutUsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BE73F2247372BF001EFD43 /* AboutUsStoryboard.storyboard */; };
 		10BE73F6247372FC001EFD43 /* MessageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BE73F5247372FC001EFD43 /* MessageStoryboard.storyboard */; };
 		10BE73F824737309001EFD43 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BE73F724737309001EFD43 /* MessageViewController.swift */; };
+		A909CA9B2474C03D00546CFC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A909CA992474C03D00546CFC /* LoginViewController.swift */; };
+		A909CA9C2474C03D00546CFC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A909CA9A2474C03D00546CFC /* LoginViewController.xib */; };
+		A909CA9E24751CD600546CFC /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A909CA9D24751CD600546CFC /* CustomButton.swift */; };
 		B1AA6A9DD53312ADEDA7B747 /* Pods_TurboTech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E351938864D04FD57B4E9046 /* Pods_TurboTech.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +45,9 @@
 		10BE73F5247372FC001EFD43 /* MessageStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageStoryboard.storyboard; sourceTree = "<group>"; };
 		10BE73F724737309001EFD43 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		5D159C71FC16C93B21108A19 /* Pods-TurboTech.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TurboTech.debug.xcconfig"; path = "Target Support Files/Pods-TurboTech/Pods-TurboTech.debug.xcconfig"; sourceTree = "<group>"; };
+		A909CA992474C03D00546CFC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A909CA9A2474C03D00546CFC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		A909CA9D24751CD600546CFC /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		CB386C5446682C36934D3A76 /* Pods-TurboTech.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TurboTech.release.xcconfig"; path = "Target Support Files/Pods-TurboTech/Pods-TurboTech.release.xcconfig"; sourceTree = "<group>"; };
 		E351938864D04FD57B4E9046 /* Pods_TurboTech.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TurboTech.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -155,6 +161,9 @@
 			children = (
 				10BE73F2247372BF001EFD43 /* AboutUsStoryboard.storyboard */,
 				10BE73E324736EDA001EFD43 /* AboutUsViewController.swift */,
+				A909CA992474C03D00546CFC /* LoginViewController.swift */,
+				A909CA9A2474C03D00546CFC /* LoginViewController.xib */,
+				A909CA9D24751CD600546CFC /* CustomButton.swift */,
 			);
 			path = "About Us";
 			sourceTree = "<group>";
@@ -192,7 +201,6 @@
 				5D159C71FC16C93B21108A19 /* Pods-TurboTech.debug.xcconfig */,
 				CB386C5446682C36934D3A76 /* Pods-TurboTech.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -263,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A909CA9C2474C03D00546CFC /* LoginViewController.xib in Resources */,
 				10BE73F6247372FC001EFD43 /* MessageStoryboard.storyboard in Resources */,
 				10BE73EC247371FA001EFD43 /* HomeStoryboard.storyboard in Resources */,
 				10BE73C4247365A4001EFD43 /* LaunchScreen.storyboard in Resources */,
@@ -307,8 +316,10 @@
 			files = (
 				10BE73E924737186001EFD43 /* LocationViewController.swift in Sources */,
 				10BE73E424736EDA001EFD43 /* AboutUsViewController.swift in Sources */,
+				A909CA9E24751CD600546CFC /* CustomButton.swift in Sources */,
 				10BE73BC247365A4001EFD43 /* ViewController.swift in Sources */,
 				10BE73B8247365A4001EFD43 /* AppDelegate.swift in Sources */,
+				A909CA9B2474C03D00546CFC /* LoginViewController.swift in Sources */,
 				10BE73BA247365A4001EFD43 /* SceneDelegate.swift in Sources */,
 				10BE73EE24737206001EFD43 /* HomeViewController.swift in Sources */,
 				10BE73F824737309001EFD43 /* MessageViewController.swift in Sources */,
