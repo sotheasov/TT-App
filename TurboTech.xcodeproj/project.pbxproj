@@ -35,9 +35,6 @@
 		10BE73F3247372BF001EFD43 /* AboutUsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BE73F2247372BF001EFD43 /* AboutUsStoryboard.storyboard */; };
 		10BE73F6247372FC001EFD43 /* MessageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BE73F5247372FC001EFD43 /* MessageStoryboard.storyboard */; };
 		10BE73F824737309001EFD43 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BE73F724737309001EFD43 /* MessageViewController.swift */; };
-		A909CA9B2474C03D00546CFC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A909CA992474C03D00546CFC /* LoginViewController.swift */; };
-		A909CA9C2474C03D00546CFC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A909CA9A2474C03D00546CFC /* LoginViewController.xib */; };
-		A909CA9E24751CD600546CFC /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A909CA9D24751CD600546CFC /* CustomButton.swift */; };
 		10D17EEE247614860095E0AF /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D17EED247614860095E0AF /* SwiftUIView.swift */; };
 		10D17EF0247619E10095E0AF /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D17EEF247619E10095E0AF /* ProductViewController.swift */; };
 		10D17EF62476203E0095E0AF /* Quicksand Medium 500.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10D17EF22476203E0095E0AF /* Quicksand Medium 500.ttf */; };
@@ -46,6 +43,17 @@
 		10D17EF92476203E0095E0AF /* Quicksand Light 300.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10D17EF52476203E0095E0AF /* Quicksand Light 300.ttf */; };
 		10D17EFC247624930095E0AF /* SubMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D17EFA247624930095E0AF /* SubMenuTableViewCell.swift */; };
 		10D17EFD247624930095E0AF /* SubMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10D17EFB247624930095E0AF /* SubMenuTableViewCell.xib */; };
+		A909CA9B2474C03D00546CFC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A909CA992474C03D00546CFC /* LoginViewController.swift */; };
+		A909CA9C2474C03D00546CFC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A909CA9A2474C03D00546CFC /* LoginViewController.xib */; };
+		A960AC21247DFD0B00E844E2 /* DepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960AC1F247DFD0B00E844E2 /* DepartmentTableViewCell.swift */; };
+		A960AC22247DFD0B00E844E2 /* DepartmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A960AC20247DFD0B00E844E2 /* DepartmentTableViewCell.xib */; };
+		A960AC24247E082400E844E2 /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960AC23247E082400E844E2 /* DepartmentViewController.swift */; };
+		A9D18D0F247B792D00ADE51B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D18D0E247B792D00ADE51B /* ProfileViewController.swift */; };
+		A9D18D12247B854A00ADE51B /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D18D10247B854A00ADE51B /* ProfileTableViewCell.swift */; };
+		A9D18D13247B854A00ADE51B /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9D18D11247B854A00ADE51B /* ProfileTableViewCell.xib */; };
+		A9D1A34B24777BE10011E02D /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A34A24777BE10011E02D /* LoginService.swift */; };
+		A9D1A34D24777BED0011E02D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A34C24777BED0011E02D /* LoginViewModel.swift */; };
+		A9D1A34F247786860011E02D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A34E247786860011E02D /* User.swift */; };
 		B1AA6A9DD53312ADEDA7B747 /* Pods_TurboTech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E351938864D04FD57B4E9046 /* Pods_TurboTech.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,7 +99,15 @@
 		5D159C71FC16C93B21108A19 /* Pods-TurboTech.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TurboTech.debug.xcconfig"; path = "Target Support Files/Pods-TurboTech/Pods-TurboTech.debug.xcconfig"; sourceTree = "<group>"; };
 		A909CA992474C03D00546CFC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A909CA9A2474C03D00546CFC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		A909CA9D24751CD600546CFC /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		A960AC1F247DFD0B00E844E2 /* DepartmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewCell.swift; sourceTree = "<group>"; };
+		A960AC20247DFD0B00E844E2 /* DepartmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartmentTableViewCell.xib; sourceTree = "<group>"; };
+		A960AC23247E082400E844E2 /* DepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentViewController.swift; sourceTree = "<group>"; };
+		A9D18D0E247B792D00ADE51B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A9D18D10247B854A00ADE51B /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		A9D18D11247B854A00ADE51B /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		A9D1A34A24777BE10011E02D /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		A9D1A34C24777BED0011E02D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A9D1A34E247786860011E02D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB386C5446682C36934D3A76 /* Pods-TurboTech.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TurboTech.release.xcconfig"; path = "Target Support Files/Pods-TurboTech/Pods-TurboTech.release.xcconfig"; sourceTree = "<group>"; };
 		E351938864D04FD57B4E9046 /* Pods_TurboTech.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TurboTech.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -193,6 +209,7 @@
 				100506F52474D771008FDFC3 /* Menu.swift */,
 				1006D83324767152000892ED /* Product.swift */,
 				1006D8352476715D000892ED /* Package.swift */,
+				A9D1A34E247786860011E02D /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,6 +229,7 @@
 		10BE73CD247365F5001EFD43 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A9D1A34824777BC10011E02D /* LoginService */,
 				1006D838247672CF000892ED /* ServiceService */,
 			);
 			path = Services;
@@ -220,6 +238,7 @@
 		10BE73CE247365FB001EFD43 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				A9D1A34924777BCC0011E02D /* LoginViewModel */,
 				1006D837247672B4000892ED /* ServiceViewModel */,
 			);
 			path = "View Models";
@@ -259,9 +278,14 @@
 			children = (
 				10BE73F2247372BF001EFD43 /* AboutUsStoryboard.storyboard */,
 				10BE73E324736EDA001EFD43 /* AboutUsViewController.swift */,
+				A9D18D0E247B792D00ADE51B /* ProfileViewController.swift */,
+				A9D18D10247B854A00ADE51B /* ProfileTableViewCell.swift */,
+				A9D18D11247B854A00ADE51B /* ProfileTableViewCell.xib */,
+				A960AC23247E082400E844E2 /* DepartmentViewController.swift */,
+				A960AC1F247DFD0B00E844E2 /* DepartmentTableViewCell.swift */,
+				A960AC20247DFD0B00E844E2 /* DepartmentTableViewCell.xib */,
 				A909CA992474C03D00546CFC /* LoginViewController.swift */,
 				A909CA9A2474C03D00546CFC /* LoginViewController.xib */,
-				A909CA9D24751CD600546CFC /* CustomButton.swift */,
 			);
 			path = "About Us";
 			sourceTree = "<group>";
@@ -324,6 +348,22 @@
 				CB386C5446682C36934D3A76 /* Pods-TurboTech.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A9D1A34824777BC10011E02D /* LoginService */ = {
+			isa = PBXGroup;
+			children = (
+				A9D1A34A24777BE10011E02D /* LoginService.swift */,
+			);
+			path = LoginService;
+			sourceTree = "<group>";
+		};
+		A9D1A34924777BCC0011E02D /* LoginViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A9D1A34C24777BED0011E02D /* LoginViewModel.swift */,
+			);
+			path = LoginViewModel;
 			sourceTree = "<group>";
 		};
 		E46FFA7F85DB145D610B0A72 /* Frameworks */ = {
@@ -399,6 +439,7 @@
 				10D17EF92476203E0095E0AF /* Quicksand Light 300.ttf in Resources */,
 				10BE73EC247371FA001EFD43 /* HomeStoryboard.storyboard in Resources */,
 				10D17EF82476203E0095E0AF /* Quicksand Regular 400.ttf in Resources */,
+				A960AC22247DFD0B00E844E2 /* DepartmentTableViewCell.xib in Resources */,
 				10BE73C4247365A4001EFD43 /* LaunchScreen.storyboard in Resources */,
 				10D17EF72476203E0095E0AF /* Quicksand Bold 700.ttf in Resources */,
 				1006D83224766226000892ED /* tbt icon.xcassets in Resources */,
@@ -407,6 +448,7 @@
 				10BE73F3247372BF001EFD43 /* AboutUsStoryboard.storyboard in Resources */,
 				10BE73C1247365A4001EFD43 /* Assets.xcassets in Resources */,
 				10D17EF62476203E0095E0AF /* Quicksand Medium 500.ttf in Resources */,
+				A9D18D13247B854A00ADE51B /* ProfileTableViewCell.xib in Resources */,
 				10BE73BF247365A4001EFD43 /* Main.storyboard in Resources */,
 				100506F42474D4F2008FDFC3 /* MenuCollectionViewCell.xib in Resources */,
 			);
@@ -461,17 +503,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A960AC24247E082400E844E2 /* DepartmentViewController.swift in Sources */,
 				1006D83024763C1A000892ED /* View.swift in Sources */,
 				10D17EF0247619E10095E0AF /* ProductViewController.swift in Sources */,
+				A9D18D0F247B792D00ADE51B /* ProfileViewController.swift in Sources */,
 				1006D84024767330000892ED /* ProductServiceDelegate.swift in Sources */,
 				100556C224738BD500B1F8BF /* Colors.swift in Sources */,
 				100506F62474D771008FDFC3 /* Menu.swift in Sources */,
+				A9D1A34F247786860011E02D /* User.swift in Sources */,
 				10D17EEE247614860095E0AF /* SwiftUIView.swift in Sources */,
 				100556C42473912B00B1F8BF /* APIManager.swift in Sources */,
 				10BE73E924737186001EFD43 /* LocationViewController.swift in Sources */,
+				A9D1A34D24777BED0011E02D /* LoginViewModel.swift in Sources */,
 				1006D83A247672F6000892ED /* ProductViewModel.swift in Sources */,
 				10BE73E424736EDA001EFD43 /* AboutUsViewController.swift in Sources */,
-				A909CA9E24751CD600546CFC /* CustomButton.swift in Sources */,
 				10BE73BC247365A4001EFD43 /* ViewController.swift in Sources */,
 				10BE73B8247365A4001EFD43 /* AppDelegate.swift in Sources */,
 				A909CA9B2474C03D00546CFC /* LoginViewController.swift in Sources */,
@@ -480,9 +525,12 @@
 				10BE73BA247365A4001EFD43 /* SceneDelegate.swift in Sources */,
 				1006D83C24767313000892ED /* ProductViewModelDelegate.swift in Sources */,
 				100506F32474D4F2008FDFC3 /* MenuCollectionViewCell.swift in Sources */,
+				A9D18D12247B854A00ADE51B /* ProfileTableViewCell.swift in Sources */,
+				A960AC21247DFD0B00E844E2 /* DepartmentTableViewCell.swift in Sources */,
 				101FE96E24767EDF005AB106 /* PackageViewController.swift in Sources */,
 				10D17EFC247624930095E0AF /* SubMenuTableViewCell.swift in Sources */,
 				1006D83E24767322000892ED /* ProductService.swift in Sources */,
+				A9D1A34B24777BE10011E02D /* LoginService.swift in Sources */,
 				10BE73EE24737206001EFD43 /* HomeViewController.swift in Sources */,
 				10BE73F824737309001EFD43 /* MessageViewController.swift in Sources */,
 			);

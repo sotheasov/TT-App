@@ -27,7 +27,7 @@ class APIManager {
     
     enum LOGIN {
         // param {username:varchar, password:varchar}
-        // res {ID Card, Full Name, Position, User Name}
+        // form {ID Card, Full Name, Position, User Name}
         static let POST = MAIN_URL + "/login/index.php"
     }
     

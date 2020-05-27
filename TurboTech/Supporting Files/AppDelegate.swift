@@ -33,6 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ]
         navBarAppearance.isTranslucent = true
         
+//        if let tabBarController = self.window!.rootViewController as? UITabBarController {
+//            tabBarController.selectedIndex = 1
+//        }
+        
         return true
     }
 

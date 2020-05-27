@@ -10,25 +10,36 @@ import UIKit
 
 class AboutUsViewController: UIViewController {
     
-    
-    @IBOutlet weak var subViewContainer: UIView!
-    
+    //IBOutlet of AboutUsViewController
+    @IBOutlet weak var subContainerView: UIView!
     @IBOutlet weak var containerView: UIView!
-    
     @IBOutlet weak var userProfileImageView: UIImageView!
+
+    var loginViewModel = LoginViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        customProfile()
         
+        customAboutUsViewController()
+        
+        subContainerView.shadowStyle(radius: 10, color: .gray, offset: CGSize(width: 10, height: 20), opacity: 0.8)
+        let isLogin = false
+        if !isLogin {
+            let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginViewControllerID") as! LoginViewController
+            loginVC.modalPresentationStyle = .fullScreen
+//            loginVC.setNavigationTitle(title: "Product")
+            self.navigationController?.pushViewController(loginVC, animated: false)
+        }
     }
-    
-    func customProfile() {
+
+    func customAboutUsViewController() {
         containerView.layer.cornerRadius = 20
-        subViewContainer.layer.cornerRadius = 20
+        subContainerView.layer.cornerRadius = 20
         userProfileImageView.layer.cornerRadius = userProfileImageView.frame.height/2
         userProfileImageView.layer.borderWidth = 5
         userProfileImageView.layer.borderColor = UIColor.white.cgColor
-        
     }
-
+    
 }
+
+
