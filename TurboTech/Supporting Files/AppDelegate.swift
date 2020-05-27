@@ -39,6 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSServices.provideAPIKey(MAP_API_KEY)
         GMSPlacesClient.provideAPIKey(MAP_API_KEY)
+//        if let tabBarController = self.window!.rootViewController as? UITabBarController {
+//            tabBarController.selectedIndex = 1
+//        }
+        
         return true
     }
 

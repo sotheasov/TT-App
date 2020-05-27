@@ -67,6 +67,17 @@
 		10E7F38F247B751F0082901F /* SoftwareSolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E7F38E247B751F0082901F /* SoftwareSolution.swift */; };
 		10E7F391247B7D380082901F /* WebApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E7F390247B7D380082901F /* WebApplicationViewController.swift */; };
 		10E7F393247B86950082901F /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E7F392247B86950082901F /* FeedBackViewController.swift */; };
+		A909CA9B2474C03D00546CFC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A909CA992474C03D00546CFC /* LoginViewController.swift */; };
+		A909CA9C2474C03D00546CFC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A909CA9A2474C03D00546CFC /* LoginViewController.xib */; };
+		A960AC21247DFD0B00E844E2 /* DepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960AC1F247DFD0B00E844E2 /* DepartmentTableViewCell.swift */; };
+		A960AC22247DFD0B00E844E2 /* DepartmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A960AC20247DFD0B00E844E2 /* DepartmentTableViewCell.xib */; };
+		A960AC24247E082400E844E2 /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960AC23247E082400E844E2 /* DepartmentViewController.swift */; };
+		A9D18D0F247B792D00ADE51B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D18D0E247B792D00ADE51B /* ProfileViewController.swift */; };
+		A9D18D12247B854A00ADE51B /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D18D10247B854A00ADE51B /* ProfileTableViewCell.swift */; };
+		A9D18D13247B854A00ADE51B /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9D18D11247B854A00ADE51B /* ProfileTableViewCell.xib */; };
+		A9D1A34B24777BE10011E02D /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A34A24777BE10011E02D /* LoginService.swift */; };
+		A9D1A34D24777BED0011E02D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A34C24777BED0011E02D /* LoginViewModel.swift */; };
+		A9D1A34F247786860011E02D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1A34E247786860011E02D /* User.swift */; };
 		B1AA6A9DD53312ADEDA7B747 /* Pods_TurboTech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E351938864D04FD57B4E9046 /* Pods_TurboTech.framework */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +145,17 @@
 		10E7F390247B7D380082901F /* WebApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebApplicationViewController.swift; sourceTree = "<group>"; };
 		10E7F392247B86950082901F /* FeedBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackViewController.swift; sourceTree = "<group>"; };
 		5D159C71FC16C93B21108A19 /* Pods-TurboTech.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TurboTech.debug.xcconfig"; path = "Target Support Files/Pods-TurboTech/Pods-TurboTech.debug.xcconfig"; sourceTree = "<group>"; };
+		A909CA992474C03D00546CFC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A909CA9A2474C03D00546CFC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		A960AC1F247DFD0B00E844E2 /* DepartmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewCell.swift; sourceTree = "<group>"; };
+		A960AC20247DFD0B00E844E2 /* DepartmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartmentTableViewCell.xib; sourceTree = "<group>"; };
+		A960AC23247E082400E844E2 /* DepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentViewController.swift; sourceTree = "<group>"; };
+		A9D18D0E247B792D00ADE51B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A9D18D10247B854A00ADE51B /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		A9D18D11247B854A00ADE51B /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		A9D1A34A24777BE10011E02D /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		A9D1A34C24777BED0011E02D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A9D1A34E247786860011E02D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB386C5446682C36934D3A76 /* Pods-TurboTech.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TurboTech.release.xcconfig"; path = "Target Support Files/Pods-TurboTech/Pods-TurboTech.release.xcconfig"; sourceTree = "<group>"; };
 		E351938864D04FD57B4E9046 /* Pods_TurboTech.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TurboTech.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -342,6 +364,7 @@
 				108848C8247CA4610034579A /* HelpDesk.swift */,
 				108848D7247CBADD0034579A /* SupportQuestion.swift */,
 				10BBF920247CFCCA008DCF3A /* POP.swift */,
+				A9D1A34E247786860011E02D /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -364,6 +387,8 @@
 				10BBF922247CFDD7008DCF3A /* SaleService */,
 				108848C2247CA40E0034579A /* HelpDeskService */,
 				1006D838247672CF000892ED /* ProductService */,
+				A9D1A34824777BC10011E02D /* LoginService */,
+				1006D838247672CF000892ED /* ServiceService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -374,6 +399,8 @@
 				10BBF923247CFDE3008DCF3A /* SaleViewModel */,
 				108848C3247CA42D0034579A /* HelpDeskViewModel */,
 				1006D837247672B4000892ED /* ProductViewModel */,
+				A9D1A34924777BCC0011E02D /* LoginViewModel */,
+				1006D837247672B4000892ED /* ServiceViewModel */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -412,6 +439,14 @@
 			children = (
 				10BE73F2247372BF001EFD43 /* AboutUsStoryboard.storyboard */,
 				10BE73E324736EDA001EFD43 /* AboutUsViewController.swift */,
+				A9D18D0E247B792D00ADE51B /* ProfileViewController.swift */,
+				A9D18D10247B854A00ADE51B /* ProfileTableViewCell.swift */,
+				A9D18D11247B854A00ADE51B /* ProfileTableViewCell.xib */,
+				A960AC23247E082400E844E2 /* DepartmentViewController.swift */,
+				A960AC1F247DFD0B00E844E2 /* DepartmentTableViewCell.swift */,
+				A960AC20247DFD0B00E844E2 /* DepartmentTableViewCell.xib */,
+				A909CA992474C03D00546CFC /* LoginViewController.swift */,
+				A909CA9A2474C03D00546CFC /* LoginViewController.xib */,
 			);
 			path = "About Us";
 			sourceTree = "<group>";
@@ -475,6 +510,22 @@
 				CB386C5446682C36934D3A76 /* Pods-TurboTech.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A9D1A34824777BC10011E02D /* LoginService */ = {
+			isa = PBXGroup;
+			children = (
+				A9D1A34A24777BE10011E02D /* LoginService.swift */,
+			);
+			path = LoginService;
+			sourceTree = "<group>";
+		};
+		A9D1A34924777BCC0011E02D /* LoginViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A9D1A34C24777BED0011E02D /* LoginViewModel.swift */,
+			);
+			path = LoginViewModel;
 			sourceTree = "<group>";
 		};
 		E46FFA7F85DB145D610B0A72 /* Frameworks */ = {
@@ -546,11 +597,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A909CA9C2474C03D00546CFC /* LoginViewController.xib in Resources */,
 				10BE73F6247372FC001EFD43 /* MessageStoryboard.storyboard in Resources */,
 				10D17EF92476203E0095E0AF /* Quicksand Light 300.ttf in Resources */,
 				10BE73EC247371FA001EFD43 /* HomeStoryboard.storyboard in Resources */,
 				108848D0247CB9150034579A /* FAQsTableViewCell.xib in Resources */,
 				10D17EF82476203E0095E0AF /* Quicksand Regular 400.ttf in Resources */,
+				A960AC22247DFD0B00E844E2 /* DepartmentTableViewCell.xib in Resources */,
 				10BE73C4247365A4001EFD43 /* LaunchScreen.storyboard in Resources */,
 				1045AA26247B55E3003A79E9 /* PackageDetailHeaderView.xib in Resources */,
 				10D17EF72476203E0095E0AF /* Quicksand Bold 700.ttf in Resources */,
@@ -561,6 +614,7 @@
 				10BE73C1247365A4001EFD43 /* Assets.xcassets in Resources */,
 				108848D4247CB91E0034579A /* FAQsTableViewHeader.xib in Resources */,
 				10D17EF62476203E0095E0AF /* Quicksand Medium 500.ttf in Resources */,
+				A9D18D13247B854A00ADE51B /* ProfileTableViewCell.xib in Resources */,
 				10BE73BF247365A4001EFD43 /* Main.storyboard in Resources */,
 				100506F42474D4F2008FDFC3 /* MenuCollectionViewCell.xib in Resources */,
 				103F3E522477B55900367024 /* PackageDetailTableViewCell.xib in Resources */,
@@ -639,6 +693,10 @@
 				108848CF247CB9150034579A /* FAQsTableViewCell.swift in Sources */,
 				105226FA247E2382007B7B29 /* SpeedTestViewController.swift in Sources */,
 				10670006247E0240002E283E /* UserLocationViewController.swift in Sources */,
+				A960AC24247E082400E844E2 /* DepartmentViewController.swift in Sources */,
+				1006D83024763C1A000892ED /* View.swift in Sources */,
+				10D17EF0247619E10095E0AF /* ProductViewController.swift in Sources */,
+				A9D18D0F247B792D00ADE51B /* ProfileViewController.swift in Sources */,
 				1006D84024767330000892ED /* ProductServiceDelegate.swift in Sources */,
 				1045AA1E247B5031003A79E9 /* PackageDetailHeaderView.swift in Sources */,
 				100556C224738BD500B1F8BF /* Colors.swift in Sources */,
@@ -649,6 +707,11 @@
 				100556C42473912B00B1F8BF /* APIManager.swift in Sources */,
 				10BE73E924737186001EFD43 /* LocationViewController.swift in Sources */,
 				108848C9247CA4610034579A /* HelpDesk.swift in Sources */,
+				A9D1A34F247786860011E02D /* User.swift in Sources */,
+				10D17EEE247614860095E0AF /* SwiftUIView.swift in Sources */,
+				100556C42473912B00B1F8BF /* APIManager.swift in Sources */,
+				10BE73E924737186001EFD43 /* LocationViewController.swift in Sources */,
+				A9D1A34D24777BED0011E02D /* LoginViewModel.swift in Sources */,
 				1006D83A247672F6000892ED /* ProductViewModel.swift in Sources */,
 				10BE73E424736EDA001EFD43 /* AboutUsViewController.swift in Sources */,
 				103F3E512477B55900367024 /* PackageDetailTableViewCell.swift in Sources */,
@@ -659,6 +722,7 @@
 				108848C5247CA44A0034579A /* HelpDeskService.swift in Sources */,
 				10BE73B8247365A4001EFD43 /* AppDelegate.swift in Sources */,
 				105226F7247E1E5E007B7B29 /* CustomizeNavTab.swift in Sources */,
+				A909CA9B2474C03D00546CFC /* LoginViewController.swift in Sources */,
 				1006D83424767152000892ED /* Product.swift in Sources */,
 				1006D8362476715D000892ED /* Package.swift in Sources */,
 				10BE73BA247365A4001EFD43 /* SceneDelegate.swift in Sources */,
@@ -669,9 +733,12 @@
 				1095651C2477717E000C286B /* PackageDetail.swift in Sources */,
 				10BBF927247CFE03008DCF3A /* SaleViewModel.swift in Sources */,
 				10E7F38F247B751F0082901F /* SoftwareSolution.swift in Sources */,
+				A9D18D12247B854A00ADE51B /* ProfileTableViewCell.swift in Sources */,
+				A960AC21247DFD0B00E844E2 /* DepartmentTableViewCell.swift in Sources */,
 				101FE96E24767EDF005AB106 /* PackageViewController.swift in Sources */,
 				10D17EFC247624930095E0AF /* SubMenuTableViewCell.swift in Sources */,
 				1006D83E24767322000892ED /* ProductService.swift in Sources */,
+				A9D1A34B24777BE10011E02D /* LoginService.swift in Sources */,
 				10BE73EE24737206001EFD43 /* HomeViewController.swift in Sources */,
 				10BE73F824737309001EFD43 /* MessageViewController.swift in Sources */,
 				10E7F38D247B73360082901F /* HelpDeskViewController.swift in Sources */,
