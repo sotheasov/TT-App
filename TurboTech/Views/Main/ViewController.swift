@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        navigationController?.navigationBar.barTintColor = UIColor.green
         let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainViewControllerID")
         mainVC.modalPresentationStyle = .fullScreen
         self.present(mainVC, animated: false) {

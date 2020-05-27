@@ -16,12 +16,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var sliderImageView: UIImageView!
     
     let menuList : [Menu] = [
-        Menu(title: "Product", imageUrl: "internet_package"),
-        Menu(title: "Payment", imageUrl: "https://www.at-languagesolutions.com/en/wp-content/uploads/2016/06/http-1.jpg"),
-        Menu(title: "Help Desk", imageUrl: "https://www.at-languagesolutions.com/en/wp-content/uploads/2016/06/http-1.jpg"),
-        Menu(title: "Speed Test", imageUrl: "speed"),
-        Menu(title: "Scan QR", imageUrl: "https://www.at-languagesolutions.com/en/wp-content/uploads/2016/06/http-1.jpg"),
-        Menu(title: "Location", imageUrl: "https://www.at-languagesolutions.com/en/wp-content/uploads/2016/06/http-1.jpg")
+        Menu(id: 0, title: "Product", imageUrl: "internet_package"),
+        Menu(id: 1, title: "Payment", imageUrl: "get_cash"),
+        Menu(id: 2, title: "Help Desk", imageUrl: "ustomer_support"),
+        Menu(id: 3, title: "Speed Test", imageUrl: "speed"),
+        Menu(id: 4, title: "Scan QR", imageUrl: "qr_black"),
+        Menu(id: 5, title: "Location", imageUrl: "Map")
     ]
     
     override func viewDidLoad() {
@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
     }
     
     private func setUp(){
-        self.navigationController?.navigationBar.barTintColor = COLOR.RED
+//        self.navigationController?.navigationBar.barTintColor = COLOR.RED
 //        setUpNavigation()
     }
     
@@ -44,7 +44,9 @@ class HomeViewController: UIViewController {
     }
     
     func addRightButton(){
+        
         let rNavView = UIView(frame: CGRect(x: 0, y: 0, width: 90,height: 40))
+        
         let notificationBtn = UIButton(frame: CGRect(x: 0,y: 0, width: 40, height: 40))
         notificationBtn.setImage(UIImage(systemName: "bell.fill"), for: .normal)
         notificationBtn.tintColor = .white
@@ -53,10 +55,10 @@ class HomeViewController: UIViewController {
         notificationBtn.imageEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         notificationBtn.addTarget(self, action: #selector(self.didTapOnRightButton), for: .touchUpInside)
         
-        let profileImageView = UIImageView(frame: CGRect(x: 50, y: 0, width: 40, height: 40))
+        let profileImageView = UIImageView(frame: CGRect(x: 50, y: 2, width: 36, height: 36))
         profileImageView.image = UIImage(named: "love.jpg")
         profileImageView.contentMode = UIView.ContentMode.scaleAspectFit
-        profileImageView.layer.cornerRadius = 20
+        profileImageView.layer.cornerRadius = SIZE.RADIOUS_IMAGE
         profileImageView.layer.masksToBounds = true
         rNavView.addSubview(profileImageView)
         rNavView.addSubview(notificationBtn)
@@ -71,8 +73,8 @@ class HomeViewController: UIViewController {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 160, height: 40))
         titleLabel.textAlignment = .left
         titleLabel.text = "TURBOTECH"
-        titleLabel.font = titleLabel.font.withSize(24)
-        titleLabel.textColor = .white
+        titleLabel.font = UIFont.systemFont(ofSize: NAV.HOME_NAV_TITLE_SIZE, weight: .semibold)
+        titleLabel.textColor = NAV.HOME_NAV_COLOR_WHITE
         lNavVIew.addSubview(titleLabel)
         let leftBarButton = UIBarButtonItem(customView: lNavVIew)
         self.navigationItem.leftBarButtonItem = leftBarButton
@@ -136,17 +138,30 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 let productVC = storyboard?.instantiateViewController(withIdentifier: "ProductViewControllerID") as! ProductViewController
                 productVC.modalPresentationStyle = .fullScreen
                 productVC.setNavigationTitle(title: "Product")
+                productVC.setTypeId(id: 0)
                 self.navigationController?.pushViewController(productVC, animated: true)
             case 1:
                 print("Payment")
             case 2:
                 print("Help Desk")
+                let productVC = storyboard?.instantiateViewController(withIdentifier: "ProductViewControllerID") as! ProductViewController
+                productVC.modalPresentationStyle = .fullScreen
+                productVC.setNavigationTitle(title: "Product")
+                productVC.setTypeId(id: 2)
+                self.navigationController?.pushViewController(productVC, animated: true)
             case 3:
                 print("Speed Test")
+                let speedTestVC = storyboard?.instantiateViewController(identifier: "SpeedTestViewControllerID") as! SpeedTestViewController
+                speedTestVC.navigationItem.title = "Speed Test"
+                self.navigationController?.pushViewController(speedTestVC, animated: true)
             case 4:
                 print("Scan QR")
             case 5:
                 print("Location")
+                let locationVC = storyboard?.instantiateViewController(identifier: "UserLocationViewControllerID") as! UserLocationViewController
+                locationVC.modalPresentationStyle = .fullScreen
+                locationVC.navigationItem.title = "Location"
+                self.navigationController?.pushViewController(locationVC, animated: true)
             default:
                 print("")
             }

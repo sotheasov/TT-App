@@ -7,22 +7,26 @@
 //
 
 import UIKit
+import GooglePlaces
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    let MAP_API_KEY = "AIzaSyBmftqoMbNwOoSqoe0EW9xnuSEhjlizAHQ"
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        UITabBar.appearance().barTintColor = UIColor.red
-        UITabBar.appearance().tintColor = UIColor.white
-        UITabBar.appearance().backgroundColor = UIColor.white
-        UITabBar.appearance().unselectedItemTintColor = UIColor.white.withAlphaComponent(0.5)
+        UITabBar.appearance().barTintColor = TAB.COLOR
+        UITabBar.appearance().tintColor = TAB.SELECTED_COLOR
+//        UITabBar.appearance().backgroundColor = UIColor.white
+        UITabBar.appearance().unselectedItemTintColor = TAB.UNSELECTED_COLOR.withAlphaComponent(TAB.UISELECTED_ALPHA)
+        
         
         let navBarAppearance = UINavigationBar.appearance()
-        navBarAppearance.barTintColor = COLOR.BLUE
+        navBarAppearance.barTintColor = COLOR.RED
         navBarAppearance.tintColor = COLOR.WHITE
         navBarAppearance.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: COLOR.WHITE,
@@ -33,6 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ]
         navBarAppearance.isTranslucent = true
         
+        GMSServices.provideAPIKey(MAP_API_KEY)
+        GMSPlacesClient.provideAPIKey(MAP_API_KEY)
         return true
     }
 

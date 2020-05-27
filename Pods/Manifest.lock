@@ -1,6 +1,30 @@
 PODS:
   - Alamofire (5.0.5)
   - FittedSheets (1.4.6)
+  - Google-Maps-iOS-Utils (3.1.4):
+    - Google-Maps-iOS-Utils/Clustering (= 3.1.4)
+    - Google-Maps-iOS-Utils/Geometry (= 3.1.4)
+    - Google-Maps-iOS-Utils/Heatmap (= 3.1.4)
+    - Google-Maps-iOS-Utils/QuadTree (= 3.1.4)
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Clustering (3.1.4):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Geometry (3.1.4):
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Heatmap (3.1.4):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/QuadTree (3.1.4):
+    - GoogleMaps
+  - GoogleMaps (3.9.0):
+    - GoogleMaps/Maps (= 3.9.0)
+  - GoogleMaps/Base (3.9.0)
+  - GoogleMaps/Maps (3.9.0):
+    - GoogleMaps/Base
+  - GooglePlaces (3.9.0):
+    - GoogleMaps/Base (= 3.9.0)
+  - iOSDropDown (0.3.4)
   - Kingfisher (5.13.4):
     - Kingfisher/Core (= 5.13.4)
   - Kingfisher/Core (5.13.4)
@@ -9,6 +33,10 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
   - FittedSheets
+  - Google-Maps-iOS-Utils (~> 3.1.4)
+  - GoogleMaps
+  - GooglePlaces
+  - iOSDropDown
   - Kingfisher
   - SwiftyJSON (~> 4.0)
 
@@ -16,15 +44,23 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - FittedSheets
+    - Google-Maps-iOS-Utils
+    - GoogleMaps
+    - GooglePlaces
+    - iOSDropDown
     - Kingfisher
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   FittedSheets: 7f37fee2567d15dcde391f31eccbffb660ddebf0
+  Google-Maps-iOS-Utils: 1e51ca272b4f4befdf3577bf46f58c22ef22062c
+  GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
+  GooglePlaces: 1634d019549b969d40fe0ccb0b9513055adebe01
+  iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
   Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: d927e86e1a045df5020a17f6d236f5dcbd481bcb
+PODFILE CHECKSUM: 6688f86d8492a8b328d0a926375d3b99b50cd626
 
 COCOAPODS: 1.9.1

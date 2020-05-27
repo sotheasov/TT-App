@@ -33,19 +33,27 @@ class SubMenuTableViewCell: UITableViewCell {
     }
     
     func setData(product : Product){
-        let lang = "KH"
+        let lang = "EN"
         self.tag = product.id
         productLabel.text = "\(lang == "EN" ? product.nameEn : product.nameKh)"
         let url = URL(string: product.imageUrl)
-        productImageView.kf.setImage(with: url)
+        productImageView.kf.setImage(with: url, placeholder: UIImage(named: product.imageUrl))
     }
     
     func setData(package : Package){
-        let lang = "KH"
+        let lang = "EN"
         self.tag = package.id
         productLabel.text = "\(lang == "EN" ? package.nameEn : package.nameKh)"
         let url = URL(string: package.imageUrl)
-        productImageView.kf.setImage(with: url)
+        productImageView.kf.setImage(with: url, placeholder: UIImage(named: package.imageUrl))
+    }
+    
+    func setData(software : SoftwareSolution) {
+        let lang = "EN"
+        self.tag = software.id
+        productLabel.text = "\(lang == "EN" ? software.nameEn : software.nameKh)"
+        let url = URL(string: software.imageUrl)
+        productImageView.kf.setImage(with: url, placeholder: UIImage(named: software.imageUrl))
     }
     
 }
