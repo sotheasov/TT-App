@@ -64,9 +64,14 @@ class AdminTableViewController: UITableViewController {
             openVC.navigationItem.title = departmentList[indexPath.row].name
             self.navigationController?.pushViewController(openVC, animated: true)
         case  .HR:
-            let openVC = storyboard?.instantiateViewController(identifier: CONTROLLER.SALE) as! SaleTableViewController
-            openVC.navigationItem.title = departmentList[indexPath.row].name
-            self.navigationController?.pushViewController(openVC, animated: true)
+            // MARK: - @Sothea Attendance Screen
+            print("Attendance")
+            let attendanceStoryboard = UIStoryboard(name: BOARD.ABOUTUS, bundle: nil)
+            let attendance = attendanceStoryboard.instantiateViewController(withIdentifier: "AttendanceViewControllerID") as! AttendanceViewController
+                self.showDetailViewController(attendance, sender: nil)
+//            let openVC = storyboard?.instantiateViewController(identifier: CONTROLLER.SALE) as! SaleTableViewController
+//            openVC.navigationItem.title = departmentList[indexPath.row].name
+//            self.navigationController?.pushViewController(openVC, animated: true)
         case .Admin:
             print("Owner hz Dear")
         }

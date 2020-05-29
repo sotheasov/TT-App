@@ -27,6 +27,7 @@ class HomeViewController: UIViewController {
         DispatchQueue.main.async {
             Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         }
+        didTapOnRightButton()
     }
     
     @objc
@@ -190,6 +191,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 print("Scan QR")
             case 5:
                 print("Location")
+                /*
                 print(AppDelegate.position)
                 switch AppDelegate.position {
                 case .Admin :
@@ -213,17 +215,18 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                     openVC.navigationItem.title = "Sale"
                     self.navigationController?.pushViewController(openVC, animated: true)
                 }
+                */
                 /*
                 let locationVC = storyboard?.instantiateViewController(identifier: "PopLocationViewControllerID") as! PopLocationViewController
                 locationVC.modalPresentationStyle = .fullScreen
                 self.navigationController?.pushViewController(locationVC, animated: true)
                 */
-                /*
+                
                 let locationVC = storyboard?.instantiateViewController(identifier: "UserLocationViewControllerID") as! UserLocationViewController
                 locationVC.modalPresentationStyle = .fullScreen
                 locationVC.navigationItem.title = "Location"
                 self.navigationController?.pushViewController(locationVC, animated: true)
-                 */
+                
             default:
                 print("")
             }

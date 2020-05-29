@@ -88,6 +88,9 @@
 		A960AC21247DFD0B00E844E2 /* DepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960AC1F247DFD0B00E844E2 /* DepartmentTableViewCell.swift */; };
 		A960AC22247DFD0B00E844E2 /* DepartmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A960AC20247DFD0B00E844E2 /* DepartmentTableViewCell.xib */; };
 		A960AC24247E082400E844E2 /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960AC23247E082400E844E2 /* DepartmentViewController.swift */; };
+		A9B0AF58247E64CF002FB5B6 /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B0AF57247E64CF002FB5B6 /* AttendanceViewController.swift */; };
+		A9B0AF5B247E6567002FB5B6 /* AttendanceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B0AF59247E6567002FB5B6 /* AttendanceCollectionViewCell.swift */; };
+		A9B0AF5C247E6567002FB5B6 /* AttendanceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9B0AF5A247E6567002FB5B6 /* AttendanceCollectionViewCell.xib */; };
 		A9D18D0F247B792D00ADE51B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D18D0E247B792D00ADE51B /* ProfileViewController.swift */; };
 		A9D18D12247B854A00ADE51B /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D18D10247B854A00ADE51B /* ProfileTableViewCell.swift */; };
 		A9D18D13247B854A00ADE51B /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9D18D11247B854A00ADE51B /* ProfileTableViewCell.xib */; };
@@ -187,6 +190,9 @@
 		A960AC1F247DFD0B00E844E2 /* DepartmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewCell.swift; sourceTree = "<group>"; };
 		A960AC20247DFD0B00E844E2 /* DepartmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartmentTableViewCell.xib; sourceTree = "<group>"; };
 		A960AC23247E082400E844E2 /* DepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentViewController.swift; sourceTree = "<group>"; };
+		A9B0AF57247E64CF002FB5B6 /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
+		A9B0AF59247E6567002FB5B6 /* AttendanceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceCollectionViewCell.swift; sourceTree = "<group>"; };
+		A9B0AF5A247E6567002FB5B6 /* AttendanceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttendanceCollectionViewCell.xib; sourceTree = "<group>"; };
 		A9D18D0E247B792D00ADE51B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A9D18D10247B854A00ADE51B /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		A9D18D11247B854A00ADE51B /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
@@ -475,8 +481,8 @@
 			children = (
 				104AAE20247E9A3700801A8F /* Department */,
 				10BE73EA247371DB001EFD43 /* Home */,
-				10BE73F4247372EF001EFD43 /* Messages */,
 				10BE73E52473715F001EFD43 /* Locations */,
+				10BE73F4247372EF001EFD43 /* Messages */,
 				10BE73E024736EB2001EFD43 /* About Us */,
 				10BE73D02473662B001EFD43 /* Main */,
 			);
@@ -551,6 +557,9 @@
 				A960AC20247DFD0B00E844E2 /* DepartmentTableViewCell.xib */,
 				A909CA992474C03D00546CFC /* LoginViewController.swift */,
 				A909CA9A2474C03D00546CFC /* LoginViewController.xib */,
+				A9B0AF57247E64CF002FB5B6 /* AttendanceViewController.swift */,
+				A9B0AF59247E6567002FB5B6 /* AttendanceCollectionViewCell.swift */,
+				A9B0AF5A247E6567002FB5B6 /* AttendanceCollectionViewCell.xib */,
 			);
 			path = "About Us";
 			sourceTree = "<group>";
@@ -731,6 +740,7 @@
 				10BE73F024737293001EFD43 /* LocationsStoryboard.storyboard in Resources */,
 				10D17EFD247624930095E0AF /* SubMenuTableViewCell.xib in Resources */,
 				10BE73F3247372BF001EFD43 /* AboutUsStoryboard.storyboard in Resources */,
+				A9B0AF5C247E6567002FB5B6 /* AttendanceCollectionViewCell.xib in Resources */,
 				10BE73C1247365A4001EFD43 /* Assets.xcassets in Resources */,
 				108848D4247CB91E0034579A /* FAQsTableViewHeader.xib in Resources */,
 				10D17EF62476203E0095E0AF /* Quicksand Medium 500.ttf in Resources */,
@@ -837,6 +847,7 @@
 				100556C42473912B00B1F8BF /* APIManager.swift in Sources */,
 				10BE73E924737186001EFD43 /* LocationViewController.swift in Sources */,
 				105226FC247E59F8007B7B29 /* PopLocationViewController.swift in Sources */,
+				A9B0AF5B247E6567002FB5B6 /* AttendanceCollectionViewCell.swift in Sources */,
 				A9D1A34D24777BED0011E02D /* LoginViewModel.swift in Sources */,
 				1006D83A247672F6000892ED /* ProductViewModel.swift in Sources */,
 				10BE73E424736EDA001EFD43 /* AboutUsViewController.swift in Sources */,
@@ -854,6 +865,7 @@
 				105226F7247E1E5E007B7B29 /* CustomizeNavTab.swift in Sources */,
 				A909CA9B2474C03D00546CFC /* LoginViewController.swift in Sources */,
 				1006D83424767152000892ED /* Product.swift in Sources */,
+				A9B0AF58247E64CF002FB5B6 /* AttendanceViewController.swift in Sources */,
 				1006D8362476715D000892ED /* Package.swift in Sources */,
 				10BE73BA247365A4001EFD43 /* SceneDelegate.swift in Sources */,
 				103F3E542477C56500367024 /* PackageDetailViewController.swift in Sources */,
