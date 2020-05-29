@@ -24,7 +24,7 @@ class AttendanceCollectionViewCell: UICollectionViewCell {
     
     func customAttendanceCollectionViewCell() {
         coverAttendanceViewCell.layer.cornerRadius = 12
-        coverAttendanceViewCell.shadowStyle(radius: 6, color: .black, offset: CGSize(width: -0.5, height: 4), opacity: 1)
+        coverAttendanceViewCell.shadowStyle(radius: 6, color: .black, offset: CGSize(width: -0.5, height: 3), opacity: 1)
     }
     
     func setConstraint(right : Bool){
