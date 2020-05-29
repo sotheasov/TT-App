@@ -15,21 +15,44 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var sliderImageView: UIImageView!
     
-    let menuList : [Menu] = [
-        Menu(id: 0, title: "Product", imageUrl: "internet_package"),
-        Menu(id: 1, title: "Payment", imageUrl: "get_cash"),
-        Menu(id: 2, title: "Help Desk", imageUrl: "ustomer_support"),
-        Menu(id: 3, title: "Speed Test", imageUrl: "speed"),
-        Menu(id: 4, title: "Scan QR", imageUrl: "qr_black"),
-        Menu(id: 5, title: "Location", imageUrl: "Map")
-    ]
+    var menuList = [Menu]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name(rawValue: "changed"), object: nil)
         setUp()
         addRightButton()
         addLeftButton()
         registerCollectionViewCell()
+        DispatchQueue.main.async {
+            Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+        }
+        didTapOnRightButton()
+    }
+    
+    @objc
+    func changeLanguage(){
+        addLeftButton()
+        menuList = [
+            Menu(id: 0, title: "product".localized.localized, imageUrl: "internet_package"),
+            Menu(id: 1, title: "payment".localized, imageUrl: "get_cash"),
+            Menu(id: 2, title: "help desk".localized, imageUrl: "ustomer_support"),
+            Menu(id: 3, title: "speed test".localized, imageUrl: "speed"),
+            Menu(id: 4, title: "scan qr".localized, imageUrl: "qr_black"),
+            Menu(id: 5, title: "location".localized, imageUrl: "Map")
+        ]
+        homeMenuCollectionView.reloadData()
+    }
+     
+    var imageNum = 0
+    let imageStr = ["1","2","3","4","5"]
+    @objc
+    func changeImage(){
+        if imageNum > imageStr.count - 1 {imageNum = 0}
+        let image = UIImage(named: imageStr[imageNum])
+        let url = URL(string: imageStr[imageNum])
+        sliderImageView.kf.setImage(with: url, placeholder: image)
+        imageNum = imageNum + 1
     }
     
     private func setUp(){
@@ -72,7 +95,7 @@ class HomeViewController: UIViewController {
         
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 160, height: 40))
         titleLabel.textAlignment = .left
-        titleLabel.text = "TURBOTECH"
+        titleLabel.text = "turbotech".localized
         titleLabel.font = UIFont.systemFont(ofSize: NAV.HOME_NAV_TITLE_SIZE, weight: .semibold)
         titleLabel.textColor = NAV.HOME_NAV_COLOR_WHITE
         lNavVIew.addSubview(titleLabel)
@@ -82,14 +105,25 @@ class HomeViewController: UIViewController {
     
     @objc
     func didTapOnRightButton(){
-        print("WORK")
+        if LanguageManager.shared.language == "km" {
+            LanguageManager.shared.language = "en"
+        }
+        else {
+            LanguageManager.shared.language = "km"
+        }
+        
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let homeScreen = storyboard?.instantiateInitialViewController()
+//        appDelegate.window?.rootViewController = homeScreen
+        
+        NotificationCenter.default.post(name: Notification.Name("changed"), object: nil)
     }
 
 }
 
 extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        6
+        menuList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -134,7 +168,6 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             switch index.item {
             case 0:
                 print("Product")
-//                let productVC = UIStoryboard(name: "HomeStoryboard", bundle: nil).instantiateViewController(withIdentifier: "ProductViewControllerID")
                 let productVC = storyboard?.instantiateViewController(withIdentifier: "ProductViewControllerID") as! ProductViewController
                 productVC.modalPresentationStyle = .fullScreen
                 productVC.setNavigationTitle(title: "Product")
@@ -158,10 +191,42 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 print("Scan QR")
             case 5:
                 print("Location")
+                /*
+                print(AppDelegate.position)
+                switch AppDelegate.position {
+                case .Admin :
+                    let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
+                    let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.ADMIN) as! AdminTableViewController
+                    openVC.navigationItem.title = "ADMIN"
+                    self.navigationController?.pushViewController(openVC, animated: true)
+                case .Finance :
+                    let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
+                    let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.FINANCE) as! FinanceTableViewController
+                    openVC.navigationItem.title = "Finance"
+                    self.navigationController?.pushViewController(openVC, animated: true)
+                case .HR :
+                    let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
+                    let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.ADMIN) as! AdminTableViewController
+                    openVC.navigationItem.title = "HR"
+                    self.navigationController?.pushViewController(openVC, animated: true)
+                case .Sale :
+                    let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
+                    let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.SALE) as! SaleTableViewController
+                    openVC.navigationItem.title = "Sale"
+                    self.navigationController?.pushViewController(openVC, animated: true)
+                }
+                */
+                /*
+                let locationVC = storyboard?.instantiateViewController(identifier: "PopLocationViewControllerID") as! PopLocationViewController
+                locationVC.modalPresentationStyle = .fullScreen
+                self.navigationController?.pushViewController(locationVC, animated: true)
+                */
+                
                 let locationVC = storyboard?.instantiateViewController(identifier: "UserLocationViewControllerID") as! UserLocationViewController
                 locationVC.modalPresentationStyle = .fullScreen
                 locationVC.navigationItem.title = "Location"
                 self.navigationController?.pushViewController(locationVC, animated: true)
+                
             default:
                 print("")
             }

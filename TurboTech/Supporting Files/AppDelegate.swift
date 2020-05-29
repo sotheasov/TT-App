@@ -13,11 +13,17 @@ import GoogleMaps
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    static let position : Position = .Admin
+    
     let MAP_API_KEY = "AIzaSyBmftqoMbNwOoSqoe0EW9xnuSEhjlizAHQ"
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if UserDefaults.standard.string(forKey: "LanguageCode") == nil {
+            LanguageManager.shared.language = "km"
+        }
         
         UITabBar.appearance().barTintColor = TAB.COLOR
         UITabBar.appearance().tintColor = TAB.SELECTED_COLOR

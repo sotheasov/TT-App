@@ -101,8 +101,34 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
 //        let productVC = homeStoryboard.instantiateViewController(withIdentifier: "ProductViewControllerID") as! ProductViewController
 //            productVC.setNavigationTitle(title: "Product")
 //            self.navigationController?.pushViewController(productVC, animated: true)
-        let department = storyboard?.instantiateViewController(withIdentifier: "DepartmentViewControllerID") as! DepartmentViewController
-        self.navigationController?.pushViewController(department, animated: true)
+//        let department = storyboard?.instantiateViewController(withIdentifier: "DepartmentViewControllerID") as! DepartmentViewController
+//        self.navigationController?.pushViewController(department, animated: true)
+            
+            // MARK: - Seakthong
+            switch AppDelegate.position {
+            case .Admin :
+                let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
+                let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.ADMIN) as! AdminTableViewController
+                openVC.navigationItem.title = "ADMIN"
+                self.navigationController?.pushViewController(openVC, animated: true)
+            case .Finance :
+                let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
+                let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.FINANCE) as! FinanceTableViewController
+                openVC.navigationItem.title = "Finance"
+                self.navigationController?.pushViewController(openVC, animated: true)
+            case .HR :
+                let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
+                let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.ADMIN) as! AdminTableViewController
+                openVC.navigationItem.title = "HR"
+                self.navigationController?.pushViewController(openVC, animated: true)
+            case .Sale :
+                let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
+                let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.SALE) as! SaleTableViewController
+                openVC.navigationItem.title = "Sale"
+                self.navigationController?.pushViewController(openVC, animated: true)
+            }
+            
+            
         case 2:
             print("Language")
         case 3:

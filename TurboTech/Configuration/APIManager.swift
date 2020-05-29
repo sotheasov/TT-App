@@ -24,6 +24,7 @@ class APIManager {
     
     enum SALE {
         static let GET_POP = MAIN_URL + "/sale/POP"
+        static let GET_DEVICE = MAIN_URL + "/sale/productlist/"
     }
     
     enum LOGIN {

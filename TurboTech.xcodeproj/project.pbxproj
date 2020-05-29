@@ -26,8 +26,14 @@
 		103F3E542477C56500367024 /* PackageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F3E532477C56500367024 /* PackageDetailViewController.swift */; };
 		1045AA1E247B5031003A79E9 /* PackageDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1045AA1D247B5031003A79E9 /* PackageDetailHeaderView.swift */; };
 		1045AA26247B55E3003A79E9 /* PackageDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1045AA24247B55E3003A79E9 /* PackageDetailHeaderView.xib */; };
+		104AAE22247E9A4E00801A8F /* DepartmentStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104AAE21247E9A4E00801A8F /* DepartmentStoryboard.storyboard */; };
+		104AAE28247E9B8D00801A8F /* AdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104AAE27247E9B8D00801A8F /* AdminTableViewController.swift */; };
+		104AAE2C247E9DE000801A8F /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104AAE2B247E9DE000801A8F /* Department.swift */; };
+		104AAE30247E9E8100801A8F /* department.json in Resources */ = {isa = PBXBuildFile; fileRef = 104AAE2F247E9E8100801A8F /* department.json */; };
+		104AAE32247EA0B100801A8F /* DepartmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104AAE31247EA0B100801A8F /* DepartmentTableViewController.swift */; };
 		105226F7247E1E5E007B7B29 /* CustomizeNavTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105226F6247E1E5E007B7B29 /* CustomizeNavTab.swift */; };
 		105226FA247E2382007B7B29 /* SpeedTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105226F9247E2382007B7B29 /* SpeedTestViewController.swift */; };
+		105226FC247E59F8007B7B29 /* PopLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105226FB247E59F8007B7B29 /* PopLocationViewController.swift */; };
 		10670006247E0240002E283E /* UserLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10670005247E0240002E283E /* UserLocationViewController.swift */; };
 		108848C5247CA44A0034579A /* HelpDeskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108848C4247CA44A0034579A /* HelpDeskService.swift */; };
 		108848C7247CA4560034579A /* HelpDeskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108848C6247CA4560034579A /* HelpDeskViewModel.swift */; };
@@ -56,6 +62,16 @@
 		10BE73F3247372BF001EFD43 /* AboutUsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BE73F2247372BF001EFD43 /* AboutUsStoryboard.storyboard */; };
 		10BE73F6247372FC001EFD43 /* MessageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BE73F5247372FC001EFD43 /* MessageStoryboard.storyboard */; };
 		10BE73F824737309001EFD43 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BE73F724737309001EFD43 /* MessageViewController.swift */; };
+		10CFC1BF247F49670059AD63 /* SaleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFC1BE247F49670059AD63 /* SaleTableViewController.swift */; };
+		10CFC1C1247F49710059AD63 /* FinanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFC1C0247F49710059AD63 /* FinanceTableViewController.swift */; };
+		10CFC1C5247F53120059AD63 /* DeviceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFC1C4247F53120059AD63 /* DeviceTableViewController.swift */; };
+		10CFC1C7247F63950059AD63 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFC1C6247F63950059AD63 /* Device.swift */; };
+		10CFC1CB247F67EF0059AD63 /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFC1C9247F67EF0059AD63 /* DeviceTableViewCell.swift */; };
+		10CFC1CC247F67EF0059AD63 /* DeviceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10CFC1CA247F67EF0059AD63 /* DeviceTableViewCell.xib */; };
+		10CFC1CE247F6B660059AD63 /* DeviceHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFC1CD247F6B660059AD63 /* DeviceHeaderView.swift */; };
+		10CFC1D4247F6EAC0059AD63 /* DeviceHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10CFC1D2247F6EAC0059AD63 /* DeviceHeaderView.xib */; };
+		10CFC1D9247FA9820059AD63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 10CFC1DB247FA9820059AD63 /* Localizable.strings */; };
+		10CFC1DE247FAA390059AD63 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFC1DD247FAA390059AD63 /* LanguageManager.swift */; };
 		10D17EF0247619E10095E0AF /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D17EEF247619E10095E0AF /* ProductViewController.swift */; };
 		10D17EF62476203E0095E0AF /* Quicksand Medium 500.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10D17EF22476203E0095E0AF /* Quicksand Medium 500.ttf */; };
 		10D17EF72476203E0095E0AF /* Quicksand Bold 700.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10D17EF32476203E0095E0AF /* Quicksand Bold 700.ttf */; };
@@ -104,8 +120,14 @@
 		103F3E532477C56500367024 /* PackageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailViewController.swift; sourceTree = "<group>"; };
 		1045AA1D247B5031003A79E9 /* PackageDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailHeaderView.swift; sourceTree = "<group>"; };
 		1045AA24247B55E3003A79E9 /* PackageDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageDetailHeaderView.xib; sourceTree = "<group>"; };
+		104AAE21247E9A4E00801A8F /* DepartmentStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DepartmentStoryboard.storyboard; sourceTree = "<group>"; };
+		104AAE27247E9B8D00801A8F /* AdminTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTableViewController.swift; sourceTree = "<group>"; };
+		104AAE2B247E9DE000801A8F /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
+		104AAE2F247E9E8100801A8F /* department.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = department.json; sourceTree = "<group>"; };
+		104AAE31247EA0B100801A8F /* DepartmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewController.swift; sourceTree = "<group>"; };
 		105226F6247E1E5E007B7B29 /* CustomizeNavTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeNavTab.swift; sourceTree = "<group>"; };
 		105226F9247E2382007B7B29 /* SpeedTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTestViewController.swift; sourceTree = "<group>"; };
+		105226FB247E59F8007B7B29 /* PopLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopLocationViewController.swift; sourceTree = "<group>"; };
 		10670005247E0240002E283E /* UserLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationViewController.swift; sourceTree = "<group>"; };
 		108848C4247CA44A0034579A /* HelpDeskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDeskService.swift; sourceTree = "<group>"; };
 		108848C6247CA4560034579A /* HelpDeskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDeskViewModel.swift; sourceTree = "<group>"; };
@@ -124,9 +146,7 @@
 		10BE73B7247365A4001EFD43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10BE73B9247365A4001EFD43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		10BE73BB247365A4001EFD43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		10BE73BE247365A4001EFD43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10BE73C0247365A4001EFD43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		10BE73C3247365A4001EFD43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10BE73C5247365A4001EFD43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10BE73E324736EDA001EFD43 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		10BE73E824737186001EFD43 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +156,23 @@
 		10BE73F2247372BF001EFD43 /* AboutUsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutUsStoryboard.storyboard; sourceTree = "<group>"; };
 		10BE73F5247372FC001EFD43 /* MessageStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageStoryboard.storyboard; sourceTree = "<group>"; };
 		10BE73F724737309001EFD43 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		10CFC1BE247F49670059AD63 /* SaleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleTableViewController.swift; sourceTree = "<group>"; };
+		10CFC1C0247F49710059AD63 /* FinanceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceTableViewController.swift; sourceTree = "<group>"; };
+		10CFC1C4247F53120059AD63 /* DeviceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewController.swift; sourceTree = "<group>"; };
+		10CFC1C6247F63950059AD63 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		10CFC1C9247F67EF0059AD63 /* DeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewCell.swift; sourceTree = "<group>"; };
+		10CFC1CA247F67EF0059AD63 /* DeviceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceTableViewCell.xib; sourceTree = "<group>"; };
+		10CFC1CD247F6B660059AD63 /* DeviceHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHeaderView.swift; sourceTree = "<group>"; };
+		10CFC1D2247F6EAC0059AD63 /* DeviceHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceHeaderView.xib; sourceTree = "<group>"; };
+		10CFC1DA247FA9820059AD63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		10CFC1DD247FAA390059AD63 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		10CFC1DF247FAF6A0059AD63 /* km */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = km; path = km.lproj/Main.storyboard; sourceTree = "<group>"; };
+		10CFC1E0247FAF6B0059AD63 /* km */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = km; path = km.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		10CFC1E3247FB1EB0059AD63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		10CFC1E4247FB1EB0059AD63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		10CFC1E5247FB1FF0059AD63 /* km */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = km; path = km.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		10CFC1E6247FB2010059AD63 /* km */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = km; path = km.lproj/Main.strings; sourceTree = "<group>"; };
+		10CFC1E7247FB20E0059AD63 /* km */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = km; path = km.lproj/Localizable.strings; sourceTree = "<group>"; };
 		10D17EEF247619E10095E0AF /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		10D17EF22476203E0095E0AF /* Quicksand Medium 500.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Medium 500.ttf"; sourceTree = "<group>"; };
 		10D17EF32476203E0095E0AF /* Quicksand Bold 700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Bold 700.ttf"; sourceTree = "<group>"; };
@@ -236,6 +273,68 @@
 				1045AA24247B55E3003A79E9 /* PackageDetailHeaderView.xib */,
 			);
 			path = "Package Detail Card";
+			sourceTree = "<group>";
+		};
+		104AAE20247E9A3700801A8F /* Department */ = {
+			isa = PBXGroup;
+			children = (
+				104AAE26247E9B0D00801A8F /* CEO-Admin */,
+				104AAE23247E9AC100801A8F /* COO-Sale */,
+				104AAE24247E9ACB00801A8F /* CFO-Finance */,
+				104AAE25247E9AD100801A8F /* HR-Attendance */,
+				104AAE21247E9A4E00801A8F /* DepartmentStoryboard.storyboard */,
+				104AAE31247EA0B100801A8F /* DepartmentTableViewController.swift */,
+			);
+			path = Department;
+			sourceTree = "<group>";
+		};
+		104AAE23247E9AC100801A8F /* COO-Sale */ = {
+			isa = PBXGroup;
+			children = (
+				10CFC1C8247F67CF0059AD63 /* Cell */,
+				10CFC1BE247F49670059AD63 /* SaleTableViewController.swift */,
+				105226FB247E59F8007B7B29 /* PopLocationViewController.swift */,
+				10CFC1C4247F53120059AD63 /* DeviceTableViewController.swift */,
+			);
+			path = "COO-Sale";
+			sourceTree = "<group>";
+		};
+		104AAE24247E9ACB00801A8F /* CFO-Finance */ = {
+			isa = PBXGroup;
+			children = (
+				10CFC1C0247F49710059AD63 /* FinanceTableViewController.swift */,
+			);
+			path = "CFO-Finance";
+			sourceTree = "<group>";
+		};
+		104AAE25247E9AD100801A8F /* HR-Attendance */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "HR-Attendance";
+			sourceTree = "<group>";
+		};
+		104AAE26247E9B0D00801A8F /* CEO-Admin */ = {
+			isa = PBXGroup;
+			children = (
+				104AAE27247E9B8D00801A8F /* AdminTableViewController.swift */,
+			);
+			path = "CEO-Admin";
+			sourceTree = "<group>";
+		};
+		104AAE2D247E9E5200801A8F /* DepartmentService */ = {
+			isa = PBXGroup;
+			children = (
+				104AAE2F247E9E8100801A8F /* department.json */,
+			);
+			path = DepartmentService;
+			sourceTree = "<group>";
+		};
+		104AAE2E247E9E5B00801A8F /* DepartmentViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DepartmentViewModel;
 			sourceTree = "<group>";
 		};
 		105226F5247E1E39007B7B29 /* Navigation & Tab Bar */ = {
@@ -371,6 +470,8 @@
 				108848D7247CBADD0034579A /* SupportQuestion.swift */,
 				10BBF920247CFCCA008DCF3A /* POP.swift */,
 				A9D1A34E247786860011E02D /* User.swift */,
+				104AAE2B247E9DE000801A8F /* Department.swift */,
+				10CFC1C6247F63950059AD63 /* Device.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -378,9 +479,10 @@
 		10BE73CC247365EE001EFD43 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				104AAE20247E9A3700801A8F /* Department */,
 				10BE73EA247371DB001EFD43 /* Home */,
-				10BE73F4247372EF001EFD43 /* Messages */,
 				10BE73E52473715F001EFD43 /* Locations */,
+				10BE73F4247372EF001EFD43 /* Messages */,
 				10BE73E024736EB2001EFD43 /* About Us */,
 				10BE73D02473662B001EFD43 /* Main */,
 			);
@@ -390,6 +492,7 @@
 		10BE73CD247365F5001EFD43 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				104AAE2D247E9E5200801A8F /* DepartmentService */,
 				10BBF922247CFDD7008DCF3A /* SaleService */,
 				108848C2247CA40E0034579A /* HelpDeskService */,
 				A9D1A34824777BC10011E02D /* LoginService */,
@@ -401,6 +504,7 @@
 		10BE73CE247365FB001EFD43 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				104AAE2E247E9E5B00801A8F /* DepartmentViewModel */,
 				10BBF923247CFDE3008DCF3A /* SaleViewModel */,
 				108848C3247CA42D0034579A /* HelpDeskViewModel */,
 				A9D1A34924777BCC0011E02D /* LoginViewModel */,
@@ -434,6 +538,8 @@
 			isa = PBXGroup;
 			children = (
 				100556C32473912B00B1F8BF /* APIManager.swift */,
+				10CFC1DB247FA9820059AD63 /* Localizable.strings */,
+				10CFC1DD247FAA390059AD63 /* LanguageManager.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -488,6 +594,17 @@
 				10BE73F724737309001EFD43 /* MessageViewController.swift */,
 			);
 			path = Messages;
+			sourceTree = "<group>";
+		};
+		10CFC1C8247F67CF0059AD63 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				10CFC1C9247F67EF0059AD63 /* DeviceTableViewCell.swift */,
+				10CFC1CA247F67EF0059AD63 /* DeviceTableViewCell.xib */,
+				10CFC1CD247F6B660059AD63 /* DeviceHeaderView.swift */,
+				10CFC1D2247F6EAC0059AD63 /* DeviceHeaderView.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		10D17EF12476203E0095E0AF /* Fonts */ = {
@@ -587,6 +704,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				km,
 				Base,
 			);
 			mainGroup = 10BE73AB247365A4001EFD43;
@@ -608,11 +726,15 @@
 				10BE73F6247372FC001EFD43 /* MessageStoryboard.storyboard in Resources */,
 				10D17EF92476203E0095E0AF /* Quicksand Light 300.ttf in Resources */,
 				10BE73EC247371FA001EFD43 /* HomeStoryboard.storyboard in Resources */,
+				10CFC1D9247FA9820059AD63 /* Localizable.strings in Resources */,
 				108848D0247CB9150034579A /* FAQsTableViewCell.xib in Resources */,
+				104AAE22247E9A4E00801A8F /* DepartmentStoryboard.storyboard in Resources */,
 				10D17EF82476203E0095E0AF /* Quicksand Regular 400.ttf in Resources */,
 				A960AC22247DFD0B00E844E2 /* DepartmentTableViewCell.xib in Resources */,
 				10BE73C4247365A4001EFD43 /* LaunchScreen.storyboard in Resources */,
 				1045AA26247B55E3003A79E9 /* PackageDetailHeaderView.xib in Resources */,
+				104AAE30247E9E8100801A8F /* department.json in Resources */,
+				10CFC1D4247F6EAC0059AD63 /* DeviceHeaderView.xib in Resources */,
 				10D17EF72476203E0095E0AF /* Quicksand Bold 700.ttf in Resources */,
 				1006D83224766226000892ED /* tbt icon.xcassets in Resources */,
 				10BE73F024737293001EFD43 /* LocationsStoryboard.storyboard in Resources */,
@@ -622,6 +744,7 @@
 				10BE73C1247365A4001EFD43 /* Assets.xcassets in Resources */,
 				108848D4247CB91E0034579A /* FAQsTableViewHeader.xib in Resources */,
 				10D17EF62476203E0095E0AF /* Quicksand Medium 500.ttf in Resources */,
+				10CFC1CC247F67EF0059AD63 /* DeviceTableViewCell.xib in Resources */,
 				A9D18D13247B854A00ADE51B /* ProfileTableViewCell.xib in Resources */,
 				10BE73BF247365A4001EFD43 /* Main.storyboard in Resources */,
 				100506F42474D4F2008FDFC3 /* MenuCollectionViewCell.xib in Resources */,
@@ -697,6 +820,7 @@
 			files = (
 				10E7F391247B7D380082901F /* WebApplicationViewController.swift in Sources */,
 				1006D83024763C1A000892ED /* View.swift in Sources */,
+				10CFC1BF247F49670059AD63 /* SaleTableViewController.swift in Sources */,
 				10D17EF0247619E10095E0AF /* ProductViewController.swift in Sources */,
 				108848CF247CB9150034579A /* FAQsTableViewCell.swift in Sources */,
 				105226FA247E2382007B7B29 /* SpeedTestViewController.swift in Sources */,
@@ -707,9 +831,13 @@
 				A9D18D0F247B792D00ADE51B /* ProfileViewController.swift in Sources */,
 				1006D84024767330000892ED /* ProductServiceDelegate.swift in Sources */,
 				1045AA1E247B5031003A79E9 /* PackageDetailHeaderView.swift in Sources */,
+				10CFC1CB247F67EF0059AD63 /* DeviceTableViewCell.swift in Sources */,
+				10CFC1DE247FAA390059AD63 /* LanguageManager.swift in Sources */,
+				10CFC1C5247F53120059AD63 /* DeviceTableViewController.swift in Sources */,
 				100556C224738BD500B1F8BF /* Colors.swift in Sources */,
 				108848D6247CB9430034579A /* FAQsTableViewHeader.swift in Sources */,
 				108848D8247CBADD0034579A /* SupportQuestion.swift in Sources */,
+				10CFC1C7247F63950059AD63 /* Device.swift in Sources */,
 				100506F62474D771008FDFC3 /* Menu.swift in Sources */,
 				10E7F393247B86950082901F /* FeedBackViewController.swift in Sources */,
 				100556C42473912B00B1F8BF /* APIManager.swift in Sources */,
@@ -718,6 +846,7 @@
 				A9D1A34F247786860011E02D /* User.swift in Sources */,
 				100556C42473912B00B1F8BF /* APIManager.swift in Sources */,
 				10BE73E924737186001EFD43 /* LocationViewController.swift in Sources */,
+				105226FC247E59F8007B7B29 /* PopLocationViewController.swift in Sources */,
 				A9B0AF5B247E6567002FB5B6 /* AttendanceCollectionViewCell.swift in Sources */,
 				A9D1A34D24777BED0011E02D /* LoginViewModel.swift in Sources */,
 				1006D83A247672F6000892ED /* ProductViewModel.swift in Sources */,
@@ -726,8 +855,12 @@
 				10BBF925247CFDF8008DCF3A /* SaleService.swift in Sources */,
 				108848C7247CA4560034579A /* HelpDeskViewModel.swift in Sources */,
 				10BE73BC247365A4001EFD43 /* ViewController.swift in Sources */,
+				104AAE2C247E9DE000801A8F /* Department.swift in Sources */,
 				10BBF921247CFCCA008DCF3A /* POP.swift in Sources */,
+				10CFC1CE247F6B660059AD63 /* DeviceHeaderView.swift in Sources */,
 				108848C5247CA44A0034579A /* HelpDeskService.swift in Sources */,
+				104AAE28247E9B8D00801A8F /* AdminTableViewController.swift in Sources */,
+				104AAE32247EA0B100801A8F /* DepartmentTableViewController.swift in Sources */,
 				10BE73B8247365A4001EFD43 /* AppDelegate.swift in Sources */,
 				105226F7247E1E5E007B7B29 /* CustomizeNavTab.swift in Sources */,
 				A909CA9B2474C03D00546CFC /* LoginViewController.swift in Sources */,
@@ -736,6 +869,7 @@
 				1006D8362476715D000892ED /* Package.swift in Sources */,
 				10BE73BA247365A4001EFD43 /* SceneDelegate.swift in Sources */,
 				103F3E542477C56500367024 /* PackageDetailViewController.swift in Sources */,
+				10CFC1C1247F49710059AD63 /* FinanceTableViewController.swift in Sources */,
 				1006D83C24767313000892ED /* ProductViewModelDelegate.swift in Sources */,
 				108848CB247CB8CB0034579A /* FAQsTableViewController.swift in Sources */,
 				100506F32474D4F2008FDFC3 /* MenuCollectionViewCell.swift in Sources */,
@@ -760,7 +894,9 @@
 		10BE73BD247365A4001EFD43 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				10BE73BE247365A4001EFD43 /* Base */,
+				10CFC1DF247FAF6A0059AD63 /* km */,
+				10CFC1E4247FB1EB0059AD63 /* Base */,
+				10CFC1E6247FB2010059AD63 /* km */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -768,9 +904,20 @@
 		10BE73C2247365A4001EFD43 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				10BE73C3247365A4001EFD43 /* Base */,
+				10CFC1E0247FAF6B0059AD63 /* km */,
+				10CFC1E3247FB1EB0059AD63 /* Base */,
+				10CFC1E5247FB1FF0059AD63 /* km */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		10CFC1DB247FA9820059AD63 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				10CFC1DA247FA9820059AD63 /* en */,
+				10CFC1E7247FB20E0059AD63 /* km */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -780,6 +927,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -840,6 +988,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

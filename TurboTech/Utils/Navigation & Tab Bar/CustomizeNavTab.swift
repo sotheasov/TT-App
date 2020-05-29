@@ -29,3 +29,26 @@ enum TAB {
 class CustomizeNavTab {
     
 }
+
+enum BOARD {
+    static let HOME = "HomeStoryboard"
+    static let MESSAGE = "MessageStoryboard"
+    static let LOCATION = "LocationStoryboard"
+    static let DEPARTMENT = "DepartmentStoryboard"
+    static let ABOUTUS = "AboutUsStoryboard"
+    static let MAIN = "Main"
+}
+
+enum CONTROLLER {
+    static let ADMIN = "AdminTableViewControllerID"
+    static let SALE = "SaleTableViewControllerID"
+    static let FINANCE = "FinanceTableViewControllerID"
+    static let PRODUCT = "ProductViewControllerID"
+    static let POP_LOCATION = "PopLocationViewControllerID"
+    static let DEVICE = "DeviceTableViewControllerID"
+    static let ATTENDANCE = "A"
+//    static let = ""
+//    static let = ""
+//    static let = ""
+//    static let = ""
+}

@@ -14,7 +14,7 @@ class ProductViewController: UIViewController {
     lazy var productViewModel = ProductViewModel()
     
     @IBOutlet weak var productTableView: UITableView!
-    
+    var position : Position?
     private var navItemTitle : String = "Unknown"
     private var typeId : Int = 0
     override func viewDidLoad() {
@@ -32,6 +32,7 @@ class ProductViewController: UIViewController {
     }
     
     func setUpView(){
+        navigationController?.delegate = self
         navigationItem.title = navItemTitle
         setTableView()
     }
@@ -137,4 +138,12 @@ extension ProductViewController : ProductViewModelDelegate {
         self.productTableView.reloadData()
     }
     
+}
+
+
+extension ProductViewController : UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        print("WORK On Product Delegate")
+        (viewController as? DepartmentTableViewController)?.setOpenType(position: position!)// Here you pass the to your original view controller
+    }
 }

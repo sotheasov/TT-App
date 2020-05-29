@@ -1,0 +1,28 @@
+/* 
+  Localiable.strings
+  TurboTech
+
+  Created by sq on 5/28/20.
+  Copyright © 2020 TurboTech. All rights reserved.
+*/
+
+// Tab Bar
+"home" = "ទំព័រដើម";
+"location" = "ទីតាំង";
+"receiver" = "ដំណឹង";
+"profile" = "អំពីខ្ញុំ";
+
+// Navigation
+"turbotech" = "ធើបូថេក";
+"product" = "ផលិតផល";
+"payment" = "ទូទាត់ប្រាក់";
+"help desk" = "បម្រើអតិថិជន";
+"speed test" = "ល្បឿនសេវាអ៊ីនធឺណេត";
+"scan qr" = "ស្កែន QR";
+"personal information" = "ព័ត៍មានផ្ទាល់ខ្លួន";
+"department" = "នាយកដ្ធាន";
+"language" = "ភាសា";
+"change" = "ផ្លាស់ប្តូរ";
+"logout" = "ចាកចេញ";
+"english" = "​ភាសាអង់គ្លេស";
+"khmer" = "ភាសាខ្មែរ";

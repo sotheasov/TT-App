@@ -1,0 +1,30 @@
+/* 
+  Localiable.strings
+  TurboTech
+
+  Created by sq on 5/28/20.
+  Copyright © 2020 TurboTech. All rights reserved.
+*/
+
+// Tab Bar
+"home" = "Home";
+"location" = "Location";
+"receiver" = "Receiver";
+"profile" = "Profile";
+
+// Navigation
+"turbotech" = "TURBOTECH";
+"product" = "Product";
+"payment" = "Payment";
+"help desk" = "Help Desk";
+"speed test" = "Speed Test";
+"scan qr" = "Scan QR";
+"personal information" = "Personal Information";
+"department" = "Department";
+"language" = "Language";
+"change" = "Change";
+"logout" = "Logout";
+"english" = "English";
+"khmer" = "Khmer";
+
+
