@@ -56,4 +56,11 @@ class SubMenuTableViewCell: UITableViewCell {
         productImageView.kf.setImage(with: url, placeholder: UIImage(named: software.imageUrl))
     }
     
+    func setData(department : Department){
+        self.tag = department.id
+        productLabel.text = department.name
+        let url = URL(string: department.image)
+        productImageView.kf.setImage(with: url, placeholder:  UIImage(named: department.image))
+    }
+    
 }

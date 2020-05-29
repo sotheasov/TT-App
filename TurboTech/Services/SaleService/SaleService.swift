@@ -21,9 +21,24 @@ class SaleService {
             if let jsons = try? JSON(data: data){
                 for json in jsons["result"].arrayValue {
                     let pop = POP(json: json)
+                    popList.append(pop)
                 }
             }
             handler(popList)
+        }
+    }
+    
+    func fetchDevices(completionHandler : @escaping(_ deviceList : [Device])->()){
+        var devices = [Device]()
+        AF.request("\(APIManager.SALE.GET_DEVICE)", method: .get, headers: headers).response { (response) in
+            guard let data = response.data else { return }
+            if let jsons = try? JSON(data: data){
+                for json in jsons["result"].arrayValue {
+                    let device = Device(json: json)
+                    devices.append(device)
+                }
+            }
+            completionHandler(devices)
         }
     }
 }

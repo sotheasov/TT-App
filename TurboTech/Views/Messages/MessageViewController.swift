@@ -13,6 +13,8 @@ class MessageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name(rawValue: "changed"), object: nil)
+        
         let myView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         myView.backgroundColor = .blue
         self.view.addSubview(myView)
@@ -39,5 +41,11 @@ class MessageViewController: UIViewController {
         print("Hello")
         
     }
+    
+    @objc
+    func changeLanguage(){
+        testLabel.text = "turbotech".localized
+    }
 
+    @IBOutlet weak var testLabel: UILabel!
 }

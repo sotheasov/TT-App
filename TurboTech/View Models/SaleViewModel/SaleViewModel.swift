@@ -15,7 +15,17 @@ class SaleViewModel {
     func fetchAllPop(handler : @escaping(_ FAQsList : [POP])->()){
         saleService.fetchAllPop { (popList) in
             print("service model = ", popList.count)
+            var newPops = [POP]()
+            for i in 0...40 {
+                newPops.append(popList[i])
+            }
             handler(popList)
+        }
+    }
+    
+    func fetchDevices(completionHandler : @escaping(_ deviceList : [Device])->()){
+        saleService.fetchDevices { (devices) in
+            completionHandler(devices)
         }
     }
 }
