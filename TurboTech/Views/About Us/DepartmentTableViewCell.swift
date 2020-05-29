@@ -10,21 +10,25 @@ import UIKit
 
 class DepartmentTableViewCell: UITableViewCell {
     
+    // IBOutlet of DepartmentTableViewCell
     @IBOutlet weak var coverViewCell: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.selectionStyle = .none
+        
+        // Call Function
         customDepartmentTableViewCell()
-        // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//        self.selectionStyle = .none
+//    }
     
     func customDepartmentTableViewCell() {
-        coverViewCell.shadowStyle(radius: 10, color: .black, offset: CGSize(width: 0, height: 10), opacity: 0.8)
+//        coverViewCell.shadowStyle(radius: 10, color: .black, offset: CGSize(width: 0, height: 10), opacity: 0.8)
+        coverViewCell.layer.cornerRadius = SIZE.RADIUS
     }
-    
 }

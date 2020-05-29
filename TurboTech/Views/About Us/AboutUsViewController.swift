@@ -10,17 +10,16 @@ import UIKit
 
 class AboutUsViewController: UIViewController {
     
-    //IBOutlet of AboutUsViewController
+    // IBOutlet of AboutUsViewController
     @IBOutlet weak var subContainerView: UIView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var userProfileImageView: UIImageView!
-
+    
+    // Declare Variable
     var loginViewModel = LoginViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        customAboutUsViewController()
         
         subContainerView.shadowStyle(radius: 10, color: .gray, offset: CGSize(width: 10, height: 20), opacity: 0.8)
         let isLogin = false
@@ -30,6 +29,9 @@ class AboutUsViewController: UIViewController {
 //            loginVC.setNavigationTitle(title: "Product")
             self.navigationController?.pushViewController(loginVC, animated: false)
         }
+        
+        // Call Function
+        customAboutUsViewController()
     }
 
     func customAboutUsViewController() {
