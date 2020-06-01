@@ -12,7 +12,7 @@
 		100506F62474D771008FDFC3 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100506F52474D771008FDFC3 /* Menu.swift */; };
 		100556C224738BD500B1F8BF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100556C124738BD500B1F8BF /* Colors.swift */; };
 		100556C42473912B00B1F8BF /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100556C32473912B00B1F8BF /* APIManager.swift */; };
-		1006D83024763C1A000892ED /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1006D82F24763C1A000892ED /* View.swift */; };
+		1006D83024763C1A000892ED /* CustomizeSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1006D82F24763C1A000892ED /* CustomizeSize.swift */; };
 		1006D83224766226000892ED /* tbt icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1006D83124766226000892ED /* tbt icon.xcassets */; };
 		1006D83424767152000892ED /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1006D83324767152000892ED /* Product.swift */; };
 		1006D8362476715D000892ED /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1006D8352476715D000892ED /* Package.swift */; };
@@ -91,6 +91,7 @@
 		A9B0AF58247E64CF002FB5B6 /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B0AF57247E64CF002FB5B6 /* AttendanceViewController.swift */; };
 		A9B0AF5B247E6567002FB5B6 /* AttendanceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B0AF59247E6567002FB5B6 /* AttendanceCollectionViewCell.swift */; };
 		A9B0AF5C247E6567002FB5B6 /* AttendanceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9B0AF5A247E6567002FB5B6 /* AttendanceCollectionViewCell.xib */; };
+		A9BF341B2480CE6B001FAC3A /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BF341A2480CE6B001FAC3A /* AViewController.swift */; };
 		A9D18D0F247B792D00ADE51B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D18D0E247B792D00ADE51B /* ProfileViewController.swift */; };
 		A9D18D12247B854A00ADE51B /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D18D10247B854A00ADE51B /* ProfileTableViewCell.swift */; };
 		A9D18D13247B854A00ADE51B /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9D18D11247B854A00ADE51B /* ProfileTableViewCell.xib */; };
@@ -106,7 +107,7 @@
 		100506F52474D771008FDFC3 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		100556C124738BD500B1F8BF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		100556C32473912B00B1F8BF /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		1006D82F24763C1A000892ED /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		1006D82F24763C1A000892ED /* CustomizeSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeSize.swift; sourceTree = "<group>"; };
 		1006D83124766226000892ED /* tbt icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "tbt icon.xcassets"; sourceTree = "<group>"; };
 		1006D83324767152000892ED /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		1006D8352476715D000892ED /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -193,6 +194,7 @@
 		A9B0AF57247E64CF002FB5B6 /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
 		A9B0AF59247E6567002FB5B6 /* AttendanceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceCollectionViewCell.swift; sourceTree = "<group>"; };
 		A9B0AF5A247E6567002FB5B6 /* AttendanceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttendanceCollectionViewCell.xib; sourceTree = "<group>"; };
+		A9BF341A2480CE6B001FAC3A /* AViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
 		A9D18D0E247B792D00ADE51B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A9D18D10247B854A00ADE51B /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		A9D18D11247B854A00ADE51B /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
@@ -241,7 +243,7 @@
 				105226F5247E1E39007B7B29 /* Navigation & Tab Bar */,
 				10D17EF12476203E0095E0AF /* Fonts */,
 				100556C124738BD500B1F8BF /* Colors.swift */,
-				1006D82F24763C1A000892ED /* View.swift */,
+				1006D82F24763C1A000892ED /* CustomizeSize.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -310,6 +312,9 @@
 		104AAE25247E9AD100801A8F /* HR-Attendance */ = {
 			isa = PBXGroup;
 			children = (
+				A9B0AF57247E64CF002FB5B6 /* AttendanceViewController.swift */,
+				A9B0AF59247E6567002FB5B6 /* AttendanceCollectionViewCell.swift */,
+				A9B0AF5A247E6567002FB5B6 /* AttendanceCollectionViewCell.xib */,
 			);
 			path = "HR-Attendance";
 			sourceTree = "<group>";
@@ -557,9 +562,7 @@
 				A960AC20247DFD0B00E844E2 /* DepartmentTableViewCell.xib */,
 				A909CA992474C03D00546CFC /* LoginViewController.swift */,
 				A909CA9A2474C03D00546CFC /* LoginViewController.xib */,
-				A9B0AF57247E64CF002FB5B6 /* AttendanceViewController.swift */,
-				A9B0AF59247E6567002FB5B6 /* AttendanceCollectionViewCell.swift */,
-				A9B0AF5A247E6567002FB5B6 /* AttendanceCollectionViewCell.xib */,
+				A9BF341A2480CE6B001FAC3A /* AViewController.swift */,
 			);
 			path = "About Us";
 			sourceTree = "<group>";
@@ -819,14 +822,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				10E7F391247B7D380082901F /* WebApplicationViewController.swift in Sources */,
-				1006D83024763C1A000892ED /* View.swift in Sources */,
+				1006D83024763C1A000892ED /* CustomizeSize.swift in Sources */,
 				10CFC1BF247F49670059AD63 /* SaleTableViewController.swift in Sources */,
 				10D17EF0247619E10095E0AF /* ProductViewController.swift in Sources */,
 				108848CF247CB9150034579A /* FAQsTableViewCell.swift in Sources */,
 				105226FA247E2382007B7B29 /* SpeedTestViewController.swift in Sources */,
 				10670006247E0240002E283E /* UserLocationViewController.swift in Sources */,
 				A960AC24247E082400E844E2 /* DepartmentViewController.swift in Sources */,
-				1006D83024763C1A000892ED /* View.swift in Sources */,
+				1006D83024763C1A000892ED /* CustomizeSize.swift in Sources */,
 				10D17EF0247619E10095E0AF /* ProductViewController.swift in Sources */,
 				A9D18D0F247B792D00ADE51B /* ProfileViewController.swift in Sources */,
 				1006D84024767330000892ED /* ProductServiceDelegate.swift in Sources */,
@@ -844,6 +847,7 @@
 				10BE73E924737186001EFD43 /* LocationViewController.swift in Sources */,
 				108848C9247CA4610034579A /* HelpDesk.swift in Sources */,
 				A9D1A34F247786860011E02D /* User.swift in Sources */,
+				A9BF341B2480CE6B001FAC3A /* AViewController.swift in Sources */,
 				100556C42473912B00B1F8BF /* APIManager.swift in Sources */,
 				10BE73E924737186001EFD43 /* LocationViewController.swift in Sources */,
 				105226FC247E59F8007B7B29 /* PopLocationViewController.swift in Sources */,

@@ -86,6 +86,21 @@ extension UIView {
 //        self.layer.shadowPath = UIBezierPath(roundedRect: <#T##CGRect#>, cornerRadius: <#T##CGFloat#>)
         return self
     }
+    
+    func setColorGradient(colorOne: UIColor, colorTwo: UIColor) {
+        let gradientLayer = CAGradientLayer()
+//        print(self.frame)
+//        gradientLayer.bounds = self.bounds
+        gradientLayer.frame = self.layer.bounds
+//        gradientLayer.bounds = self.bounds
+        gradientLayer.colors = [colorOne.cgColor, colorTwo.cgColor]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.startPoint = CGPoint(x: 1.0, y: 2.0)
+        gradientLayer.endPoint = CGPoint(x: 2.0, y: 1.0)
+//        gradientLayer.position = self.center //CGPoint(x: self.frame.size.width / 2, y: self.frame.size.height / 2)
+//        layer.insertSublayer(gradientLayer, at: 0)
+        
+    }
 }
 
 

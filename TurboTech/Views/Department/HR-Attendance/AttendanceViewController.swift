@@ -30,6 +30,8 @@ class AttendanceViewController: UIViewController {
         flowLayout.minimumLineSpacing = 0
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//        self.view.backgroundColor = UIColor(red: 0.20, green: 0.67, blue: 0.88, alpha: 1.00)
+        
         
         // Register Attendance CollectionViewCell
         attendanceCollectionView.register(UINib(nibName: "AttendanceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "attendanceCellItem")
@@ -57,7 +59,7 @@ class AttendanceViewController: UIViewController {
     func customAttendanceViewController() {
         attendanceProfileImageView.layer.cornerRadius = attendanceProfileImageView.frame.height/2
         attendanceProfileImageView.layer.borderWidth = 2
-        attendanceProfileImageView.layer.borderColor = UIColor.gray.cgColor
+        attendanceProfileImageView.layer.borderColor = COLOR.RED.cgColor
     }
     
     // Action Button
@@ -79,6 +81,7 @@ extension AttendanceViewController: UICollectionViewDataSource {
         } else {
             cell.setConstraint(right: false)
         }
+        cell.coverAttendanceViewCell.setColorGradient(colorOne: COLOR.RED, colorTwo: COLOR.BLUE)
         return cell
     }
     
@@ -97,7 +100,7 @@ extension AttendanceViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.calculateWidth()
 //        let width = self.set()
-        if indexPath.item == 0 || indexPath.item == 3 {
+        if indexPath.item == 0 || indexPath.item == 3 {        
             return CGSize(width: (self.view.frame.width / 2), height: 270)
         }
         else {

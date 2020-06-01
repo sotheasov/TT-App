@@ -23,6 +23,37 @@ class ViewController: UIViewController {
             print("Show")
         }
     }
+    
+    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) -> Bool {
 
+        print("WORK hz")
+        let selectIndex : NSInteger = (tabBarController.viewControllers?.index(of: viewController))!
+
+        if (selectIndex == 3) {
+                let vc = LoginViewController()  // your new Controller
+
+                var allviews = tabBarController.viewControllers
+                 allviews?.remove(at: selectIndex)
+                 allviews?.insert(vc, at: selectIndex)
+            tabBarController.setViewControllers(allviews, animated: true)
+
+
+                return false;
+
+        }
+
+        return true;
+
+    }
+
+//    @IBSegueAction func aboutus(_ coder: NSCoder, sender: Any?) -> UIViewController? {
+//        return <#UIViewController(coder: coder)#>
+//    }
+//    
+    
+}
+
+extension ViewController : UITabBarDelegate {
+    
 }
 

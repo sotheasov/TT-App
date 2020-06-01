@@ -67,7 +67,7 @@ class AdminTableViewController: UITableViewController {
             // MARK: - @Sothea Attendance Screen
             print("Attendance")
             let attendanceStoryboard = UIStoryboard(name: BOARD.ABOUTUS, bundle: nil)
-            let attendance = attendanceStoryboard.instantiateViewController(withIdentifier: "AttendanceViewControllerID") as! AttendanceViewController
+            let attendance = attendanceStoryboard.instantiateViewController(withIdentifier: CONTROLLER.ATTENDANCE) as! AttendanceViewController
                 self.showDetailViewController(attendance, sender: nil)
 //            let openVC = storyboard?.instantiateViewController(identifier: CONTROLLER.SALE) as! SaleTableViewController
 //            openVC.navigationItem.title = departmentList[indexPath.row].name
