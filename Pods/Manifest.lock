@@ -29,7 +29,11 @@ PODS:
   - Kingfisher (5.13.4):
     - Kingfisher/Core (= 5.13.4)
   - Kingfisher/Core (5.13.4)
+  - PinterestLayout (1.0.3)
+  - SNCollectionViewLayout (1.0.1)
+  - SquareFlowLayout (0.0.1)
   - SwiftyJSON (4.3.0)
+  - WBCollectionViewLayout (0.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
@@ -40,7 +44,11 @@ DEPENDENCIES:
   - IBPCollectionViewCompositionalLayout
   - iOSDropDown
   - Kingfisher
+  - PinterestLayout
+  - SNCollectionViewLayout
+  - SquareFlowLayout
   - SwiftyJSON (~> 4.0)
+  - WBCollectionViewLayout (from `https://github.com/mwaqasbhati/WBCollectionViewLayout.git`)
 
 SPEC REPOS:
   trunk:
@@ -52,7 +60,19 @@ SPEC REPOS:
     - IBPCollectionViewCompositionalLayout
     - iOSDropDown
     - Kingfisher
+    - PinterestLayout
+    - SNCollectionViewLayout
+    - SquareFlowLayout
     - SwiftyJSON
+
+EXTERNAL SOURCES:
+  WBCollectionViewLayout:
+    :git: https://github.com/mwaqasbhati/WBCollectionViewLayout.git
+
+CHECKOUT OPTIONS:
+  WBCollectionViewLayout:
+    :commit: eb68819942287690805d939eb81592abb658edb5
+    :git: https://github.com/mwaqasbhati/WBCollectionViewLayout.git
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
@@ -63,8 +83,12 @@ SPEC CHECKSUMS:
   IBPCollectionViewCompositionalLayout: 06cf9aa021fd80807385d5c49ece4364609a0c97
   iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
   Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
+  PinterestLayout: f1c7ec0254ffa842d69f1b43e4436c8ded4359b9
+  SNCollectionViewLayout: 9991574aa022237c75acf0e3dc890b09aa4e4c31
+  SquareFlowLayout: cde3486d3086fb7f95b303d9b90bb86aa9dd98b5
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  WBCollectionViewLayout: 40fa78106b231f81f0495e90e7535339213da44b
 
-PODFILE CHECKSUM: 49d6671bdf290f580180e532d586b73ced81922b
+PODFILE CHECKSUM: 741b951c8ce9f4f539804314fbf9b9fd057bb898
 
 COCOAPODS: 1.9.1
