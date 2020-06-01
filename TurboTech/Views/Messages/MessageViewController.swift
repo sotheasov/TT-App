@@ -44,8 +44,5 @@ class MessageViewController: UIViewController {
     
     @objc
     func changeLanguage(){
-        testLabel.text = "turbotech".localized
     }
-
-    @IBOutlet weak var testLabel: UILabel!
 }

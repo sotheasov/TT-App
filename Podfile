@@ -15,5 +15,6 @@ target 'TurboTech' do
   pod 'GooglePlaces'
   pod 'Google-Maps-iOS-Utils', '~> 3.1.4'
 
+  pod 'IBPCollectionViewCompositionalLayout'
 
 end

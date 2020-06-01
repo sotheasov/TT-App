@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Network
 
 class HomeViewController: UIViewController {
 
@@ -16,6 +17,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var sliderImageView: UIImageView!
     
     var menuList = [Menu]()
+    
+    let monitor = NWPathMonitor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,18 @@ class HomeViewController: UIViewController {
             Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         }
         didTapOnRightButton()
+        
+        monitor.pathUpdateHandler = { pathUpdateHandler in
+            if pathUpdateHandler.status == .satisfied {
+                print("Internet connection is on.")
+            } else {
+                print("There's no internet connection.")
+                self.showAndDismissAlert(title: "បើកសេវាតិចទៅ", message: "សុំអង្វរ", style: .alert, second: 5)
+            }
+        }
+        
+        let queue = DispatchQueue(label: "InternetConnectionMonitor")
+        monitor.start(queue: queue)
     }
     
     @objc
@@ -111,11 +126,6 @@ class HomeViewController: UIViewController {
         else {
             LanguageManager.shared.language = "km"
         }
-        
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let homeScreen = storyboard?.instantiateInitialViewController()
-//        appDelegate.window?.rootViewController = homeScreen
-        
         NotificationCenter.default.post(name: Notification.Name("changed"), object: nil)
     }
 

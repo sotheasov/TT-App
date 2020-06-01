@@ -22,6 +22,7 @@ class UserLocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name(rawValue: "changed"), object: nil)
         
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -45,6 +46,11 @@ class UserLocationViewController: UIViewController {
         // Add the map to the view, hide it until we've got a location update.
         view.addSubview(mapView)
         mapView.isHidden = true
+    }
+
+    @objc
+    func changeLanguage(){
+        
     }
 
 }
@@ -76,8 +82,8 @@ extension UserLocationViewController: CLLocationManagerDelegate {
                 case .denied:
                 print("User denied access to location.")
                 // Display the map using the default location.
-                let alertController = UIAlertController(title: "Enable Location Service", message: "Please go to Settings and turn on Location permissions", preferredStyle: .alert)
-                let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
+                let alertController = UIAlertController(title: "Enable Location Service".localized, message: "Please go to Settings and turn on Location permissions".localized, preferredStyle: .alert)
+                let settingsAction = UIAlertAction(title: "Settings".localized, style: .default) { (_) -> Void in
                     guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                         return
                     }
@@ -86,7 +92,7 @@ extension UserLocationViewController: CLLocationManagerDelegate {
                     }
                 }
           
-                let cancelAction = UIAlertAction(title: "Cancel", style: .destructive){(action) in self.showAndDismissAlert(title: "Cannot Get Current Location", message: "Please go to setting and enable it.", style: .alert, second: 2)}
+                let cancelAction = UIAlertAction(title: "Cancel".localized, style: .destructive){(action) in self.showAndDismissAlert(title: "Cannot Get Current Location".localized, message: "Please go to setting and enable it.".localized, style: .alert, second: 2)}
                 alertController.addAction(cancelAction)
                 alertController.addAction(settingsAction)
 
