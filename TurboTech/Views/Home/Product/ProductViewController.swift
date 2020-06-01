@@ -15,7 +15,7 @@ class ProductViewController: UIViewController {
     
     @IBOutlet weak var productTableView: UITableView!
     var position : Position?
-    private var navItemTitle : String = "Unknown"
+    private var navItemTitle : String = "Unknown".localized
     private var typeId : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()

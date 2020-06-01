@@ -26,3 +26,12 @@
 "logout" = "ចាកចេញ";
 "english" = "​ភាសាអង់គ្លេស";
 "khmer" = "ភាសាខ្មែរ";
+
+
+"Enable Location Service" = "ដំណើរការ សេវាកម្មទីកន្លែង";
+"Please go to Settings and turn on Location permissions" = "សូមចូលទៅកាន់ កន្លែងផ្លាស់ប្តូរ និងបើកដំណើរការ សេវាកម្មទីកន្លែង";
+"Settings" = "កន្លែងផ្លាស់ប្តូរ";
+
+"Cancel" = "បដិសេទ";
+"Cannot Get Current Location" = "មិនអាចទាញយកទីតាំងបច្ចុប្បន្នភាព";
+"Please go to setting and enable it." = "សូមចូលទៅកាន់កន្លែងផ្លាស់ប្តូរ និងបើកដំណើរការ សេវាទីកន្លែង";
