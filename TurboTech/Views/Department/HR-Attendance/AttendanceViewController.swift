@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IBPCollectionViewCompositionalLayout
 
 class AttendanceViewController: UIViewController {
     
