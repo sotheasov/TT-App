@@ -10,9 +10,10 @@ import UIKit
 
 class AttendanceCollectionViewCell: UICollectionViewCell {
     
+    
+    // IBOutlet of AttendanceCollectionViewCell
     @IBOutlet weak var leadingCoverConstraint: NSLayoutConstraint!
     @IBOutlet weak var trailingCoverConstraint: NSLayoutConstraint!
-    // IBOutlet of AttendanceCollectionViewCell
     @IBOutlet weak var coverAttendanceViewCell: UIView!
     
     override func awakeFromNib() {
@@ -23,8 +24,11 @@ class AttendanceCollectionViewCell: UICollectionViewCell {
     }
     
     func customAttendanceCollectionViewCell() {
-        coverAttendanceViewCell.layer.cornerRadius = 12
-        coverAttendanceViewCell.shadowStyle(radius: 6, color: .black, offset: CGSize(width: -0.5, height: 4), opacity: 1)
+//        coverAttendanceViewCell.layer.cornerRadius = 12
+//        coverAttendanceViewCell.shadowStyle(radius: 6, color: .black, offset: CGSize(width: -0.5, height: 3), opacity: 1)
+        //(red: 0.20, green: 0.67, blue: 0.88, alpha: 1.00)
+//        let backgroundColor = COLOR.RED
+//        coverAttendanceViewCell.backgroundColor = backgroundColor
     }
     
     func setConstraint(right : Bool){
