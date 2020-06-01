@@ -3,5 +3,9 @@ ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework
 ${BUILT_PRODUCTS_DIR}/IBPCollectionViewCompositionalLayout/IBPCollectionViewCompositionalLayout.framework
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
+${BUILT_PRODUCTS_DIR}/PinterestLayout/PinterestLayout.framework
+${BUILT_PRODUCTS_DIR}/SNCollectionViewLayout/SNCollectionViewLayout.framework
+${BUILT_PRODUCTS_DIR}/SquareFlowLayout/SquareFlowLayout.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
+${BUILT_PRODUCTS_DIR}/WBCollectionViewLayout/WBCollectionViewLayout.framework
 ${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework
