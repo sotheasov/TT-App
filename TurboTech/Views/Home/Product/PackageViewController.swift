@@ -14,7 +14,7 @@ class PackageViewController: UIViewController {
     lazy var softwareList : [SoftwareSolution] = []
     lazy var productViewModel = ProductViewModel()
     
-    private var navItemTitle : String = "Unknown"
+    private var navItemTitle : String = "Unknown".localized
     private var packageId : Int = 0
     
     @IBOutlet weak var packageTableView : UITableView!

@@ -25,7 +25,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lU-M9-bOn">
                                         <rect key="frame" x="0.0" y="0.0" width="462" height="25"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDc-mP-Sev">
@@ -34,13 +34,12 @@
                                             <constraint firstAttribute="width" constant="80" id="5tu-j2-8AX"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="eQA-tJ-1gh" secondAttribute="trailing" constant="16" id="5xY-CN-Lpb"/>
                             <constraint firstItem="eQA-tJ-1gh" firstAttribute="top" secondItem="Fc9-2c-K5D" secondAttribute="top" constant="8" id="Isj-VY-TOi"/>
@@ -49,7 +48,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="Fc9-2c-K5D" secondAttribute="bottom" id="fIj-OW-xil"/>
                     <constraint firstItem="Fc9-2c-K5D" firstAttribute="left" secondItem="H2p-sc-9uM" secondAttribute="left" id="hmm-QM-pxD"/>
@@ -57,7 +56,7 @@
                     <constraint firstItem="Fc9-2c-K5D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="zv5-dA-Gcy"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="nameLabel" destination="1lU-M9-bOn" id="8g1-Z7-63f"/>

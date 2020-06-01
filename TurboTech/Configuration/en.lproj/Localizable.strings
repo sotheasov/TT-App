@@ -28,3 +28,10 @@
 "khmer" = "Khmer";
 
 
+"Enable Location Service" = "Enable Location Service";
+"Please go to Settings and turn on Location permissions" = "Please go to Settings and turn on Location permissions";
+"Settings" = "Settings";
+
+"Cancel" = "Cancel";
+"Cannot Get Current Location" = "Cannot Get Current Location";
+"Please go to setting and enable it." = "Please go to setting and enable it.";

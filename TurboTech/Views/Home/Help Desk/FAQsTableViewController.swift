@@ -25,7 +25,7 @@ class FAQsTableViewController: UITableViewController {
         let headerNib = UINib(nibName: "FAQsTableViewHeader", bundle: nil)
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "FAQsTableViewHeaderID")
         
-        tableView.backgroundView = UIImageView(image: UIImage(named: "3"))
+        tableView.backgroundView = UIImageView(image: UIImage(named: "launchScreen"))
     }
     
     func setData(){
@@ -54,7 +54,7 @@ class FAQsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FAQsTableViewCellID", for: indexPath) as! FAQsTableViewCell
 //        cell.setData(answer: "Answer ")
         cell.backgroundColor = .clear
-        cell.setData(answer: FAQsList[indexPath.row].answerEn)
+        cell.setData(answer: FAQsList[indexPath.section].answerEn)
 
         return cell
     }

@@ -15,9 +15,9 @@ class DeviceTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "launchScreen")!)
         tableView.register(UINib(nibName: "DeviceTableViewCell", bundle: nil), forCellReuseIdentifier: "DeviceTableViewCellID")
         tableView.register(UINib(nibName: "DeviceHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "DeviceHeaderViewID")
-        tableView.backgroundView = UIImageView(image: UIImage(named: "3"))
         DispatchQueue.main.async {
             self.saleViewModel.fetchDevices { (devices) in
                 self.deviceList = devices

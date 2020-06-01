@@ -15,6 +15,7 @@ class SaleTableViewController: UITableViewController {
             super.viewDidLoad()
             setData()
             tableView.register(UINib(nibName: "SubMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "SubMenuCellID")
+            self.tableView.backgroundView = UIImageView(image: UIImage(named: "launchScreen")!)
         }
         
         func setData() {

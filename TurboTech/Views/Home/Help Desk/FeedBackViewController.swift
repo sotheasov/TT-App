@@ -34,21 +34,21 @@ class FeedBackViewController: UIViewController {
 //        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
 //
 //        view.addGestureRecognizer(tap)
+        complainTypeDropDown.didSelect{(selectedText , index ,id) in
+            print("WROK")
+//            complain.setType(type: self.selectOption[index])
+            self.complainTypeDropDown.text = "selectedText"
+            self.complainTypeDropDown.tag = index
+//            selected = true
+        }
     }
     @IBAction func submitComplainPress(_ sender: Any) {
         let helpDeskViewModel = HelpDeskViewModel()
         let complain = UserComplain(type: "", question: "")
-//        complain.setType(type: complainTypeTextField.text ?? "")
-        var selected = false
-        complainTypeDropDown.didSelect{(selectedText , index ,id) in
-            complain.setType(type: self.selectOption[index])
-            selected = true
-        }
-        if !selected {
-            complain.setType(type: self.selectOption[0])
-        }
+        complain.setType(type: self.selectOption[self.complainTypeDropDown.tag])
         complain.setQuestion(question: complainTextView.text ?? "")
-//        print(complainTypeTextField.text ?? "")
+        print("user text : ", complain.question)
+        
         DispatchQueue.main.async {
             helpDeskViewModel.postComplainMessage(complain: complain) { (message) in
                 print("Post comment : ", message)
