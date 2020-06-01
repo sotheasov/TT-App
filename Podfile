@@ -1,4 +1,5 @@
 # Uncomment the next line to define a global platform for your project
+# source 'https://github.com/CocoaPods/Specs.git'
 # platform :ios, '9.0'
 
 target 'TurboTech' do
@@ -16,5 +17,17 @@ target 'TurboTech' do
   pod 'Google-Maps-iOS-Utils', '~> 3.1.4'
 
   pod 'IBPCollectionViewCompositionalLayout'
+  
+  pod 'PinterestLayout'
+  # https://github.com/MagicLab-team/PinterestLayout #
+  
+  pod 'SNCollectionViewLayout' 
+  # https://github.com/ahmedAlmasri/SNCollectionViewLayout #
+  
+  pod 'WBCollectionViewLayout', :git => 'https://github.com/mwaqasbhati/WBCollectionViewLayout.git' 
+  # https://github.com/mwaqasbhati/WBCollectionViewLayout #
+
+  pod 'SquareFlowLayout'
+  # https://github.com/ChernyshenkoTaras/SquareFlowLayout #
 
 end
