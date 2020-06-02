@@ -51,7 +51,7 @@ extension PackageDetailViewController : UITableViewDelegate, UITableViewDataSour
         1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("SIZE : ")
+//        print("SIZE : ")
         return packageList.count
     }
     
@@ -103,7 +103,7 @@ extension PackageDetailViewController : ProductViewModelDelegate {
     func responsePackageDetail(packageDetails: [PackageDetail]) {
         self.packageList = packageDetails
         
-        print("COUNTED : ", self.packageList.count )
+//        print("COUNTED : ", self.packageList.count )
         self.detailTableView.reloadData()
     }
     

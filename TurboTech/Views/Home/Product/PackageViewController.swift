@@ -24,7 +24,7 @@ class PackageViewController: UIViewController {
 
         productViewModel.productViewModelDelegate = self
         if packageId == 3 {
-            print("fetch software solution")
+//            print("fetch software solution")
             productViewModel.fetchSoftwareSolution()
         }
         else{
@@ -55,7 +55,7 @@ extension PackageViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = packageTableView.dequeueReusableCell(withIdentifier: "SubMenuCellID") as! SubMenuTableViewCell
-        print("MY ID IS : ", packageId)
+//        print("MY ID IS : ", packageId)
         if packageId == 3 {
             cell.setData(software: softwareList[indexPath.row])
         } else {
@@ -119,7 +119,7 @@ extension PackageViewController : UITableViewDelegate, UITableViewDataSource {
 extension PackageViewController : ProductViewModelDelegate {
     func responseSoftwareSolution(solutions: [SoftwareSolution]) {
         self.softwareList = solutions
-        print("SS work")
+//        print("SS work")
         self.packageTableView.reloadData()
     }
     
@@ -129,8 +129,8 @@ extension PackageViewController : ProductViewModelDelegate {
     
     func responsePackage(packages: [Package]) {
         self.packageList = packages
-        print("Package View : ", self.packageList.count)
-        print(packageId)
+//        print("Package View : ", self.packageList.count)
+//        print(packageId)
         self.packageTableView.reloadData()
     }
     

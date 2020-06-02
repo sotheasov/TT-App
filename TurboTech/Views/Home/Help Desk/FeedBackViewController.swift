@@ -35,7 +35,7 @@ class FeedBackViewController: UIViewController {
 //
 //        view.addGestureRecognizer(tap)
         complainTypeDropDown.didSelect{(selectedText , index ,id) in
-            print("WROK")
+//            print("WROK")
 //            complain.setType(type: self.selectOption[index])
             self.complainTypeDropDown.text = "selectedText"
             self.complainTypeDropDown.tag = index

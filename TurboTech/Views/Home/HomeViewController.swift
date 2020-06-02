@@ -65,8 +65,9 @@ class HomeViewController: UIViewController {
     func changeImage(){
         if imageNum > imageStr.count - 1 {imageNum = 0}
         let image = UIImage(named: imageStr[imageNum])
-        let url = URL(string: imageStr[imageNum])
-        sliderImageView.kf.setImage(with: url, placeholder: image)
+        _ = URL(string: imageStr[imageNum])
+//        sliderImageView.kf.setImage(with: url, placeholder: image)
+        sliderImageView.image = image
         imageNum = imageNum + 1
     }
     
@@ -174,7 +175,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         let location = sender.location(in: self.homeMenuCollectionView)
         let indexPath = self.homeMenuCollectionView.indexPathForItem(at: location)
         if let index = indexPath {
-            print("Got clicked on index: \(index)!")
+//            print("Got clicked on index: \(index)!")
             switch index.item {
             case 0:
                 print("Product")

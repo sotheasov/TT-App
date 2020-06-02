@@ -14,7 +14,7 @@ public extension UIImage {
     /**
      Calculates the best height of the image for available width.
      */
-    public func height(forWidth width: CGFloat) -> CGFloat {
+    func height(forWidth width: CGFloat) -> CGFloat {
         let boundingRect = CGRect(
             x: 0,
             y: 0,
@@ -34,11 +34,11 @@ public extension String {
     /**
      Calculates the best height of the text for available width and font used.
      */
-    public func heightForWidth(width: CGFloat, font: UIFont) -> CGFloat {
+    func heightForWidth(width: CGFloat, font: UIFont) -> CGFloat {
         let rect = NSString(string: self).boundingRect(
             with: CGSize(width: width, height: CGFloat(MAXFLOAT)),
             options: .usesLineFragmentOrigin,
-            attributes: [NSFontAttributeName: font],
+            attributes: [NSAttributedString.Key.font: font],
             context: nil
         )
         return ceil(rect.height)

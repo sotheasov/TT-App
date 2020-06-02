@@ -35,7 +35,7 @@ class ProductViewModel {
 extension ProductViewModel : ProductServiceDelegate {
     
     func responsePackageDetail(packageId: Int, packageDetails: [PackageDetail]) {
-        print("recieve detail")
+//        print("recieve detail")
 //        productViewModelDelegate?.responsePackageDetail(packageDetails: packageDetails)
         
         productViewModelDelegate?.responsePackageDetail(packageDetails: filterPackageDetail(packageId: packageId, packageDetails: packageDetails))
@@ -69,7 +69,7 @@ extension ProductViewModel : ProductServiceDelegate {
             if detail.packageId == packageId {
                 detail.setDetailEn(str: String((detail.detailEn).dropFirst()))
                 detail.setDetailEn(str: (detail.detailEn).replacingOccurrences(of: "▒", with: "\n\n"))
-                print(detail.detailEn)
+//                print(detail.detailEn)
                 filter.append(detail)
             }
         }

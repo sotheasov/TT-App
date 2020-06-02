@@ -76,7 +76,7 @@ class FAQsTableViewController: UITableViewController {
         guard let tag = sender.view?.tag else {
             return
         }
-        print(tag)
+//        print(tag)
         self.FAQsList[tag].isCollapse = self.FAQsList[tag].isCollapse == true ? false : true
         self.tableView.reloadSections([tag], with: .fade)
     }

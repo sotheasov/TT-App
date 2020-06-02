@@ -40,14 +40,14 @@ class PackageDetailTableViewCell: UITableViewCell {
     }
     
     func setData(package : PackageDetail){
-        print("Detail setup data")
+//        print("Detail setup data")
         let ln = "EN"
         self.tag = package.packageId
         packageTypeLabel.text = ln == "EN" ? package.nameEn : package.nameKh
         priceLabel.text = package.price
         monthLabel.text = (ln == "EN" ? "/ month":"/ ខែ")
         speedLabel.text = package.speed
-        print(package.detailEn)
+//        print(package.detailEn)
         detailTextView?.text = ln == "EN" ? package.detailEn : package.detailKh
     }
     
