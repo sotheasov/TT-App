@@ -56,6 +56,8 @@ class APIManager {
         static let GET_CHECKIN = MAIN_URL_2 + "/figerprint/api/fingerprint_present.php?today_date=" // 2020-06-01
         static let GET_ABSENCE = MAIN_URL_2 + "/figerprint/api/fingerprint_absent.php?today_date=" //2020-06-01
         static let GET_LATE = MAIN_URL_2 + "/figerprint/api/fingerprint_lates.php?today_date=" //2020-06-01
+    }
+    
     enum ADDRESS {
         static let PROVINCE = MAIN_URL + "/key_gazetteers/province.php"
         static let DISTRICT = MAIN_URL + "/key_gazetteers/district.php?province_id="
