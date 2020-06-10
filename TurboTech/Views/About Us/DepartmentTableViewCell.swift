@@ -11,7 +11,7 @@ import UIKit
 class DepartmentTableViewCell: UITableViewCell {
     
     // IBOutlet of DepartmentTableViewCell
-    @IBOutlet weak var coverViewCell: UIView!
+    @IBOutlet weak var coverDepartmentViewCellOutlet: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +28,7 @@ class DepartmentTableViewCell: UITableViewCell {
 //    }
     
     func customDepartmentTableViewCell() {
-//        coverViewCell.shadowStyle(radius: 10, color: .black, offset: CGSize(width: 0, height: 10), opacity: 0.8)
-        coverViewCell.layer.cornerRadius = SIZE.RADIUS
+//        coverDepartmentViewCellOutlet.shadowStyle(radius: 10, color: .black, offset: CGSize(width: 0, height: 10), opacity: 0.8)
+        coverDepartmentViewCellOutlet.layer.cornerRadius = SIZE.RADIUS
     }
 }

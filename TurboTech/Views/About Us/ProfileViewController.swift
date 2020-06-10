@@ -11,43 +11,36 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     // IBOutlet of ProfileViewController
-    @IBOutlet weak var coverProfileImageView: UIView!
-    @IBOutlet weak var profileTableView: UITableView!
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var coverProfileViewOutlet: UIView!
+    @IBOutlet weak var profileTableViewOutlet: UITableView!
+    @IBOutlet weak var profileImageViewOutlet: UIImageView!
     
     // Declare Variable
     let data = ["Information", "Department", "Language", "Logout"]
-//    let screenHeight = UIScreen.main.bounds.height
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        profileTableView.delegate = self
-        profileTableView.dataSource = self
-        profileTableView.tableFooterView = UIView()
-        
-//        let height = self.view.frame.height
-//
-//        if height > 800 {
-//            self.profileTableView.isScrollEnabled = true
-//        } else {
-//            self.profileTableView.isScrollEnabled = false
-//        }
-        
-        // Register Profile TableViewCell
-        profileTableView.register(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "profileCellItem")
         
         // Call Function
         customProfileViewController()
+        registerTableViewCell()
+    }
+    
+    func registerTableViewCell() {
+        profileTableViewOutlet.register(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "profileCellItem")
+        profileTableViewOutlet.delegate = self
+        profileTableViewOutlet.dataSource = self
     }
     
     func customProfileViewController() {
-        coverProfileImageView.layer.cornerRadius = 10
-        coverProfileImageView.shadowStyle(radius: 8, color: .black, offset: CGSize(width: 0, height: 10), opacity: 0.8)
+        // Close Table Footer
+        profileTableViewOutlet.tableFooterView = UIView()
+        coverProfileViewOutlet.layer.cornerRadius = 10
+        coverProfileViewOutlet.shadowStyle(radius: 8, color: .black, offset: CGSize(width: 0, height: 10), opacity: 0.8)
         
-        profileImageView.layer.cornerRadius = profileImageView.frame.height/2
-        profileImageView.layer.borderWidth = 5
-        profileImageView.layer.borderColor = UIColor.gray.cgColor
+        profileImageViewOutlet.layer.cornerRadius = profileImageViewOutlet.frame.height/2
+        profileImageViewOutlet.layer.borderWidth = 5
+        profileImageViewOutlet.layer.borderColor = UIColor.gray.cgColor
         
     }
 }
@@ -96,6 +89,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         switch section {
         case 1:
             print("Department")
+            
             //Another Way to Call Other Storyboard
 //        let homeStoryboard = UIStoryboard(name: "HomeStoryboard", bundle: nil)
 //        let productVC = homeStoryboard.instantiateViewController(withIdentifier: "ProductViewControllerID") as! ProductViewController
@@ -109,7 +103,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             case .Admin :
                 let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
                 let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.ADMIN) as! AdminTableViewController
-                openVC.navigationItem.title = "ADMIN"
+                openVC.navigationItem.title = "Admin"
                 self.navigationController?.pushViewController(openVC, animated: true)
             case .Finance :
                 let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
@@ -128,15 +122,14 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
                 self.navigationController?.pushViewController(openVC, animated: true)
             }
             
-            
         case 2:
             print("Language")
         case 3:
             print("Logout")
     //            let loginViewController = UIStoryboard(name: "AboutUsStoryboard", bundle: nil)
-        let login = storyboard?.instantiateViewController(withIdentifier: "LoginViewControllerID") as! LoginViewController
+        let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginViewControllerID") as! LoginViewController
     //            login.setNavigationTitle(title: "Logout")
-        self.navigationController?.pushViewController(login, animated: true)
+        self.navigationController?.pushViewController(loginVC, animated: true)
         default:
             print("Default")
             

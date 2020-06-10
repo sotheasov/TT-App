@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 
 class APIManager {
+    static let MAIN_URL_2 = "http://103.101.80.73"
     static let MAIN_URL = "https://turbotech.com/api"
     static let IMAGE_URL = "https://www.turbotech.com/storages/assets/img/img_mobile/"
     static let IMAGE_WEB_URL = "https://www.turbotech.com/storages/assets/img/services/"
@@ -48,6 +49,12 @@ class APIManager {
     
     enum PRODUCT {
         static let GET = MAIN_URL + "/service"
+    }
+    
+    enum ATTENDANCE {
+        static let GET_CHECKIN = MAIN_URL_2 + "/figerprint/api/fingerprint_present.php?today_date=" // 2020-06-01
+        static let GET_ABSENCE = MAIN_URL_2 + "/figerprint/api/fingerprint_absent.php?today_date=" //2020-06-01
+        static let GET_LATE = MAIN_URL_2 + "/figerprint/api/fingerprint_lates.php?today_date=" //2020-06-01
     }
 }
 

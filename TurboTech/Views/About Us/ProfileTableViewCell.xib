@@ -56,9 +56,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="iconCell" destination="IUu-2X-gog" id="5ya-Wq-QDH"/>
-                <outlet property="labelCell" destination="nlN-i1-mha" id="PHR-Ae-dKj"/>
-                <outlet property="subContentView" destination="MU8-7z-fNh" id="1mI-Yc-4iE"/>
+                <outlet property="iconCellOutlet" destination="IUu-2X-gog" id="5ya-Wq-QDH"/>
+                <outlet property="lbCellOutlet" destination="nlN-i1-mha" id="PHR-Ae-dKj"/>
+                <outlet property="subContentViewOutlet" destination="MU8-7z-fNh" id="1mI-Yc-4iE"/>
             </connections>
             <point key="canvasLocation" x="-471.01449275362324" y="64.620535714285708"/>
         </tableViewCell>

@@ -11,9 +11,9 @@ import UIKit
 class AboutUsViewController: UIViewController {
     
     // IBOutlet of AboutUsViewController
-    @IBOutlet weak var subContainerView: UIView!
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var userProfileImageView: UIImageView!
+    @IBOutlet weak var subContainerViewOutlet: UIView!
+    @IBOutlet weak var containerViewOutlet: UIView!
+    @IBOutlet weak var userProfileImageViewOutlet: UIImageView!
     
     // Declare Variable
     var loginViewModel = LoginViewModel()
@@ -21,7 +21,6 @@ class AboutUsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        subContainerView.shadowStyle(radius: 10, color: .gray, offset: CGSize(width: 10, height: 20), opacity: 0.8)
         let isLogin = false
         if !isLogin {
             let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginViewControllerID") as! LoginViewController
@@ -35,11 +34,13 @@ class AboutUsViewController: UIViewController {
     }
 
     func customAboutUsViewController() {
-        containerView.layer.cornerRadius = 20
-        subContainerView.layer.cornerRadius = 20
-        userProfileImageView.layer.cornerRadius = userProfileImageView.frame.height/2
-        userProfileImageView.layer.borderWidth = 5
-        userProfileImageView.layer.borderColor = UIColor.white.cgColor
+        containerViewOutlet.layer.cornerRadius = 20
+        subContainerViewOutlet.layer.cornerRadius = 20
+        subContainerViewOutlet.shadowStyle(radius: 10, color: .gray, offset: CGSize(width: 10, height: 20), opacity: 0.8)
+        
+        userProfileImageViewOutlet.layer.cornerRadius = userProfileImageViewOutlet.frame.height/2
+        userProfileImageViewOutlet.layer.borderWidth = 5
+        userProfileImageViewOutlet.layer.borderColor = UIColor.white.cgColor
     }
     
 }
