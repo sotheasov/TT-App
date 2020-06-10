@@ -143,7 +143,7 @@ extension ProductViewController : ProductViewModelDelegate {
 
 extension ProductViewController : UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        print("WORK On Product Delegate")
+//        print("WORK On Product Delegate")
         (viewController as? DepartmentTableViewController)?.setOpenType(position: position!)// Here you pass the to your original view controller
     }
 }

@@ -21,10 +21,11 @@ class MenuCollectionViewCell: UICollectionViewCell {
     
     func customCell(menu : Menu){
         self.menuLabel.text = menu.title
-        print("Image URL : " + menu.imageUrl)
+//        print("Image URL : " + menu.imageUrl)
         let image = UIImage(named: menu.imageUrl)
-        let url = URL(string: menu.imageUrl)
-        self.menyImageView.kf.setImage(with: url, placeholder: image)
+        _ = URL(string: menu.imageUrl)
+//        self.menyImageView.kf.setImage(with: url, placeholder: image)
+        self.menyImageView.image = image
     }
 
 }

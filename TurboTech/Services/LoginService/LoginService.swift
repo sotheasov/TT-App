@@ -38,7 +38,7 @@ class LoginService {
                 return
             }
             for json in jsons!["result"].arrayValue {
-                print(json)
+//                print(json)
                 user = User(json: json)
             }
             handler(user!)

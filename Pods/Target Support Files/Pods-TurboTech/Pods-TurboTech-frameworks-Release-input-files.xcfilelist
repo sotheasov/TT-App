@@ -1,5 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-TurboTech/Pods-TurboTech-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
 ${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework
 ${BUILT_PRODUCTS_DIR}/IBPCollectionViewCompositionalLayout/IBPCollectionViewCompositionalLayout.framework
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework

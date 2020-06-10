@@ -24,7 +24,7 @@ extension UIView {
       caShapeLayer.lineWidth = width
       caShapeLayer.lineDashPattern = [4,4]
       let cgPath = CGMutablePath()
-    print("Create Dot : ", self.frame.width)
+//    print("Create Dot : ", self.frame.width)
     
     let cgPoint = [CGPoint(x: 0, y: 0), CGPoint(x: self.frame.width, y: 0)]
       cgPath.addLines(between: cgPoint)

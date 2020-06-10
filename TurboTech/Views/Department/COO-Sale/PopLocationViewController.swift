@@ -64,9 +64,9 @@ class PopLocationViewController: UIViewController {
     }
     
     func setPop(){
-        print("WORK 4")
+//        print("WORK 4")
         popList.forEach { (pop) in
-            print("WORK 5")
+//            print("WORK 5")
             pinPop(pop: pop)
             selectOption.append(pop.nameEn)
         }
@@ -74,9 +74,9 @@ class PopLocationViewController: UIViewController {
     }
     
     func pinPop(pop : POP){
-        print("WORK 44")
+//        print("WORK 44")
         let position = CLLocationCoordinate2D(latitude: (pop.latitude*1000000)/1000000, longitude: (pop.longitude*1000000)/1000000)
-        print("My lat long : ", (pop.latitude*1000000)/1000000, (pop.longitude*1000000)/1000000)
+//        print("My lat long : ", (pop.latitude*1000000)/1000000, (pop.longitude*1000000)/1000000)
         let marker = GMSMarker(position: position)
 //        marker.appearAnimation = an
         marker.title = "\(pop.nameEn)"
@@ -107,11 +107,11 @@ class PopLocationViewController: UIViewController {
         dropdown.selectedIndex = 0
         dropdown.listHeight = 240
         dropdown.didSelect{(selectedText , index ,id) in
-            print(index - 1)
+//            print(index - 1)
             
             if index > 0 {
                 let selectedPop = self.popList[index - 1]
-                print(selectedPop.latitude, selectedPop.longitude)
+//                print(selectedPop.latitude, selectedPop.longitude)
                 let camera = GMSCameraPosition.camera(withLatitude: selectedPop.latitude, longitude: selectedPop.longitude, zoom: self.zoomLevel)
                 self.mapView.camera = camera
                 self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -135,7 +135,7 @@ extension PopLocationViewController: CLLocationManagerDelegate {
     // Handle incoming location events.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location: CLLocation = locations.last!
-        print("Location: \(location)")
+//        print("Location: \(location)")
 
         let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: zoomLevel)
         if mapView.isHidden {

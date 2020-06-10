@@ -21,11 +21,11 @@ class ProductService {
             if let jsons = try? JSON(data: data){
                 for json in jsons["result"].arrayValue {
                     let pro = Product(json: json)
-                    print(pro.id)
+//                    print(pro.id)
                     products.append(pro)
                 }
             }
-            print("Product Server : ",products)
+//            print("Product Server : ",products)
             self.productServiceDelegate?.responseProduct(products: products)
         }
     }
@@ -37,11 +37,11 @@ class ProductService {
             if let jsons = try? JSON(data: data){
                 for json in jsons["result"].arrayValue {
                     let package = Package(json: json)
-                    print(package.id)
+//                    print(package.id)
                     packages.append(package)
                 }
             }
-            print("Product Server : ",packages)
+//            print("Product Server : ",packages)
             self.productServiceDelegate?.responsePackage(type : type, packages: packages)
         }
     }
@@ -53,7 +53,7 @@ class ProductService {
             if let jsons = try? JSON(data: data){
                 for json in jsons["result"].arrayValue {
                     let package = PackageDetail(json: json)
-                    print("Detail : ", package.id)
+//                    print("Detail : ", package.id)
                     details.append(package)
                 }
             }
@@ -68,7 +68,7 @@ class ProductService {
             if let jsons = try? JSON(data: data){
                 for json in jsons["result"].arrayValue {
                     let software = SoftwareSolution(json: json)
-                    print("Detail : ", software.id)
+//                    print("Detail : ", software.id)
                     softwareList.append(software)
                 }
             }
