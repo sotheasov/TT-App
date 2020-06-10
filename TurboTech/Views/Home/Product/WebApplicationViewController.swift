@@ -31,7 +31,7 @@ class WebApplicationViewController: UIViewController {
     
     private func setData(){
         let url = URL(string: software!.imageWebUrl)
-        print(software!.imageWebUrl)
+//        print(software!.imageWebUrl)
         self.webImageView.kf.setImage(with: url)
         nameLabel.text = software!.nameEn
         detailTextView.text = software!.detailEn

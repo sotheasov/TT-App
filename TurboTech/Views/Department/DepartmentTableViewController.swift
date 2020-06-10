@@ -116,12 +116,12 @@ class DepartmentTableViewController: UITableViewController {
 
 extension DepartmentTableViewController : UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        print("Delegate : ", openType)
+//        print("Delegate : ", openType)
         (viewController as? DepartmentTableViewController)?.setOpenType(position: self.openType!)// Here you pass the to your original view controller
     }
     
     override func willMove(toParent parent: UIViewController?) {
-        print("Delegate move: ", openType)
+//        print("Delegate move: ", openType)
         (parent as? DepartmentTableViewController)?.setOpenType(position: self.openType!)
     }
 }

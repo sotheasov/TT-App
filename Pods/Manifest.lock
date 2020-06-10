@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (5.0.5)
+  - Charts (3.5.0):
+    - Charts/Core (= 3.5.0)
+  - Charts/Core (3.5.0)
   - FittedSheets (1.4.6)
   - Google-Maps-iOS-Utils (3.1.4):
     - Google-Maps-iOS-Utils/Clustering (= 3.1.4)
@@ -37,6 +40,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
+  - Charts
   - FittedSheets
   - Google-Maps-iOS-Utils (~> 3.1.4)
   - GoogleMaps
@@ -53,6 +57,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Charts
     - FittedSheets
     - Google-Maps-iOS-Utils
     - GoogleMaps
@@ -76,6 +81,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
   FittedSheets: 7f37fee2567d15dcde391f31eccbffb660ddebf0
   Google-Maps-iOS-Utils: 1e51ca272b4f4befdf3577bf46f58c22ef22062c
   GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
@@ -89,6 +95,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   WBCollectionViewLayout: 40fa78106b231f81f0495e90e7535339213da44b
 
-PODFILE CHECKSUM: 741b951c8ce9f4f539804314fbf9b9fd057bb898
+PODFILE CHECKSUM: 090059b03463a477eaeaa281d00feb7ef077ab0a
 
 COCOAPODS: 1.9.1

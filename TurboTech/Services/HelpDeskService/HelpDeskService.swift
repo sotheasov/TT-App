@@ -15,7 +15,7 @@ class HelpDeskService{
     let headers : HTTPHeaders = APIManager.HEADER
     
     func postComplainMessage(complain : UserComplain, handler : @escaping(_ message : String)->()){
-        print(complain.type)
+//        print(complain.type)
         
         let params = [
             "protypename" : complain.type,
@@ -28,7 +28,7 @@ class HelpDeskService{
             guard let data = response.data else { return }
             if let json = try? JSON(data: data){
                 message = json["message"].string ?? "NO POST"
-                print("My message : ", message)
+//                print("My message : ", message)
                 if message == "NO ID" {
                     self.defaultPostComplain(complain: complain) { (msg) in
                         message = msg
@@ -47,7 +47,7 @@ class HelpDeskService{
             guard let data = response.data else { return }
             if let json = try? JSON(data: data){
                 message = json["message"].stringValue
-                print(message)
+//                print(message)
             }
         }
         handler(message)
@@ -60,7 +60,7 @@ class HelpDeskService{
             if let jsons = try? JSON(data: data){
                 for json in jsons["result"].arrayValue {
                     let sq = SupportQuestion(json: json)
-                    print(sq.id)
+//                    print(sq.id)
                     FAQsList.append(sq)
                 }
             }
