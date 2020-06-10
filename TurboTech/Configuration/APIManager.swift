@@ -37,7 +37,8 @@ class APIManager {
     enum HELP_DESK {
         // param {idcard, code, protypename, question}
         static let POST = MAIN_URL + "/help_dest/addproblem.php"
-        static let GET_PROBLEM = MAIN_URL + "/help desk/readproblemtype.php"
+        static let GET_PROBLEM = MAIN_URL + "/help_dest/readproblemtype.php"
+//        https://turbotech.com/api/help_dest/readproblemtype.php
         static let GET = MAIN_URL + "/support/"
     }
     
@@ -55,6 +56,16 @@ class APIManager {
         static let GET_CHECKIN = MAIN_URL_2 + "/figerprint/api/fingerprint_present.php?today_date=" // 2020-06-01
         static let GET_ABSENCE = MAIN_URL_2 + "/figerprint/api/fingerprint_absent.php?today_date=" //2020-06-01
         static let GET_LATE = MAIN_URL_2 + "/figerprint/api/fingerprint_lates.php?today_date=" //2020-06-01
+    enum ADDRESS {
+        static let PROVINCE = MAIN_URL + "/key_gazetteers/province.php"
+        static let DISTRICT = MAIN_URL + "/key_gazetteers/district.php?province_id="
+        static let COMMUNE = MAIN_URL + "/key_gazetteers/commune.php?district_id="
+        static let VILLAGE = MAIN_URL + "/key_gazetteers/village.php?commune_id="
+    }
+    
+    enum CRM {
+        static let GET_PACKAGE = MAIN_URL + "/register_service/readpackage.php"
+        static let POST_REGISTER_PACKAGE = MAIN_URL + "/register_service/register_crm.php"
     }
 }
 

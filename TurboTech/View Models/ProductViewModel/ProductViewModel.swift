@@ -37,7 +37,7 @@ extension ProductViewModel : ProductServiceDelegate {
     func responsePackageDetail(packageId: Int, packageDetails: [PackageDetail]) {
 //        print("recieve detail")
 //        productViewModelDelegate?.responsePackageDetail(packageDetails: packageDetails)
-        
+//        productViewModelDelegate?.responsePackageDetail(packageDetails: packageDetails)
         productViewModelDelegate?.responsePackageDetail(packageDetails: filterPackageDetail(packageId: packageId, packageDetails: packageDetails))
     }
     
@@ -69,6 +69,13 @@ extension ProductViewModel : ProductServiceDelegate {
             if detail.packageId == packageId {
                 detail.setDetailEn(str: String((detail.detailEn).dropFirst()))
                 detail.setDetailEn(str: (detail.detailEn).replacingOccurrences(of: "▒", with: "\n\n"))
+                detail.setDetailKh(str: String((detail.detailKh).dropFirst()))
+                
+                detail.setDetailKh(str: (detail.detailKh).replacingOccurrences(of: "&amp;", with: "&"))
+                detail.setDetailKh(str: (detail.detailKh).replacingOccurrences(of: "\r\n", with: ""))
+                detail.setDetailKh(str: (detail.detailKh).replacingOccurrences(of: "▒", with: "\n\n"))
+                detail.setDetailKh(str: (detail.detailKh).replacingOccurrences(of: "&nbsp;", with: ""))
+                
 //                print(detail.detailEn)
                 filter.append(detail)
             }

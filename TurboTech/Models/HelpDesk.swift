@@ -26,3 +26,19 @@ class UserComplain {
         self.question = question
     }
 }
+
+class ProblemType {
+    var id : Int
+    var nameEn : String
+    var nameKh : String
+    
+    init(json: JSON) {
+        self.id = json["id"].intValue
+        self.nameEn = json["name_en"].stringValue
+        self.nameKh = json["name_kh"].stringValue
+    }
+    
+    func getId() -> Int{
+        return self.id
+    }
+}

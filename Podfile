@@ -30,5 +30,8 @@ target 'TurboTech' do
 
   pod 'SquareFlowLayout'
   # https://github.com/ChernyshenkoTaras/SquareFlowLayout #
+  
+  pod "ATInternet-Apple-SDK/Tracker",">=2.0"
+  # https://github.com/at-internet/atinternet-apple-sdk #
 
 end

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+// let lang = UserDefaults.standard.string(forKey: "LanguageCode")
 class LanguageManager {
     static let shared = LanguageManager()
     var language : String {

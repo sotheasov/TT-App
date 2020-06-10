@@ -29,7 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = TAB.SELECTED_COLOR
 //        UITabBar.appearance().backgroundColor = UIColor.white
         UITabBar.appearance().unselectedItemTintColor = TAB.UNSELECTED_COLOR.withAlphaComponent(TAB.UISELECTED_ALPHA)
-        
+//        UITabBarItem.appearance().setTitleTextAttributes([
+//            NSAttributedString.Key.foregroundColor: COLOR.WHITE,
+//                NSAttributedString.Key.font: UIFont(descriptor: UIFontDescriptor(fontAttributes: [
+//                    UIFontDescriptor.AttributeName.textStyle: UIFont.TextStyle.headline,
+//                    UIFontDescriptor.AttributeName.name: UIFontDescriptor(name: "Quicksand-bold", size: 14)
+//                ]), size: 14)
+//        ], for: .normal)
         
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.barTintColor = COLOR.RED

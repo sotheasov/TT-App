@@ -16,6 +16,9 @@ class HelpDeskViewModel {
             if message == "Data Inserted Successfully" {
                 handler("Thanks For Your Us Report Problem")
             }
+            else {
+                handler("Sorry")
+            }
             
         }
     }
@@ -29,4 +32,9 @@ class HelpDeskViewModel {
 //    deinit {
 //        print("Help Desk View Model Deinit")
 //    }
+    func fetchProblemType(completionHandler : @escaping(_ problemList : [ProblemType])->()){
+        helpDeskService.fetchProblemType { (list) in
+            completionHandler(list)
+        }
+    }
 }

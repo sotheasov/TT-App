@@ -21,6 +21,12 @@
 		1006D83E24767322000892ED /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1006D83D24767322000892ED /* ProductService.swift */; };
 		1006D84024767330000892ED /* ProductServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1006D83F24767330000892ED /* ProductServiceDelegate.swift */; };
 		101FE96E24767EDF005AB106 /* PackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101FE96D24767EDF005AB106 /* PackageViewController.swift */; };
+		10200A31248D353A0024F086 /* TTTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10200A30248D353A0024F086 /* TTTabBarViewController.swift */; };
+		10200A34248E162E0024F086 /* RegisterServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10200A33248E162E0024F086 /* RegisterServiceViewController.swift */; };
+		10200A36248E3D6A0024F086 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10200A35248E3D6A0024F086 /* Address.swift */; };
+		102A77122488F06600A657AD /* InternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102A77112488F06600A657AD /* InternetConnection.swift */; };
+		102D3961249098470039BC3E /* CRMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D3960249098470039BC3E /* CRMService.swift */; };
+		102D3964249098740039BC3E /* CRMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D3963249098740039BC3E /* CRMViewModel.swift */; };
 		103F3E512477B55900367024 /* PackageDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F3E4F2477B55900367024 /* PackageDetailTableViewCell.swift */; };
 		103F3E522477B55900367024 /* PackageDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 103F3E502477B55900367024 /* PackageDetailTableViewCell.xib */; };
 		103F3E542477C56500367024 /* PackageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F3E532477C56500367024 /* PackageDetailViewController.swift */; };
@@ -35,6 +41,10 @@
 		105226FA247E2382007B7B29 /* SpeedTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105226F9247E2382007B7B29 /* SpeedTestViewController.swift */; };
 		105226FC247E59F8007B7B29 /* PopLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105226FB247E59F8007B7B29 /* PopLocationViewController.swift */; };
 		10670006247E0240002E283E /* UserLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10670005247E0240002E283E /* UserLocationViewController.swift */; };
+		1077A065249070810062EBFB /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1077A064249070810062EBFB /* Validation.swift */; };
+		1077A067249087690062EBFB /* PackageCRMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1077A066249087690062EBFB /* PackageCRMViewController.swift */; };
+		1077A06A24908C250062EBFB /* PackageCRMCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1077A06824908C250062EBFB /* PackageCRMCellTableViewCell.swift */; };
+		1077A06B24908C250062EBFB /* PackageCRMCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1077A06924908C250062EBFB /* PackageCRMCellTableViewCell.xib */; };
 		108848C5247CA44A0034579A /* HelpDeskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108848C4247CA44A0034579A /* HelpDeskService.swift */; };
 		108848C7247CA4560034579A /* HelpDeskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108848C6247CA4560034579A /* HelpDeskViewModel.swift */; };
 		108848C9247CA4610034579A /* HelpDesk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108848C8247CA4610034579A /* HelpDesk.swift */; };
@@ -44,6 +54,7 @@
 		108848D4247CB91E0034579A /* FAQsTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108848D2247CB91E0034579A /* FAQsTableViewHeader.xib */; };
 		108848D6247CB9430034579A /* FAQsTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108848D5247CB9430034579A /* FAQsTableViewHeader.swift */; };
 		108848D8247CBADD0034579A /* SupportQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108848D7247CBADD0034579A /* SupportQuestion.swift */; };
+		1089359D248F667A00D8CF84 /* RequestCRM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089359C248F667A00D8CF84 /* RequestCRM.swift */; };
 		1095651C2477717E000C286B /* PackageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1095651B2477717E000C286B /* PackageDetail.swift */; };
 		10BBF921247CFCCA008DCF3A /* POP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BBF920247CFCCA008DCF3A /* POP.swift */; };
 		10BBF925247CFDF8008DCF3A /* SaleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BBF924247CFDF8008DCF3A /* SaleService.swift */; };
@@ -126,6 +137,12 @@
 		1006D83D24767322000892ED /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		1006D83F24767330000892ED /* ProductServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductServiceDelegate.swift; sourceTree = "<group>"; };
 		101FE96D24767EDF005AB106 /* PackageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageViewController.swift; sourceTree = "<group>"; };
+		10200A30248D353A0024F086 /* TTTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTabBarViewController.swift; sourceTree = "<group>"; };
+		10200A33248E162E0024F086 /* RegisterServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterServiceViewController.swift; sourceTree = "<group>"; };
+		10200A35248E3D6A0024F086 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		102A77112488F06600A657AD /* InternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
+		102D3960249098470039BC3E /* CRMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRMService.swift; sourceTree = "<group>"; };
+		102D3963249098740039BC3E /* CRMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRMViewModel.swift; sourceTree = "<group>"; };
 		103F3E4F2477B55900367024 /* PackageDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailTableViewCell.swift; sourceTree = "<group>"; };
 		103F3E502477B55900367024 /* PackageDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageDetailTableViewCell.xib; sourceTree = "<group>"; };
 		103F3E532477C56500367024 /* PackageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +157,10 @@
 		105226F9247E2382007B7B29 /* SpeedTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTestViewController.swift; sourceTree = "<group>"; };
 		105226FB247E59F8007B7B29 /* PopLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopLocationViewController.swift; sourceTree = "<group>"; };
 		10670005247E0240002E283E /* UserLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationViewController.swift; sourceTree = "<group>"; };
+		1077A064249070810062EBFB /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		1077A066249087690062EBFB /* PackageCRMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCRMViewController.swift; sourceTree = "<group>"; };
+		1077A06824908C250062EBFB /* PackageCRMCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCRMCellTableViewCell.swift; sourceTree = "<group>"; };
+		1077A06924908C250062EBFB /* PackageCRMCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageCRMCellTableViewCell.xib; sourceTree = "<group>"; };
 		108848C4247CA44A0034579A /* HelpDeskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDeskService.swift; sourceTree = "<group>"; };
 		108848C6247CA4560034579A /* HelpDeskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDeskViewModel.swift; sourceTree = "<group>"; };
 		108848C8247CA4610034579A /* HelpDesk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDesk.swift; sourceTree = "<group>"; };
@@ -149,6 +170,7 @@
 		108848D2247CB91E0034579A /* FAQsTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQsTableViewHeader.xib; sourceTree = "<group>"; };
 		108848D5247CB9430034579A /* FAQsTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsTableViewHeader.swift; sourceTree = "<group>"; };
 		108848D7247CBADD0034579A /* SupportQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportQuestion.swift; sourceTree = "<group>"; };
+		1089359C248F667A00D8CF84 /* RequestCRM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCRM.swift; sourceTree = "<group>"; };
 		1095651B2477717E000C286B /* PackageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetail.swift; sourceTree = "<group>"; };
 		10BBF920247CFCCA008DCF3A /* POP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POP.swift; sourceTree = "<group>"; };
 		10BBF924247CFDF8008DCF3A /* SaleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleService.swift; sourceTree = "<group>"; };
@@ -260,6 +282,7 @@
 		100556C024738BC200B1F8BF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				1077A0632490706D0062EBFB /* Validation */,
 				105226F5247E1E39007B7B29 /* Navigation & Tab Bar */,
 				10D17EF12476203E0095E0AF /* Fonts */,
 				100556C124738BD500B1F8BF /* Colors.swift */,
@@ -284,6 +307,16 @@
 				1006D83F24767330000892ED /* ProductServiceDelegate.swift */,
 			);
 			path = ProductService;
+			sourceTree = "<group>";
+		};
+		10200A32248E16180024F086 /* CRM */ = {
+			isa = PBXGroup;
+			children = (
+				1077A06C24908C470062EBFB /* cell */,
+				10200A33248E162E0024F086 /* RegisterServiceViewController.swift */,
+				1077A066249087690062EBFB /* PackageCRMViewController.swift */,
+			);
+			path = CRM;
 			sourceTree = "<group>";
 		};
 		103F3E4E2477B41300367024 /* Package Detail Card */ = {
@@ -313,6 +346,7 @@
 		104AAE23247E9AC100801A8F /* COO-Sale */ = {
 			isa = PBXGroup;
 			children = (
+				10200A32248E16180024F086 /* CRM */,
 				10CFC1C8247F67CF0059AD63 /* Cell */,
 				10CFC1BE247F49670059AD63 /* SaleTableViewController.swift */,
 				105226FB247E59F8007B7B29 /* PopLocationViewController.swift */,
@@ -384,6 +418,23 @@
 			path = "Speed Test";
 			sourceTree = "<group>";
 		};
+		1077A0632490706D0062EBFB /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				1077A064249070810062EBFB /* Validation.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		1077A06C24908C470062EBFB /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				1077A06824908C250062EBFB /* PackageCRMCellTableViewCell.swift */,
+				1077A06924908C250062EBFB /* PackageCRMCellTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		108848C2247CA40E0034579A /* HelpDeskService */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +494,7 @@
 		10BBF922247CFDD7008DCF3A /* SaleService */ = {
 			isa = PBXGroup;
 			children = (
+				102D3960249098470039BC3E /* CRMService.swift */,
 				10BBF924247CFDF8008DCF3A /* SaleService.swift */,
 			);
 			path = SaleService;
@@ -451,6 +503,7 @@
 		10BBF923247CFDE3008DCF3A /* SaleViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				102D3963249098740039BC3E /* CRMViewModel.swift */,
 				10BBF926247CFE03008DCF3A /* SaleViewModel.swift */,
 			);
 			path = SaleViewModel;
@@ -504,6 +557,8 @@
 				104AAE2B247E9DE000801A8F /* Department.swift */,
 				10CFC1C6247F63950059AD63 /* Device.swift */,
 				A93E8EEB248F796A00A8D450 /* Attendance.swift */,
+				10200A35248E3D6A0024F086 /* Address.swift */,
+				1089359C248F667A00D8CF84 /* RequestCRM.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -564,6 +619,7 @@
 				10BE73C2247365A4001EFD43 /* LaunchScreen.storyboard */,
 				10BE73BB247365A4001EFD43 /* ViewController.swift */,
 				10BE73BD247365A4001EFD43 /* Main.storyboard */,
+				10200A30248D353A0024F086 /* TTTabBarViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -574,6 +630,7 @@
 				100556C32473912B00B1F8BF /* APIManager.swift */,
 				10CFC1DB247FA9820059AD63 /* Localizable.strings */,
 				10CFC1DD247FAA390059AD63 /* LanguageManager.swift */,
+				102A77112488F06600A657AD /* InternetConnection.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -776,6 +833,7 @@
 				10D17EF92476203E0095E0AF /* Quicksand Light 300.ttf in Resources */,
 				10BE73EC247371FA001EFD43 /* HomeStoryboard.storyboard in Resources */,
 				10CFC1D9247FA9820059AD63 /* Localizable.strings in Resources */,
+				1077A06B24908C250062EBFB /* PackageCRMCellTableViewCell.xib in Resources */,
 				108848D0247CB9150034579A /* FAQsTableViewCell.xib in Resources */,
 				104AAE22247E9A4E00801A8F /* DepartmentStoryboard.storyboard in Resources */,
 				10D17EF82476203E0095E0AF /* Quicksand Regular 400.ttf in Resources */,
@@ -870,6 +928,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A93E8EF0248F7B9400A8D450 /* AttandanceService.swift in Sources */,
+				1077A06A24908C250062EBFB /* PackageCRMCellTableViewCell.swift in Sources */,
 				10E7F391247B7D380082901F /* WebApplicationViewController.swift in Sources */,
 				1006D83024763C1A000892ED /* CustomizeSize.swift in Sources */,
 				10CFC1BF247F49670059AD63 /* SaleTableViewController.swift in Sources */,
@@ -877,6 +936,7 @@
 				10D17EF0247619E10095E0AF /* ProductViewController.swift in Sources */,
 				108848CF247CB9150034579A /* FAQsTableViewCell.swift in Sources */,
 				105226FA247E2382007B7B29 /* SpeedTestViewController.swift in Sources */,
+				1089359D248F667A00D8CF84 /* RequestCRM.swift in Sources */,
 				10670006247E0240002E283E /* UserLocationViewController.swift in Sources */,
 				A960AC24247E082400E844E2 /* DepartmentViewController.swift in Sources */,
 				1006D83024763C1A000892ED /* CustomizeSize.swift in Sources */,
@@ -886,12 +946,16 @@
 				1045AA1E247B5031003A79E9 /* PackageDetailHeaderView.swift in Sources */,
 				10CFC1CB247F67EF0059AD63 /* DeviceTableViewCell.swift in Sources */,
 				10CFC1DE247FAA390059AD63 /* LanguageManager.swift in Sources */,
+				102D3961249098470039BC3E /* CRMService.swift in Sources */,
 				10CFC1C5247F53120059AD63 /* DeviceTableViewController.swift in Sources */,
 				100556C224738BD500B1F8BF /* Colors.swift in Sources */,
+				10200A31248D353A0024F086 /* TTTabBarViewController.swift in Sources */,
+				1077A067249087690062EBFB /* PackageCRMViewController.swift in Sources */,
 				108848D6247CB9430034579A /* FAQsTableViewHeader.swift in Sources */,
 				108848D8247CBADD0034579A /* SupportQuestion.swift in Sources */,
 				10CFC1C7247F63950059AD63 /* Device.swift in Sources */,
 				100506F62474D771008FDFC3 /* Menu.swift in Sources */,
+				102D3964249098740039BC3E /* CRMViewModel.swift in Sources */,
 				10E7F393247B86950082901F /* FeedBackViewController.swift in Sources */,
 				100556C42473912B00B1F8BF /* APIManager.swift in Sources */,
 				10BE73E924737186001EFD43 /* LocationViewController.swift in Sources */,
@@ -912,6 +976,7 @@
 				10BBF925247CFDF8008DCF3A /* SaleService.swift in Sources */,
 				108848C7247CA4560034579A /* HelpDeskViewModel.swift in Sources */,
 				A91706E3248B2CBF00E23655 /* InsideAttendanceOverallTableViewCell.swift in Sources */,
+				1077A065249070810062EBFB /* Validation.swift in Sources */,
 				10BE73BC247365A4001EFD43 /* ViewController.swift in Sources */,
 				104AAE2C247E9DE000801A8F /* Department.swift in Sources */,
 				10BBF921247CFCCA008DCF3A /* POP.swift in Sources */,
@@ -924,15 +989,18 @@
 				A909CA9B2474C03D00546CFC /* LoginViewController.swift in Sources */,
 				A92A23242487A3120095D4A9 /* TotalAttendanceViewController.swift in Sources */,
 				1006D83424767152000892ED /* Product.swift in Sources */,
+				10200A36248E3D6A0024F086 /* Address.swift in Sources */,
 				A9B0AF58247E64CF002FB5B6 /* AttendanceViewController.swift in Sources */,
 				1006D8362476715D000892ED /* Package.swift in Sources */,
 				10BE73BA247365A4001EFD43 /* SceneDelegate.swift in Sources */,
 				103F3E542477C56500367024 /* PackageDetailViewController.swift in Sources */,
 				10CFC1C1247F49710059AD63 /* FinanceTableViewController.swift in Sources */,
+				10200A34248E162E0024F086 /* RegisterServiceViewController.swift in Sources */,
 				1006D83C24767313000892ED /* ProductViewModelDelegate.swift in Sources */,
 				108848CB247CB8CB0034579A /* FAQsTableViewController.swift in Sources */,
 				100506F32474D4F2008FDFC3 /* MenuCollectionViewCell.swift in Sources */,
 				1095651C2477717E000C286B /* PackageDetail.swift in Sources */,
+				102A77122488F06600A657AD /* InternetConnection.swift in Sources */,
 				10BBF927247CFE03008DCF3A /* SaleViewModel.swift in Sources */,
 				10E7F38F247B751F0082901F /* SoftwareSolution.swift in Sources */,
 				A9D18D12247B854A00ADE51B /* ProfileTableViewCell.swift in Sources */,
