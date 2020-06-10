@@ -16,48 +16,53 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var sliderImageView: UIImageView!
     
-    var menuList = [Menu]()
+    var menuList = [
+        Menu(id: 0, title: "product".localized, imageUrl: "internet_package"),
+        Menu(id: 1, title: "payment".localized, imageUrl: "get_cash"),
+        Menu(id: 2, title: "help desk".localized, imageUrl: "ustomer_support"),
+        Menu(id: 3, title: "speed test".localized, imageUrl: "speed"),
+        Menu(id: 4, title: "scan qr".localized, imageUrl: "qr_black"),
+        Menu(id: 5, title: "location".localized, imageUrl: "Map")
+    ]
+    //[Menu]()
     
-    let monitor = NWPathMonitor()
+//    let monitor = NWPathMonitor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name(rawValue: "changed"), object: nil)
-        setUp()
+//        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name(rawValue: "changed"), object: nil)
+//        setUp()
         addRightButton()
         addLeftButton()
         registerCollectionViewCell()
+        localized()
         DispatchQueue.main.async {
             Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         }
-        didTapOnRightButton()
         
-        monitor.pathUpdateHandler = { pathUpdateHandler in
-            if pathUpdateHandler.status == .satisfied {
-                print("Internet connection is on.")
-            } else {
-                print("There's no internet connection.")
-                self.showAndDismissAlert(title: "បើកសេវាតិចទៅ", message: "សុំអង្វរ", style: .alert, second: 5)
-            }
-        }
+//        didTapOnRightButton()
         
-        let queue = DispatchQueue(label: "InternetConnectionMonitor")
-        monitor.start(queue: queue)
+        InternetConnection.shared.checkConnection(self)
+        
+//        monitor.pathUpdateHandler = { pathUpdateHandler in
+//            if pathUpdateHandler.status == .satisfied {
+//                print("Internet connection is on.")
+//            } else {
+//                print("There's no internet connection.")
+//                self.showAndDismissAlert(title: "បើកសេវាតិចទៅ", message: "សុំអង្វរ", style: .alert, second: 5)
+//            }
+//        }
+//
+//        let queue = DispatchQueue(label: "InternetConnectionMonitor")
+//        monitor.start(queue: queue)
     }
     
-    @objc
-    func changeLanguage(){
-        addLeftButton()
-        menuList = [
-            Menu(id: 0, title: "product".localized.localized, imageUrl: "internet_package"),
-            Menu(id: 1, title: "payment".localized, imageUrl: "get_cash"),
-            Menu(id: 2, title: "help desk".localized, imageUrl: "ustomer_support"),
-            Menu(id: 3, title: "speed test".localized, imageUrl: "speed"),
-            Menu(id: 4, title: "scan qr".localized, imageUrl: "qr_black"),
-            Menu(id: 5, title: "location".localized, imageUrl: "Map")
-        ]
-        homeMenuCollectionView.reloadData()
-    }
+//    @objc
+//    func changeLanguage(){
+//        addLeftButton()
+////        menuList =
+//        homeMenuCollectionView.reloadData()
+//    }
      
     var imageNum = 0
     let imageStr = ["1","2","3","4","5"]
@@ -69,11 +74,6 @@ class HomeViewController: UIViewController {
 //        sliderImageView.kf.setImage(with: url, placeholder: image)
         sliderImageView.image = image
         imageNum = imageNum + 1
-    }
-    
-    private func setUp(){
-//        self.navigationController?.navigationBar.barTintColor = COLOR.RED
-//        setUpNavigation()
     }
     
     private func setUpNavigation(){
@@ -127,9 +127,33 @@ class HomeViewController: UIViewController {
         else {
             LanguageManager.shared.language = "km"
         }
-        NotificationCenter.default.post(name: Notification.Name("changed"), object: nil)
+        localized()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        localized();
+    }
+    
+    func localized(){
+        menuList = [
+            Menu(id: 0, title: "product".localized, imageUrl: "internet_package"),
+            Menu(id: 1, title: "payment".localized, imageUrl: "get_cash"),
+            Menu(id: 2, title: "help desk".localized, imageUrl: "ustomer_support"),
+            Menu(id: 3, title: "speed test".localized, imageUrl: "speed"),
+            Menu(id: 4, title: "scan qr".localized, imageUrl: "qr_black"),
+            Menu(id: 5, title: "location".localized, imageUrl: "Map")
+        ]
+        homeMenuCollectionView.reloadData()
+        addLeftButton()
+        self.tabBarController?.tabBar.items![0].title = "home".localized
+        self.tabBarController?.tabBar.items![1].title = "location".localized
+        self.tabBarController?.tabBar.items![2].title = "message".localized
+        self.tabBarController?.tabBar.items![3].title = "profile".localized
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "home".localized, style: .plain, target: self, action: nil)
+    }
+    
 }
 
 extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -181,7 +205,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 print("Product")
                 let productVC = storyboard?.instantiateViewController(withIdentifier: "ProductViewControllerID") as! ProductViewController
                 productVC.modalPresentationStyle = .fullScreen
-                productVC.setNavigationTitle(title: "Product")
+                productVC.setNavigationTitle(title: "product".localized)
                 productVC.setTypeId(id: 0)
                 self.navigationController?.pushViewController(productVC, animated: true)
             case 1:
@@ -190,13 +214,13 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 print("Help Desk")
                 let productVC = storyboard?.instantiateViewController(withIdentifier: "ProductViewControllerID") as! ProductViewController
                 productVC.modalPresentationStyle = .fullScreen
-                productVC.setNavigationTitle(title: "Product")
+                productVC.setNavigationTitle(title: "help desk".localized)
                 productVC.setTypeId(id: 2)
                 self.navigationController?.pushViewController(productVC, animated: true)
             case 3:
                 print("Speed Test")
                 let speedTestVC = storyboard?.instantiateViewController(identifier: "SpeedTestViewControllerID") as! SpeedTestViewController
-                speedTestVC.navigationItem.title = "Speed Test"
+                speedTestVC.navigationItem.title = "speed test".localized
                 self.navigationController?.pushViewController(speedTestVC, animated: true)
             case 4:
                 print("Scan QR")
@@ -232,11 +256,16 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 locationVC.modalPresentationStyle = .fullScreen
                 self.navigationController?.pushViewController(locationVC, animated: true)
                 */
-                
+                /*
                 let locationVC = storyboard?.instantiateViewController(identifier: "UserLocationViewControllerID") as! UserLocationViewController
                 locationVC.modalPresentationStyle = .fullScreen
-                locationVC.navigationItem.title = "Location"
+                locationVC.navigationItem.title = "location".localized
                 self.navigationController?.pushViewController(locationVC, animated: true)
+ */
+                let department = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
+                let crmVC = department.instantiateViewController(identifier: "RegisterServiceViewControllerID") as! RegisterServiceViewController
+                crmVC.modalPresentationStyle = .fullScreen
+                self.navigationController?.pushViewController(crmVC, animated: true)
                 
             default:
                 print("")

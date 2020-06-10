@@ -22,10 +22,10 @@
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="m1F-iz-xBg">
             <objects>
-                <tabBarController storyboardIdentifier="MainViewControllerID" automaticallyAdjustsScrollViewInsets="NO" id="yCw-4b-gPx" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainViewControllerID" automaticallyAdjustsScrollViewInsets="NO" id="yCw-4b-gPx" customClass="TTTabBarViewController" customModule="TurboTech" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CMW-1K-v1i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

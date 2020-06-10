@@ -11,6 +11,7 @@ import UIKit
 class FAQsTableViewController: UITableViewController {
 
     var FAQsList = [SupportQuestion]()
+    let lang = LanguageManager.shared.language
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,7 @@ class FAQsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FAQsTableViewCellID", for: indexPath) as! FAQsTableViewCell
 //        cell.setData(answer: "Answer ")
         cell.backgroundColor = .clear
-        cell.setData(answer: FAQsList[indexPath.section].answerEn)
+        cell.setData(answer: lang == "en" ? FAQsList[indexPath.section].answerEn : FAQsList[indexPath.section].answerKh)
 
         return cell
     }
@@ -62,7 +63,7 @@ class FAQsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "FAQsTableViewHeaderID") as! FAQsTableViewHeader
 //        header.setData(question: "Question")
-        header.setData(question: FAQsList[section].questionEn)
+        header.setData(question: lang == "en" ? FAQsList[section].questionEn : FAQsList[section].questionKh )
         let tap = UITapGestureRecognizer()
         tap.addTarget(self, action: #selector(tapSection(_:)))
         header.isUserInteractionEnabled = true

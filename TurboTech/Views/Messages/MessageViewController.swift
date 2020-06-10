@@ -10,6 +10,8 @@ import UIKit
 
 class MessageViewController: UIViewController {
 
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,7 +37,18 @@ class MessageViewController: UIViewController {
 //            btn.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
 //            btn.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
 //            ])
+//        localized()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        localized()
+    }
+    
+    func localized(){
+        label.text = "Coming Soon".localized
+    }
+    
     @objc
     func hello(_ : UIButton){
         print("Hello")

@@ -48,7 +48,7 @@ class ProductService {
     
     func fetchPackageDetail(packageId : Int){
         var details = [PackageDetail]()
-        AF.request("\(APIManager.PACKAGE.GET_DETAIL)", method: .get, headers: headers).response { (response) in
+        AF.request("\(APIManager.PACKAGE.GET_DETAIL)?package_id=\(packageId)", method: .get, headers: headers).response { (response) in
             guard let data = response.data else { return }
             if let jsons = try? JSON(data: data){
                 for json in jsons["result"].arrayValue {

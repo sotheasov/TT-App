@@ -77,6 +77,9 @@ class SaleTableViewController: UITableViewController {
                 self.navigationController?.pushViewController(locationVC, animated: true)
             case .CRM :
                 print("CRM")
+                let crmVC = self.storyboard?.instantiateViewController(identifier: "RegisterServiceViewControllerID") as! RegisterServiceViewController
+                crmVC.modalPresentationStyle = .fullScreen
+                self.navigationController?.pushViewController(crmVC, animated: true)
             }
         }
 }

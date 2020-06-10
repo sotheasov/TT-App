@@ -27,7 +27,7 @@ class PackageDetail {
         self.price = json["price"].stringValue
         self.speed = json["speed"].stringValue
         self.detailEn = json["product_fea_en"].stringValue
-        self.detailKh = json["product_fea_kh"].stringValue
+        self.detailKh = json["speproduct_fea_kh"].stringValue
         self.packageId = json["package_id"].intValue
         self.serviceId = json["service_id"].intValue
     }

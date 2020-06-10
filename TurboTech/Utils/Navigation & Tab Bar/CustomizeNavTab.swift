@@ -47,7 +47,7 @@ enum CONTROLLER {
     static let POP_LOCATION = "PopLocationViewControllerID"
     static let DEVICE = "DeviceTableViewControllerID"
     static let ATTENDANCE = "A"
-//    static let = ""
+    static let REGISTER_SERVICE = "RegisterServiceViewControllerID"
 //    static let = ""
 //    static let = ""
 //    static let = ""

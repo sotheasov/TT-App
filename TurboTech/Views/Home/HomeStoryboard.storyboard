@@ -286,7 +286,10 @@
                     <connections>
                         <outlet property="complainTextView" destination="Ci1-9X-Akt" id="U6e-xK-Grb"/>
                         <outlet property="complainTypeDropDown" destination="yZu-aA-Wmm" id="8Ah-is-IFq"/>
+                        <outlet property="problemDetailLabel" destination="4bC-7q-ykv" id="j0s-wC-lZh"/>
+                        <outlet property="problemTypeLabel" destination="puu-zt-b0g" id="JoA-pa-Kpa"/>
                         <outlet property="submitButton" destination="0ZH-xm-dc9" id="V4o-o8-luC"/>
+                        <outlet property="titleLabel" destination="L2c-Dl-j5F" id="GDN-KF-u3u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSf-NN-876" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -437,6 +440,11 @@ Heh</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Uy8-my-YGT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <view key="tableHeaderView" contentMode="top" id="7pg-W5-MjU">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                         <connections>
                             <outlet property="dataSource" destination="mcr-V3-Pca" id="6j2-9P-8d9"/>
                             <outlet property="delegate" destination="mcr-V3-Pca" id="Jky-2V-QJY"/>
@@ -445,7 +453,7 @@ Heh</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jvq-OL-2mV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2670" y="467"/>
+            <point key="canvasLocation" x="2669.5652173913045" y="466.74107142857139"/>
         </scene>
         <!--User Location View Controller-->
         <scene sceneID="XOL-B7-RjM">
@@ -518,7 +526,7 @@ Heh</string>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="old-9l-hEh"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c2l-mI-GsC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="back64.png" id="c2l-mI-GsC">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -590,6 +598,7 @@ Heh</string>
     <resources>
         <image name="2" width="816" height="560"/>
         <image name="3" width="3264" height="2448"/>
+        <image name="back64.png" width="32" height="32"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="launchScreen" width="200" height="400"/>
     </resources>
