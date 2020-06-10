@@ -7,113 +7,214 @@
 //
 
 import UIKit
-import IBPCollectionViewCompositionalLayout
+import PinterestLayout
 
 class AttendanceViewController: UIViewController {
     
     // IBOutlet of AttendanceViewController
-    @IBOutlet weak var attendanceProfileImageView: UIImageView!
-    @IBOutlet weak var attendanceCollectionView: UICollectionView!
+    @IBOutlet weak var attendanceProfileImageViewOutlet: UIImageView!
+    @IBOutlet weak var btnBackAttendanceOutlet: UIButton!
+    @IBOutlet weak var lbTopAttendanceOutlet: UILabel!
+    @IBOutlet weak var lbBottomAttendanceOutlet: UILabel!
+    @IBOutlet weak var attendanceCollectionViewOutlet: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     // Declare Variable
-    let data = ["1", "2", "3", "4"]
-    var estimateWidth = 200.0
-    var cellMarginSize = 0
+    var data = [0, 0, -1, 0]
+    let cellLayout = PinterestLayout()
+    let attandanceViewModel = AttandanceViewModel()
+    
+    var presentList = [PresentAttendance]()
+    var lateList = [PresentAttendance]()
+    var absenceList = [AbsenceAttendance]()
+    var overallList = [AttendanceProtocol]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        attendanceCollectionView.delegate = self
-        attendanceCollectionView.dataSource = self
-        
-        flowLayout.scrollDirection = .vertical
-        flowLayout.minimumLineSpacing = 0
-        flowLayout.minimumInteritemSpacing = 0
-        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//        self.view.backgroundColor = UIColor(red: 0.20, green: 0.67, blue: 0.88, alpha: 1.00)
-        
-        
-        // Register Attendance CollectionViewCell
-        attendanceCollectionView.register(UINib(nibName: "AttendanceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "attendanceCellItem")
-        
         // Call Function
         customAttendanceViewController()
-        setupGridView()
+        registerCollectionViewCell()
+        
+        let date = "2020-06-09"
+        DispatchQueue.main.async {
+            self.attandanceViewModel.fetchPresentAttandance(date: date) { (presentList) in
+                self.data[0] = presentList.count
+                self.presentList = presentList
+                self.attendanceCollectionViewOutlet.reloadData()
+            }
+            self.attandanceViewModel.fetchLateAttandance(date: date) { (lateList) in
+                self.data[1] = lateList.count
+                self.lateList = lateList
+                self.attendanceCollectionViewOutlet.reloadData()
+            }
+            self.attandanceViewModel.fetchAbsneceAttandance(date: date) { (absenceList) in
+                self.data[3] = absenceList.count
+                self.absenceList = absenceList
+                self.attendanceCollectionViewOutlet.reloadData()
+            }
+            self.attandanceViewModel.fectchOverall(date: date) { (overallList) in
+                self.overallList = overallList
+            }
+        }
+        
 //        setCollectionLayout()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.setupGridView()
         DispatchQueue.main.async {
-            self.attendanceCollectionView.reloadData()
+            self.attendanceCollectionViewOutlet.reloadData()
         }
     }
     
-    func setupGridView() {
-        let flow = attendanceCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        flow.minimumInteritemSpacing = CGFloat(self.cellMarginSize)
-        flow.minimumLineSpacing = CGFloat(self.cellMarginSize)
+    func registerCollectionViewCell()  {
+        attendanceCollectionViewOutlet.register(UINib(nibName: "AttendanceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "attendanceCellItem")
+        attendanceCollectionViewOutlet.delegate = self
+        attendanceCollectionViewOutlet.dataSource = self
+        attendanceCollectionViewOutlet.collectionViewLayout = cellLayout
+        cellLayout.delegate = self
+        cellLayout.cellPadding = 0
+        cellLayout.numberOfColumns = 2
     }
     
     func customAttendanceViewController() {
-        attendanceProfileImageView.layer.cornerRadius = attendanceProfileImageView.frame.height/2
-        attendanceProfileImageView.layer.borderWidth = 2
-        attendanceProfileImageView.layer.borderColor = COLOR.RED.cgColor
+        attendanceProfileImageViewOutlet.layer.cornerRadius = attendanceProfileImageViewOutlet.frame.height/2
+        attendanceProfileImageViewOutlet.layer.borderWidth = 3
+        attendanceProfileImageViewOutlet.layer.borderColor = COLOR.WHITE_SMOKE_GREY.cgColor
+        
+        btnBackAttendanceOutlet.shadowStyle(radius: 3, color: .black, offset: CGSize(width: -0.5, height: 3), opacity: 0.8)
+        lbTopAttendanceOutlet.textColor = COLOR.COLOR_PRESENT
+        lbBottomAttendanceOutlet.textColor = COLOR.COLOR_PRESENT
     }
     
     // Action Button
-    @IBAction func buttonBackPress(_ sender: Any) {
+    @IBAction func btnBackAttendance(_ sender: UIButton) {
+        sender.pulsate()
         self.dismiss(animated: true, completion: nil)
     }
 }
 
-extension AttendanceViewController: UICollectionViewDataSource {
+// MARK: SovSothea
+extension AttendanceViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "attendanceCellItem", for: indexPath) as! AttendanceCollectionViewCell
-//        cell.setData(text: self.data[indexPath.row])
-        if indexPath.item % 2 == 0 {
-            cell.setConstraint(right: true)
-        } else {
-            cell.setConstraint(right: false)
+        cell.numberAttendanceLabelOutlet.text = "\(data[indexPath.item])"
+        if cell.frame.maxX > (self.attendanceCollectionViewOutlet.frame.width / 2) {
+            cell.coverAttendanceViewCellOutlet.backgroundColor = COLOR.COLOR_LATE
+            cell.trailingCoverConstraintOutlet.constant = 32
+            cell.leadingCoverConstraintOutlet.constant = 10
         }
-        cell.coverAttendanceViewCell.setColorGradient(colorOne: COLOR.RED, colorTwo: COLOR.BLUE)
+        else {
+            cell.coverAttendanceViewCellOutlet.backgroundColor = COLOR.COLOR_ABSENCE
+            cell.trailingCoverConstraintOutlet.constant = 10
+            cell.leadingCoverConstraintOutlet.constant = 32
+        }
+        // Add GestureRecognizer
+        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
         return cell
     }
     
-//    func setCollectionLayout() {
-//        let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//        layout.sectionInset = UIEdgeInsets(top:0,left:0,bottom:0,right:0)
-//        layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width/2 - 1, height: 145)
-//        layout.minimumInteritemSpacing = 1
-//        layout.minimumLineSpacing = 1
-//        attendanceCollectionView.collectionViewLayout = layout
-//    }
+    @objc
+    func tap(_ sender: UITapGestureRecognizer) {
+        let location = sender.location(in: self.attendanceCollectionViewOutlet)
+        let indexPath = self.attendanceCollectionViewOutlet.indexPathForItem(at: location)
+        if let index = indexPath {
+            print("Got clicked on index: \(index)!")
+            switch index.item {
+            case 0:
+                print("Present")
+                let insideAttendanceVC = storyboard?.instantiateViewController(withIdentifier: "InsideAttendanceViewControllerID") as! InsideAttendanceViewController
+                insideAttendanceVC.presentationType = .present
+                insideAttendanceVC.overallData = overallList
+                insideAttendanceVC.presentData = presentList
+//                insideAttendanceVC.presentData = self.my_datadel_fetch_present
+//                insideAttendanceVC.overallData = self.my_data_del_fetch_overall
+                insideAttendanceVC.modalPresentationStyle = .fullScreen
+                self.showDetailViewController(insideAttendanceVC, sender: nil)
+                self.navigationController?.pushViewController(insideAttendanceVC, animated: true)
+            case 1:
+                print("Late")
+                let insideAttendanceVC = storyboard?.instantiateViewController(withIdentifier: "InsideAttendanceViewControllerID") as! InsideAttendanceViewController
+                insideAttendanceVC.presentationType = .late
+                insideAttendanceVC.overallData = overallList
+                insideAttendanceVC.presentData = lateList
+                insideAttendanceVC.modalPresentationStyle = .fullScreen
+                self.showDetailViewController(insideAttendanceVC, sender: nil)
+                self.navigationController?.pushViewController(insideAttendanceVC, animated: true)
+            case 2:
+                print("Total")
+                let totalVC = storyboard?.instantiateViewController(withIdentifier: "TotalAttendanceViewControllerID") as! TotalAttendanceViewController
+                totalVC.modalPresentationStyle = .fullScreen
+                self.showDetailViewController(totalVC, sender: nil)
+                self.navigationController?.pushViewController(totalVC, animated: true)
+            case 3:
+                print("Absence")
+                let insideAttendanceVC = storyboard?.instantiateViewController(withIdentifier: "InsideAttendanceViewControllerID") as! InsideAttendanceViewController
+                insideAttendanceVC.presentationType = .absence
+                insideAttendanceVC.modalPresentationStyle = .fullScreen
+                self.showDetailViewController(insideAttendanceVC, sender: nil)
+                self.navigationController?.pushViewController(insideAttendanceVC, animated: true)
+                
+            default:
+                print("")
+            }
+        }
+    }
 }
 
-extension AttendanceViewController: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.calculateWidth()
-//        let width = self.set()
-        if indexPath.item == 0 || indexPath.item == 3 {        
-            return CGSize(width: (self.view.frame.width / 2), height: 270)
+extension AttendanceViewController : PinterestLayoutDelegate {
+    func collectionView(collectionView: UICollectionView, heightForImageAtIndexPath indexPath: IndexPath, withWidth: CGFloat) -> CGFloat {
+//        let image =
+//        get collection view cell -> height, width of View
+//        return image.height(forWidth: withWidth)
+        if (indexPath.item % 2 == 0) {
+            return CGFloat(248)
         }
         else {
-            return CGSize(width: (self.view.frame.width / 2), height: 200)
+            return CGFloat(190)
         }
     }
     
-    func calculateWidth() -> CGFloat {
-        let estimatedWidth = CGFloat(estimateWidth)
-        let cellCount = floor(CGFloat(self.view.frame.size.width) / estimatedWidth)
-        let margin = CGFloat(cellMarginSize * 2)
-        let width = (self.view.frame.size.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / floor(2.0)
-        return width
+    func collectionView(collectionView: UICollectionView, heightForAnnotationAtIndexPath indexPath: IndexPath, withWidth: CGFloat) -> CGFloat {
+//        let textFont = UIFont(name: "Arial-ItalicMT", size: 11)!
+//        return "Some text".heightForWidth(width: withWidth, font: textFont)
+        return CGFloat(0)
     }
 }
+
+
+//extension AttendanceViewController: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+////        let width = self.calculateWidth()
+////        let width = self.set()
+//        if indexPath.item == 0 || indexPath.item == 3 {
+//            return CGSize(width: (self.view.frame.width / 2), height: 270)
+//        }
+//        else {
+//            return CGSize(width: (self.view.frame.width / 2), height: 200)
+//        }
+//    }
+//
+//    func calculateWidth() -> CGFloat {
+//        let estimatedWidth = CGFloat(estimateWidth)
+//        let cellCount = floor(CGFloat(self.view.frame.size.width) / estimatedWidth)
+//        let margin = CGFloat(cellMarginSize * 2)
+//        let width = (self.view.frame.size.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / floor(2.0)
+//        return width
+//    }
+
+
+
+
+
+    
+    
+    
+    
+

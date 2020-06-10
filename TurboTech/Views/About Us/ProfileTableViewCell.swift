@@ -11,9 +11,9 @@ import UIKit
 class ProfileTableViewCell: UITableViewCell {
     
     // IBOutlet of ProfileTableViewCell
-    @IBOutlet weak var subContentView: UIView!
-    @IBOutlet weak var labelCell: UILabel!
-    @IBOutlet weak var iconCell: UIImageView!
+    @IBOutlet weak var subContentViewOutlet: UIView!
+    @IBOutlet weak var lbCellOutlet: UILabel!
+    @IBOutlet weak var iconCellOutlet: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +27,6 @@ class ProfileTableViewCell: UITableViewCell {
     }
     
     func customProfileTableViewCell() {
-        subContentView.shadowStyle(radius: 10, color: .black, offset: CGSize(width: 0, height: 10), opacity: 0.6)
+        subContentViewOutlet.shadowStyle(radius: 10, color: .black, offset: CGSize(width: 0, height: 10), opacity: 0.6)
     }
 }

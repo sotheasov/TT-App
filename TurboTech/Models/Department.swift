@@ -15,6 +15,13 @@ enum Position {
     case HR
 }
 
+enum Attendance {
+    case Present
+    case Late
+    case Total
+    case Absence
+}
+
 enum Sale {
     case Product
     case Pop

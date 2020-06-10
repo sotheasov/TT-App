@@ -85,9 +85,19 @@
 		10E7F393247B86950082901F /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E7F392247B86950082901F /* FeedBackViewController.swift */; };
 		A909CA9B2474C03D00546CFC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A909CA992474C03D00546CFC /* LoginViewController.swift */; };
 		A909CA9C2474C03D00546CFC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A909CA9A2474C03D00546CFC /* LoginViewController.xib */; };
+		A91706E3248B2CBF00E23655 /* InsideAttendanceOverallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91706E1248B2CBF00E23655 /* InsideAttendanceOverallTableViewCell.swift */; };
+		A91706E4248B2CBF00E23655 /* InsideAttendanceOverallTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91706E2248B2CBF00E23655 /* InsideAttendanceOverallTableViewCell.xib */; };
+		A92A231E248795750095D4A9 /* CustomAnimationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A231D248795750095D4A9 /* CustomAnimationStyle.swift */; };
+		A92A23242487A3120095D4A9 /* TotalAttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A23232487A3120095D4A9 /* TotalAttendanceViewController.swift */; };
+		A93E8EEC248F796A00A8D450 /* Attendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E8EEB248F796A00A8D450 /* Attendance.swift */; };
+		A93E8EF0248F7B9400A8D450 /* AttandanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E8EEF248F7B9400A8D450 /* AttandanceService.swift */; };
+		A93E8EF2248F7BA600A8D450 /* AttandanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E8EF1248F7BA600A8D450 /* AttandanceViewModel.swift */; };
 		A960AC21247DFD0B00E844E2 /* DepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960AC1F247DFD0B00E844E2 /* DepartmentTableViewCell.swift */; };
 		A960AC22247DFD0B00E844E2 /* DepartmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A960AC20247DFD0B00E844E2 /* DepartmentTableViewCell.xib */; };
 		A960AC24247E082400E844E2 /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A960AC23247E082400E844E2 /* DepartmentViewController.swift */; };
+		A979FB4224889DE300A1F580 /* InsideAttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A979FB4124889DE300A1F580 /* InsideAttendanceViewController.swift */; };
+		A993554A2488E991006F060C /* InsideAttendanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99355482488E991006F060C /* InsideAttendanceTableViewCell.swift */; };
+		A993554B2488E991006F060C /* InsideAttendanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99355492488E991006F060C /* InsideAttendanceTableViewCell.xib */; };
 		A9B0AF58247E64CF002FB5B6 /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B0AF57247E64CF002FB5B6 /* AttendanceViewController.swift */; };
 		A9B0AF5B247E6567002FB5B6 /* AttendanceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B0AF59247E6567002FB5B6 /* AttendanceCollectionViewCell.swift */; };
 		A9B0AF5C247E6567002FB5B6 /* AttendanceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9B0AF5A247E6567002FB5B6 /* AttendanceCollectionViewCell.xib */; };
@@ -188,9 +198,19 @@
 		5D159C71FC16C93B21108A19 /* Pods-TurboTech.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TurboTech.debug.xcconfig"; path = "Target Support Files/Pods-TurboTech/Pods-TurboTech.debug.xcconfig"; sourceTree = "<group>"; };
 		A909CA992474C03D00546CFC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A909CA9A2474C03D00546CFC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		A91706E1248B2CBF00E23655 /* InsideAttendanceOverallTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideAttendanceOverallTableViewCell.swift; sourceTree = "<group>"; };
+		A91706E2248B2CBF00E23655 /* InsideAttendanceOverallTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsideAttendanceOverallTableViewCell.xib; sourceTree = "<group>"; };
+		A92A231D248795750095D4A9 /* CustomAnimationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationStyle.swift; sourceTree = "<group>"; };
+		A92A23232487A3120095D4A9 /* TotalAttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAttendanceViewController.swift; sourceTree = "<group>"; };
+		A93E8EEB248F796A00A8D450 /* Attendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attendance.swift; sourceTree = "<group>"; };
+		A93E8EEF248F7B9400A8D450 /* AttandanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttandanceService.swift; sourceTree = "<group>"; };
+		A93E8EF1248F7BA600A8D450 /* AttandanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttandanceViewModel.swift; sourceTree = "<group>"; };
 		A960AC1F247DFD0B00E844E2 /* DepartmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewCell.swift; sourceTree = "<group>"; };
 		A960AC20247DFD0B00E844E2 /* DepartmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartmentTableViewCell.xib; sourceTree = "<group>"; };
 		A960AC23247E082400E844E2 /* DepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentViewController.swift; sourceTree = "<group>"; };
+		A979FB4124889DE300A1F580 /* InsideAttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideAttendanceViewController.swift; sourceTree = "<group>"; };
+		A99355482488E991006F060C /* InsideAttendanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideAttendanceTableViewCell.swift; sourceTree = "<group>"; };
+		A99355492488E991006F060C /* InsideAttendanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsideAttendanceTableViewCell.xib; sourceTree = "<group>"; };
 		A9B0AF57247E64CF002FB5B6 /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
 		A9B0AF59247E6567002FB5B6 /* AttendanceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceCollectionViewCell.swift; sourceTree = "<group>"; };
 		A9B0AF5A247E6567002FB5B6 /* AttendanceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttendanceCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -315,6 +335,12 @@
 				A9B0AF57247E64CF002FB5B6 /* AttendanceViewController.swift */,
 				A9B0AF59247E6567002FB5B6 /* AttendanceCollectionViewCell.swift */,
 				A9B0AF5A247E6567002FB5B6 /* AttendanceCollectionViewCell.xib */,
+				A979FB4124889DE300A1F580 /* InsideAttendanceViewController.swift */,
+				A99355482488E991006F060C /* InsideAttendanceTableViewCell.swift */,
+				A99355492488E991006F060C /* InsideAttendanceTableViewCell.xib */,
+				A91706E1248B2CBF00E23655 /* InsideAttendanceOverallTableViewCell.swift */,
+				A91706E2248B2CBF00E23655 /* InsideAttendanceOverallTableViewCell.xib */,
+				A92A23232487A3120095D4A9 /* TotalAttendanceViewController.swift */,
 			);
 			path = "HR-Attendance";
 			sourceTree = "<group>";
@@ -477,6 +503,7 @@
 				A9D1A34E247786860011E02D /* User.swift */,
 				104AAE2B247E9DE000801A8F /* Department.swift */,
 				10CFC1C6247F63950059AD63 /* Device.swift */,
+				A93E8EEB248F796A00A8D450 /* Attendance.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -497,6 +524,7 @@
 		10BE73CD247365F5001EFD43 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A93E8EED248F7B4C00A8D450 /* AttendanceService */,
 				104AAE2D247E9E5200801A8F /* DepartmentService */,
 				10BBF922247CFDD7008DCF3A /* SaleService */,
 				108848C2247CA40E0034579A /* HelpDeskService */,
@@ -509,6 +537,7 @@
 		10BE73CE247365FB001EFD43 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				A93E8EEE248F7B5500A8D450 /* AttendanceViewModel */,
 				104AAE2E247E9E5B00801A8F /* DepartmentViewModel */,
 				10BBF923247CFDE3008DCF3A /* SaleViewModel */,
 				108848C3247CA42D0034579A /* HelpDeskViewModel */,
@@ -563,6 +592,7 @@
 				A909CA992474C03D00546CFC /* LoginViewController.swift */,
 				A909CA9A2474C03D00546CFC /* LoginViewController.xib */,
 				A9BF341A2480CE6B001FAC3A /* AViewController.swift */,
+				A92A231D248795750095D4A9 /* CustomAnimationStyle.swift */,
 			);
 			path = "About Us";
 			sourceTree = "<group>";
@@ -637,6 +667,22 @@
 				CB386C5446682C36934D3A76 /* Pods-TurboTech.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A93E8EED248F7B4C00A8D450 /* AttendanceService */ = {
+			isa = PBXGroup;
+			children = (
+				A93E8EEF248F7B9400A8D450 /* AttandanceService.swift */,
+			);
+			path = AttendanceService;
+			sourceTree = "<group>";
+		};
+		A93E8EEE248F7B5500A8D450 /* AttendanceViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A93E8EF1248F7BA600A8D450 /* AttandanceViewModel.swift */,
+			);
+			path = AttendanceViewModel;
 			sourceTree = "<group>";
 		};
 		A9D1A34824777BC10011E02D /* LoginService */ = {
@@ -733,11 +779,13 @@
 				108848D0247CB9150034579A /* FAQsTableViewCell.xib in Resources */,
 				104AAE22247E9A4E00801A8F /* DepartmentStoryboard.storyboard in Resources */,
 				10D17EF82476203E0095E0AF /* Quicksand Regular 400.ttf in Resources */,
+				A993554B2488E991006F060C /* InsideAttendanceTableViewCell.xib in Resources */,
 				A960AC22247DFD0B00E844E2 /* DepartmentTableViewCell.xib in Resources */,
 				10BE73C4247365A4001EFD43 /* LaunchScreen.storyboard in Resources */,
 				1045AA26247B55E3003A79E9 /* PackageDetailHeaderView.xib in Resources */,
 				104AAE30247E9E8100801A8F /* department.json in Resources */,
 				10CFC1D4247F6EAC0059AD63 /* DeviceHeaderView.xib in Resources */,
+				A91706E4248B2CBF00E23655 /* InsideAttendanceOverallTableViewCell.xib in Resources */,
 				10D17EF72476203E0095E0AF /* Quicksand Bold 700.ttf in Resources */,
 				1006D83224766226000892ED /* tbt icon.xcassets in Resources */,
 				10BE73F024737293001EFD43 /* LocationsStoryboard.storyboard in Resources */,
@@ -821,9 +869,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A93E8EF0248F7B9400A8D450 /* AttandanceService.swift in Sources */,
 				10E7F391247B7D380082901F /* WebApplicationViewController.swift in Sources */,
 				1006D83024763C1A000892ED /* CustomizeSize.swift in Sources */,
 				10CFC1BF247F49670059AD63 /* SaleTableViewController.swift in Sources */,
+				A979FB4224889DE300A1F580 /* InsideAttendanceViewController.swift in Sources */,
 				10D17EF0247619E10095E0AF /* ProductViewController.swift in Sources */,
 				108848CF247CB9150034579A /* FAQsTableViewCell.swift in Sources */,
 				105226FA247E2382007B7B29 /* SpeedTestViewController.swift in Sources */,
@@ -850,14 +900,18 @@
 				A9BF341B2480CE6B001FAC3A /* AViewController.swift in Sources */,
 				100556C42473912B00B1F8BF /* APIManager.swift in Sources */,
 				10BE73E924737186001EFD43 /* LocationViewController.swift in Sources */,
+				A93E8EEC248F796A00A8D450 /* Attendance.swift in Sources */,
 				105226FC247E59F8007B7B29 /* PopLocationViewController.swift in Sources */,
 				A9B0AF5B247E6567002FB5B6 /* AttendanceCollectionViewCell.swift in Sources */,
 				A9D1A34D24777BED0011E02D /* LoginViewModel.swift in Sources */,
+				A93E8EF2248F7BA600A8D450 /* AttandanceViewModel.swift in Sources */,
 				1006D83A247672F6000892ED /* ProductViewModel.swift in Sources */,
 				10BE73E424736EDA001EFD43 /* AboutUsViewController.swift in Sources */,
 				103F3E512477B55900367024 /* PackageDetailTableViewCell.swift in Sources */,
+				A993554A2488E991006F060C /* InsideAttendanceTableViewCell.swift in Sources */,
 				10BBF925247CFDF8008DCF3A /* SaleService.swift in Sources */,
 				108848C7247CA4560034579A /* HelpDeskViewModel.swift in Sources */,
+				A91706E3248B2CBF00E23655 /* InsideAttendanceOverallTableViewCell.swift in Sources */,
 				10BE73BC247365A4001EFD43 /* ViewController.swift in Sources */,
 				104AAE2C247E9DE000801A8F /* Department.swift in Sources */,
 				10BBF921247CFCCA008DCF3A /* POP.swift in Sources */,
@@ -868,6 +922,7 @@
 				10BE73B8247365A4001EFD43 /* AppDelegate.swift in Sources */,
 				105226F7247E1E5E007B7B29 /* CustomizeNavTab.swift in Sources */,
 				A909CA9B2474C03D00546CFC /* LoginViewController.swift in Sources */,
+				A92A23242487A3120095D4A9 /* TotalAttendanceViewController.swift in Sources */,
 				1006D83424767152000892ED /* Product.swift in Sources */,
 				A9B0AF58247E64CF002FB5B6 /* AttendanceViewController.swift in Sources */,
 				1006D8362476715D000892ED /* Package.swift in Sources */,
@@ -883,6 +938,7 @@
 				A9D18D12247B854A00ADE51B /* ProfileTableViewCell.swift in Sources */,
 				A960AC21247DFD0B00E844E2 /* DepartmentTableViewCell.swift in Sources */,
 				101FE96E24767EDF005AB106 /* PackageViewController.swift in Sources */,
+				A92A231E248795750095D4A9 /* CustomAnimationStyle.swift in Sources */,
 				10D17EFC247624930095E0AF /* SubMenuTableViewCell.swift in Sources */,
 				1006D83E24767322000892ED /* ProductService.swift in Sources */,
 				A9D1A34B24777BE10011E02D /* LoginService.swift in Sources */,

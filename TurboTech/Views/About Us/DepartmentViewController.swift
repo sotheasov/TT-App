@@ -11,7 +11,7 @@ import UIKit
 class DepartmentViewController: UIViewController {
     
     // IBOutlet of DepartmentViewController
-    @IBOutlet weak var departmentTableView: UITableView!
+    @IBOutlet weak var departmentTableViewOutlet: UITableView!
     
     // Declare Variable
 //    let data = ["Information", "Department", "Language", "Logout"]
@@ -19,14 +19,17 @@ class DepartmentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        departmentTableView.delegate = self
-        departmentTableView.dataSource = self
+        // Call Function
+        registerTableViewCell()
         
+    }
+    
+    func registerTableViewCell() {
         // Close Table Footer
-        departmentTableView.tableFooterView = UIView()
-        
-        // Register Department TableViewCell
-        departmentTableView.register(UINib(nibName: "DepartmentTableViewCell", bundle: nil), forCellReuseIdentifier: "departmentCellItem")
+        departmentTableViewOutlet.tableFooterView = UIView()
+        departmentTableViewOutlet.register(UINib(nibName: "DepartmentTableViewCell", bundle: nil), forCellReuseIdentifier: "departmentCellItem")
+        departmentTableViewOutlet.delegate = self
+        departmentTableViewOutlet.dataSource = self
     }
 }
 
@@ -45,10 +48,9 @@ extension DepartmentViewController: UITableViewDataSource, UITableViewDelegate {
         let selection = indexPath.row
         switch selection {
         case 0:
-//            print("0 : ", selection)
-            let attendance = storyboard?.instantiateViewController(withIdentifier: "AttendanceViewControllerID") as! AttendanceViewController
+            let attendanceVC = storyboard?.instantiateViewController(withIdentifier: "AttendanceViewControllerID") as! AttendanceViewController
 //            self.present(attendance, animated: false, completion: nil)
-            self.showDetailViewController(attendance, sender: nil)
+            self.showDetailViewController(attendanceVC, sender: nil)
 //            self.navigationController?.pushViewController(attendance, animated: true)
         case 1:
             print(selection)
