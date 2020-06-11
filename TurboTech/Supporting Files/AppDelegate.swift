@@ -14,6 +14,7 @@ import GoogleMaps
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     static let position : Position = .Admin
+    static var isLogin : Bool = false
     
     let MAP_API_KEY = "AIzaSyBmftqoMbNwOoSqoe0EW9xnuSEhjlizAHQ"
     var window: UIWindow?
@@ -29,13 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = TAB.SELECTED_COLOR
 //        UITabBar.appearance().backgroundColor = UIColor.white
         UITabBar.appearance().unselectedItemTintColor = TAB.UNSELECTED_COLOR.withAlphaComponent(TAB.UISELECTED_ALPHA)
-//        UITabBarItem.appearance().setTitleTextAttributes([
+        UITabBarItem.appearance().setTitleTextAttributes([
 //            NSAttributedString.Key.foregroundColor: COLOR.WHITE,
-//                NSAttributedString.Key.font: UIFont(descriptor: UIFontDescriptor(fontAttributes: [
-//                    UIFontDescriptor.AttributeName.textStyle: UIFont.TextStyle.headline,
-//                    UIFontDescriptor.AttributeName.name: UIFontDescriptor(name: "Quicksand-bold", size: 14)
-//                ]), size: 14)
-//        ], for: .normal)
+                NSAttributedString.Key.font: UIFont(descriptor: UIFontDescriptor(fontAttributes: [
+                    UIFontDescriptor.AttributeName.textStyle: UIFont.TextStyle.headline,
+                    UIFontDescriptor.AttributeName.name: UIFontDescriptor(name: "Quicksand-Bold", size: 12)
+                ]), size: 12)
+        ], for: .normal)
         
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.barTintColor = COLOR.RED

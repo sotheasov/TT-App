@@ -8,47 +8,52 @@
 
 import UIKit
 import iOSDropDown
+import CoreLocation
 
 class RegisterServiceViewController: UIViewController {
-
-    @IBOutlet weak var scrollView: UIScrollView!
     
+    let lang = LanguageManager.shared.language
+    
+    // MARK: - View Model
+    lazy var crmViewModel = CRMViewModel()
+    lazy var saleViewModel = SaleViewModel()
+    lazy var locationManager = CLLocationManager()
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
-//    @IBOutlet weak var genderTextField: DropDown!
     @IBOutlet weak var genderButton: UIButton!
     
-    
+    // MARK: - inputStyle -> PickerView
     @IBOutlet weak var provinceTextField: UITextField!
     @IBOutlet weak var districtTextField: UITextField!
     @IBOutlet weak var communeTextField: UITextField!
     @IBOutlet weak var villageTextField: UITextField!
     @IBOutlet weak var homeStreetTextField: UITextField!
     
-    
+    // MARK: - Button
     @IBOutlet weak var chooseProductButton: UIButton!
     @IBOutlet weak var shareLocationButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
-    
-    let lang = LanguageManager.shared.language
     var isShared = false
     var isMale = true
+    var packageId : Int?
+    var packageName : String?
     
-//    var pickerData = ["PS", "PP", "SR", "BTB"]
+    // MARK: - Storing each address
     var addressList = [Address]()
     var provinceList = [Address]()
     var districtList = [Address]()
     var communeList = [Address]()
     var villageList = [Address]()
-//    var id : String = ""
+    
     var proId : Int?
     var disId : Int?
     var comId : Int?
     var vilId : Int?
     let picker = UIPickerView()
-    let saleViewModel = SaleViewModel()
     var activeTextField = UITextField()
     
     override func viewDidLoad() {
@@ -103,6 +108,8 @@ class RegisterServiceViewController: UIViewController {
         
         picker.dataSource = self
         picker.delegate = self
+        
+        print("VIEW DO ")
     }
     
     @objc func donePicker(_ sender : UIBarButtonItem){
@@ -115,6 +122,16 @@ class RegisterServiceViewController: UIViewController {
         isShared = !isShared
         if isShared {
             shareLocationButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            locationManager.requestWhenInUseAuthorization()
+            var currentLoc: CLLocation!
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+            if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() == .authorizedAlways) {
+               currentLoc = locationManager.location
+               print(currentLoc.coordinate.latitude)
+               print(currentLoc.coordinate.longitude)
+            }
         } else {
             shareLocationButton.setImage(UIImage(systemName: "square"), for: .normal)
         }
@@ -136,33 +153,133 @@ class RegisterServiceViewController: UIViewController {
     @IBAction func choosePackagePress(_ sender: Any) {
         let choosePackageVC = storyboard?.instantiateViewController(identifier: "PackageCRMViewControllerID") as! PackageCRMViewController
         choosePackageVC.modalPresentationStyle = .overCurrentContext
+        if let selected = packageId {
+            choosePackageVC.oldSelected = selected
+        }
+        choosePackageVC.onDoneBlock = { id, name in
+            self.packageId = id
+            self.packageName = name
+            self.chooseProductButton.setTitle(self.packageName, for: .normal)
+            self.chooseProductButton.setTitleColor(UIColor.white, for: .normal)
+            self.chooseProductButton.tintColor = .white
+            self.chooseProductButton.backgroundColor = .systemTeal
+            self.chooseProductButton.layer.borderColor = UIColor.white.cgColor
+        }
         self.present(choosePackageVC, animated: true, completion: nil)
     }
     
     @IBAction func registerPress(_ sender: Any) {
         guard let fname = firstNameTextField.text, let lname = lastNameTextField.text /*, let email = emailTextField.text*/, let phone = phoneNumberTextField.text else { return }
+//        let province = provinceTextField.text, let district = districtTextField.text, let commune = communeTextField.text, let village = villageTextField.text
+        
         let gray = UIColor.gray.cgColor
         let red = UIColor.red.cgColor
+        
         firstNameTextField.layer.borderColor = gray
         lastNameTextField.layer.borderColor = gray
         phoneNumberTextField.layer.borderColor = gray
+        provinceTextField.layer.borderColor = gray
+        districtTextField.layer.borderColor = gray
+        communeTextField.layer.borderColor = gray
+        villageTextField.layer.borderColor = gray
+        chooseProductButton.setTitleColor(UIColor.white, for: .normal)
+        chooseProductButton.tintColor = .white
+        chooseProductButton.backgroundColor = .systemTeal
+        chooseProductButton.layer.borderColor = UIColor.white.cgColor
+        
         let isValidateFirstName = Validaton.shared.validationName(name: fname)
         if !isValidateFirstName {
             firstNameTextField.layer.borderColor = red
         }
+        
         let isValidateLastName = Validaton.shared.validationName(name: lname)
         if !isValidateLastName {
             lastNameTextField.layer.borderColor = red
         }
+        
         let isValidationPhone = Validaton.shared.validaPhoneNumber(phoneNumber: phone)
         if !isValidationPhone {
             phoneNumberTextField.layer.borderColor = red
         }
+        var isValidVillage = false
+        var postVilId : String = ""
+        if let _ = proId {
+            if let _ = disId {
+                if let _ = comId {
+                    if let vId = vilId {
+                        postVilId = villageList[vId].gazcode
+                        isValidVillage = true
+                    } else {
+                        villageTextField.layer.borderColor = red
+                    }
+                } else {
+                    communeTextField.layer.borderColor = red
+                    villageTextField.layer.borderColor = red
+                }
+            }
+            else {
+                districtTextField.layer.borderColor = red
+                communeTextField.layer.borderColor = red
+                villageTextField.layer.borderColor = red
+            }
+        } else {
+            provinceTextField.layer.borderColor = red
+            districtTextField.layer.borderColor = red
+            communeTextField.layer.borderColor = red
+            villageTextField.layer.borderColor = red
+        }
         
-        if isValidateFirstName && isValidateLastName && isValidationPhone {
+        print(postVilId)
+        var isValidPackage = false
+        if let packId = packageId {
+            print("my package id : ", packId)
+            isValidPackage = true
+        } else {
+            chooseProductButton.setTitleColor(UIColor.red, for: .normal)
+            chooseProductButton.tintColor = .red
+            chooseProductButton.backgroundColor = .white
+            chooseProductButton.layer.borderColor = red
+            chooseProductButton.layer.borderWidth = 1.0
+        }
+        
+        // MARK: - Everything can post request URL
+        if isValidateFirstName && isValidateLastName && isValidationPhone && isValidVillage && isValidPackage {
             print("CAN POST REGISTER, BUT NEED SELLER NAME")
+            let register = RegisterPackageCRM(fname: fname, lname: lname, email: "", phone: phone, latlong: nil, homeNStreetN: nil, packageId: "\(packageId ?? 0)", villageId: postVilId, userName: "monyoudom.bun")
+            DispatchQueue.main.async {
+                self.crmViewModel.postRegisterPackageCRM(registerPackageCRM: register) { (message) in
+                    self.showAndDismissAlert(title: message, message: message, style: .alert, second: 1.5)
+                    print("-------->>> \(message)")
+                    self.clearDataWhenDone()
+                }
+            }
+        } else {
+            print(isValidateFirstName, isValidateLastName, isValidationPhone, isValidVillage, isValidPackage)
         }
     }
+    
+    func clearDataWhenDone(){
+        firstNameTextField.text = nil
+        lastNameTextField.text = nil
+        emailTextField.text = nil
+        phoneNumberTextField.text = nil
+        provinceTextField.text = nil
+        districtTextField.text = nil
+        communeTextField.text = nil
+        villageTextField.text = nil
+        homeStreetTextField.text = nil
+        chooseProductButton.setTitle("choose our internet package".localized, for: .normal)
+        shareLocationButton.setImage(UIImage(systemName: "square"), for: .normal)
+        isShared = false
+        isMale = true
+        packageId = nil
+        packageName = nil
+        proId = nil
+        disId = nil
+        comId = nil
+        vilId = nil
+    }
+    
 }
 
 extension UITextField {
@@ -255,6 +372,7 @@ extension RegisterServiceViewController : UIPickerViewDelegate, UIPickerViewData
 }
 
 extension RegisterServiceViewController : UITextFieldDelegate {
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         activeTextField = textField
         
@@ -345,7 +463,6 @@ extension RegisterServiceViewController : UITextFieldDelegate {
             }
         }
     }
-    
 
     func addDoneButtonOnKeyboard() {
         let toolBar = UIToolbar()
@@ -395,4 +512,5 @@ extension RegisterServiceViewController : UITextFieldDelegate {
 //            self.view.frame.origin.y = 0
 //        }
     }
+    
 }

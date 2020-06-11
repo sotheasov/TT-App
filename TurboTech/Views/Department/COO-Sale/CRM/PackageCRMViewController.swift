@@ -12,11 +12,15 @@ class PackageCRMViewController: UIViewController {
     
 //    @IBOutlet var pressedGesture: UITapGestureRecognizer!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var doneView: UIView!
     lazy var crmViewModel = CRMViewModel()
     var packageList = [CRMPackage]()
     var filterPackageList = [CRMPackage]()
-    var onDoneBlock : ((Int) -> Void)?
+    var onDoneBlock : ((_ id : Int, _ name : String) -> Void)?
     var selectedID : Int?
+    var oldSelected : Int? 
+    
+    @IBOutlet weak var doneButton: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -32,17 +36,24 @@ class PackageCRMViewController: UIViewController {
         DispatchQueue.main.async {
             self.crmViewModel.fetchRegisterPackage { (packageList) in
                 self.packageList = packageList
+                if let oldId = self.oldSelected {
+                    self.setSelected(id: oldId)
+                }
+                
                 self.tableView.reloadData()
                 print("PACKAGE WORK")
             }
         }
         setupSearchBar()
+        doneButton.setTitle("done".localized, for: .normal)
+        containerView.layer.cornerRadius = SIZE.RADIUS_CARD
+        doneView.layer.cornerRadius = SIZE.RADIUS_CARD
     }
     
     func setupSearchBar(){
         let searchBar = UISearchBar()
         searchBar.searchBarStyle = .prominent
-        searchBar.placeholder = "Search Package ..."
+        searchBar.placeholder = "search package ...".localized
         searchBar.sizeToFit()
         searchBar.isTranslucent = false
         searchBar.backgroundImage = UIImage()
@@ -52,7 +63,9 @@ class PackageCRMViewController: UIViewController {
     
     @IBAction func donePressed(_ sender : UIButton){
         self.dismiss(animated: true) {
-            print("DONE")
+            if let id = self.selectedID {
+                self.onDoneBlock!(id, self.getPackageName(id: id))
+            }
         }
     }
     
@@ -97,6 +110,10 @@ extension PackageCRMViewController : UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
+        if let oldId = oldSelected {
+            removeSelected(id: oldId)
+            oldSelected = nil
+        }
         if let id = selectedID {
             removeSelected(id: id)
         }
@@ -120,6 +137,28 @@ extension PackageCRMViewController : UITableViewDelegate, UITableViewDataSource 
             }
             c += 1
         }
+    }
+    
+    func setSelected(id : Int){
+        var c = 0
+        for package in packageList {
+            if package.id == id {
+                packageList[c].isSelected = true
+                return
+            }
+            c += 1
+        }
+    }
+    
+    func getPackageName(id : Int) -> String{
+        var c = 0
+        for package in packageList {
+            if package.id == id {
+                return packageList[c].name
+            }
+            c += 1
+        }
+        return "NOT FOUND"
     }
      
     

@@ -16,4 +16,10 @@ class CRMViewModel {
             completion(packageList)
         }
     }
+    
+    func postRegisterPackageCRM (registerPackageCRM crm : RegisterPackageCRM, completion : @escaping(_ packageList : String)->()){
+        crmService.postRegisterPackageCRM(registerPackageCRM: crm) { (str) in
+            completion(str)
+        }
+    }
 }

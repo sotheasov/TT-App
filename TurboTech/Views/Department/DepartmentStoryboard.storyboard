@@ -314,7 +314,7 @@
                                 <rect key="frame" x="32" y="60" width="256" height="448"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XqI-tR-1EE">
-                                        <rect key="frame" x="8" y="36" width="240" height="412"/>
+                                        <rect key="frame" x="8" y="36" width="240" height="396"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMg-dG-0Ei">
@@ -345,7 +345,7 @@
                                 <constraints>
                                     <constraint firstItem="EMg-dG-0Ei" firstAttribute="leading" secondItem="w69-hK-1Nt" secondAttribute="leading" id="18Q-qE-lna"/>
                                     <constraint firstAttribute="trailing" secondItem="XqI-tR-1EE" secondAttribute="trailing" constant="8" id="9hE-Gt-MLr"/>
-                                    <constraint firstAttribute="bottom" secondItem="XqI-tR-1EE" secondAttribute="bottom" id="BPa-rj-4af"/>
+                                    <constraint firstAttribute="bottom" secondItem="XqI-tR-1EE" secondAttribute="bottom" constant="16" id="BPa-rj-4af"/>
                                     <constraint firstAttribute="trailing" secondItem="EMg-dG-0Ei" secondAttribute="trailing" id="Dsf-H6-zKO"/>
                                     <constraint firstItem="XqI-tR-1EE" firstAttribute="leading" secondItem="w69-hK-1Nt" secondAttribute="leading" constant="8" id="bIy-bZ-p0a"/>
                                     <constraint firstItem="EMg-dG-0Ei" firstAttribute="top" secondItem="w69-hK-1Nt" secondAttribute="top" id="cOP-gU-IZx"/>
@@ -365,6 +365,8 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="containerView" destination="w69-hK-1Nt" id="Grd-4P-yYW"/>
+                        <outlet property="doneButton" destination="IBv-7w-GCx" id="jK2-OL-ubw"/>
+                        <outlet property="doneView" destination="EMg-dG-0Ei" id="ynh-71-NKt"/>
                         <outlet property="tableView" destination="XqI-tR-1EE" id="t6h-UP-Rhj"/>
                     </connections>
                 </viewController>

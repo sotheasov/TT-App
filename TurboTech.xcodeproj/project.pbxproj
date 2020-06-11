@@ -21,7 +21,6 @@
 		1006D83E24767322000892ED /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1006D83D24767322000892ED /* ProductService.swift */; };
 		1006D84024767330000892ED /* ProductServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1006D83F24767330000892ED /* ProductServiceDelegate.swift */; };
 		101FE96E24767EDF005AB106 /* PackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101FE96D24767EDF005AB106 /* PackageViewController.swift */; };
-		10200A31248D353A0024F086 /* TTTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10200A30248D353A0024F086 /* TTTabBarViewController.swift */; };
 		10200A34248E162E0024F086 /* RegisterServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10200A33248E162E0024F086 /* RegisterServiceViewController.swift */; };
 		10200A36248E3D6A0024F086 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10200A35248E3D6A0024F086 /* Address.swift */; };
 		102A77122488F06600A657AD /* InternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102A77112488F06600A657AD /* InternetConnection.swift */; };
@@ -73,6 +72,18 @@
 		10BE73F3247372BF001EFD43 /* AboutUsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BE73F2247372BF001EFD43 /* AboutUsStoryboard.storyboard */; };
 		10BE73F6247372FC001EFD43 /* MessageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10BE73F5247372FC001EFD43 /* MessageStoryboard.storyboard */; };
 		10BE73F824737309001EFD43 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BE73F724737309001EFD43 /* MessageViewController.swift */; };
+		10C0B85324920CDA00D105FC /* Battambang-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10C0B85124920CDA00D105FC /* Battambang-Regular.ttf */; };
+		10C0B85424920CDA00D105FC /* Battambang-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10C0B85224920CDA00D105FC /* Battambang-Bold.ttf */; };
+		10C0B85A24920CE600D105FC /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10C0B85524920CE600D105FC /* Quicksand-Regular.ttf */; };
+		10C0B85B24920CE600D105FC /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10C0B85624920CE600D105FC /* Quicksand-Light.ttf */; };
+		10C0B85C24920CE600D105FC /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10C0B85724920CE600D105FC /* Quicksand-Bold.ttf */; };
+		10C0B85D24920CE600D105FC /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10C0B85824920CE600D105FC /* Quicksand-Medium.ttf */; };
+		10C0B85E24920CE600D105FC /* Quicksand-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10C0B85924920CE600D105FC /* Quicksand-SemiBold.ttf */; };
+		10C0B8602492131B00D105FC /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C0B85F2492131B00D105FC /* Font.swift */; };
+		10C0B864249219B800D105FC /* Hanuman-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10C0B862249219B700D105FC /* Hanuman-Bold.ttf */; };
+		10C0B865249219B800D105FC /* Hanuman-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10C0B863249219B800D105FC /* Hanuman-Regular.ttf */; };
+		10C0B8672492202E00D105FC /* LoginMonitorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C0B8662492202E00D105FC /* LoginMonitorViewController.swift */; };
+		10C0B869249224F300D105FC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C0B868249224F300D105FC /* MainViewController.swift */; };
 		10CFC1BF247F49670059AD63 /* SaleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFC1BE247F49670059AD63 /* SaleTableViewController.swift */; };
 		10CFC1C1247F49710059AD63 /* FinanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFC1C0247F49710059AD63 /* FinanceTableViewController.swift */; };
 		10CFC1C5247F53120059AD63 /* DeviceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFC1C4247F53120059AD63 /* DeviceTableViewController.swift */; };
@@ -84,10 +95,6 @@
 		10CFC1D9247FA9820059AD63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 10CFC1DB247FA9820059AD63 /* Localizable.strings */; };
 		10CFC1DE247FAA390059AD63 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFC1DD247FAA390059AD63 /* LanguageManager.swift */; };
 		10D17EF0247619E10095E0AF /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D17EEF247619E10095E0AF /* ProductViewController.swift */; };
-		10D17EF62476203E0095E0AF /* Quicksand Medium 500.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10D17EF22476203E0095E0AF /* Quicksand Medium 500.ttf */; };
-		10D17EF72476203E0095E0AF /* Quicksand Bold 700.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10D17EF32476203E0095E0AF /* Quicksand Bold 700.ttf */; };
-		10D17EF82476203E0095E0AF /* Quicksand Regular 400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10D17EF42476203E0095E0AF /* Quicksand Regular 400.ttf */; };
-		10D17EF92476203E0095E0AF /* Quicksand Light 300.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10D17EF52476203E0095E0AF /* Quicksand Light 300.ttf */; };
 		10D17EFC247624930095E0AF /* SubMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D17EFA247624930095E0AF /* SubMenuTableViewCell.swift */; };
 		10D17EFD247624930095E0AF /* SubMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10D17EFB247624930095E0AF /* SubMenuTableViewCell.xib */; };
 		10E7F38D247B73360082901F /* HelpDeskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E7F38C247B73360082901F /* HelpDeskViewController.swift */; };
@@ -137,7 +144,6 @@
 		1006D83D24767322000892ED /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		1006D83F24767330000892ED /* ProductServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductServiceDelegate.swift; sourceTree = "<group>"; };
 		101FE96D24767EDF005AB106 /* PackageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageViewController.swift; sourceTree = "<group>"; };
-		10200A30248D353A0024F086 /* TTTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTabBarViewController.swift; sourceTree = "<group>"; };
 		10200A33248E162E0024F086 /* RegisterServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterServiceViewController.swift; sourceTree = "<group>"; };
 		10200A35248E3D6A0024F086 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		102A77112488F06600A657AD /* InternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
@@ -189,6 +195,18 @@
 		10BE73F2247372BF001EFD43 /* AboutUsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutUsStoryboard.storyboard; sourceTree = "<group>"; };
 		10BE73F5247372FC001EFD43 /* MessageStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageStoryboard.storyboard; sourceTree = "<group>"; };
 		10BE73F724737309001EFD43 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		10C0B85124920CDA00D105FC /* Battambang-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Battambang-Regular.ttf"; sourceTree = "<group>"; };
+		10C0B85224920CDA00D105FC /* Battambang-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Battambang-Bold.ttf"; sourceTree = "<group>"; };
+		10C0B85524920CE600D105FC /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
+		10C0B85624920CE600D105FC /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
+		10C0B85724920CE600D105FC /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
+		10C0B85824920CE600D105FC /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Medium.ttf"; sourceTree = "<group>"; };
+		10C0B85924920CE600D105FC /* Quicksand-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-SemiBold.ttf"; sourceTree = "<group>"; };
+		10C0B85F2492131B00D105FC /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		10C0B862249219B700D105FC /* Hanuman-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hanuman-Bold.ttf"; sourceTree = "<group>"; };
+		10C0B863249219B800D105FC /* Hanuman-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hanuman-Regular.ttf"; sourceTree = "<group>"; };
+		10C0B8662492202E00D105FC /* LoginMonitorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMonitorViewController.swift; sourceTree = "<group>"; };
+		10C0B868249224F300D105FC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		10CFC1BE247F49670059AD63 /* SaleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleTableViewController.swift; sourceTree = "<group>"; };
 		10CFC1C0247F49710059AD63 /* FinanceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceTableViewController.swift; sourceTree = "<group>"; };
 		10CFC1C4247F53120059AD63 /* DeviceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewController.swift; sourceTree = "<group>"; };
@@ -207,10 +225,6 @@
 		10CFC1E6247FB2010059AD63 /* km */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = km; path = km.lproj/Main.strings; sourceTree = "<group>"; };
 		10CFC1E7247FB20E0059AD63 /* km */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = km; path = km.lproj/Localizable.strings; sourceTree = "<group>"; };
 		10D17EEF247619E10095E0AF /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
-		10D17EF22476203E0095E0AF /* Quicksand Medium 500.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Medium 500.ttf"; sourceTree = "<group>"; };
-		10D17EF32476203E0095E0AF /* Quicksand Bold 700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Bold 700.ttf"; sourceTree = "<group>"; };
-		10D17EF42476203E0095E0AF /* Quicksand Regular 400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Regular 400.ttf"; sourceTree = "<group>"; };
-		10D17EF52476203E0095E0AF /* Quicksand Light 300.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand Light 300.ttf"; sourceTree = "<group>"; };
 		10D17EFA247624930095E0AF /* SubMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMenuTableViewCell.swift; sourceTree = "<group>"; };
 		10D17EFB247624930095E0AF /* SubMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubMenuTableViewCell.xib; sourceTree = "<group>"; };
 		10E7F38C247B73360082901F /* HelpDeskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDeskViewController.swift; sourceTree = "<group>"; };
@@ -619,7 +633,7 @@
 				10BE73C2247365A4001EFD43 /* LaunchScreen.storyboard */,
 				10BE73BB247365A4001EFD43 /* ViewController.swift */,
 				10BE73BD247365A4001EFD43 /* Main.storyboard */,
-				10200A30248D353A0024F086 /* TTTabBarViewController.swift */,
+				10C0B868249224F300D105FC /* MainViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -650,6 +664,7 @@
 				A909CA9A2474C03D00546CFC /* LoginViewController.xib */,
 				A9BF341A2480CE6B001FAC3A /* AViewController.swift */,
 				A92A231D248795750095D4A9 /* CustomAnimationStyle.swift */,
+				10C0B8662492202E00D105FC /* LoginMonitorViewController.swift */,
 			);
 			path = "About Us";
 			sourceTree = "<group>";
@@ -686,6 +701,36 @@
 			path = Messages;
 			sourceTree = "<group>";
 		};
+		10C0B84F24920CB500D105FC /* QuickSand */ = {
+			isa = PBXGroup;
+			children = (
+				10C0B85724920CE600D105FC /* Quicksand-Bold.ttf */,
+				10C0B85624920CE600D105FC /* Quicksand-Light.ttf */,
+				10C0B85824920CE600D105FC /* Quicksand-Medium.ttf */,
+				10C0B85524920CE600D105FC /* Quicksand-Regular.ttf */,
+				10C0B85924920CE600D105FC /* Quicksand-SemiBold.ttf */,
+			);
+			path = QuickSand;
+			sourceTree = "<group>";
+		};
+		10C0B85024920CBD00D105FC /* Battambang */ = {
+			isa = PBXGroup;
+			children = (
+				10C0B85224920CDA00D105FC /* Battambang-Bold.ttf */,
+				10C0B85124920CDA00D105FC /* Battambang-Regular.ttf */,
+			);
+			path = Battambang;
+			sourceTree = "<group>";
+		};
+		10C0B861249219A300D105FC /* Hanuman */ = {
+			isa = PBXGroup;
+			children = (
+				10C0B862249219B700D105FC /* Hanuman-Bold.ttf */,
+				10C0B863249219B800D105FC /* Hanuman-Regular.ttf */,
+			);
+			path = Hanuman;
+			sourceTree = "<group>";
+		};
 		10CFC1C8247F67CF0059AD63 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -700,10 +745,10 @@
 		10D17EF12476203E0095E0AF /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				10D17EF22476203E0095E0AF /* Quicksand Medium 500.ttf */,
-				10D17EF32476203E0095E0AF /* Quicksand Bold 700.ttf */,
-				10D17EF42476203E0095E0AF /* Quicksand Regular 400.ttf */,
-				10D17EF52476203E0095E0AF /* Quicksand Light 300.ttf */,
+				10C0B85F2492131B00D105FC /* Font.swift */,
+				10C0B85024920CBD00D105FC /* Battambang */,
+				10C0B861249219A300D105FC /* Hanuman */,
+				10C0B84F24920CB500D105FC /* QuickSand */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -829,30 +874,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				A909CA9C2474C03D00546CFC /* LoginViewController.xib in Resources */,
+				10C0B85D24920CE600D105FC /* Quicksand-Medium.ttf in Resources */,
 				10BE73F6247372FC001EFD43 /* MessageStoryboard.storyboard in Resources */,
-				10D17EF92476203E0095E0AF /* Quicksand Light 300.ttf in Resources */,
 				10BE73EC247371FA001EFD43 /* HomeStoryboard.storyboard in Resources */,
+				10C0B865249219B800D105FC /* Hanuman-Regular.ttf in Resources */,
 				10CFC1D9247FA9820059AD63 /* Localizable.strings in Resources */,
 				1077A06B24908C250062EBFB /* PackageCRMCellTableViewCell.xib in Resources */,
 				108848D0247CB9150034579A /* FAQsTableViewCell.xib in Resources */,
 				104AAE22247E9A4E00801A8F /* DepartmentStoryboard.storyboard in Resources */,
-				10D17EF82476203E0095E0AF /* Quicksand Regular 400.ttf in Resources */,
 				A993554B2488E991006F060C /* InsideAttendanceTableViewCell.xib in Resources */,
 				A960AC22247DFD0B00E844E2 /* DepartmentTableViewCell.xib in Resources */,
+				10C0B85B24920CE600D105FC /* Quicksand-Light.ttf in Resources */,
+				10C0B85A24920CE600D105FC /* Quicksand-Regular.ttf in Resources */,
 				10BE73C4247365A4001EFD43 /* LaunchScreen.storyboard in Resources */,
 				1045AA26247B55E3003A79E9 /* PackageDetailHeaderView.xib in Resources */,
 				104AAE30247E9E8100801A8F /* department.json in Resources */,
 				10CFC1D4247F6EAC0059AD63 /* DeviceHeaderView.xib in Resources */,
+				10C0B864249219B800D105FC /* Hanuman-Bold.ttf in Resources */,
 				A91706E4248B2CBF00E23655 /* InsideAttendanceOverallTableViewCell.xib in Resources */,
-				10D17EF72476203E0095E0AF /* Quicksand Bold 700.ttf in Resources */,
+				10C0B85C24920CE600D105FC /* Quicksand-Bold.ttf in Resources */,
+				10C0B85E24920CE600D105FC /* Quicksand-SemiBold.ttf in Resources */,
 				1006D83224766226000892ED /* tbt icon.xcassets in Resources */,
 				10BE73F024737293001EFD43 /* LocationsStoryboard.storyboard in Resources */,
 				10D17EFD247624930095E0AF /* SubMenuTableViewCell.xib in Resources */,
 				10BE73F3247372BF001EFD43 /* AboutUsStoryboard.storyboard in Resources */,
 				A9B0AF5C247E6567002FB5B6 /* AttendanceCollectionViewCell.xib in Resources */,
 				10BE73C1247365A4001EFD43 /* Assets.xcassets in Resources */,
+				10C0B85324920CDA00D105FC /* Battambang-Regular.ttf in Resources */,
 				108848D4247CB91E0034579A /* FAQsTableViewHeader.xib in Resources */,
-				10D17EF62476203E0095E0AF /* Quicksand Medium 500.ttf in Resources */,
+				10C0B85424920CDA00D105FC /* Battambang-Bold.ttf in Resources */,
 				10CFC1CC247F67EF0059AD63 /* DeviceTableViewCell.xib in Resources */,
 				A9D18D13247B854A00ADE51B /* ProfileTableViewCell.xib in Resources */,
 				10BE73BF247365A4001EFD43 /* Main.storyboard in Resources */,
@@ -933,8 +983,10 @@
 				1006D83024763C1A000892ED /* CustomizeSize.swift in Sources */,
 				10CFC1BF247F49670059AD63 /* SaleTableViewController.swift in Sources */,
 				A979FB4224889DE300A1F580 /* InsideAttendanceViewController.swift in Sources */,
+				10C0B8672492202E00D105FC /* LoginMonitorViewController.swift in Sources */,
 				10D17EF0247619E10095E0AF /* ProductViewController.swift in Sources */,
 				108848CF247CB9150034579A /* FAQsTableViewCell.swift in Sources */,
+				10C0B8602492131B00D105FC /* Font.swift in Sources */,
 				105226FA247E2382007B7B29 /* SpeedTestViewController.swift in Sources */,
 				1089359D248F667A00D8CF84 /* RequestCRM.swift in Sources */,
 				10670006247E0240002E283E /* UserLocationViewController.swift in Sources */,
@@ -948,8 +1000,8 @@
 				10CFC1DE247FAA390059AD63 /* LanguageManager.swift in Sources */,
 				102D3961249098470039BC3E /* CRMService.swift in Sources */,
 				10CFC1C5247F53120059AD63 /* DeviceTableViewController.swift in Sources */,
+				10C0B869249224F300D105FC /* MainViewController.swift in Sources */,
 				100556C224738BD500B1F8BF /* Colors.swift in Sources */,
-				10200A31248D353A0024F086 /* TTTabBarViewController.swift in Sources */,
 				1077A067249087690062EBFB /* PackageCRMViewController.swift in Sources */,
 				108848D6247CB9430034579A /* FAQsTableViewHeader.swift in Sources */,
 				108848D8247CBADD0034579A /* SupportQuestion.swift in Sources */,

@@ -27,4 +27,30 @@ class CRMService {
             completion(packageList)
         }
     }
+    
+    func postRegisterPackageCRM (registerPackageCRM crm : RegisterPackageCRM, completion : @escaping(_ packageList : String)->()){
+        let parameters = [
+            "staff_name": "\(crm.userName ?? "monyoudom.bun")",
+            "fname": "\(crm.fname ?? "")",
+            "lname": "\(crm.lname ?? "")",
+            "phone": "\(crm.phone ?? "")",
+            "package": "\(crm.packageId ?? "")",
+            "village": "\(crm.villageId ?? "")",
+            "email": "\(crm.email ?? "")",
+            "latlong": "\(crm.latlong ?? "")",
+            "address": "\(crm.homeNStreetN ?? "")"
+        ]
+        AF.request(APIManager.CRM.POST_REGISTER_PACKAGE, method: .post , parameters: parameters).response { (response) in
+            guard let data = response.data else { return }
+            let json = try? JSON(data: data)
+            if let json = json {
+                print(json["MESSAGE"].stringValue)
+                completion(json["MESSAGE"].stringValue)
+            } else {
+                print("FUCK YOU")
+                completion("Fuck You")
+            }
+            
+        }
+    }
 }
