@@ -5,7 +5,7 @@
 //  Created by Sov Sothea on 6/4/20.
 //  Copyright © 2020 TurboTech. All rights reserved.
 //
-
+/*
 import UIKit
 
 // MARK: - Complete header view, overall cell, late controller view.
@@ -190,3 +190,4 @@ extension InsideAttendanceViewController: UITableViewDelegate, UITableViewDataSo
     
     
 }
+*/

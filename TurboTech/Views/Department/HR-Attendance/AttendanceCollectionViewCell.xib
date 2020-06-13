@@ -65,6 +65,7 @@
             <size key="customSize" width="206" height="282"/>
             <connections>
                 <outlet property="coverAttendanceViewCellOutlet" destination="lPg-c5-wiu" id="tGZ-a8-0ip"/>
+                <outlet property="lbNameAttendanceBoxOutlet" destination="VbR-E5-Rr9" id="0Mk-Dq-1w1"/>
                 <outlet property="leadingCoverConstraintOutlet" destination="C29-ng-cRX" id="SeU-7J-EX2"/>
                 <outlet property="numberAttendanceLabelOutlet" destination="s1j-m3-cxk" id="d0P-Fe-mcp"/>
                 <outlet property="profileCellImageViewOutlet" destination="eKi-gl-Xps" id="xSS-HM-bfh"/>

@@ -13,6 +13,7 @@ class AttendanceViewController: UIViewController {
     
     // IBOutlet of AttendanceViewController
     @IBOutlet weak var attendanceProfileImageViewOutlet: UIImageView!
+    @IBOutlet weak var lbOverView: UILabel!
     @IBOutlet weak var btnBackAttendanceOutlet: UIButton!
     @IBOutlet weak var lbTopAttendanceOutlet: UILabel!
     @IBOutlet weak var lbBottomAttendanceOutlet: UILabel!
@@ -35,8 +36,18 @@ class AttendanceViewController: UIViewController {
         // Call Function
         customAttendanceViewController()
         registerCollectionViewCell()
+        getCurrentDateTime()
+        getSingle()
         
-        let date = "2020-06-09"
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-M-dd"
+        // "yyyy-M-dd"
+        // 2020-01-01
+        // Jan 01, 2020
+        
+        let str = formatter.string(from: Date())
+        print("TOT API : ", str)
+        let date = str
         DispatchQueue.main.async {
             self.attandanceViewModel.fetchPresentAttandance(date: date) { (presentList) in
                 self.data[0] = presentList.count
@@ -57,8 +68,6 @@ class AttendanceViewController: UIViewController {
                 self.overallList = overallList
             }
         }
-        
-//        setCollectionLayout()
     }
     
     override func viewDidLayoutSubviews() {
@@ -78,6 +87,25 @@ class AttendanceViewController: UIViewController {
         cellLayout.numberOfColumns = 2
     }
     
+    func getCurrentDateTime(){
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM dd, yyyy"
+        // "yyyy-M-dd"
+        // 2020-01-01
+        // Jan 01, 2020
+        let str = formatter.string(from: Date())
+        lbOverView.text = str
+    }
+    
+    func getSingle(){
+        let date = Date()
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        print("\(year):\(month):\(day)")
+    }
+    
     func customAttendanceViewController() {
         attendanceProfileImageViewOutlet.layer.cornerRadius = attendanceProfileImageViewOutlet.frame.height/2
         attendanceProfileImageViewOutlet.layer.borderWidth = 3
@@ -86,6 +114,7 @@ class AttendanceViewController: UIViewController {
         btnBackAttendanceOutlet.shadowStyle(radius: 3, color: .black, offset: CGSize(width: -0.5, height: 3), opacity: 0.8)
         lbTopAttendanceOutlet.textColor = COLOR.COLOR_PRESENT
         lbBottomAttendanceOutlet.textColor = COLOR.COLOR_PRESENT
+        
     }
     
     // Action Button
@@ -109,6 +138,7 @@ extension AttendanceViewController: UICollectionViewDataSource, UICollectionView
             cell.coverAttendanceViewCellOutlet.backgroundColor = COLOR.COLOR_LATE
             cell.trailingCoverConstraintOutlet.constant = 32
             cell.leadingCoverConstraintOutlet.constant = 10
+            
         }
         else {
             cell.coverAttendanceViewCellOutlet.backgroundColor = COLOR.COLOR_ABSENCE
@@ -128,38 +158,31 @@ extension AttendanceViewController: UICollectionViewDataSource, UICollectionView
             print("Got clicked on index: \(index)!")
             switch index.item {
             case 0:
-                print("Present")
-                let insideAttendanceVC = storyboard?.instantiateViewController(withIdentifier: "InsideAttendanceViewControllerID") as! InsideAttendanceViewController
-                insideAttendanceVC.presentationType = .present
-                insideAttendanceVC.overallData = overallList
-                insideAttendanceVC.presentData = presentList
-//                insideAttendanceVC.presentData = self.my_datadel_fetch_present
-//                insideAttendanceVC.overallData = self.my_data_del_fetch_overall
-                insideAttendanceVC.modalPresentationStyle = .fullScreen
-                self.showDetailViewController(insideAttendanceVC, sender: nil)
-                self.navigationController?.pushViewController(insideAttendanceVC, animated: true)
+                let presentAttendanceVC = storyboard?.instantiateViewController(withIdentifier: "PresentAttendanceViewControllerID") as! PresentAttendanceViewController
+                presentAttendanceVC.modalPresentationStyle = .fullScreen
+                presentAttendanceVC.presentList = presentList
+                presentAttendanceVC.overallList = overallList
+                self.showDetailViewController(presentAttendanceVC, sender: nil)
+                self.navigationController?.pushViewController(presentAttendanceVC, animated: true)
             case 1:
-                print("Late")
-                let insideAttendanceVC = storyboard?.instantiateViewController(withIdentifier: "InsideAttendanceViewControllerID") as! InsideAttendanceViewController
-                insideAttendanceVC.presentationType = .late
-                insideAttendanceVC.overallData = overallList
-                insideAttendanceVC.presentData = lateList
-                insideAttendanceVC.modalPresentationStyle = .fullScreen
-                self.showDetailViewController(insideAttendanceVC, sender: nil)
-                self.navigationController?.pushViewController(insideAttendanceVC, animated: true)
+                let lateAttendanceVC = storyboard?.instantiateViewController(withIdentifier: "LateAttendanceViewControllerID") as! LateAttendanceViewController
+                lateAttendanceVC.modalPresentationStyle = .fullScreen
+                lateAttendanceVC.lateList = lateList
+                lateAttendanceVC.overallList = overallList
+                self.showDetailViewController(lateAttendanceVC, sender: nil)
+                self.navigationController?.pushViewController(lateAttendanceVC, animated: true)
             case 2:
-                print("Total")
                 let totalVC = storyboard?.instantiateViewController(withIdentifier: "TotalAttendanceViewControllerID") as! TotalAttendanceViewController
                 totalVC.modalPresentationStyle = .fullScreen
                 self.showDetailViewController(totalVC, sender: nil)
                 self.navigationController?.pushViewController(totalVC, animated: true)
             case 3:
-                print("Absence")
-                let insideAttendanceVC = storyboard?.instantiateViewController(withIdentifier: "InsideAttendanceViewControllerID") as! InsideAttendanceViewController
-                insideAttendanceVC.presentationType = .absence
-                insideAttendanceVC.modalPresentationStyle = .fullScreen
-                self.showDetailViewController(insideAttendanceVC, sender: nil)
-                self.navigationController?.pushViewController(insideAttendanceVC, animated: true)
+                let absenceAttendanceVC = storyboard?.instantiateViewController(withIdentifier: "AbsenceAttendanceViewControllerID") as! AbsenceAttendanceViewController
+                absenceAttendanceVC.modalPresentationStyle = .fullScreen
+                absenceAttendanceVC.absenceList = absenceList
+                absenceAttendanceVC.overallList = overallList
+                self.showDetailViewController(absenceAttendanceVC, sender: nil)
+                self.navigationController?.pushViewController(absenceAttendanceVC, animated: true)
                 
             default:
                 print("")
@@ -167,6 +190,56 @@ extension AttendanceViewController: UICollectionViewDataSource, UICollectionView
         }
     }
 }
+
+    
+    
+//    @objc
+//    func tap(_ sender: UITapGestureRecognizer) {
+//        let location = sender.location(in: self.attendanceCollectionViewOutlet)
+//        let indexPath = self.attendanceCollectionViewOutlet.indexPathForItem(at: location)
+//        if let index = indexPath {
+//            print("Got clicked on index: \(index)!")
+//            switch index.item {
+//            case 0:
+//                print("Present")
+//                let insideAttendanceVC = storyboard?.instantiateViewController(withIdentifier: "InsideAttendanceViewControllerID") as! InsideAttendanceViewController
+//                insideAttendanceVC.presentationType = .present
+//                insideAttendanceVC.overallData = overallList
+//                insideAttendanceVC.presentData = presentList
+////                insideAttendanceVC.presentData = self.my_datadel_fetch_present
+////                insideAttendanceVC.overallData = self.my_data_del_fetch_overall
+//                insideAttendanceVC.modalPresentationStyle = .fullScreen
+//                self.showDetailViewController(insideAttendanceVC, sender: nil)
+//                self.navigationController?.pushViewController(insideAttendanceVC, animated: true)
+//            case 1:
+//                print("Late")
+//                let insideAttendanceVC = storyboard?.instantiateViewController(withIdentifier: "InsideAttendanceViewControllerID") as! InsideAttendanceViewController
+//                insideAttendanceVC.presentationType = .late
+//                insideAttendanceVC.overallData = overallList
+//                insideAttendanceVC.presentData = lateList
+//                insideAttendanceVC.modalPresentationStyle = .fullScreen
+//                self.showDetailViewController(insideAttendanceVC, sender: nil)
+//                self.navigationController?.pushViewController(insideAttendanceVC, animated: true)
+//            case 2:
+//                print("Total")
+//                let totalVC = storyboard?.instantiateViewController(withIdentifier: "TotalAttendanceViewControllerID") as! TotalAttendanceViewController
+//                totalVC.modalPresentationStyle = .fullScreen
+//                self.showDetailViewController(totalVC, sender: nil)
+//                self.navigationController?.pushViewController(totalVC, animated: true)
+//            case 3:
+//                print("Absence")
+//                let insideAttendanceVC = storyboard?.instantiateViewController(withIdentifier: "InsideAttendanceViewControllerID") as! InsideAttendanceViewController
+//                insideAttendanceVC.presentationType = .absence
+//                insideAttendanceVC.modalPresentationStyle = .fullScreen
+//                self.showDetailViewController(insideAttendanceVC, sender: nil)
+//                self.navigationController?.pushViewController(insideAttendanceVC, animated: true)
+//
+//            default:
+//                print("")
+//            }
+//        }
+//    }
+//}
 
 extension AttendanceViewController : PinterestLayoutDelegate {
     func collectionView(collectionView: UICollectionView, heightForImageAtIndexPath indexPath: IndexPath, withWidth: CGFloat) -> CGFloat {

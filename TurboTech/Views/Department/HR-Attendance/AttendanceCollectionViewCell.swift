@@ -10,8 +10,8 @@ import UIKit
 
 class AttendanceCollectionViewCell: UICollectionViewCell {
     
-    
     // IBOutlet of AttendanceCollectionViewCell
+    @IBOutlet weak var lbNameAttendanceBoxOutlet: UILabel!
     @IBOutlet weak var leadingCoverConstraintOutlet: NSLayoutConstraint!
     @IBOutlet weak var trailingCoverConstraintOutlet: NSLayoutConstraint!
     @IBOutlet weak var coverAttendanceViewCellOutlet: UIView!
@@ -25,6 +25,7 @@ class AttendanceCollectionViewCell: UICollectionViewCell {
         customAttendanceCollectionViewCell()
     }
     
+    
     func customAttendanceCollectionViewCell() {
         coverAttendanceViewCellOutlet.layer.cornerRadius = 10
         coverAttendanceViewCellOutlet.shadowStyle(radius: 4, color: .black, offset: CGSize(width: -0.5, height: 3), opacity: 0.8)
@@ -32,6 +33,8 @@ class AttendanceCollectionViewCell: UICollectionViewCell {
         profileCellImageViewOutlet.layer.cornerRadius = profileCellImageViewOutlet.frame.height/2
         profileCellImageViewOutlet.layer.borderWidth = 2
         profileCellImageViewOutlet.layer.borderColor = COLOR.COLOR_PRESENT.cgColor
+        
+        
     }
 }
 

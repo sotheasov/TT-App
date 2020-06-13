@@ -5,7 +5,7 @@
 //  Created by Sov Sothea on 6/4/20.
 //  Copyright © 2020 TurboTech. All rights reserved.
 //
-
+/*
 import UIKit
 
 class InsideAttendanceTableViewCell: UITableViewCell {
@@ -68,4 +68,4 @@ class InsideAttendanceTableViewCell: UITableViewCell {
     
 }
 
-
+ */
