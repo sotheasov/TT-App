@@ -67,4 +67,19 @@ class HelpDeskService{
             handler(FAQsList)
         }
     }
+    
+    func fetchProblemType(completionHandler : @escaping(_ problemList : [ProblemType])->()){
+        var problemList = [ProblemType]()
+        AF.request("\(APIManager.HELP_DESK.GET_PROBLEM)", method: .get, headers: headers).response{(response) in
+            guard let data = response.data else {return}
+            if let jsons = try? JSON(data: data){
+                for json in jsons["result"].arrayValue {
+                    let type = ProblemType(json: json)
+                    problemList.append(type)
+                }
+            }
+            completionHandler(problemList)
+        }
+    }
+    
 }

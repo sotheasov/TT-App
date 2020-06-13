@@ -8,11 +8,11 @@
 
 import Foundation
 
-enum Position {
-    case Sale
-    case Admin
-    case Finance
-    case HR
+enum Position : String {
+    case Sale = "Sale"
+    case Admin = "Admin"
+    case Finance = "Finance"
+    case HR = "HR"
 }
 
 enum Attendance {

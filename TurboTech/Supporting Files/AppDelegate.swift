@@ -9,11 +9,13 @@
 import UIKit
 import GooglePlaces
 import GoogleMaps
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    static let position : Position = .Admin
+//    static let position : Position = .Admin
+    static var user : User?
     
     let MAP_API_KEY = "AIzaSyBmftqoMbNwOoSqoe0EW9xnuSEhjlizAHQ"
     var window: UIWindow?
@@ -25,11 +27,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             LanguageManager.shared.language = "km"
         }
         
+        if UserDefaults.standard.bool(forKey: "isLogin") {
+            let loginViewModel = LoginViewModel()
+            loginViewModel.fetchCurrentUser()
+        }
+        
+//        if UserDefaults.standard.bool(forKey: "isLogin") == nil {
+//            UserDefaults.standard.set(false, forKey: "isLogin")
+//        }
+        
+//        if UserDefaults.standard.bool(forKey: "isLogin") {
+//            let decoded = UserDefaults.standard.data(forKey: "curUser")
+//            if let decode = decoded {
+//                print("work decode")
+//                AppDelegate.user = try? NSKeyedUnarchiver.unarchivedObject(ofClass: User.self, from: decode)
+//            } else {
+//                print("not work decode")
+//                UserDefaults.standard.set(false, forKey: "isLogin")
+//            }
+//        }
+        
         UITabBar.appearance().barTintColor = TAB.COLOR
         UITabBar.appearance().tintColor = TAB.SELECTED_COLOR
 //        UITabBar.appearance().backgroundColor = UIColor.white
         UITabBar.appearance().unselectedItemTintColor = TAB.UNSELECTED_COLOR.withAlphaComponent(TAB.UISELECTED_ALPHA)
-        
+        UITabBarItem.appearance().setTitleTextAttributes([
+//            NSAttributedString.Key.foregroundColor: COLOR.WHITE,
+                NSAttributedString.Key.font: UIFont(descriptor: UIFontDescriptor(fontAttributes: [
+                    UIFontDescriptor.AttributeName.textStyle: UIFont.TextStyle.headline,
+                    UIFontDescriptor.AttributeName.name: UIFontDescriptor(name: "Quicksand-Bold", size: 12)
+                ]), size: 12)
+        ], for: .normal)
         
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.barTintColor = COLOR.RED
@@ -48,18 +76,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        if let tabBarController = self.window!.rootViewController as? UITabBarController {
 //            tabBarController.selectedIndex = 1
 //        }
-        
+        FirebaseApp.configure()
         return true
     }
 
     // MARK: UISceneSession Lifecycle
 
+    @available(iOS 13.0, *)
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being crreated.
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
+    @available(iOS 13.0, *)
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.

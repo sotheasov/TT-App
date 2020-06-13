@@ -11,48 +11,89 @@ import iOSDropDown
 
 class FeedBackViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var problemTypeLabel: UILabel!
+    @IBOutlet weak var problemDetailLabel: UILabel!
+    
     @IBOutlet weak var complainTypeDropDown: DropDown!
     @IBOutlet weak var complainTextView: UITextView!
     @IBOutlet weak var submitButton: UIButton!
+
+    let lang = LanguageManager.shared.language
+    var ids = [Int]()
+    var titlesKh = [String]()
+    var titlesEn = [String]()
     
-    let selectOption = ["Internet", "Payment", "Human Resources", "Service"]
-    
+//    let selectOption = ["Internet", "Payment", "Human Resources", "Service"]
+    var problemTypeList = [ProblemType]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        localized()
+        fetchData()
 //        complainTypeTextField.delegate = self
-        complainTextView.delegate = self
-        complainTypeDropDown.optionArray = selectOption
-        complainTypeDropDown.selectedRowColor = .red
-        complainTypeDropDown.selectedIndex = 0
-        submitButton.setTitle("Submit", for: .highlighted)
-        submitButton.layer.cornerRadius = SIZE.RADIUS_BUTTON
-        complainTextView.layer.cornerRadius = SIZE.RADIUS_CARD
-        complainTypeDropDown.layer.cornerRadius = SIZE.RADIUS
+        
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 //
 //        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
 //
 //        view.addGestureRecognizer(tap)
-        complainTypeDropDown.didSelect{(selectedText , index ,id) in
-//            print("WROK")
-//            complain.setType(type: self.selectOption[index])
-            self.complainTypeDropDown.text = "selectedText"
-            self.complainTypeDropDown.tag = index
-//            selected = true
+    }
+
+    func localized(){
+        titleLabel.text = "problem complain".localized
+        problemTypeLabel.text = "problem type".localized
+        problemDetailLabel.text = "problem detail".localized
+        submitButton.setTitle("submit".localized, for: .normal)
+    }
+    
+    func fetchData(){
+        let helpDeskViewModel = HelpDeskViewModel()
+        DispatchQueue.main.async {
+            helpDeskViewModel.fetchProblemType { (problemTypes) in
+                self.problemTypeList = problemTypes
+                self.setupDropDown()
+                print(problemTypes.count)
+            }
         }
     }
+    
+    func setupDropDown(){
+        complainTextView.delegate = self
+//        complainTypeDropDown.optionArray = selectOption
+        for type in self.problemTypeList {
+            ids.append(type.id)
+            titlesEn.append(type.nameEn)
+            titlesKh.append(type.nameKh)
+        }
+//        complainTypeDropDown.optionIds = ids
+        complainTypeDropDown.text = lang == "en" ? titlesEn[0] : titlesKh[0]
+        complainTypeDropDown.optionArray = lang == "en" ? titlesEn : titlesKh
+        complainTypeDropDown.selectedRowColor = .red
+        complainTypeDropDown.selectedIndex = 0
+        submitButton.setTitle("Submit", for: .highlighted)
+        submitButton.layer.cornerRadius = SIZE.RADIUS_BUTTON
+        complainTextView.layer.cornerRadius = SIZE.RADIUS_CARD
+        complainTypeDropDown.layer.cornerRadius = SIZE.RADIUS
+
+        complainTypeDropDown.didSelect{(selectedText , index ,id) in
+            self.complainTypeDropDown.text = ""//.localized
+            self.complainTypeDropDown.tag = index
+        }
+    }
+    
     @IBAction func submitComplainPress(_ sender: Any) {
         let helpDeskViewModel = HelpDeskViewModel()
         let complain = UserComplain(type: "", question: "")
-        complain.setType(type: self.selectOption[self.complainTypeDropDown.tag])
+        complain.setType(type: self.titlesEn[self.complainTypeDropDown.tag])
         complain.setQuestion(question: complainTextView.text ?? "")
         print("user text : ", complain.question)
         
         DispatchQueue.main.async {
             helpDeskViewModel.postComplainMessage(complain: complain) { (message) in
-                print("Post comment : ", message)
-                self.showAndDismissAlert(title: "\(complain.type) Problem", message: message, style: .alert, second: 2)
+                let shMsg = self.lang == "en" ? "\(self.titlesEn[self.complainTypeDropDown.tag]) " + "problem".localized : "problem".localized + " \(self.titlesKh[self.complainTypeDropDown.tag])"
+                self.showAndDismissAlert(title: shMsg, message: message.localized, style: .alert, second: 2)
+                print(message)
             }
         }
     }
@@ -134,6 +175,15 @@ extension FeedBackViewController : UITextViewDelegate {
 
 extension UIViewController {
     func showAndDismissAlert(title : String?, message : String?, style : UIAlertController.Style, second : Double){
+        let ac = UIAlertController(title: title, message: message, preferredStyle: style)
+        present(ac, animated: true)
+        let time = DispatchTime.now() + second//second
+        DispatchQueue.main.asyncAfter(deadline: time) {
+            self.dismiss(animated: true) { }
+        }
+    }
+    
+    func showAndDismissAlert(_ target : UIViewController, title : String?, message : String?, style : UIAlertController.Style, second : Double){
         let ac = UIAlertController(title: title, message: message, preferredStyle: style)
         present(ac, animated: true)
         let time = DispatchTime.now() + second//second

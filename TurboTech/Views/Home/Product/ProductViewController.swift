@@ -9,7 +9,9 @@
 import UIKit
 
 class ProductViewController: UIViewController {
-
+    
+    let lang = LanguageManager.shared.language
+    
     lazy var productList : [Product] = []
     lazy var productViewModel = ProductViewModel()
     
@@ -83,7 +85,7 @@ extension ProductViewController : UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.cellForRow(at: indexPath)
             let packageVC = storyboard?.instantiateViewController(withIdentifier: "PackageViewControllerID") as! PackageViewController
             packageVC.modalPresentationStyle = .fullScreen
-            packageVC.setNavigationTitle(title: productList[indexPath.row].nameEn)
+            packageVC.setNavigationTitle(title: lang == "en" ? productList[indexPath.row].nameEn : productList[indexPath.row].nameKh)
             packageVC.setPackageId(id: cell!.tag)
             self.navigationController?.pushViewController(packageVC, animated: true)
         case 2:
@@ -97,7 +99,8 @@ extension ProductViewController : UITableViewDelegate, UITableViewDataSource {
             }
             else if indexPath.row == 1 {
                 print("FAQs")
-                let FAQsVC = storyboard?.instantiateViewController(identifier: "FAQsTableViewControllerID") as! FAQsTableViewController
+                let FAQsVC = storyboard?.instantiateViewController(withIdentifier: "FAQsTableViewControllerID") as! FAQsTableViewController
+                FAQsVC.navigationItem.title = lang == "en" ? productList[indexPath.row].nameEn : productList[indexPath.row].nameKh
                 FAQsVC.modalPresentationStyle = .fullScreen
                 self.navigationController?.pushViewController(FAQsVC, animated: true)
                 

@@ -9,14 +9,23 @@
 import UIKit
 
 class AViewController: UINavigationController {
-
+    
+    static let shared = AViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        isLoginSucceed(UserDefaults.standard.bool(forKey: "isLogin"))
         
-        let login = storyboard?.instantiateViewController(withIdentifier: "LoginViewControllerID") as! LoginViewController
-        //            login.setNavigationTitle(title: "Logout")
-            self.navigationController?.pushViewController(login, animated: true)
-        // Do any additional setup after loading the view.
+    }
+    
+    func isLoginSucceed(_ status : Bool){
+        if status {
+            let newViewController = storyboard?.instantiateViewController(withIdentifier: "ProfileMainTableViewControllerID") as! ProfileMainTableViewController
+            self.pushViewController(newViewController, animated: true)
+        } else {
+            let newViewController = storyboard?.instantiateViewController(withIdentifier: "LoginViewControllerID") as! LoginViewController
+            self.pushViewController(newViewController, animated: true)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

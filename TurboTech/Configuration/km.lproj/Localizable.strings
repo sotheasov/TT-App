@@ -9,7 +9,7 @@
 // Tab Bar
 "home" = "ទំព័រដើម";
 "location" = "ទីតាំង";
-"receiver" = "ដំណឹង";
+"message" = "ដំណឹង";
 "profile" = "អំពីខ្ញុំ";
 
 // Navigation
@@ -26,12 +26,74 @@
 "logout" = "ចាកចេញ";
 "english" = "​ភាសាអង់គ្លេស";
 "khmer" = "ភាសាខ្មែរ";
+"back" = "ត្រលប់ក្រោយ";
 
 
 "Enable Location Service" = "ដំណើរការ សេវាកម្មទីកន្លែង";
 "Please go to Settings and turn on Location permissions" = "សូមចូលទៅកាន់ កន្លែងផ្លាស់ប្តូរ និងបើកដំណើរការ សេវាកម្មទីកន្លែង";
 "Settings" = "កន្លែងផ្លាស់ប្តូរ";
 
+
 "Cancel" = "បដិសេទ";
 "Cannot Get Current Location" = "មិនអាចទាញយកទីតាំងបច្ចុប្បន្នភាព";
 "Please go to setting and enable it." = "សូមចូលទៅកាន់កន្លែងផ្លាស់ប្តូរ និងបើកដំណើរការ សេវាទីកន្លែង";
+
+// Internet Connection
+"No Internet Connection" = "អ្នកមិនមានការតភ្ជាប់ទេ";
+"Check Your Connection please!" = "សូមភ្ជាប់ទៅកាន់អ៊ីនធឺនេត";
+
+
+// Message
+"Coming Soon" = "មកដល់ឆាប់ៗ";
+
+
+// Customer Service
+"Thanks For Your Us Report Problem" = "អរគុណសម្រាប់ការចូលរួមបញ្ចេញយោបល់";
+"selectedText" = "ជ្រើសរើស បញ្ហា";
+"problem" = "បញ្ហា";
+"problem complain" = "លើកឡើងនូវ បញ្ហា";
+"problem type" = "ប្រភេទនៃបញ្ហា";
+"problem detail" = "បញ្ជាក់បន្ថែមលើបញ្ហា";
+"submit" = "ដាក់ស្នើ";
+
+// CRM
+"first name" = "នាមខ្លួន";
+"last name" = "គោត្តនាម";
+"email" = "អុីម៉ែល";
+"phone number" = "លេខទូរស័ព្ទ";
+"province / city" = "ខេត្ត / ក្រុង";
+"district / khan" = "ស្រុក / ខណ្ឌ";
+"commune / sangkat" = "ឃុំ / សង្កាត់";
+"village" = "ភូមិ";
+"home, street" = "ផ្ទះលេខ / ផ្លូវលេខ";
+"choose our internet package" = "ជ្រើសរើសកញ្ចប់សេវាកម្ម";
+"share location" = "ផ្ញើរទីកន្លែង";
+"register" = "ចុះឈ្មោះ";
+"female" = "ស្រី";
+"male" = "ប្រុស";
+
+// Product
+"apply" = "ដាក់ស្នើរ";
+"done" = "រួចរាល់";
+"search package ..." = "ស្វែងរកសេវាកម្ម ...";
+"register successfully" = "ចុះឈ្មោះបានជោគជ័យ";
+"please try again !" = "សួមព្យាយាមម្តងទៀត";
+
+
+// Profile
+"curLanguage" = "ភាសាខ្មែរ";
+"information" = "ព័ត៌មាន";
+"Sale" = "អ្នកលក់";
+"Admin" = "រដ្ឋបាល";
+"HR" = "ធនធានមនុស្ស";
+"Finance" = "ហិរញ្ញវត្ថុ";
+
+
+// Sale
+"saleProduct" = "ផលិតផល";
+"salePop" = "POP";
+"saleDevice" = "ឧបករណ៍";
+"saleCrm" = "CRM";
+
+// Attendance
+"hello" = "សួស្តី ,";

@@ -28,4 +28,10 @@ class SaleViewModel {
             completionHandler(devices)
         }
     }
+    
+    func fetchAddress(addressType : ADDRESS, id : String?, completionHandler : @escaping(_ addresList : [Address])->()){
+        saleService.fetchAddress(addressType: addressType, id: id) { (list) in
+            completionHandler(list)
+        }
+    }
 }

@@ -48,6 +48,8 @@ enum CONTROLLER {
     static let DEVICE = "DeviceTableViewControllerID"
     static let ATTENDANCE = "AttendanceViewControllerID"
 //    static let = ""
+//    static let ATTENDANCE = "A"
+    static let REGISTER_SERVICE = "RegisterServiceViewControllerID"
 //    static let = ""
 //    static let = ""
 //    static let = ""

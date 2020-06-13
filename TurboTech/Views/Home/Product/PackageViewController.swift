@@ -14,6 +14,8 @@ class PackageViewController: UIViewController {
     lazy var softwareList : [SoftwareSolution] = []
     lazy var productViewModel = ProductViewModel()
     
+    let lang = LanguageManager.shared.language
+    
     private var navItemTitle : String = "Unknown".localized
     private var packageId : Int = 0
     
@@ -89,7 +91,7 @@ extension PackageViewController : UITableViewDelegate, UITableViewDataSource {
         if (packageId == 2 && cell?.tag == 19){
             let packageVC = storyboard?.instantiateViewController(withIdentifier: "PackageViewControllerID") as! PackageViewController
             packageVC.modalPresentationStyle = .fullScreen
-            packageVC.setNavigationTitle(title: packageList[indexPath.row].nameEn)
+            packageVC.setNavigationTitle(title: lang == "en" ? packageList[indexPath.row].nameEn : packageList[indexPath.row].nameKh)
             packageVC.setPackageId(id: 5)
             self.navigationController?.pushViewController(packageVC, animated: true)
         }
@@ -107,7 +109,7 @@ extension PackageViewController : UITableViewDelegate, UITableViewDataSource {
         else {
             let packageVC = storyboard?.instantiateViewController(withIdentifier: "PackageDetailViewControllerID") as! PackageDetailViewController
             packageVC.modalPresentationStyle = .fullScreen
-        packageVC.setNavigationTitle(title: packageList[indexPath.row].nameEn)
+            packageVC.setNavigationTitle(title: lang == "en " ? packageList[indexPath.row].nameEn : packageList[indexPath.row].nameKh)
             packageVC.setPackageId(id: cell!.tag)
             self.navigationController?.pushViewController(packageVC, animated: true)
         }

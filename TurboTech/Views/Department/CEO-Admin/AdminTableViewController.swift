@@ -57,11 +57,11 @@ class AdminTableViewController: UITableViewController {
 //        self.navigationController?.pushViewController(openVC, animated: true)
         switch departmentList[indexPath.row].position! {
         case .Sale :
-            let openVC = storyboard?.instantiateViewController(identifier: CONTROLLER.SALE) as! SaleTableViewController
+            let openVC = storyboard?.instantiateViewController(withIdentifier: CONTROLLER.SALE) as! SaleTableViewController
             openVC.navigationItem.title = departmentList[indexPath.row].name
             self.navigationController?.pushViewController(openVC, animated: true)
         case .Finance :
-            let openVC = storyboard?.instantiateViewController(identifier: CONTROLLER.SALE) as! SaleTableViewController
+            let openVC = storyboard?.instantiateViewController(withIdentifier: CONTROLLER.SALE) as! SaleTableViewController
             openVC.navigationItem.title = departmentList[indexPath.row].name
             self.navigationController?.pushViewController(openVC, animated: true)
         case  .HR:

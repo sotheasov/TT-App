@@ -24,28 +24,26 @@ class LoginService {
 //    }
 //    func userLogin(username : String, handler: @escaping((_ name : String)->())){
 //    }
-    func userLogin(username : String, password : String, handler: @escaping(_ user : User)->Void) {
+    func userLogin(username : String, password : String, handler: @escaping(_ user : User?)->()) {
         var user : User?
         // build parameters
-        let parameters = ["username": "thon", "pass": "111"]
+        let parameters = ["username": username, "pass": password]
 
         // build request
         AF.request(APIManager.LOGIN.POST, method: .post , parameters: parameters).response { (response) in
             guard let data = response.data else { return }
-            let jsons = try? JSON(data: data)
-            if jsons == nil {
-                handler(User())
-                return
+            if let jsons = try? JSON(data: data) {
+                print("Fetch user ban")
+                for json in jsons["result"].arrayValue {
+                    user = User(json: json)
+                }
+            } else {
+                print("fetch user ot ban")
+                user = nil
             }
-            for json in jsons!["result"].arrayValue {
-//                print(json)
-                user = User(json: json)
-            }
-            handler(user!)
+            handler(user)
         }
-        
     }
-    
 }
 
 //protocol LoginServiceDelegate {

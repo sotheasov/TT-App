@@ -9,7 +9,7 @@
 // Tab Bar
 "home" = "Home";
 "location" = "Location";
-"receiver" = "Receiver";
+"message" = "Receiver";
 "profile" = "Profile";
 
 // Navigation
@@ -26,12 +26,74 @@
 "logout" = "Logout";
 "english" = "English";
 "khmer" = "Khmer";
+"back" = "Back";
 
-
+// Location
 "Enable Location Service" = "Enable Location Service";
 "Please go to Settings and turn on Location permissions" = "Please go to Settings and turn on Location permissions";
 "Settings" = "Settings";
 
+
 "Cancel" = "Cancel";
 "Cannot Get Current Location" = "Cannot Get Current Location";
 "Please go to setting and enable it." = "Please go to setting and enable it.";
+
+// Internet Connection
+"No Internet Connection" = "No Internet Connection";
+"Check Your Connection please!" = "Check Your Connection please!";
+
+
+// Message
+"Coming Soon" = "Coming Soon";
+
+
+// Customer Service
+"Thanks For Your Us Report Problem" = "Thanks For Your Us Report Problem";
+"selectedText" = "selectedText";
+"problem" = "Problem";
+"problem complain" = "Problem Complain";
+"problem type" = "Problem Type";
+"problem detail" = "Problem Description";
+"submit" = "Submit";
+
+// CRM
+"first name" = "First Name";
+"last name" = "Last Name";
+"email" = "Email";
+"phone number" = "Phone Number";
+"province / city" = "Province / City";
+"district / khan" = "District / Khan";
+"commune / sangkat" = "Commune / Sangkat";
+"village" = "Village";
+"home, street" = "Home, Street";
+"choose our internet package" = "Choose Our Internet Package";
+"share location" = "Share Location";
+"register" = "Register";
+"female" = "Female";
+"male" = "Male";
+
+// Product
+"apply" = "Apply";
+"done" = "Done";
+"search package ..." = "Search Package ...";
+"register successfully" = "Register Successfully";
+"please try again !" = "Please Try Again !";
+
+
+// Profile
+"curLanguage" = "English";
+"information" = "User Information";
+"Sale" = "Sale";
+"Admin" = "Admin";
+"HR" = "HR";
+"Finance" = "Finance";
+
+
+// Sale
+"saleProduct" = "Product";
+"salePop" = "POP";
+"saleDevice" = "Device";
+"saleCrm" = "CRM";
+
+// Attendance
+"hello" = "Hello ,";

@@ -36,19 +36,20 @@ class PackageDetailTableViewCell: UITableViewCell {
         bodyView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
         applyButton.layer.cornerRadius = SIZE.RADIUS_BUTTON
+        applyButton.setTitle("apply".localized, for: .normal)
         
     }
     
     func setData(package : PackageDetail){
 //        print("Detail setup data")
-        let ln = "EN"
+        let lng = UserDefaults.standard.string(forKey: "LanguageCode")
         self.tag = package.packageId
-        packageTypeLabel.text = ln == "EN" ? package.nameEn : package.nameKh
+        packageTypeLabel.text = lng == "en" ? package.nameEn : package.nameKh
         priceLabel.text = package.price
-        monthLabel.text = (ln == "EN" ? "/ month":"/ ខែ")
+        monthLabel.text = (lng == "en" ? "/ month":"/ ខែ")
         speedLabel.text = package.speed
 //        print(package.detailEn)
-        detailTextView?.text = ln == "EN" ? package.detailEn : package.detailKh
+        detailTextView?.text = lng == "en" ? package.detailEn : package.detailKh
     }
     
 }

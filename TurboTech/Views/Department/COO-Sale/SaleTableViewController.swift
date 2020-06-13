@@ -21,10 +21,10 @@ class SaleTableViewController: UITableViewController {
         func setData() {
             let str = "https://www.turbotech.com/storages/assets/img/img_mobile/15900490041355968.png"
             print("Here Sale")
-            departmentList.append(Department(id: 0, name: "Product", image: str, sale: .Product))
-            departmentList.append(Department(id: 1, name: "POP", image: str, sale: .Pop))
-            departmentList.append(Department(id: 2, name: "Device", image: str, sale: .Device))
-            departmentList.append(Department(id: 3, name: "CRM", image: str, sale: .CRM))
+            departmentList.append(Department(id: 0, name: "saleProduct".localized, image: str, sale: .Product))
+            departmentList.append(Department(id: 1, name: "salePop".localized, image: str, sale: .Pop))
+            departmentList.append(Department(id: 2, name: "saleDevice".localized, image: str, sale: .Device))
+            departmentList.append(Department(id: 3, name: "saleCrm".localized, image: str, sale: .CRM))
         }
 
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,25 +58,28 @@ class SaleTableViewController: UITableViewController {
             switch departmentList[indexPath.row].sale! {
             case .Product :
                 let homeSB = UIStoryboard(name: BOARD.HOME, bundle: nil)
-                let openVC = homeSB.instantiateViewController(identifier: CONTROLLER.PRODUCT) as! ProductViewController
+                let openVC = homeSB.instantiateViewController(withIdentifier: CONTROLLER.PRODUCT) as! ProductViewController
 //                openVC.navigationItem.title = departmentList[indexPath.row].name
                 openVC.setNavigationTitle(title: departmentList[indexPath.row].name)
                 self.navigationController?.pushViewController(openVC, animated: true)
             case .Device :
                 print("Deivice")
                 let homeSB = UIStoryboard(name: BOARD.HOME, bundle: nil)
-                                let openVC = homeSB.instantiateViewController(identifier: CONTROLLER.DEVICE) as! DeviceTableViewController
+                                let openVC = homeSB.instantiateViewController(withIdentifier: CONTROLLER.DEVICE) as! DeviceTableViewController
                 //                openVC.navigationItem.title = departmentList[indexPath.row].name
                 openVC.navigationItem.title = departmentList[indexPath.row].name
                                 self.navigationController?.pushViewController(openVC, animated: true)
             case .Pop :
                 print("POP")
                 let homeSB = UIStoryboard(name: BOARD.HOME, bundle: nil)
-                let locationVC = homeSB.instantiateViewController(identifier: CONTROLLER.POP_LOCATION) as! PopLocationViewController
+                let locationVC = homeSB.instantiateViewController(withIdentifier: CONTROLLER.POP_LOCATION) as! PopLocationViewController
                 locationVC.modalPresentationStyle = .fullScreen
                 self.navigationController?.pushViewController(locationVC, animated: true)
             case .CRM :
                 print("CRM")
+                let crmVC = self.storyboard?.instantiateViewController(withIdentifier: "RegisterServiceViewControllerID") as! RegisterServiceViewController
+                crmVC.modalPresentationStyle = .fullScreen
+                self.navigationController?.pushViewController(crmVC, animated: true)
             }
         }
 }

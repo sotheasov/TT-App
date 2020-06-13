@@ -7,7 +7,8 @@
 //
 
 import Foundation
-
+import UIKit
+// let lang = UserDefaults.standard.string(forKey: "LanguageCode")
 class LanguageManager {
     static let shared = LanguageManager()
     var language : String {
@@ -20,6 +21,16 @@ class LanguageManager {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: "LanguageCode")
+        }
+    }
+    
+    var fontName : String {
+        get {
+            switch language {
+            case "en" : return "QuickSand"
+            case "km" : return "Battambang"
+            default : return "Battambang"
+            }
         }
     }
 }

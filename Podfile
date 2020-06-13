@@ -16,6 +16,9 @@ target 'TurboTech' do
   pod 'GooglePlaces'
   pod 'Google-Maps-iOS-Utils', '~> 3.1.4'
   pod 'Charts'
+  
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
 
   pod 'IBPCollectionViewCompositionalLayout'
   
@@ -30,5 +33,8 @@ target 'TurboTech' do
 
   pod 'SquareFlowLayout'
   # https://github.com/ChernyshenkoTaras/SquareFlowLayout #
+  
+  pod "ATInternet-Apple-SDK/Tracker",">=2.0"
+  # https://github.com/at-internet/atinternet-apple-sdk #
 
 end
