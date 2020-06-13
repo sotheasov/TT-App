@@ -9,6 +9,7 @@
 import UIKit
 import iOSDropDown
 import CoreLocation
+import Kingfisher
 
 class RegisterServiceViewController: UIViewController {
     
@@ -56,6 +57,10 @@ class RegisterServiceViewController: UIViewController {
     let picker = UIPickerView()
     var activeTextField = UITextField()
     
+    let square = UIImage(named: "box")
+    let checked = UIImage(named: "checked.box")
+    let package = UIImage(named: "package-box")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
@@ -86,11 +91,17 @@ class RegisterServiceViewController: UIViewController {
         villageTextField.setDropDownImage()
         homeStreetTextField.customizeRegister()
         
-        chooseProductButton.layer.cornerRadius = chooseProductButton.frame.height / 2
-        registerButton.layer.cornerRadius = registerButton.frame.height / 2
         chooseProductButton.setTitle("choose our internet package".localized, for: .normal)
-        shareLocationButton.setTitle("share location".localized, for: .normal)
+        chooseProductButton.layer.cornerRadius = chooseProductButton.frame.height / 2
+        chooseProductButton.setImage(package, for: .normal)
+        chooseProductButton.imageView?.contentMode = .scaleAspectFit
+        
+        registerButton.layer.cornerRadius = registerButton.frame.height / 2
         registerButton.setTitle("register".localized, for: .normal)
+        
+        shareLocationButton.setTitle("share location".localized, for: .normal)
+        shareLocationButton.setImage(square, for: .normal)
+        shareLocationButton.imageView?.contentMode = .scaleAspectFit
         
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
@@ -121,7 +132,7 @@ class RegisterServiceViewController: UIViewController {
 //        shareLocationButton
         isShared = !isShared
         if isShared {
-            shareLocationButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            shareLocationButton.setImage(checked, for: .normal)
             locationManager.requestWhenInUseAuthorization()
             var currentLoc: CLLocation!
             locationManager.requestAlwaysAuthorization()
@@ -133,7 +144,7 @@ class RegisterServiceViewController: UIViewController {
                print(currentLoc.coordinate.longitude)
             }
         } else {
-            shareLocationButton.setImage(UIImage(systemName: "square"), for: .normal)
+            shareLocationButton.setImage(square, for: .normal)
         }
     }
     
@@ -151,7 +162,7 @@ class RegisterServiceViewController: UIViewController {
     }
     
     @IBAction func choosePackagePress(_ sender: Any) {
-        let choosePackageVC = storyboard?.instantiateViewController(identifier: "PackageCRMViewControllerID") as! PackageCRMViewController
+        let choosePackageVC = storyboard?.instantiateViewController(withIdentifier: "PackageCRMViewControllerID") as! PackageCRMViewController
         choosePackageVC.modalPresentationStyle = .overCurrentContext
         if let selected = packageId {
             choosePackageVC.oldSelected = selected
@@ -243,14 +254,16 @@ class RegisterServiceViewController: UIViewController {
         }
         
         // MARK: - Everything can post request URL
-        if isValidateFirstName && isValidateLastName && isValidationPhone && isValidVillage && isValidPackage {
+        if isValidateFirstName && isValidateLastName /*&& isValidationPhone && isValidVillage && isValidPackage */{
             print("CAN POST REGISTER, BUT NEED SELLER NAME")
             let register = RegisterPackageCRM(fname: fname, lname: lname, email: "", phone: phone, latlong: nil, homeNStreetN: nil, packageId: "\(packageId ?? 0)", villageId: postVilId, userName: "monyoudom.bun")
+//            print(register.fname, register.lname)
             DispatchQueue.main.async {
-                self.crmViewModel.postRegisterPackageCRM(registerPackageCRM: register) { (message) in
-                    self.showAndDismissAlert(title: message, message: message, style: .alert, second: 1.5)
-                    print("-------->>> \(message)")
-                    self.clearDataWhenDone()
+                self.crmViewModel.postRegisterPackageCRM(registerPackageCRM: register) { (code, message) in
+                    self.showAndDismissAlert(title: message, message: nil, style: .alert, second: 3)
+                    if code == 200 {
+                        self.clearDataWhenDone()
+                    }
                 }
             }
         } else {
@@ -269,7 +282,11 @@ class RegisterServiceViewController: UIViewController {
         villageTextField.text = nil
         homeStreetTextField.text = nil
         chooseProductButton.setTitle("choose our internet package".localized, for: .normal)
-        shareLocationButton.setImage(UIImage(systemName: "square"), for: .normal)
+        chooseProductButton.setBackgroundImage(UIImage(named: "packageicon"), for: .normal)
+        let square = UIImage(named: "square")
+        shareLocationButton.setImage(square, for: .normal)
+        shareLocationButton.imageView?.contentMode = .scaleAspectFit
+        shareLocationButton.imageEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         isShared = false
         isMale = true
         packageId = nil
@@ -310,12 +327,11 @@ extension UITextField {
         let h : CGFloat = b - 2.75 * s
         let y = (b - h)/2
         let imageBounds = CGRect(x: s, y: y, width: b - 2*s , height: h)
-        let image = UIImage(systemName: "arrowtriangle.down.fill")
+        let image = UIImage(named: "arrowtriangle.down.fill")
         let imageView = UIImageView(frame: imageBounds)
         imageView.image = image
-//        imageView.contentMode = .scaleAspectFit
         self.rightView = UIView(frame: bounds)
-//        self.rightView?.backgroundColor = .red
+        rightView?.tintColor = .gray
         self.rightView?.addSubview(imageView)
         self.rightViewMode = .always
     }
@@ -513,4 +529,19 @@ extension RegisterServiceViewController : UITextFieldDelegate {
 //        }
     }
     
+}
+
+extension UIButton {
+    func setImage(image: UIImage?, inFrame frame: CGRect?, forState state: UIControl.State){
+        self.setImage(image, for: state)
+
+        if let frame = frame{
+            self.imageEdgeInsets = UIEdgeInsets(
+                top: frame.minY - self.frame.minY,
+                left: frame.minX - self.frame.minX,
+                bottom: self.frame.maxY - frame.maxY,
+                right: self.frame.maxX - frame.maxX
+            )
+        }
+    }
 }

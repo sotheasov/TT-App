@@ -29,11 +29,13 @@ class PackageCRMCellTableViewCell: UITableViewCell {
     }
     
     func setSelected(){
-        radioButton.setImage(UIImage(systemName: "circle"), for: .normal)
+        radioButton.setImage(UIImage(named: "no-choosed-product"), for: .normal)
+//        radioButton.tintColor = .white
     }
     
     func clearSelected(){
-        radioButton.setImage(UIImage(systemName: "circle.fill"), for: .normal)
+        radioButton.setImage(UIImage(named: "choosed-product"), for: .normal)
+//        radioButton.tintColor = .blue
     }
     
     func setPackage(package : CRMPackage) {

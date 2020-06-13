@@ -14,6 +14,7 @@ class APIManager {
     static let MAIN_URL = "https://turbotech.com"
     static let IMAGE_URL = "https://www.turbotech.com/storages/assets/img/img_mobile/"
     static let IMAGE_WEB_URL = "https://www.turbotech.com/storages/assets/img/services/"
+    static let IMAGE_PRO = "https://www.turbotech.com/storages/assets/img/usermobile/"
     static let HEADER : HTTPHeaders = [
         "Content-Type": "application/json"
     ]

@@ -2,39 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Hanuman-Regular.ttf</string>
-		<string>Hanuman-Bold.ttf</string>
-		<string>Battambang-Regular.ttf</string>
-		<string>Battambang-Bold.ttf</string>
-		<string>Quicksand-Light.ttf</string>
-		<string>Quicksand-Regular.ttf</string>
-		<string>Quicksand-Medium.ttf</string>
-		<string>Quicksand-SemiBold.ttf</string>
-		<string>Quicksand-Bold.ttf</string>
-	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>xiti.com</key>
-			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSExceptionDomains</key>
-				<true/>
-			</dict>
-			<key>SpeedTest</key>
-			<string>https://netspeed.one/</string>
-		</dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Your location is really required for checking to POP location which is the nearest to you.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Your location is required for your travelling to neared POP location.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -53,6 +20,39 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>SpeedTest</key>
+			<string>https://netspeed.one/</string>
+			<key>xiti.com</key>
+			<dict>
+				<key>NSExceptionDomains</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Your location is really required for checking to POP location which is the nearest to you.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your location is required for your travelling to neared POP location.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Hanuman-Regular.ttf</string>
+		<string>Hanuman-Bold.ttf</string>
+		<string>Battambang-Regular.ttf</string>
+		<string>Battambang-Bold.ttf</string>
+		<string>Quicksand-Light.ttf</string>
+		<string>Quicksand-Regular.ttf</string>
+		<string>Quicksand-Medium.ttf</string>
+		<string>Quicksand-SemiBold.ttf</string>
+		<string>Quicksand-Bold.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

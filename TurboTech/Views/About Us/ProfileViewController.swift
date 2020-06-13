@@ -18,12 +18,18 @@ class ProfileViewController: UIViewController {
     // Declare Variable
     let data = ["Information", "Department", "Language", "Logout"]
     
+    var user : User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        user = AppDelegate.user
         // Call Function
         customProfileViewController()
         registerTableViewCell()
+    }
+    
+    func setupUser(user : User){
+        
     }
     
     func registerTableViewCell() {
@@ -47,20 +53,20 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-            4
+        4
     }
-        
+    
     //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     //        print("Section : ", section)
     //        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 10))
     //        label.text = "\(data[section])"
     //        return label
     //    }
-        
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-            data[section]
+        data[section]
     }
-        
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 3
@@ -68,19 +74,22 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         else {
             return 1
         }
-            //        return data.count
+        //        return data.count
     }
-        
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "profileCellItem") as! ProfileTableViewCell
-    //        if (indexPath.section == 0 ){
-                cell.selectionStyle = .none
-    //        }
-    //        if indexPath.row % 2 == 0 {
-    //            cell = tableView.dequeueReusableCell(withIdentifier: "profileCellItem") as! ProfileTableViewCell
-    //        }
-    //        cell?.textLabel?.text = data[indexPath.row]
-            return cell
+        cell.selectionStyle = .none
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                
+            } else if indexPath.row == 1 {
+                
+            } else if indexPath.row == 2 {
+                
+            }
+        }
+        return cell
             
     }
         
@@ -99,7 +108,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
 //        self.navigationController?.pushViewController(department, animated: true)
             
             // MARK: - Seakthong
-            switch AppDelegate.position {
+            switch  user!.positon {
             case .Admin :
                 let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
                 let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.ADMIN) as! AdminTableViewController
@@ -126,10 +135,11 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             print("Language")
         case 3:
             print("Logout")
-    //            let loginViewController = UIStoryboard(name: "AboutUsStoryboard", bundle: nil)
-        let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginViewControllerID") as! LoginViewController
-    //            login.setNavigationTitle(title: "Logout")
-        self.navigationController?.pushViewController(loginVC, animated: true)
+            UserDefaults.standard.set(false, forKey: "isLogin")
+            AppDelegate.user = nil
+            
+            let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginViewControllerID") as! LoginViewController
+            self.navigationController?.viewControllers = [loginVC]
         default:
             print("Default")
             

@@ -59,18 +59,72 @@ class LoginViewController: UIViewController {
     
     // Action Button
     @IBAction func btnLogin(_ sender: UIButton) {
+        txtLoginUsernameOutlet.layer.borderColor = UIColor.gray.cgColor
+        txtLoginPasswordOutlet.layer.borderColor = UIColor.gray.cgColor
+        
+        guard let username = txtLoginUsernameOutlet.text, let password = txtLoginPasswordOutlet.text else {return}
+        
+        if username == "" || password == "" {
+            if username == "" {
+                txtLoginUsernameOutlet.layer.borderColor = UIColor.red.cgColor
+            }
+            if password == "" {
+                txtLoginPasswordOutlet.layer.borderColor = UIColor.red.cgColor
+            }
+            print(username, password)
+            return
+        }
+        
+        print(username, password)
+        
         DispatchQueue.main.async {
             sender.pulsate()
-            self.loginViewModel.userLogin(username: "get user from textfield", password: "get password for textfield") { (user) in
-                if user.id == "0" {
-                    print("Wrong Login")
+            self.loginViewModel.userLogin(username: username, password: password) { (isSucceed, user)  in
+                
+                print(isSucceed)
+                
+                if !isSucceed {
+                    self.showAndDismissAlert(title: "please try again".localized, message: "", style: .alert, second: 1.5)
+                    return
+                } else {
+                    UserDefaults.standard.set(true, forKey: "isLogin")
+                    AppDelegate.user = user
+                    UserDefaults.standard.set(username, forKey: "curUsername")
+                    UserDefaults.standard.set(password, forKey: "curPassword")
+//                    if let u = user {
+//                        let encodedData : Data = NSKeyedArchiver.archivedData(withRootObject: [u])
+//                        print("Console Data : ", encodedData)
+//
+//                        UserDefaults.standard.set(encodedData, forKey: "curUser")
+//                        UserDefaults.standard.synchronize()
+//                    }
+//
+//
+//                    let decoded = UserDefaults.standard.data(forKey: "curUser")
+//                    if let decode = decoded {
+//                        print("work decode")
+//                        print(try! NSKeyedUnarchiver.unarchivedObject(ofClass: User.self, from: decode)!.id)
+//                    } else {
+//                        print("not work decode")
+//                        UserDefaults.standard.set(false, forKey: "isLogin")
+//                    }
+                    
+                    let profileVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileMainTableViewControllerID") as! ProfileMainTableViewController
+                    self.navigationController?.viewControllers = [profileVC]
                 }
-                else {
-                    print("Login Success")
-                    self.dismiss(animated: false) {
-                        
-                    }
-                }
+                
+//                if user.id == "0" {
+//                    print("Wrong Login")
+//                    AppDelegate.isLogin = true
+//                    let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewControllerID") as! ProfileViewController
+//                    self.navigationController?.viewControllers = [newViewController]
+//                }
+//                else {
+//                    print("Login Success")
+//                    self.dismiss(animated: false) {
+//
+//                    }
+//                }
             }
         }
     }

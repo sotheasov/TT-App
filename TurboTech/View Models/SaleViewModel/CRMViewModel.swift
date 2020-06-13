@@ -17,9 +17,13 @@ class CRMViewModel {
         }
     }
     
-    func postRegisterPackageCRM (registerPackageCRM crm : RegisterPackageCRM, completion : @escaping(_ packageList : String)->()){
-        crmService.postRegisterPackageCRM(registerPackageCRM: crm) { (str) in
-            completion(str)
+    func postRegisterPackageCRM (registerPackageCRM crm : RegisterPackageCRM, completion : @escaping(_ code : Int, _ packageList : String)->()){
+        crmService.postRegisterPackageCRM(registerPackageCRM: crm) { (code) in
+            if code == 200 {
+                completion(code, "register successfully".localized)
+            } else {
+                completion(code, "please try again !".localized)
+            }
         }
     }
 }

@@ -20,6 +20,7 @@
 		1006D83C24767313000892ED /* ProductViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1006D83B24767313000892ED /* ProductViewModelDelegate.swift */; };
 		1006D83E24767322000892ED /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1006D83D24767322000892ED /* ProductService.swift */; };
 		1006D84024767330000892ED /* ProductServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1006D83F24767330000892ED /* ProductServiceDelegate.swift */; };
+		101A8672249311E40014D738 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 101A8671249311E40014D738 /* GoogleService-Info.plist */; };
 		101FE96E24767EDF005AB106 /* PackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101FE96D24767EDF005AB106 /* PackageViewController.swift */; };
 		10200A34248E162E0024F086 /* RegisterServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10200A33248E162E0024F086 /* RegisterServiceViewController.swift */; };
 		10200A36248E3D6A0024F086 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10200A35248E3D6A0024F086 /* Address.swift */; };
@@ -36,6 +37,7 @@
 		104AAE2C247E9DE000801A8F /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104AAE2B247E9DE000801A8F /* Department.swift */; };
 		104AAE30247E9E8100801A8F /* department.json in Resources */ = {isa = PBXBuildFile; fileRef = 104AAE2F247E9E8100801A8F /* department.json */; };
 		104AAE32247EA0B100801A8F /* DepartmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104AAE31247EA0B100801A8F /* DepartmentTableViewController.swift */; };
+		1050185C24936B9F0030565F /* ProfileMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050185B24936B9F0030565F /* ProfileMainTableViewController.swift */; };
 		105226F7247E1E5E007B7B29 /* CustomizeNavTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105226F6247E1E5E007B7B29 /* CustomizeNavTab.swift */; };
 		105226FA247E2382007B7B29 /* SpeedTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105226F9247E2382007B7B29 /* SpeedTestViewController.swift */; };
 		105226FC247E59F8007B7B29 /* PopLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105226FB247E59F8007B7B29 /* PopLocationViewController.swift */; };
@@ -143,6 +145,8 @@
 		1006D83B24767313000892ED /* ProductViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModelDelegate.swift; sourceTree = "<group>"; };
 		1006D83D24767322000892ED /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		1006D83F24767330000892ED /* ProductServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductServiceDelegate.swift; sourceTree = "<group>"; };
+		101A8671249311E40014D738 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		101A867324931AA60014D738 /* TurboTech.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TurboTech.entitlements; sourceTree = "<group>"; };
 		101FE96D24767EDF005AB106 /* PackageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageViewController.swift; sourceTree = "<group>"; };
 		10200A33248E162E0024F086 /* RegisterServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterServiceViewController.swift; sourceTree = "<group>"; };
 		10200A35248E3D6A0024F086 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 		104AAE2B247E9DE000801A8F /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		104AAE2F247E9E8100801A8F /* department.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = department.json; sourceTree = "<group>"; };
 		104AAE31247EA0B100801A8F /* DepartmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewController.swift; sourceTree = "<group>"; };
+		1050185B24936B9F0030565F /* ProfileMainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainTableViewController.swift; sourceTree = "<group>"; };
 		105226F6247E1E5E007B7B29 /* CustomizeNavTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeNavTab.swift; sourceTree = "<group>"; };
 		105226F9247E2382007B7B29 /* SpeedTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTestViewController.swift; sourceTree = "<group>"; };
 		105226FB247E59F8007B7B29 /* PopLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopLocationViewController.swift; sourceTree = "<group>"; };
@@ -544,6 +549,7 @@
 		10BE73B6247365A4001EFD43 /* TurboTech */ = {
 			isa = PBXGroup;
 			children = (
+				101A867324931AA60014D738 /* TurboTech.entitlements */,
 				100556C024738BC200B1F8BF /* Utils */,
 				10BE73D12473666B001EFD43 /* Configuration */,
 				10BE73CB247365E3001EFD43 /* Models */,
@@ -552,6 +558,7 @@
 				10BE73CC247365EE001EFD43 /* Views */,
 				10BE73CF24736614001EFD43 /* Supporting Files */,
 				10BE73C5247365A4001EFD43 /* Info.plist */,
+				101A8671249311E40014D738 /* GoogleService-Info.plist */,
 			);
 			path = TurboTech;
 			sourceTree = "<group>";
@@ -652,6 +659,7 @@
 		10BE73E024736EB2001EFD43 /* About Us */ = {
 			isa = PBXGroup;
 			children = (
+				A9BF341A2480CE6B001FAC3A /* AViewController.swift */,
 				10BE73F2247372BF001EFD43 /* AboutUsStoryboard.storyboard */,
 				10BE73E324736EDA001EFD43 /* AboutUsViewController.swift */,
 				A9D18D0E247B792D00ADE51B /* ProfileViewController.swift */,
@@ -662,9 +670,9 @@
 				A960AC20247DFD0B00E844E2 /* DepartmentTableViewCell.xib */,
 				A909CA992474C03D00546CFC /* LoginViewController.swift */,
 				A909CA9A2474C03D00546CFC /* LoginViewController.xib */,
-				A9BF341A2480CE6B001FAC3A /* AViewController.swift */,
 				A92A231D248795750095D4A9 /* CustomAnimationStyle.swift */,
 				10C0B8662492202E00D105FC /* LoginMonitorViewController.swift */,
+				1050185B24936B9F0030565F /* ProfileMainTableViewController.swift */,
 			);
 			path = "About Us";
 			sourceTree = "<group>";
@@ -902,6 +910,7 @@
 				10BE73C1247365A4001EFD43 /* Assets.xcassets in Resources */,
 				10C0B85324920CDA00D105FC /* Battambang-Regular.ttf in Resources */,
 				108848D4247CB91E0034579A /* FAQsTableViewHeader.xib in Resources */,
+				101A8672249311E40014D738 /* GoogleService-Info.plist in Resources */,
 				10C0B85424920CDA00D105FC /* Battambang-Bold.ttf in Resources */,
 				10CFC1CC247F67EF0059AD63 /* DeviceTableViewCell.xib in Resources */,
 				A9D18D13247B854A00ADE51B /* ProfileTableViewCell.xib in Resources */,
@@ -1019,6 +1028,7 @@
 				A93E8EEC248F796A00A8D450 /* Attendance.swift in Sources */,
 				105226FC247E59F8007B7B29 /* PopLocationViewController.swift in Sources */,
 				A9B0AF5B247E6567002FB5B6 /* AttendanceCollectionViewCell.swift in Sources */,
+				1050185C24936B9F0030565F /* ProfileMainTableViewController.swift in Sources */,
 				A9D1A34D24777BED0011E02D /* LoginViewModel.swift in Sources */,
 				A93E8EF2248F7BA600A8D450 /* AttandanceViewModel.swift in Sources */,
 				1006D83A247672F6000892ED /* ProductViewModel.swift in Sources */,
@@ -1224,16 +1234,19 @@
 			baseConfigurationReference = 5D159C71FC16C93B21108A19 /* Pods-TurboTech.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TurboTech/TurboTech.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K6SUPH6GZT;
+				DEVELOPMENT_TEAM = S5AZC8X8J7;
 				INFOPLIST_FILE = TurboTech/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.turbotech.TurboTech;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.turbotech.turbotech-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1244,16 +1257,19 @@
 			baseConfigurationReference = CB386C5446682C36934D3A76 /* Pods-TurboTech.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TurboTech/TurboTech.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K6SUPH6GZT;
+				DEVELOPMENT_TEAM = S5AZC8X8J7;
 				INFOPLIST_FILE = TurboTech/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.turbotech.TurboTech;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.turbotech.turbotech-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

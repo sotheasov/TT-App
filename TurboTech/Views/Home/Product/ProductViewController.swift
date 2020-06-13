@@ -99,7 +99,7 @@ extension ProductViewController : UITableViewDelegate, UITableViewDataSource {
             }
             else if indexPath.row == 1 {
                 print("FAQs")
-                let FAQsVC = storyboard?.instantiateViewController(identifier: "FAQsTableViewControllerID") as! FAQsTableViewController
+                let FAQsVC = storyboard?.instantiateViewController(withIdentifier: "FAQsTableViewControllerID") as! FAQsTableViewController
                 FAQsVC.navigationItem.title = lang == "en" ? productList[indexPath.row].nameEn : productList[indexPath.row].nameKh
                 FAQsVC.modalPresentationStyle = .fullScreen
                 self.navigationController?.pushViewController(FAQsVC, animated: true)

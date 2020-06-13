@@ -76,3 +76,21 @@
 "apply" = "ដាក់ស្នើរ";
 "done" = "រួចរាល់";
 "search package ..." = "ស្វែងរកសេវាកម្ម ...";
+"register successfully" = "ចុះឈ្មោះបានជោគជ័យ";
+"please try again !" = "សួមព្យាយាមម្តងទៀត";
+
+
+// Profile
+"curLanguage" = "ភាសាខ្មែរ";
+"information" = "ព័ត៌មាន";
+"Sale" = "អ្នកលក់";
+"Admin" = "រដ្ឋបាល";
+"HR" = "ធនធានមនុស្ស";
+"Finance" = "ហិរញ្ញវត្ថុ";
+
+
+// Sale
+"saleProduct" = "ផលិតផល";
+"salePop" = "POP";
+"saleDevice" = "ឧបករណ៍";
+"saleCrm" = "CRM";

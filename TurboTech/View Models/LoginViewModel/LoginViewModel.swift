@@ -9,12 +9,7 @@
 import Foundation
 
 class LoginViewModel {
-    var loginService : LoginService?
-    
-    init(){
-        loginService = LoginService()
-//        loginService?.loginServiceDelegate = self
-    }
+    var loginService = LoginService()
     
 //    func userLogin(username : String){
 //        loginService?.userLogin(username: username)
@@ -26,10 +21,27 @@ class LoginViewModel {
 //        })
 //    }
     
-    func userLogin(username : String, password : String, handler: @escaping(_ user : User)->Void){
-        loginService?.userLogin(username: username, password: password , handler: { (user) in
-            handler(user)
+    func userLogin(username : String, password : String, handler: @escaping(_ isLogin : Bool, _ user : User?)->Void){
+        loginService.userLogin(username: username, password: password , handler: { (user) in
+            if user != nil {
+                print("vm true")
+                handler(true, user)
+            } else {
+                print("vm false")
+                handler(false, user)
+            }
         })
+    }
+    
+    func fetchCurrentUser(){
+        guard let username = UserDefaults.standard.string(forKey: "curUsername"),
+            let password = UserDefaults.standard.string(forKey: "curPassword") else {
+                UserDefaults.standard.set(false, forKey: "isLogin")
+                return
+        }
+        loginService.userLogin(username: username, password: password) { (user) in
+            AppDelegate.user = user
+        }
     }
 }
 

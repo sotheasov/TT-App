@@ -76,3 +76,21 @@
 "apply" = "Apply";
 "done" = "Done";
 "search package ..." = "Search Package ...";
+"register successfully" = "Register Successfully";
+"please try again !" = "Please Try Again !";
+
+
+// Profile
+"curLanguage" = "English";
+"information" = "User Information";
+"Sale" = "Sale";
+"Admin" = "Admin";
+"HR" = "HR";
+"Finance" = "Finance";
+
+
+// Sale
+"saleProduct" = "Product";
+"salePop" = "POP";
+"saleDevice" = "Device";
+"saleCrm" = "CRM";

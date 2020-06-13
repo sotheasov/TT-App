@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 //        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name(rawValue: "changed"), object: nil)
 //        setUp()
+        self.tabBarItem = UITabBarItem(title: "home".localized, image: UIImage(named: "house.fill"), selectedImage: UIImage(named: "house.fill"))
         addRightButton()
         addLeftButton()
         registerCollectionViewCell()
@@ -87,7 +88,7 @@ class HomeViewController: UIViewController {
         let rNavView = UIView(frame: CGRect(x: 0, y: 0, width: 90,height: 40))
         
         let notificationBtn = UIButton(frame: CGRect(x: 0,y: 0, width: 40, height: 40))
-        notificationBtn.setImage(UIImage(systemName: "bell.fill"), for: .normal)
+        notificationBtn.setImage(UIImage(named: "bell.fill"), for: .normal)
         notificationBtn.tintColor = .white
         notificationBtn.contentVerticalAlignment = .fill
         notificationBtn.contentHorizontalAlignment = .fill
@@ -137,12 +138,12 @@ class HomeViewController: UIViewController {
     
     func localized(){
         menuList = [
-            Menu(id: 0, title: "product".localized, imageUrl: "internet_package"),
-            Menu(id: 1, title: "payment".localized, imageUrl: "get_cash"),
-            Menu(id: 2, title: "help desk".localized, imageUrl: "ustomer_support"),
-            Menu(id: 3, title: "speed test".localized, imageUrl: "speed"),
-            Menu(id: 4, title: "scan qr".localized, imageUrl: "qr_black"),
-            Menu(id: 5, title: "location".localized, imageUrl: "Map")
+            Menu(id: 0, title: "product".localized, imageUrl: "product"),
+            Menu(id: 1, title: "payment".localized, imageUrl: "payment"),
+            Menu(id: 2, title: "help desk".localized, imageUrl: "help-desk"),
+            Menu(id: 3, title: "speed test".localized, imageUrl: "speed-test"),
+            Menu(id: 4, title: "scan qr".localized, imageUrl: "qr"),
+            Menu(id: 5, title: "location".localized, imageUrl: "pin")
         ]
         homeMenuCollectionView.reloadData()
         addLeftButton()
@@ -219,7 +220,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 self.navigationController?.pushViewController(productVC, animated: true)
             case 3:
                 print("Speed Test")
-                let speedTestVC = storyboard?.instantiateViewController(identifier: "SpeedTestViewControllerID") as! SpeedTestViewController
+                let speedTestVC = storyboard?.instantiateViewController(withIdentifier: "SpeedTestViewControllerID") as! SpeedTestViewController
                 speedTestVC.navigationItem.title = "speed test".localized
                 self.navigationController?.pushViewController(speedTestVC, animated: true)
             case 4:
@@ -263,7 +264,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 self.navigationController?.pushViewController(locationVC, animated: true)
  */
                 let department = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
-                let crmVC = department.instantiateViewController(identifier: "RegisterServiceViewControllerID") as! RegisterServiceViewController
+                let crmVC = department.instantiateViewController(withIdentifier: "RegisterServiceViewControllerID") as! RegisterServiceViewController
                 crmVC.modalPresentationStyle = .fullScreen
                 self.navigationController?.pushViewController(crmVC, animated: true)
                 

@@ -28,7 +28,7 @@ class CRMService {
         }
     }
     
-    func postRegisterPackageCRM (registerPackageCRM crm : RegisterPackageCRM, completion : @escaping(_ packageList : String)->()){
+    func postRegisterPackageCRM (registerPackageCRM crm : RegisterPackageCRM, completion : @escaping(_ statusCode : Int)->()){
         let parameters = [
             "staff_name": "\(crm.userName ?? "monyoudom.bun")",
             "fname": "\(crm.fname ?? "")",
@@ -44,11 +44,13 @@ class CRMService {
             guard let data = response.data else { return }
             let json = try? JSON(data: data)
             if let json = json {
-                print(json["MESSAGE"].stringValue)
-                completion(json["MESSAGE"].stringValue)
+                if json["STATUS"].intValue == 200 {
+                    completion(json["STATUS"].intValue)
+                } else if json["MESSAGE"].stringValue == "invalid request" {
+                    completion(0)
+                }
             } else {
-                print("FUCK YOU")
-                completion("Fuck You")
+                completion(-1)
             }
             
         }
