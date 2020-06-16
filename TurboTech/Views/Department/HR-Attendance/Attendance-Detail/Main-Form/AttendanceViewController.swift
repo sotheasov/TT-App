@@ -37,7 +37,8 @@ class AttendanceViewController: UIViewController {
         customAttendanceViewController()
         registerCollectionViewCell()
         getCurrentDateTime()
-        getSingle()
+        getDate()
+        localized()
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-M-dd"
@@ -68,11 +69,11 @@ class AttendanceViewController: UIViewController {
                 self.overallList = overallList
             }
         }
-        localized()
     }
     
     func localized(){
         lbTopAttendanceOutlet.text = "hello".localized
+        lbBottomAttendanceOutlet.text = "admin".localized
     }
     
     override func viewDidLayoutSubviews() {
@@ -102,7 +103,7 @@ class AttendanceViewController: UIViewController {
         lbOverView.text = str
     }
     
-    func getSingle(){
+    func getDate(){
         let date = Date()
         let calendar = Calendar.current
         let year = calendar.component(.year, from: date)
@@ -177,10 +178,10 @@ extension AttendanceViewController: UICollectionViewDataSource, UICollectionView
                 self.showDetailViewController(lateAttendanceVC, sender: nil)
                 self.navigationController?.pushViewController(lateAttendanceVC, animated: true)
             case 2:
-                let totalVC = storyboard?.instantiateViewController(withIdentifier: "TotalAttendanceViewControllerID") as! TotalAttendanceViewController
-                totalVC.modalPresentationStyle = .fullScreen
-                self.showDetailViewController(totalVC, sender: nil)
-                self.navigationController?.pushViewController(totalVC, animated: true)
+                let reportAttendanceVC = storyboard?.instantiateViewController(withIdentifier: "ReportAttendanceViewControllerID") as! ReportAttendanceViewController
+                reportAttendanceVC.modalPresentationStyle = .fullScreen
+                self.showDetailViewController(reportAttendanceVC, sender: nil)
+                self.navigationController?.pushViewController(reportAttendanceVC, animated: true)
             case 3:
                 let absenceAttendanceVC = storyboard?.instantiateViewController(withIdentifier: "AbsenceAttendanceViewControllerID") as! AbsenceAttendanceViewController
                 absenceAttendanceVC.modalPresentationStyle = .fullScreen
@@ -196,8 +197,28 @@ extension AttendanceViewController: UICollectionViewDataSource, UICollectionView
     }
 }
 
-    
-    
+ extension AttendanceViewController : PinterestLayoutDelegate {
+     func collectionView(collectionView: UICollectionView, heightForImageAtIndexPath indexPath: IndexPath, withWidth: CGFloat) -> CGFloat {
+ //        let image =
+ //        get collection view cell -> height, width of View
+ //        return image.height(forWidth: withWidth)
+         if (indexPath.item % 2 == 0) {
+             return CGFloat(248)
+         }
+         else {
+             return CGFloat(190)
+         }
+     }
+     
+     func collectionView(collectionView: UICollectionView, heightForAnnotationAtIndexPath indexPath: IndexPath, withWidth: CGFloat) -> CGFloat {
+ //        let textFont = UIFont(name: "Arial-ItalicMT", size: 11)!
+ //        return "Some text".heightForWidth(width: withWidth, font: textFont)
+         return CGFloat(0)
+     }
+ }
+
+
+// MARK: Not Use
 //    @objc
 //    func tap(_ sender: UITapGestureRecognizer) {
 //        let location = sender.location(in: self.attendanceCollectionViewOutlet)
@@ -246,27 +267,9 @@ extension AttendanceViewController: UICollectionViewDataSource, UICollectionView
 //    }
 //}
 
-extension AttendanceViewController : PinterestLayoutDelegate {
-    func collectionView(collectionView: UICollectionView, heightForImageAtIndexPath indexPath: IndexPath, withWidth: CGFloat) -> CGFloat {
-//        let image =
-//        get collection view cell -> height, width of View
-//        return image.height(forWidth: withWidth)
-        if (indexPath.item % 2 == 0) {
-            return CGFloat(248)
-        }
-        else {
-            return CGFloat(190)
-        }
-    }
-    
-    func collectionView(collectionView: UICollectionView, heightForAnnotationAtIndexPath indexPath: IndexPath, withWidth: CGFloat) -> CGFloat {
-//        let textFont = UIFont(name: "Arial-ItalicMT", size: 11)!
-//        return "Some text".heightForWidth(width: withWidth, font: textFont)
-        return CGFloat(0)
-    }
-}
 
 
+// MARK: Not Use
 //extension AttendanceViewController: UICollectionViewDelegateFlowLayout {
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 ////        let width = self.calculateWidth()

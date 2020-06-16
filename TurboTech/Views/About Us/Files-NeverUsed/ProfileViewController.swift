@@ -6,6 +6,7 @@
 //  Copyright © 2020 TurboTech. All rights reserved.
 //
 
+/*
 import UIKit
 
 class ProfileViewController: UIViewController {
@@ -107,29 +108,29 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
 //        let department = storyboard?.instantiateViewController(withIdentifier: "DepartmentViewControllerID") as! DepartmentViewController
 //        self.navigationController?.pushViewController(department, animated: true)
             
-            // MARK: - Seakthong
-            switch  user!.positon {
-            case .Admin :
-                let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
-                let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.ADMIN) as! AdminTableViewController
-                openVC.navigationItem.title = "Admin"
-                self.navigationController?.pushViewController(openVC, animated: true)
-            case .Finance :
-                let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
-                let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.FINANCE) as! FinanceTableViewController
-                openVC.navigationItem.title = "Finance"
-                self.navigationController?.pushViewController(openVC, animated: true)
-            case .HR :
-                let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
-                let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.ADMIN) as! AdminTableViewController
-                openVC.navigationItem.title = "HR"
-                self.navigationController?.pushViewController(openVC, animated: true)
-            case .Sale :
-                let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
-                let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.SALE) as! SaleTableViewController
-                openVC.navigationItem.title = "Sale"
-                self.navigationController?.pushViewController(openVC, animated: true)
-            }
+        // MARK: - Seakthong
+        switch  user!.positon {
+        case .Admin :
+            let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
+            let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.ADMIN) as! AdminTableViewController
+            openVC.navigationItem.title = "Admin"
+            self.navigationController?.pushViewController(openVC, animated: true)
+        case .Finance :
+            let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
+            let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.FINANCE) as! FinanceTableViewController
+            openVC.navigationItem.title = "Finance"
+            self.navigationController?.pushViewController(openVC, animated: true)
+        case .HR :
+            let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
+            let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.ADMIN) as! AdminTableViewController
+            openVC.navigationItem.title = "HR"
+            self.navigationController?.pushViewController(openVC, animated: true)
+        case .Sale :
+            let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
+            let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.SALE) as! SaleTableViewController
+            openVC.navigationItem.title = "Sale"
+            self.navigationController?.pushViewController(openVC, animated: true)
+        }
             
         case 2:
             print("Language")
@@ -146,3 +147,4 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 }
+*/

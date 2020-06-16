@@ -6,6 +6,7 @@
 //  Copyright © 2020 TurboTech. All rights reserved.
 //
 
+/*
 import UIKit
 
 class AboutUsViewController: UIViewController {
@@ -44,5 +45,5 @@ class AboutUsViewController: UIViewController {
     }
     
 }
-
+*/
 

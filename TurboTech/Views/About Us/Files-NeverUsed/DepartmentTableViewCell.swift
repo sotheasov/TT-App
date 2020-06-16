@@ -6,6 +6,7 @@
 //  Copyright © 2020 TurboTech. All rights reserved.
 //
 
+/*
 import UIKit
 
 class DepartmentTableViewCell: UITableViewCell {
@@ -32,3 +33,4 @@ class DepartmentTableViewCell: UITableViewCell {
         coverDepartmentViewCellOutlet.layer.cornerRadius = SIZE.RADIUS
     }
 }
+*/

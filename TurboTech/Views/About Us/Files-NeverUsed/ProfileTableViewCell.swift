@@ -6,6 +6,7 @@
 //  Copyright © 2020 TurboTech. All rights reserved.
 //
 
+/*
 import UIKit
 
 class ProfileTableViewCell: UITableViewCell {
@@ -30,3 +31,4 @@ class ProfileTableViewCell: UITableViewCell {
         subContentViewOutlet.shadowStyle(radius: 10, color: .black, offset: CGSize(width: 0, height: 10), opacity: 0.6)
     }
 }
+ */
