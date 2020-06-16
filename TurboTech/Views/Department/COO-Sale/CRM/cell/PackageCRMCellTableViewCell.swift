@@ -29,12 +29,12 @@ class PackageCRMCellTableViewCell: UITableViewCell {
     }
     
     func setSelected(){
-        radioButton.setImage(UIImage(named: "no-choosed-product"), for: .normal)
+        radioButton.setImage(UIImage(named: "circle"), for: .normal)
 //        radioButton.tintColor = .white
     }
     
     func clearSelected(){
-        radioButton.setImage(UIImage(named: "choosed-product"), for: .normal)
+        radioButton.setImage(UIImage(named: "check-circle"), for: .normal)
 //        radioButton.tintColor = .blue
     }
     

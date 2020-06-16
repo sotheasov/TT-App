@@ -19,22 +19,32 @@ target 'TurboTech' do
   
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
-
-  pod 'IBPCollectionViewCompositionalLayout'
+  
+  pod 'LGButton'
+  pod 'SwipeCellKit'
+  
+#  pod 'Firebase/Firestore'
+#  pod 'Firebase/Messaging'
+#  pod 'Firebase/DynamicLinks'
+#  pod 'Firebase/InAppMessaging'
+#  pod 'Firebase/RemoteConfig'
+#  pod 'Google-Mobile-Ads-SDK'
+  
+#  pod 'IBPCollectionViewCompositionalLayout'
   
   pod 'PinterestLayout'
   # https://github.com/MagicLab-team/PinterestLayout #
   
-  pod 'SNCollectionViewLayout' 
+#  pod 'SNCollectionViewLayout'
   # https://github.com/ahmedAlmasri/SNCollectionViewLayout #
   
-  pod 'WBCollectionViewLayout', :git => 'https://github.com/mwaqasbhati/WBCollectionViewLayout.git' 
+#  pod 'WBCollectionViewLayout', :git => 'https://github.com/mwaqasbhati/WBCollectionViewLayout.git'
   # https://github.com/mwaqasbhati/WBCollectionViewLayout #
 
-  pod 'SquareFlowLayout'
+#  pod 'SquareFlowLayout'
   # https://github.com/ChernyshenkoTaras/SquareFlowLayout #
   
-  pod "ATInternet-Apple-SDK/Tracker",">=2.0"
+#  pod "ATInternet-Apple-SDK/Tracker",">=2.0"
   # https://github.com/at-internet/atinternet-apple-sdk #
 
 end

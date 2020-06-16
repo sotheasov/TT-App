@@ -12,9 +12,12 @@ import Alamofire
 class APIManager {
     static let MAIN_URL_2 = "http://103.101.80.73"
     static let MAIN_URL = "https://turbotech.com"
-    static let IMAGE_URL = "https://www.turbotech.com/storages/assets/img/img_mobile/"
-    static let IMAGE_WEB_URL = "https://www.turbotech.com/storages/assets/img/services/"
-    static let IMAGE_PRO = "https://www.turbotech.com/storages/assets/img/usermobile/"
+    static let IMAGE_MAIN = MAIN_URL + "/storages/assets/img"
+    static let IMAGE_URL = "\(IMAGE_MAIN)/img_mobile/"
+    static let IMAGE_WEB_URL = "\(IMAGE_MAIN)/services/"
+    static let IMAGE_PRO = "\(IMAGE_MAIN)/usermobile/"
+    static let IMAGE_EN = "\(IMAGE_MAIN)/sliders/EN/"
+    static let IMAGE_KH = "\(IMAGE_MAIN)/sliders/Khmer/"
     static let HEADER : HTTPHeaders = [
         "Content-Type": "application/json"
     ]
@@ -33,6 +36,7 @@ class APIManager {
         // param {username:varchar, password:varchar}
         // form {ID Card, Full Name, Position, User Name}
         static let POST = MAIN_URL + "/api/login/index.php"
+        static let POST_PW = MAIN_URL + "/api/login/change_pass.php"
     }
     
     enum HELP_DESK {
@@ -69,6 +73,10 @@ class APIManager {
     enum CRM {
         static let GET_PACKAGE = MAIN_URL + "/api/register_service/readpackage.php"
         static let POST_REGISTER_PACKAGE = MAIN_URL_2 + "/api/register_service/register_crm.php"
+    }
+    
+    enum HOME {
+        static let GET_IMAGE = MAIN_URL + "/api/sliders/"
     }
 }
 
