@@ -87,13 +87,15 @@
 "Admin" = "រដ្ឋបាល";
 "HR" = "ធនធានមនុស្ស";
 "Finance" = "ហិរញ្ញវត្ថុ";
+"Attendance" = "បញ្ជីវត្តមាន";
 "setting" = "ការកំណត់";
-"change password" = "ផ្លាស់ប្តួរពាក្យសម្ងាត់";
+"change password" = "ផ្លាស់ប្តូរពាក្យសម្ងាត់";
 "choose language" = "ជ្រើសរើសភាសា";
 "old password" = "ពាក្យសម្ងាត់ចាស់";
 "new password" = "ពាក្យសម្ងាត់ថ្មី";
 "confirm new password" = "ពាក្យសម្ងាត់ថ្មីម្តងទៀត";
 "confirm" = "យល់ព្រម";
+"old Password worng" = "ខុសពាក្យសម្ងាត់ចាស់";
 
 
 // Sale

@@ -85,4 +85,11 @@ class User : NSObject, NSCoding{
         userDefault.set(password, forKey: "curPassword")
         userDefault.synchronize()
     }
+    
+    static func setNewPassword(password : String){
+        let userDefault = UserDefaults.standard
+        userDefault.set(true, forKey: "isLogin")
+        userDefault.set(password, forKey: "curPassword")
+        userDefault.synchronize()
+    }
 }

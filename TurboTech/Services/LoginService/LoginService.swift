@@ -32,10 +32,11 @@ class LoginService {
         }
     }
     
-    func userChangePassword(username : String, oldPass : String, newPass : String, handler: @escaping(_ done : Bool)->()){
+    func userChangePassword(username : String, oldPass : String, newPass : String, handler: @escaping(_ done : Bool, _ state : String)->()){
         
         let parameters = ["username" : username, "old_pass" : oldPass, "new_pass" : newPass]
         var status = false
+        var state = ""
         AF.request(APIManager.LOGIN.POST_PW, method: .post , parameters: parameters).response { (response) in
             print("min torn jol change ")
             
@@ -46,15 +47,19 @@ class LoginService {
             print(data)
             if let json = try? JSON(data: data) {
                 print(json)
-//                status = json["pass"].bool ?? false
-                UserDefaults.standard.set(newPass, forKey: "curPassword")
-                print("change ban hz")
-                status = true
+                state = json["pass"].stringValue
+                if  state == "true" {
+                    status = true
+                    print("change ban hz")
+                } else {
+                    status = false
+                    print("change !ban hz")
+                }
             } else {
                 print("change ot ban")
                 status = false
             }
-            handler(status)
+            handler(status, state)
         }
     }
 }

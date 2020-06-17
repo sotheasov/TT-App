@@ -95,10 +95,10 @@ class ProfileMainTableViewController: UITableViewController {
                 
                 // MARK: - Seakthong
                 switch  AppDelegate.user!.positon {
-                case .Admin :
+                case .Admin, .CEO :
                     let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
                     let openVC = departmentStoryboard.instantiateViewController(withIdentifier: CONTROLLER.ADMIN) as! AdminTableViewController
-                    openVC.navigationItem.title = "Admin"
+                    openVC.navigationItem.title = AppDelegate.user?.positon.rawValue.localized
                     self.navigationController?.pushViewController(openVC, animated: true)
                 case .Finance :
                     let departmentStoryboard = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
@@ -120,7 +120,7 @@ class ProfileMainTableViewController: UITableViewController {
             case 2:
                 print("Setting")
                 let settingVC = storyboard?.instantiateViewController(withIdentifier: "SettingTableViewControllerID") as! SettingTableViewController
-                settingVC.navigationItem.title = "setting".localized
+                settingVC.navigationItem.title = "Hey You".localized
                 settingVC.modalPresentationStyle = .fullScreen
                 self.navigationController?.pushViewController(settingVC, animated: true)
             case 3:

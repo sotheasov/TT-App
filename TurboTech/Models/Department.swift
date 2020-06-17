@@ -9,6 +9,7 @@
 import Foundation
 
 enum Position : String {
+    case CEO = "CEO"
     case Sale = "Sale"
     case Admin = "Admin"
     case Finance = "Finance"

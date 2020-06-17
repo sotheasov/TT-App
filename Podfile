@@ -19,6 +19,7 @@ target 'TurboTech' do
   
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'Firebase/Messaging'
   
   pod 'LGButton'
   pod 'SwipeCellKit'

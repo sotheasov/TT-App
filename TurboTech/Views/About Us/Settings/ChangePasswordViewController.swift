@@ -50,8 +50,15 @@ class ChangePasswordViewController: UIViewController {
         if isAcceptablePassword() {
             DispatchQueue.main.async {
                 let loginViewModel = LoginViewModel()
-                loginViewModel.userChangePassword(username: u.userName, oldPass: old, newPass: newP1) { (status) in
-                    self.showAndDismissAlert(title: status ? "successfully".localized : "try again".localized, message: nil, style: .alert, second: 2.0)
+                loginViewModel.userChangePassword(username: u.userName, oldPass: old, newPass: newP1) { (status, state) in
+                    if status {
+                        self.showAndDismissAlert(title: "successfully".localized, message: nil, style: .alert, second: 1.0)
+                        User.setNewPassword(password: newP1)
+                        self.dismiss(animated: true, completion: nil)
+                    } else {
+                        self.showAndDismissAlert(title: state.localized, message: nil, style: .alert, second: 2.0)
+                    }
+                    
                 }
             }
         }

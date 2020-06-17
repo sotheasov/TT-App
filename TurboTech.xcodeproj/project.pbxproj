@@ -62,6 +62,8 @@
 		1089359D248F667A00D8CF84 /* RequestCRM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089359C248F667A00D8CF84 /* RequestCRM.swift */; };
 		1090B6D62494C00A00ED59C7 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1090B6D52494C00A00ED59C7 /* SettingTableViewController.swift */; };
 		1095651C2477717E000C286B /* PackageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1095651B2477717E000C286B /* PackageDetail.swift */; };
+		10A05C872498FB200043043B /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A05C862498FB200043043B /* NotificationExtension.swift */; };
+		10A05C8A2498FE7C0043043B /* NotificationExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A05C892498FE7B0043043B /* NotificationExampleViewController.swift */; };
 		10B0DD5D2494EA2600FB4F4B /* VerifyLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0DD5B2494EA2600FB4F4B /* VerifyLoginViewController.swift */; };
 		10B0DD602494F68E00FB4F4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10B0DD5F2494F68E00FB4F4B /* GoogleService-Info.plist */; };
 		10BBF921247CFCCA008DCF3A /* POP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BBF920247CFCCA008DCF3A /* POP.swift */; };
@@ -92,6 +94,7 @@
 		10CD936D24989FF4005E6CA6 /* TicketTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD936C24989FF4005E6CA6 /* TicketTableViewController.swift */; };
 		10CD93722498A01F005E6CA6 /* TicketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD93702498A01F005E6CA6 /* TicketTableViewCell.swift */; };
 		10CD93732498A01F005E6CA6 /* TicketTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10CD93712498A01F005E6CA6 /* TicketTableViewCell.xib */; };
+		10CD93752498CE47005E6CA6 /* CreateTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD93742498CE47005E6CA6 /* CreateTicketViewController.swift */; };
 		10CFC1BF247F49670059AD63 /* SaleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFC1BE247F49670059AD63 /* SaleTableViewController.swift */; };
 		10CFC1C1247F49710059AD63 /* FinanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFC1C0247F49710059AD63 /* FinanceTableViewController.swift */; };
 		10CFC1C5247F53120059AD63 /* DeviceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFC1C4247F53120059AD63 /* DeviceTableViewController.swift */; };
@@ -198,6 +201,8 @@
 		1089359C248F667A00D8CF84 /* RequestCRM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCRM.swift; sourceTree = "<group>"; };
 		1090B6D52494C00A00ED59C7 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		1095651B2477717E000C286B /* PackageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetail.swift; sourceTree = "<group>"; };
+		10A05C862498FB200043043B /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		10A05C892498FE7B0043043B /* NotificationExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExampleViewController.swift; sourceTree = "<group>"; };
 		10B0DD5B2494EA2600FB4F4B /* VerifyLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyLoginViewController.swift; sourceTree = "<group>"; };
 		10B0DD5F2494F68E00FB4F4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10BBF920247CFCCA008DCF3A /* POP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POP.swift; sourceTree = "<group>"; };
@@ -228,6 +233,7 @@
 		10CD936C24989FF4005E6CA6 /* TicketTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTableViewController.swift; sourceTree = "<group>"; };
 		10CD93702498A01F005E6CA6 /* TicketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTableViewCell.swift; sourceTree = "<group>"; };
 		10CD93712498A01F005E6CA6 /* TicketTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketTableViewCell.xib; sourceTree = "<group>"; };
+		10CD93742498CE47005E6CA6 /* CreateTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTicketViewController.swift; sourceTree = "<group>"; };
 		10CFC1BE247F49670059AD63 /* SaleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleTableViewController.swift; sourceTree = "<group>"; };
 		10CFC1C0247F49710059AD63 /* FinanceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceTableViewController.swift; sourceTree = "<group>"; };
 		10CFC1C4247F53120059AD63 /* DeviceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewController.swift; sourceTree = "<group>"; };
@@ -456,8 +462,10 @@
 		1051110F249522730062DCAE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				10A05C882498FE660043043B /* Example */,
 				A92A231D248795750095D4A9 /* CustomAnimationStyle.swift */,
 				105111102495228A0062DCAE /* String-Extension.swift */,
+				10A05C862498FB200043043B /* NotificationExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -570,6 +578,14 @@
 				10B0DD5B2494EA2600FB4F4B /* VerifyLoginViewController.swift */,
 			);
 			path = "Login+Monitor";
+			sourceTree = "<group>";
+		};
+		10A05C882498FE660043043B /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				10A05C892498FE7B0043043B /* NotificationExampleViewController.swift */,
+			);
+			path = Example;
 			sourceTree = "<group>";
 		};
 		10BBF922247CFDD7008DCF3A /* SaleService */ = {
@@ -796,6 +812,7 @@
 			children = (
 				10CD936E2498A006005E6CA6 /* Nib File */,
 				10CD936C24989FF4005E6CA6 /* TicketTableViewController.swift */,
+				10CD93742498CE47005E6CA6 /* CreateTicketViewController.swift */,
 			);
 			path = "Shared Regerence";
 			sourceTree = "<group>";
@@ -1126,6 +1143,7 @@
 				105226FA247E2382007B7B29 /* SpeedTestViewController.swift in Sources */,
 				1089359D248F667A00D8CF84 /* RequestCRM.swift in Sources */,
 				10670006247E0240002E283E /* UserLocationViewController.swift in Sources */,
+				10A05C872498FB200043043B /* NotificationExtension.swift in Sources */,
 				A9185C272490BA3400C2BAFE /* AbsenceAttendanceTableViewCell.swift in Sources */,
 				1006D83024763C1A000892ED /* CustomizeSize.swift in Sources */,
 				10D17EF0247619E10095E0AF /* ProductViewController.swift in Sources */,
@@ -1133,6 +1151,7 @@
 				1048C527249851AA00193D9D /* HomeService.swift in Sources */,
 				1045AA1E247B5031003A79E9 /* PackageDetailHeaderView.swift in Sources */,
 				10CFC1CB247F67EF0059AD63 /* DeviceTableViewCell.swift in Sources */,
+				10A05C8A2498FE7C0043043B /* NotificationExampleViewController.swift in Sources */,
 				10CFC1DE247FAA390059AD63 /* LanguageManager.swift in Sources */,
 				102D3961249098470039BC3E /* CRMService.swift in Sources */,
 				10CFC1C5247F53120059AD63 /* DeviceTableViewController.swift in Sources */,
@@ -1200,6 +1219,7 @@
 				1095651C2477717E000C286B /* PackageDetail.swift in Sources */,
 				102A77122488F06600A657AD /* InternetConnection.swift in Sources */,
 				10BBF927247CFE03008DCF3A /* SaleViewModel.swift in Sources */,
+				10CD93752498CE47005E6CA6 /* CreateTicketViewController.swift in Sources */,
 				10E7F38F247B751F0082901F /* SoftwareSolution.swift in Sources */,
 				101FE96E24767EDF005AB106 /* PackageViewController.swift in Sources */,
 				A9328065249363D000EAA4F8 /* OverallTableViewHeader.swift in Sources */,

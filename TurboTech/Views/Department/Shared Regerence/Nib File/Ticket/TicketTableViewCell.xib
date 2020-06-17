@@ -18,29 +18,29 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLw-Dp-z43">
-                        <rect key="frame" x="0.0" y="0.0" width="362" height="63"/>
+                        <rect key="frame" x="8" y="0.0" width="346" height="63"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="center" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="M7X-9e-9qN">
-                                <rect key="frame" x="0.0" y="0.0" width="362" height="63"/>
+                                <rect key="frame" x="0.0" y="0.0" width="346" height="63"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VpC-wR-oCo">
-                                        <rect key="frame" x="0.0" y="0.0" width="12" height="63"/>
+                                        <rect key="frame" x="0.0" y="4" width="4" height="55"/>
                                         <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="12" id="azG-nH-lkF"/>
+                                            <constraint firstAttribute="width" constant="4" id="azG-nH-lkF"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="center" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="xPX-RZ-q5Y">
-                                        <rect key="frame" x="20" y="14.5" width="342" height="34"/>
+                                        <rect key="frame" x="12" y="14.5" width="334" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Ticket" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ji-4A-cRi">
-                                                <rect key="frame" x="0.0" y="0.0" width="342" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsX-3Z-Y5E">
-                                                <rect key="frame" x="0.0" y="19.5" width="342" height="14.5"/>
+                                                <rect key="frame" x="0.0" y="19.5" width="334" height="14.5"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -59,8 +59,8 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="VpC-wR-oCo" firstAttribute="top" secondItem="M7X-9e-9qN" secondAttribute="top" id="6RE-cP-xaC"/>
-                                    <constraint firstAttribute="bottom" secondItem="VpC-wR-oCo" secondAttribute="bottom" id="G7d-mt-AdD"/>
+                                    <constraint firstItem="VpC-wR-oCo" firstAttribute="top" secondItem="M7X-9e-9qN" secondAttribute="top" constant="4" id="6RE-cP-xaC"/>
+                                    <constraint firstAttribute="bottom" secondItem="VpC-wR-oCo" secondAttribute="bottom" constant="4" id="G7d-mt-AdD"/>
                                     <constraint firstItem="VpC-wR-oCo" firstAttribute="leading" secondItem="M7X-9e-9qN" secondAttribute="leading" id="cIh-Xf-o7u"/>
                                 </constraints>
                             </stackView>
@@ -76,10 +76,10 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="xLw-Dp-z43" secondAttribute="trailing" id="3SO-dU-63B"/>
+                    <constraint firstAttribute="trailing" secondItem="xLw-Dp-z43" secondAttribute="trailing" constant="8" id="3SO-dU-63B"/>
                     <constraint firstItem="xLw-Dp-z43" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="XBn-tf-h05"/>
                     <constraint firstAttribute="bottom" secondItem="xLw-Dp-z43" secondAttribute="bottom" id="h3c-Kh-vgc"/>
-                    <constraint firstItem="xLw-Dp-z43" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="q5U-dp-vSh"/>
+                    <constraint firstItem="xLw-Dp-z43" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="q5U-dp-vSh"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
