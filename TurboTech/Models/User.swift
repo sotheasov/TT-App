@@ -33,7 +33,7 @@ class User : NSObject, NSCoding{
         print(json["Phone"].stringValue)
         self.id = json["ID Card"].stringValue
         self.fullName = json["Full Name"].stringValue
-        self.userName = json["Full Name"].stringValue
+        self.userName = json["User Name"].stringValue
         self.positon = Position(rawValue: json["Position"].stringValue)!
         self.imageUrl = APIManager.IMAGE_PRO + json["Image"].stringValue
         self.phone = json["Phone"].stringValue
@@ -66,5 +66,23 @@ class User : NSObject, NSCoding{
         aCoder.encode(self.positon.rawValue,forKey: "postion")
         aCoder.encode(self.imageUrl, forKey: "imageUrl")
         aCoder.encode(self.phone, forKey: "phone")
+    }
+    
+    static func resetUser(){
+        let userDefault = UserDefaults.standard
+        userDefault.set(false, forKey: "isLogin")
+        AppDelegate.user = nil
+        userDefault.set(nil, forKey: "curUsername")
+        userDefault.set(nil, forKey: "curPassword")
+        userDefault.synchronize()
+    }
+    
+    static func setupUser(username : String, password : String, user : User){
+        let userDefault = UserDefaults.standard
+        userDefault.set(true, forKey: "isLogin")
+        AppDelegate.user = user
+        userDefault.set(username, forKey: "curUsername")
+        userDefault.set(password, forKey: "curPassword")
+        userDefault.synchronize()
     }
 }

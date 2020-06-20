@@ -11,16 +11,6 @@ import Foundation
 class LoginViewModel {
     var loginService = LoginService()
     
-//    func userLogin(username : String){
-//        loginService?.userLogin(username: username)
-//    }
-//    func userLogin(username : String, handler: @escaping(_ name : String)->()){
-//        loginService?.userLogin(username: username, handler: { (str) in
-//            print(str)
-//            handler("crm")
-//        })
-//    }
-    
     func userLogin(username : String, password : String, handler: @escaping(_ isLogin : Bool, _ user : User?)->Void){
         loginService.userLogin(username: username, password: password , handler: { (user) in
             if user != nil {
@@ -43,10 +33,10 @@ class LoginViewModel {
             AppDelegate.user = user
         }
     }
+    
+    func userChangePassword(username : String, oldPass : String, newPass : String, handler: @escaping(_ done : Bool)->()){
+        loginService.userChangePassword(username: username, oldPass: oldPass, newPass: newPass) { (status) in
+            handler(status)
+        }
+    }
 }
-
-//extension LoginViewModel : LoginServiceDelegate{
-//    func responseUser(user: String) {
-//        print("View model : ", user)
-//    }
-//}

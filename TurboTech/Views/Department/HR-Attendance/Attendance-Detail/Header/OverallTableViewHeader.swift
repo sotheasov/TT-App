@@ -23,4 +23,5 @@ class OverallTableViewHeader: UITableViewHeaderFooterView {
         lbAbsenceOverallOutlet.text = absence
         
     }
+    
 }

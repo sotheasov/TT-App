@@ -11,6 +11,7 @@ import UIKit
 class LateAttendanceViewController: UIViewController {
     
     // IBOutlet of LateAttendanceViewController
+    @IBOutlet weak var lbHeaderLateAttendanceOutlet: UILabel!
     @IBOutlet weak var lateAttendanceSegmentedOutlet: UISegmentedControl!
     @IBOutlet weak var btnBackLateAttendanceOutlet: UIButton!
     @IBOutlet weak var lateOverallAttendanceTableViewOutlet: UITableView!
@@ -73,6 +74,8 @@ class LateAttendanceViewController: UIViewController {
     }
     
     func customLateAttendanceViewController() {
+        lbHeaderLateAttendanceOutlet.textColor = COLOR.COLOR_LATE
+        
         btnBackLateAttendanceOutlet.shadowStyle(radius: 3, color: .black, offset: CGSize(width: -0.5, height: 3), opacity: 0.8)
         
         lateAttendanceSegmentedOutlet.shadowStyle(radius: 3, color: .black, offset: CGSize(width: -0.5, height: 0.5), opacity: 0.6)

@@ -16,16 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="6en-vF-IHu">
-                                <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6en-vF-IHu" id="kDH-75-gTq">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="LqL-3E-AYM" id="b6B-Jz-EEZ"/>
                             <outlet property="delegate" destination="LqL-3E-AYM" id="HXW-Hx-Cvc"/>
@@ -44,16 +34,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qFH-P7-L6g">
-                                <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qFH-P7-L6g" id="Wj2-Rb-4NF">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="UoL-bQ-YGZ" id="Lcd-aV-C4Z"/>
                             <outlet property="delegate" destination="UoL-bQ-YGZ" id="Meg-JW-3g1"/>
@@ -76,15 +56,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60c-1y-QZK" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="562"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="580"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="center" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="8VM-RM-7Dx" userLabel="Container Stack View">
-                                                <rect key="frame" x="16" y="32" width="288" height="530"/>
+                                                <rect key="frame" x="16" y="32" width="288" height="548"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nBI-HV-ddd" userLabel="Name Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="288" height="40"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="first name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UOS-tI-rcs">
+                                                            <textField opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="first name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UOS-tI-rcs">
                                                                 <rect key="frame" x="0.0" y="0.0" width="173" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="i40-ax-xPe"/>
@@ -92,7 +72,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="family-name"/>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BJl-V5-dWj">
+                                                            <textField opaque="NO" tag="110" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BJl-V5-dWj">
                                                                 <rect key="frame" x="181" y="0.0" width="107" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="given-name"/>
@@ -111,10 +91,10 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BqX-4z-pxg" userLabel="P G Stack View">
                                                         <rect key="frame" x="0.0" y="70" width="288" height="40"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dYE-co-C3w">
+                                                            <textField opaque="NO" tag="120" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dYE-co-C3w">
                                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" textContentType="tel"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next" textContentType="tel"/>
                                                             </textField>
                                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2K-3r-dcd">
                                                                 <rect key="frame" x="0.0" y="0.0" width="0.0" height="40"/>
@@ -132,20 +112,20 @@
                                                             <constraint firstItem="dYE-co-C3w" firstAttribute="width" secondItem="BqX-4z-pxg" secondAttribute="width" id="fSF-yx-ldw"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="province / city" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D3M-xx-yPN">
+                                                    <textField opaque="NO" tag="130" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="province / city" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D3M-xx-yPN">
                                                         <rect key="frame" x="0.0" y="140" width="288" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="address-level2"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="address-level2"/>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xHo-ir-Mm2" userLabel="D C Stack View">
                                                         <rect key="frame" x="0.0" y="210" width="288" height="40"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="district / khan" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ykS-4y-rNu">
+                                                            <textField opaque="NO" tag="140" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="district / khan" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ykS-4y-rNu">
                                                                 <rect key="frame" x="0.0" y="0.0" width="144" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="address-line2"/>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="commune / sangkat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="592-QE-w2M">
+                                                            <textField opaque="NO" tag="150" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="commune / sangkat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="592-QE-w2M">
                                                                 <rect key="frame" x="152" y="0.0" width="136" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -159,12 +139,12 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4JG-fu-fi1" userLabel="V H S Stack View">
                                                         <rect key="frame" x="0.0" y="280" width="288" height="40"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="village" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b1f-Lz-l5O">
+                                                            <textField opaque="NO" tag="160" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="village" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b1f-Lz-l5O">
                                                                 <rect key="frame" x="0.0" y="0.0" width="144" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="location"/>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="home, street" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QB7-Zr-vuy">
+                                                            <textField opaque="NO" tag="170" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="home, street" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QB7-Zr-vuy">
                                                                 <rect key="frame" x="152" y="0.0" width="136" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="address-line1"/>
@@ -175,42 +155,55 @@
                                                             <constraint firstItem="QB7-Zr-vuy" firstAttribute="height" secondItem="b1f-Lz-l5O" secondAttribute="height" id="Kse-sf-l0M"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfK-PX-gVQ">
-                                                        <rect key="frame" x="0.0" y="350" width="288" height="48"/>
-                                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="48" id="iJZ-Zz-pf3"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                        <inset key="imageEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                        <state key="normal" title="choose our internet package" image="cube.box" catalog="system">
-                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
-                                                        </state>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p3g-FL-UZx" customClass="LGButton" customModule="LGButton">
+                                                        <rect key="frame" x="6.5" y="350" width="275.5" height="40"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                                <color key="value" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="choose our internet package"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="titleNumOfLines">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImageSrc" value="package"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="choosePackagePress:" destination="JdS-Wp-oc3" eventType="touchUpInside" id="hgI-Ca-dzs"/>
+                                                            <action selector="choosePackageLgPressed:" destination="JdS-Wp-oc3" eventType="touchUpInside" id="EHP-up-lLo"/>
                                                         </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBw-98-qdf">
-                                                        <rect key="frame" x="33" y="428" width="222" height="24"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="222" id="Uxy-8M-9pp"/>
-                                                            <constraint firstAttribute="height" constant="24" id="jkF-ty-vhy"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                        <inset key="imageEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                        <state key="normal" title="share location" image="square" catalog="system">
-                                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OEQ-Mq-1gi" customClass="LGButton" customModule="LGButton">
+                                                        <rect key="frame" x="56.5" y="420" width="175.5" height="50"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="share location"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImageSrc" value="square"/>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                                <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
+                                                                <real key="value" value="17"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="shareLocationPress:" destination="JdS-Wp-oc3" eventType="touchUpInside" id="koI-Rb-VMf"/>
+                                                            <action selector="shareLocationLgPressed:" destination="JdS-Wp-oc3" eventType="touchUpInside" id="g0M-Fy-Uee"/>
                                                         </connections>
-                                                    </button>
+                                                    </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbA-CX-9Iz">
-                                                        <rect key="frame" x="64" y="482" width="160" height="48"/>
+                                                        <rect key="frame" x="64" y="500" width="160" height="48"/>
                                                         <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="160" id="ogD-rh-DpR"/>
@@ -233,19 +226,18 @@
                                                     <constraint firstItem="4JG-fu-fi1" firstAttribute="height" secondItem="xHo-ir-Mm2" secondAttribute="height" id="8bs-7p-Jxb"/>
                                                     <constraint firstItem="xHo-ir-Mm2" firstAttribute="height" secondItem="D3M-xx-yPN" secondAttribute="height" id="Bo7-vu-Sro"/>
                                                     <constraint firstItem="D3M-xx-yPN" firstAttribute="height" secondItem="BqX-4z-pxg" secondAttribute="height" id="DOI-OQ-sNh"/>
-                                                    <constraint firstAttribute="trailing" secondItem="wfK-PX-gVQ" secondAttribute="trailing" id="DaD-6A-fBA"/>
                                                     <constraint firstItem="D3M-xx-yPN" firstAttribute="leading" secondItem="8VM-RM-7Dx" secondAttribute="leading" id="KBn-mE-HY4"/>
                                                     <constraint firstAttribute="trailing" secondItem="xHo-ir-Mm2" secondAttribute="trailing" id="KhO-hI-yHP"/>
                                                     <constraint firstItem="GMe-wX-yhe" firstAttribute="height" secondItem="UOS-tI-rcs" secondAttribute="height" id="O0j-zR-UIE"/>
                                                     <constraint firstItem="4JG-fu-fi1" firstAttribute="leading" secondItem="8VM-RM-7Dx" secondAttribute="leading" id="Ppp-Ty-o4i"/>
                                                     <constraint firstAttribute="trailing" secondItem="BqX-4z-pxg" secondAttribute="trailing" id="S1v-5g-R6K"/>
                                                     <constraint firstAttribute="trailing" secondItem="GMe-wX-yhe" secondAttribute="trailing" id="T9I-yd-UGB"/>
+                                                    <constraint firstItem="p3g-FL-UZx" firstAttribute="height" secondItem="UOS-tI-rcs" secondAttribute="height" id="TBF-tm-RCS"/>
                                                     <constraint firstItem="BqX-4z-pxg" firstAttribute="leading" secondItem="8VM-RM-7Dx" secondAttribute="leading" id="UFE-aU-7v5"/>
                                                     <constraint firstItem="b1f-Lz-l5O" firstAttribute="height" secondItem="UOS-tI-rcs" secondAttribute="height" id="bE8-eV-zA4"/>
                                                     <constraint firstItem="ykS-4y-rNu" firstAttribute="height" secondItem="UOS-tI-rcs" secondAttribute="height" id="cUZ-G5-Rlh"/>
                                                     <constraint firstItem="xHo-ir-Mm2" firstAttribute="leading" secondItem="8VM-RM-7Dx" secondAttribute="leading" id="cdw-aU-phd"/>
                                                     <constraint firstAttribute="trailing" secondItem="D3M-xx-yPN" secondAttribute="trailing" id="ctZ-Rp-DWg"/>
-                                                    <constraint firstItem="wfK-PX-gVQ" firstAttribute="leading" secondItem="8VM-RM-7Dx" secondAttribute="leading" id="lbN-k8-m6o"/>
                                                     <constraint firstItem="GMe-wX-yhe" firstAttribute="leading" secondItem="8VM-RM-7Dx" secondAttribute="leading" id="ngT-g9-fie"/>
                                                     <constraint firstAttribute="trailing" secondItem="nBI-HV-ddd" secondAttribute="trailing" id="sp5-nG-b2j"/>
                                                     <constraint firstItem="nBI-HV-ddd" firstAttribute="leading" secondItem="8VM-RM-7Dx" secondAttribute="leading" id="vuf-GZ-ojj"/>
@@ -282,7 +274,7 @@
                         <viewLayoutGuide key="safeArea" id="dSP-9Z-vCB"/>
                     </view>
                     <connections>
-                        <outlet property="chooseProductButton" destination="wfK-PX-gVQ" id="djX-4M-ZQa"/>
+                        <outlet property="chooseProductLgButton" destination="p3g-FL-UZx" id="m4Y-dT-e56"/>
                         <outlet property="communeTextField" destination="592-QE-w2M" id="iZQ-sF-qxd"/>
                         <outlet property="districtTextField" destination="ykS-4y-rNu" id="vwf-dh-mGe"/>
                         <outlet property="emailTextField" destination="GMe-wX-yhe" id="XfO-K0-um5"/>
@@ -294,7 +286,7 @@
                         <outlet property="provinceTextField" destination="D3M-xx-yPN" id="I4R-YH-aDW"/>
                         <outlet property="registerButton" destination="JbA-CX-9Iz" id="CE0-cb-7CZ"/>
                         <outlet property="scrollView" destination="LZ0-aF-GOb" id="cG3-kq-hmo"/>
-                        <outlet property="shareLocationButton" destination="ZBw-98-qdf" id="NvB-FO-FOx"/>
+                        <outlet property="shareLocationLgButton" destination="OEQ-Mq-1gi" id="cbh-oF-Ucs"/>
                         <outlet property="villageTextField" destination="b1f-Lz-l5O" id="yNd-Nl-0Zs"/>
                     </connections>
                 </viewController>
@@ -382,16 +374,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Hqc-my-wLS">
-                                <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hqc-my-wLS" id="Bn1-ar-7p0">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="FUx-4m-bEs" id="Ei0-Pw-Pih"/>
                             <outlet property="delegate" destination="FUx-4m-bEs" id="A9P-PL-qN9"/>
@@ -402,10 +384,43 @@
             </objects>
             <point key="canvasLocation" x="-2575" y="243"/>
         </scene>
+        <!--Ticket Table View Controller-->
+        <scene sceneID="Ebc-dN-0PC">
+            <objects>
+                <tableViewController storyboardIdentifier="TicketTableViewControllerID" id="KOh-FH-dYT" customClass="TicketTableViewController" customModule="TurboTech" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SbT-vX-b6F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="KOh-FH-dYT" id="DHa-1m-RWb"/>
+                            <outlet property="delegate" destination="KOh-FH-dYT" id="4XQ-4N-9XA"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hA6-PY-lxH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2574" y="985"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tXM-rU-EBP">
+            <objects>
+                <viewController id="dax-rm-4MA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BjI-NB-XXr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="e36-TC-gbp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l5r-NP-9AJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1819" y="985"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="cube.box" catalog="system" width="128" height="124"/>
         <image name="male" width="21.5" height="21.5"/>
-        <image name="square" catalog="system" width="128" height="114"/>
+        <image name="package" width="84.5" height="92.5"/>
+        <image name="square" width="83.5" height="83.5"/>
     </resources>
 </document>

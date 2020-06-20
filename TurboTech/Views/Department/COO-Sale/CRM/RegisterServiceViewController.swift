@@ -10,6 +10,7 @@ import UIKit
 import iOSDropDown
 import CoreLocation
 import Kingfisher
+import LGButton
 
 class RegisterServiceViewController: UIViewController {
     
@@ -35,38 +36,38 @@ class RegisterServiceViewController: UIViewController {
     @IBOutlet weak var homeStreetTextField: UITextField!
     
     // MARK: - Button
-    @IBOutlet weak var chooseProductButton: UIButton!
-    @IBOutlet weak var shareLocationButton: UIButton!
+    @IBOutlet weak var chooseProductLgButton: LGButton!
+    @IBOutlet weak var shareLocationLgButton: LGButton!
     @IBOutlet weak var registerButton: UIButton!
-    var isShared = false
-    var isMale = true
-    var packageId : Int?
-    var packageName : String?
+    private var isShared = false
+    private var isMale = true
+    private var packageId : Int?
+    private var packageName : String?
     
     // MARK: - Storing each address
-    var addressList = [Address]()
-    var provinceList = [Address]()
-    var districtList = [Address]()
-    var communeList = [Address]()
-    var villageList = [Address]()
+    private var addressList = [Address]()
+    private var provinceList = [Address]()
+    private var districtList = [Address]()
+    private var communeList = [Address]()
+    private var villageList = [Address]()
     
-    var proId : Int?
-    var disId : Int?
-    var comId : Int?
-    var vilId : Int?
-    let picker = UIPickerView()
-    var activeTextField = UITextField()
+    private var proId : Int?
+    private var disId : Int?
+    private var comId : Int?
+    private var vilId : Int?
+    private let picker = UIPickerView()
+    private var activeTextField = UITextField()
     
-    let square = UIImage(named: "box")
-    let checked = UIImage(named: "checked.box")
-    let package = UIImage(named: "package-box")
+    private let square = UIImage(named: "square")
+    private let checked = UIImage(named: "check-square")
+//    let package = UIImage(named: "package")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
     }
     
-    func setView(){
+    private func setView(){
         
 //        let tap = UITapGestureRecognizer(target: self, action: #selector(UIView.endEditing(_:)))
 //        tap.cancelsTouchesInView = false
@@ -90,18 +91,15 @@ class RegisterServiceViewController: UIViewController {
         villageTextField.customizeRegister()
         villageTextField.setDropDownImage()
         homeStreetTextField.customizeRegister()
-        
-        chooseProductButton.setTitle("choose our internet package".localized, for: .normal)
-        chooseProductButton.layer.cornerRadius = chooseProductButton.frame.height / 2
-        chooseProductButton.setImage(package, for: .normal)
-        chooseProductButton.imageView?.contentMode = .scaleAspectFit
+        chooseProductLgButton.titleString = "choose our internet package".localized
+//        chooseProductButton.setImage(package, for: .normal)
+//        chooseProductButton.imageView?.contentMode = .scaleAspectFit
         
         registerButton.layer.cornerRadius = registerButton.frame.height / 2
         registerButton.setTitle("register".localized, for: .normal)
         
-        shareLocationButton.setTitle("share location".localized, for: .normal)
-        shareLocationButton.setImage(square, for: .normal)
-        shareLocationButton.imageView?.contentMode = .scaleAspectFit
+        shareLocationLgButton.titleString = "share location".localized
+        shareLocationLgButton.leftImageSrc = square
         
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
@@ -128,11 +126,10 @@ class RegisterServiceViewController: UIViewController {
     }
     
     
-    @IBAction func shareLocationPress(_ sender: Any) {
-//        shareLocationButton
+    @IBAction func shareLocationLgPressed(_ sender: Any) {
         isShared = !isShared
         if isShared {
-            shareLocationButton.setImage(checked, for: .normal)
+            shareLocationLgButton.leftImageSrc = checked
             locationManager.requestWhenInUseAuthorization()
             var currentLoc: CLLocation!
             locationManager.requestAlwaysAuthorization()
@@ -144,7 +141,7 @@ class RegisterServiceViewController: UIViewController {
                print(currentLoc.coordinate.longitude)
             }
         } else {
-            shareLocationButton.setImage(square, for: .normal)
+            shareLocationLgButton.leftImageSrc = square
         }
     }
     
@@ -161,7 +158,7 @@ class RegisterServiceViewController: UIViewController {
         }
     }
     
-    @IBAction func choosePackagePress(_ sender: Any) {
+    @IBAction func choosePackageLgPressed(_ sender: Any) {
         let choosePackageVC = storyboard?.instantiateViewController(withIdentifier: "PackageCRMViewControllerID") as! PackageCRMViewController
         choosePackageVC.modalPresentationStyle = .overCurrentContext
         if let selected = packageId {
@@ -170,11 +167,7 @@ class RegisterServiceViewController: UIViewController {
         choosePackageVC.onDoneBlock = { id, name in
             self.packageId = id
             self.packageName = name
-            self.chooseProductButton.setTitle(self.packageName, for: .normal)
-            self.chooseProductButton.setTitleColor(UIColor.white, for: .normal)
-            self.chooseProductButton.tintColor = .white
-            self.chooseProductButton.backgroundColor = .systemTeal
-            self.chooseProductButton.layer.borderColor = UIColor.white.cgColor
+            self.chooseProductLgButton.titleString = name
         }
         self.present(choosePackageVC, animated: true, completion: nil)
     }
@@ -193,10 +186,10 @@ class RegisterServiceViewController: UIViewController {
         districtTextField.layer.borderColor = gray
         communeTextField.layer.borderColor = gray
         villageTextField.layer.borderColor = gray
-        chooseProductButton.setTitleColor(UIColor.white, for: .normal)
-        chooseProductButton.tintColor = .white
-        chooseProductButton.backgroundColor = .systemTeal
-        chooseProductButton.layer.borderColor = UIColor.white.cgColor
+        chooseProductLgButton.titleColor = .white
+        chooseProductLgButton.titleColor = .white
+        chooseProductLgButton.backgroundColor = .systemTeal
+        chooseProductLgButton.borderColor = .white
         
         let isValidateFirstName = Validaton.shared.validationName(name: fname)
         if !isValidateFirstName {
@@ -246,11 +239,11 @@ class RegisterServiceViewController: UIViewController {
             print("my package id : ", packId)
             isValidPackage = true
         } else {
-            chooseProductButton.setTitleColor(UIColor.red, for: .normal)
-            chooseProductButton.tintColor = .red
-            chooseProductButton.backgroundColor = .white
-            chooseProductButton.layer.borderColor = red
-            chooseProductButton.layer.borderWidth = 1.0
+            chooseProductLgButton.titleColor = .red
+            chooseProductLgButton.bgColor = .white
+            chooseProductLgButton.borderColor = .red
+            chooseProductLgButton.borderWidth = 1.0
+            chooseProductLgButton.titleColor = .red
         }
         
         // MARK: - Everything can post request URL
@@ -271,7 +264,7 @@ class RegisterServiceViewController: UIViewController {
         }
     }
     
-    func clearDataWhenDone(){
+    private func clearDataWhenDone(){
         firstNameTextField.text = nil
         lastNameTextField.text = nil
         emailTextField.text = nil
@@ -281,12 +274,7 @@ class RegisterServiceViewController: UIViewController {
         communeTextField.text = nil
         villageTextField.text = nil
         homeStreetTextField.text = nil
-        chooseProductButton.setTitle("choose our internet package".localized, for: .normal)
-        chooseProductButton.setBackgroundImage(UIImage(named: "packageicon"), for: .normal)
-        let square = UIImage(named: "square")
-        shareLocationButton.setImage(square, for: .normal)
-        shareLocationButton.imageView?.contentMode = .scaleAspectFit
-        shareLocationButton.imageEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        chooseProductLgButton.titleString = "choose our internet package".localized
         isShared = false
         isMale = true
         packageId = nil
@@ -327,7 +315,7 @@ extension UITextField {
         let h : CGFloat = b - 2.75 * s
         let y = (b - h)/2
         let imageBounds = CGRect(x: s, y: y, width: b - 2*s , height: h)
-        let image = UIImage(named: "arrowtriangle.down.fill")
+        let image = UIImage(named: "chevron-down")
         let imageView = UIImageView(frame: imageBounds)
         imageView.image = image
         self.rightView = UIView(frame: bounds)
@@ -423,7 +411,12 @@ extension RegisterServiceViewController : UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        let nextTag = textField.tag + 10
+        if let nextResponder = textField.superview?.viewWithTag(nextTag){
+            nextResponder.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
         return true
     }
     

@@ -11,19 +11,6 @@ import Alamofire
 import SwiftyJSON
 
 class LoginService {
-    
-//    var loginServiceDelegate : LoginServiceDelegate?
-//
-//    func userLogin(username : String){
-//        // user login was called from view model
-//        // and fetch data
-//        // User, status
-//        // get data hz
-//        // tver mix ban pass datqa to view model vinh
-//        self.loginServiceDelegate?.responseUser(user: "response \(username)")
-//    }
-//    func userLogin(username : String, handler: @escaping((_ name : String)->())){
-//    }
     func userLogin(username : String, password : String, handler: @escaping(_ user : User?)->()) {
         var user : User?
         // build parameters
@@ -44,8 +31,30 @@ class LoginService {
             handler(user)
         }
     }
+    
+    func userChangePassword(username : String, oldPass : String, newPass : String, handler: @escaping(_ done : Bool)->()){
+        
+        let parameters = ["username" : username, "old_pass" : oldPass, "new_pass" : newPass]
+        var status = false
+        AF.request(APIManager.LOGIN.POST_PW, method: .post , parameters: parameters).response { (response) in
+            print("min torn jol change ")
+            
+            guard let data = response.data else {
+                print(" pre data")
+                return
+            }
+            print(data)
+            if let json = try? JSON(data: data) {
+                print(json)
+//                status = json["pass"].bool ?? false
+                UserDefaults.standard.set(newPass, forKey: "curPassword")
+                print("change ban hz")
+                status = true
+            } else {
+                print("change ot ban")
+                status = false
+            }
+            handler(status)
+        }
+    }
 }
-
-//protocol LoginServiceDelegate {
-//    func responseUser(user : String)
-//}

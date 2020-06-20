@@ -8,15 +8,20 @@
 
 import UIKit
 import Network
+import Kingfisher
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var homeMenyCollectionViewFlowLayout: UICollectionViewFlowLayout!
-    @IBOutlet weak var homeMenuCollectionView: UICollectionView!
-    @IBOutlet weak var menuView: UIView!
-    @IBOutlet weak var sliderImageView: UIImageView!
+    @IBOutlet weak var imageSliderCollectionView: UICollectionView!
+    @IBOutlet weak var pageController: UIPageControl!
     
-    var menuList = [
+    @IBOutlet weak var homeMenyCollectionViewFlowLayout: UICollectionViewFlowLayout!
+    
+    @IBOutlet weak var homeMenuCollectionView: UICollectionView!
+    
+    @IBOutlet weak var menuView: UIView!
+    
+    private var menuList = [
         Menu(id: 0, title: "product".localized, imageUrl: "internet_package"),
         Menu(id: 1, title: "payment".localized, imageUrl: "get_cash"),
         Menu(id: 2, title: "help desk".localized, imageUrl: "ustomer_support"),
@@ -25,6 +30,8 @@ class HomeViewController: UIViewController {
         Menu(id: 5, title: "location".localized, imageUrl: "Map")
     ]
     //[Menu]()
+    private lazy var homeViewModel = HomeViewModel()
+    private var imageList = [HomeImage]()
     
 //    let monitor = NWPathMonitor()
     
@@ -32,13 +39,21 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 //        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name(rawValue: "changed"), object: nil)
 //        setUp()
-        self.tabBarItem = UITabBarItem(title: "home".localized, image: UIImage(named: "house.fill"), selectedImage: UIImage(named: "house.fill"))
-        addRightButton()
-        addLeftButton()
-        registerCollectionViewCell()
-        localized()
+//        self.tabBarItem = UITabBarItem(title: "home".localized, image: UIImage(named: "house.fill"), selectedImage: UIImage(named: "house.fill"))
+//        addRightButton()
+//        addLeftButton()
+//        registerCollectionViewCell()
+//        localized()
         DispatchQueue.main.async {
-            Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+//            Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+            self.homeViewModel.fetchSliderImage { (image) in
+                self.imageList = image
+                for img in image {
+                    print(img.imageKh, img.imageEn)
+                }
+                self.imageSliderCollectionView.reloadData()
+            }
         }
         
 //        didTapOnRightButton()
@@ -64,18 +79,25 @@ class HomeViewController: UIViewController {
 ////        menuList =
 //        homeMenuCollectionView.reloadData()
 //    }
-     
-    var imageNum = 0
-    let imageStr = ["1","2","3","4","5"]
-    @objc
-    func changeImage(){
-        if imageNum > imageStr.count - 1 {imageNum = 0}
-        let image = UIImage(named: imageStr[imageNum])
-        _ = URL(string: imageStr[imageNum])
-//        sliderImageView.kf.setImage(with: url, placeholder: image)
-        sliderImageView.image = image
-        imageNum = imageNum + 1
+    
+    @objc func changeImage(){
+        if imageNum < imageList.count {
+            let index = IndexPath.init(item: imageNum, section: 0)
+            self.imageSliderCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+            pageController.currentPage = imageNum
+            imageNum += 1
+        } else {
+            imageNum = 0
+            let index = IndexPath.init(item: imageNum, section: 0)
+            self.imageSliderCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: false)
+            pageController.currentPage = imageNum
+            imageNum = 1
+        }
     }
+    
+    private var timer = Timer()
+    private var imageNum = 0
+    private let imageStr = ["1","2","3","4","5"]
     
     private func setUpNavigation(){
         let height: CGFloat = 0 //whatever height you want to add to the existing height
@@ -83,7 +105,7 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height + height)
     }
     
-    func addRightButton(){
+    private func addRightButton(){
         
         let rNavView = UIView(frame: CGRect(x: 0, y: 0, width: 90,height: 40))
         
@@ -96,8 +118,17 @@ class HomeViewController: UIViewController {
         notificationBtn.addTarget(self, action: #selector(self.didTapOnRightButton), for: .touchUpInside)
         
         let profileImageView = UIImageView(frame: CGRect(x: 50, y: 2, width: 36, height: 36))
-        profileImageView.image = UIImage(named: "love.jpg")
-        profileImageView.contentMode = UIView.ContentMode.scaleAspectFit
+        let image = UIImage(named: "user-circle")
+        profileImageView.image = image
+        if UserDefaults.standard.bool(forKey: "isLogin") && AppDelegate.user != nil {
+            print(AppDelegate.user!.imageUrl)
+            let url = URL(string: AppDelegate.user!.imageUrl)
+            profileImageView.kf.setImage(with: url, placeholder: image)
+        } else {
+            profileImageView.image = image
+        }
+        
+        profileImageView.contentMode = .scaleAspectFill
         profileImageView.layer.cornerRadius = SIZE.RADIOUS_IMAGE
         profileImageView.layer.masksToBounds = true
         rNavView.addSubview(profileImageView)
@@ -107,7 +138,7 @@ class HomeViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = rightBarButton
     }
     
-    func addLeftButton(){
+    private func addLeftButton(){
         let lNavVIew = UIView(frame: CGRect(x: 0, y: 0, width: 160, height: 40))
         
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 160, height: 40))
@@ -137,6 +168,8 @@ class HomeViewController: UIViewController {
     }
     
     func localized(){
+        self.tabBarItem = UITabBarItem(title: "home".localized, image: UIImage(named: "house.fill"), selectedImage: UIImage(named: "house.fill"))
+        registerCollectionViewCell()
         menuList = [
             Menu(id: 0, title: "product".localized, imageUrl: "product"),
             Menu(id: 1, title: "payment".localized, imageUrl: "payment"),
@@ -147,6 +180,7 @@ class HomeViewController: UIViewController {
         ]
         homeMenuCollectionView.reloadData()
         addLeftButton()
+        addRightButton()
         self.tabBarController?.tabBar.items![0].title = "home".localized
         self.tabBarController?.tabBar.items![1].title = "location".localized
         self.tabBarController?.tabBar.items![2].title = "message".localized
@@ -158,41 +192,59 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        menuList.count
+        collectionView == imageSliderCollectionView ? imageList.count : menuList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = homeMenuCollectionView.dequeueReusableCell(withReuseIdentifier: "MenuCellID", for: indexPath) as! MenuCollectionViewCell
-        cell.customCell(menu: menuList[indexPath.item])
-        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
-        return cell
+        if collectionView == imageSliderCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+            if let vc = cell.viewWithTag(111) as? UIImageView {
+                let url = URL(string: LanguageManager.shared.language == "en" ? imageList[indexPath.row].imageEn : imageList[indexPath.row].imageKh)
+                vc.kf.setImage(with: url, placeholder: UIImage(named: "defaultImage"))
+//                vc.image = UIImage(named: "defaultImage")
+            }
+            return cell
+        } else {
+            let cell = homeMenuCollectionView.dequeueReusableCell(withReuseIdentifier: "MenuCellID", for: indexPath) as! MenuCollectionViewCell
+            cell.customCell(menu: menuList[indexPath.item])
+            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
+            return cell
+        }
     }
     
     func registerCollectionViewCell()  {
         homeMenuCollectionView.register(UINib(nibName: "MenuCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MenuCellID")
         homeMenuCollectionView.delegate = self
         homeMenuCollectionView.dataSource = self
+        imageSliderCollectionView.delegate = self
+        imageSliderCollectionView.dataSource = self
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        0.8
+        collectionView == imageSliderCollectionView ? 0.0 : 0.8
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        0.4
+        collectionView == imageSliderCollectionView ? 0.0 : 0.4
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemPerRow : CGFloat = 2
-        let itemPerColumn : CGFloat = 3
-        let lineSpacing: CGFloat = 0.8
-        let itemSpacing: CGFloat = 0.4
-        let size = self.menuView.frame.size
+        if collectionView == imageSliderCollectionView {
+            return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
+//            return CGSize(width: 100, height: 100)
+        } else {
+            let itemPerRow : CGFloat = 2
+            let itemPerColumn : CGFloat = 3
+            let lineSpacing: CGFloat = 0.8
+            let itemSpacing: CGFloat = 0.4
+            let size = self.menuView.frame.size
 
-        let width = (size.width - (itemPerRow * itemSpacing)) / itemPerRow
-        let height = (size.height - (itemPerColumn * lineSpacing)) / itemPerColumn
-        return CGSize(width: width, height: height)
+            let width = (size.width - (itemPerRow * itemSpacing)) / itemPerRow
+            let height = (size.height - (itemPerColumn * lineSpacing)) / itemPerColumn
+            return CGSize(width: width, height: height)
+        }
     }
     
     @objc
@@ -257,16 +309,18 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 locationVC.modalPresentationStyle = .fullScreen
                 self.navigationController?.pushViewController(locationVC, animated: true)
                 */
-                /*
-                let locationVC = storyboard?.instantiateViewController(identifier: "UserLocationViewControllerID") as! UserLocationViewController
-                locationVC.modalPresentationStyle = .fullScreen
-                locationVC.navigationItem.title = "location".localized
-                self.navigationController?.pushViewController(locationVC, animated: true)
- */
+                
+//                let locationVC = storyboard?.instantiateViewController(withIdentifier: "UserLocationViewControllerID") as! UserLocationViewController
+//                locationVC.modalPresentationStyle = .fullScreen
+//                locationVC.navigationItem.title = "location".localized
+//                self.navigationController?.pushViewController(locationVC, animated: true)
+                
                 let department = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
-                let crmVC = department.instantiateViewController(withIdentifier: "RegisterServiceViewControllerID") as! RegisterServiceViewController
+                let crmVC = department.instantiateViewController(withIdentifier: "TicketTableViewControllerID") as! TicketTableViewController
                 crmVC.modalPresentationStyle = .fullScreen
                 self.navigationController?.pushViewController(crmVC, animated: true)
+                
+//                TicketTableViewController
                 
             default:
                 print("")

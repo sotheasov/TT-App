@@ -15,12 +15,12 @@ enum Position : String {
     case HR = "HR"
 }
 
-enum Attendance {
-    case Present
-    case Late
-    case Total
-    case Absence
-}
+//enum Attendance {
+//    case Present
+//    case Late
+//    case Total
+//    case Absence
+//}
 
 enum Sale {
     case Product

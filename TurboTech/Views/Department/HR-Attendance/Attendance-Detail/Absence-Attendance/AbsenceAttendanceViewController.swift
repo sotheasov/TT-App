@@ -11,6 +11,7 @@ import UIKit
 class AbsenceAttendanceViewController: UIViewController {
     
     // IBOutlet of AbsenceAttendanceViewController
+    @IBOutlet weak var lbHeaderAbsenceAttendanceOutlet: UILabel!
     @IBOutlet weak var absenceOverallAttendanceTableViewOutlet: UITableView!
     @IBOutlet weak var btnBackAbsenceAttendanceOutlet: UIButton!
     @IBOutlet weak var absenceAttendanceSegmentedOutlet: UISegmentedControl!
@@ -72,6 +73,8 @@ class AbsenceAttendanceViewController: UIViewController {
     }
     
     func customAbsenceAttendanceViewController() {
+        lbHeaderAbsenceAttendanceOutlet.textColor = COLOR.COLOR_ABSENCE
+        
         btnBackAbsenceAttendanceOutlet.shadowStyle(radius: 3, color: .black, offset: CGSize(width: -0.5, height: 3), opacity: 0.8)
         
         absenceAttendanceSegmentedOutlet.shadowStyle(radius: 3, color: .black, offset: CGSize(width: -0.5, height: 0.5), opacity: 0.6)

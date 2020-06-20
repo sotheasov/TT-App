@@ -44,8 +44,31 @@ class AbsenceAttendance : AttendanceProtocol {
     
 }
 
-enum ATTANDANCE_TYPE {
-    case present
-    case late
-    case absence
+protocol ReportAttendanceProtocol {
+    var nameReport : String { get }
+    var dateReport : String { get }
 }
+
+class FullEarlyReport : ReportAttendanceProtocol {
+    var nameReport: String
+    var dateReport: String
+    
+    init(json : JSON){
+        self.nameReport = json["name"].stringValue
+        self.dateReport = json["date"].stringValue
+    }
+    
+    init(json: JSON, isFullLateReport : Bool){
+        self.nameReport = json["name"].stringValue
+        self.dateReport = json["date"].stringValue
+//        self.statusName = isLate ? "Late" : "Present"
+    }
+    
+}
+
+
+//enum ATTANDANCE_TYPE {
+//    case present
+//    case late
+//    case absence
+//}

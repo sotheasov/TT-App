@@ -8,6 +8,7 @@
 
 import UIKit
 import PinterestLayout
+import Kingfisher
 
 class AttendanceViewController: UIViewController {
     
@@ -21,7 +22,7 @@ class AttendanceViewController: UIViewController {
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     // Declare Variable
-    var data = [0, 0, -1, 0]
+    var data = [0, 0, 12, 0]
     let cellLayout = PinterestLayout()
     let attandanceViewModel = AttandanceViewModel()
     
@@ -39,6 +40,9 @@ class AttendanceViewController: UIViewController {
         getCurrentDateTime()
         getDate()
         localized()
+        
+        setUser(user : AppDelegate.user)
+        attendanceCollectionViewOutlet.reloadData()
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-M-dd"
@@ -83,6 +87,14 @@ class AttendanceViewController: UIViewController {
         }
     }
     
+    func setUser(user : User?){
+           if let u = user {
+            let url = URL(string: u.imageUrl)
+            attendanceProfileImageViewOutlet.kf.setImage(with: url, placeholder: UIImage(named: "person.circle.fill"))
+        }
+    }
+
+    
     func registerCollectionViewCell()  {
         attendanceCollectionViewOutlet.register(UINib(nibName: "AttendanceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "attendanceCellItem")
         attendanceCollectionViewOutlet.delegate = self
@@ -114,8 +126,9 @@ class AttendanceViewController: UIViewController {
     
     func customAttendanceViewController() {
         attendanceProfileImageViewOutlet.layer.cornerRadius = attendanceProfileImageViewOutlet.frame.height/2
-        attendanceProfileImageViewOutlet.layer.borderWidth = 3
+        attendanceProfileImageViewOutlet.layer.borderWidth = 2
         attendanceProfileImageViewOutlet.layer.borderColor = COLOR.WHITE_SMOKE_GREY.cgColor
+        attendanceProfileImageViewOutlet.shadowStyle(radius: 5, color: .black, offset: CGSize(width: -0.5, height: 5), opacity: 0.8)
         
         btnBackAttendanceOutlet.shadowStyle(radius: 3, color: .black, offset: CGSize(width: -0.5, height: 3), opacity: 0.8)
         lbTopAttendanceOutlet.textColor = COLOR.COLOR_PRESENT

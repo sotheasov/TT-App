@@ -5,7 +5,13 @@
 //  Created by sq on 5/19/20.
 //  Copyright © 2020 TurboTech. All rights reserved.
 //
-
+// S5AZC8X8J7
+// APP ID : S5AZC8X8J7.com.turbotech.turbotech-ios
+/*
+ Name:TurboTech
+ Key ID:TWSAK32XLQ
+ Services:Apple Push Notifications service (APNs)
+ */
 import UIKit
 import GooglePlaces
 import GoogleMaps
@@ -31,21 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let loginViewModel = LoginViewModel()
             loginViewModel.fetchCurrentUser()
         }
-        
-//        if UserDefaults.standard.bool(forKey: "isLogin") == nil {
-//            UserDefaults.standard.set(false, forKey: "isLogin")
-//        }
-        
-//        if UserDefaults.standard.bool(forKey: "isLogin") {
-//            let decoded = UserDefaults.standard.data(forKey: "curUser")
-//            if let decode = decoded {
-//                print("work decode")
-//                AppDelegate.user = try? NSKeyedUnarchiver.unarchivedObject(ofClass: User.self, from: decode)
-//            } else {
-//                print("not work decode")
-//                UserDefaults.standard.set(false, forKey: "isLogin")
-//            }
-//        }
         
         UITabBar.appearance().barTintColor = TAB.COLOR
         UITabBar.appearance().tintColor = TAB.SELECTED_COLOR
@@ -73,9 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSServices.provideAPIKey(MAP_API_KEY)
         GMSPlacesClient.provideAPIKey(MAP_API_KEY)
-//        if let tabBarController = self.window!.rootViewController as? UITabBarController {
-//            tabBarController.selectedIndex = 1
-//        }
         FirebaseApp.configure()
         return true
     }

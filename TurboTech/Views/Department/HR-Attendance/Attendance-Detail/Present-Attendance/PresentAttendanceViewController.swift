@@ -11,6 +11,7 @@ import UIKit
 class PresentAttendanceViewController: UIViewController {
     
     // IBOutlet of PresentAttendanceViewController
+    @IBOutlet weak var lbHeaderPresentAttendanceOutlet: UILabel!
     @IBOutlet weak var btnBackPresentAttendanceOutlet: UIButton!
     @IBOutlet weak var presentAttendanceSegmentedOutlet: UISegmentedControl!
     @IBOutlet weak var presentOverallAttendanceTableViewOutlet: UITableView!
@@ -29,6 +30,7 @@ class PresentAttendanceViewController: UIViewController {
         customPresentAttendanceViewController()
         presentAttendanceSegmented(presentAttendanceSegmentedOutlet)
         addGestureSwapeToSegment()
+        
     }
     
     func registerTableViewCell() {
@@ -76,6 +78,8 @@ class PresentAttendanceViewController: UIViewController {
     }
     
     func customPresentAttendanceViewController() {
+        lbHeaderPresentAttendanceOutlet.textColor = COLOR.COLOR_PRESENT
+        
         btnBackPresentAttendanceOutlet.shadowStyle(radius: 3, color: .black, offset: CGSize(width: -0.5, height: 3), opacity: 0.8)
         
         presentAttendanceSegmentedOutlet.shadowStyle(radius: 3, color: .black, offset: CGSize(width: -0.5, height: 0.5), opacity: 0.6)

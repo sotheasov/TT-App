@@ -115,8 +115,8 @@ extension HelpDeskViewController : ProductViewModelDelegate {
     }
     
     func dataForHelpDesk(){
-        self.productList.append(Product(id: 0, nameEn: "Complain", nameKh: "បញ្ចេញមតិ", imageUrl: "icons8-task_completed_filled"))
-        self.productList.append(Product(id: 1, nameEn: "FAQs", nameKh: "សំណួរ​ចម្លើយ", imageUrl: "icons8-faq_filled"))
+        self.productList.append(Product(id: 0, nameEn: "Complain", nameKh: "បញ្ចេញមតិ", imageUrl: "feedback"))
+        self.productList.append(Product(id: 1, nameEn: "FAQs", nameKh: "សំណួរ​ចម្លើយ", imageUrl: "question-answer"))
         self.productTableView.reloadData()
     }
     
