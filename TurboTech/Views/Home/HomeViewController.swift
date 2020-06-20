@@ -33,19 +33,13 @@ class HomeViewController: UIViewController {
     private lazy var homeViewModel = HomeViewModel()
     private var imageList = [HomeImage]()
     
-//    let monitor = NWPathMonitor()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name(rawValue: "changed"), object: nil)
-//        setUp()
-//        self.tabBarItem = UITabBarItem(title: "home".localized, image: UIImage(named: "house.fill"), selectedImage: UIImage(named: "house.fill"))
-//        addRightButton()
-//        addLeftButton()
-//        registerCollectionViewCell()
-//        localized()
+        InternetConnection.shared.checkConnection(self)
+    }
+    
+    func fetchData(){
         DispatchQueue.main.async {
-//            Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
             self.timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
             self.homeViewModel.fetchSliderImage { (image) in
                 self.imageList = image
@@ -55,30 +49,7 @@ class HomeViewController: UIViewController {
                 self.imageSliderCollectionView.reloadData()
             }
         }
-        
-//        didTapOnRightButton()
-        
-        InternetConnection.shared.checkConnection(self)
-        
-//        monitor.pathUpdateHandler = { pathUpdateHandler in
-//            if pathUpdateHandler.status == .satisfied {
-//                print("Internet connection is on.")
-//            } else {
-//                print("There's no internet connection.")
-//                self.showAndDismissAlert(title: "បើកសេវាតិចទៅ", message: "សុំអង្វរ", style: .alert, second: 5)
-//            }
-//        }
-//
-//        let queue = DispatchQueue(label: "InternetConnectionMonitor")
-//        monitor.start(queue: queue)
     }
-    
-//    @objc
-//    func changeLanguage(){
-//        addLeftButton()
-////        menuList =
-//        homeMenuCollectionView.reloadData()
-//    }
     
     @objc func changeImage(){
         if imageNum < imageList.count {
@@ -165,6 +136,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         localized();
+        fetchData()
     }
     
     func localized(){
@@ -310,15 +282,10 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 self.navigationController?.pushViewController(locationVC, animated: true)
                 */
                 
-//                let locationVC = storyboard?.instantiateViewController(withIdentifier: "UserLocationViewControllerID") as! UserLocationViewController
-//                locationVC.modalPresentationStyle = .fullScreen
-//                locationVC.navigationItem.title = "location".localized
-//                self.navigationController?.pushViewController(locationVC, animated: true)
-                
-                let department = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
-                let crmVC = department.instantiateViewController(withIdentifier: "TicketTableViewControllerID") as! TicketTableViewController
-                crmVC.modalPresentationStyle = .fullScreen
-                self.navigationController?.pushViewController(crmVC, animated: true)
+                let locationVC = storyboard?.instantiateViewController(withIdentifier: "UserLocationViewControllerID") as! UserLocationViewController
+                locationVC.modalPresentationStyle = .fullScreen
+                locationVC.navigationItem.title = "location".localized
+                self.navigationController?.pushViewController(locationVC, animated: true)
                 
 //                TicketTableViewController
                 

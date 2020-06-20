@@ -33,8 +33,7 @@ class SettingTableViewController: UITableViewController {
     private func localize(){
         languageLabel.text = "curLanguage".localized
         changePasswordLabel.text = "change password".localized
-        navigationItem.backBarButtonItem?.title = "profile".localized
-        navigationItem.title = "setting".localized
+
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

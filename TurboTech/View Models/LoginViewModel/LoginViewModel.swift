@@ -34,9 +34,9 @@ class LoginViewModel {
         }
     }
     
-    func userChangePassword(username : String, oldPass : String, newPass : String, handler: @escaping(_ done : Bool)->()){
-        loginService.userChangePassword(username: username, oldPass: oldPass, newPass: newPass) { (status) in
-            handler(status)
+    func userChangePassword(username : String, oldPass : String, newPass : String, handler: @escaping(_ done : Bool, _ state : String)->()){
+        loginService.userChangePassword(username: username, oldPass: oldPass, newPass: newPass) { (status, state) in
+            handler(status, state)
         }
     }
 }

@@ -38,8 +38,16 @@ class MessageViewController: UIViewController {
 //            btn.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
 //            ])
 //        localized()
+        
     }
     
+    @IBAction func btn(_ sender: Any) {
+        
+        let department = UIStoryboard(name: BOARD.DEPARTMENT, bundle: nil)
+        let crmVC = department.instantiateViewController(withIdentifier: "TicketTableViewControllerID") as! TicketTableViewController
+        crmVC.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(crmVC, animated: true)
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         localized()

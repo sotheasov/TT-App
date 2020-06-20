@@ -87,6 +87,7 @@
 "Admin" = "Admin";
 "HR" = "HR";
 "Finance" = "Finance";
+"Attendance" = "Attendance";
 "setting" = "Setting";
 "change password" = "Change Password";
 "choose language" = "Choose Language";
@@ -94,6 +95,7 @@
 "new password" = "New Password";
 "confirm new password" = "Confirm New Password";
 "confirm" = "Confirm";
+"old Password worng" = "Wrong Old Password";
 
 
 // Sale

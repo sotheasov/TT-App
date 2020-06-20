@@ -37,8 +37,16 @@ class VerifyLoginViewController: UIViewController, UITextFieldDelegate {
         confirmButton.setTitle("confirm".localized, for: .normal)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if let u = user {
+            print(u.phone)
+            sendVerifyCode(phone: u.phone)
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.onTimeTextField.becomeFirstResponder()
+        
     }
     
     private func setup(){
@@ -56,7 +64,7 @@ class VerifyLoginViewController: UIViewController, UITextFieldDelegate {
         if onTimeTextField.text?.count == 6 {
             confirmButton.isEnabled = true
             confirmButton.isHidden = false
-            confirmPressed(confirmButton!)
+//            confirmPressed(confirmButton!)
         } else {
             confirmButton.isEnabled = false
             confirmButton.isHidden = true
@@ -65,91 +73,59 @@ class VerifyLoginViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func confirmPressed(_ sender: Any) {
-        let verificationID = UserDefaults.standard.string(forKey: "authVerificationID")
-        guard let verId = verificationID, let code = onTimeTextField.text else { return }
-        let credential = PhoneAuthProvider.provider().credential(
-        withVerificationID: verId,
-        verificationCode: code)
-        
-        
-        Auth.auth().signIn(with: credential)
-        { (authResult, error) in
-          if let error = error
-          {
-            User.resetUser()
-            UserDefaults.standard.set(nil, forKey: "authVerificationID")
-//            let authError = error as NSError
-            // if (isMFAEnabled && authError.code == AuthErrorCode.secondFactorRequired.rawValue)
-            // {
-            //   // The user is a multi-factor user. Second factor challenge is required.
-            //   // let resolver = authError.userInfo[AuthErrorUserInfoMultiFactorResolverKey] as! MultiFactorResolver
-            //   // var displayNameString = ""
-            //   // for tmpFactorInfo in (resolver.hints)
-            //   // {
-            //   //   displayNameString += tmpFactorInfo.displayName ?? ""
-            //   //   displayNameString += " "
-            //   // }
-            //   // self.showTextInputPrompt
-            //   // (withMessage: "Select factor to sign in\n\(displayNameString)", completionBlock:
-            //   // { userPressedOK, displayName in
-            //   //   var selectedHint: PhoneMultiFactorInfo?
-            //   //   // for tmpFactorInfo in resolver.hints
-            //   //   // {
-            //   //   //   // if (displayName == tmpFactorInfo.displayName)
-            //   //   //   // {
-            //   //   //   //   selectedHint = tmpFactorInfo as? PhoneMultiFactorInfo
-            //   //   //   // }
-            //   //   // }
-            //   //   // PhoneAuthProvider.provider().verifyPhoneNumber(with: selectedHint!, uiDelegate: nil, multiFactorSession: resolver.session)
-            //   //   // { verificationID, error in
-            //   //   //   // if error != nil
-            //   //   //   // {
-            //   //   //   //   print("Multi factor start sign in failed. Error: \(error.debugDescription)")
-            //   //   //   // }
-            //   //   //   // else {
-            //   //   //   //   // self.showTextInputPrompt
-            //   //   //   //   // (withMessage: "Verification code for \(selectedHint?.displayName ?? "")", completionBlock:
-            //   //   //   //   // { userPressedOK, verificationCode in
-            //   //   //   //   //   let credential: PhoneAuthCredential? = PhoneAuthProvider.provider().credential(withVerificationID: verificationID!, verificationCode: verificationCode!)
-            //   //   //   //   //   let assertion: MultiFactorAssertion? = PhoneMultiFactorGenerator.assertion(with: credential!)
-            //   //   //   //   //   // resolver.resolveSignIn(with: assertion!)
-            //   //   //   //   //   // { authResult, error in
-            //   //   //   //   //   //   // if error != nil
-            //   //   //   //   //   //   // {
-            //   //   //   //   //   //   //   print("Multi factor finanlize sign in failed. Error: \(error.debugDescription)")
-            //   //   //   //   //   //   // }
-            //   //   //   //   //   //   // else {
-            //   //   //   //   //   //   //   self.navigationController?.popViewController(animated: true)
-            //   //   //   //   //   //   // }
-            //   //   //   //   //   // }
-            //   //   //   //   // }
-            //   //   //   //   // )
-            //   //   //   // }
-            //   //   // }
-            //   // }
-            //   // )
-            // } else
-//            {
-//              self.showMessagePrompt(error.localizedDescription)
-            self.showAndDismissAlert(title: error.localizedDescription, message: nil, style: .alert, second: 5.0)
-            UserDefaults.standard.set(nil, forKey: "authVerificationID")
-            let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewControllerID") as! LoginViewController
-            self.navigationController?.viewControllers = [newViewController]
-              return
-//            }
-            // ...
-//            return
-          }
-          // User is signed in
-          // ...
-            User.setupUser(username: self.username, password: self.password, user: self.user)
-            UserDefaults.standard.set(nil, forKey: "authVerificationID")
-            let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProfileMainTableViewControllerID") as! ProfileMainTableViewController
-            self.navigationController?.viewControllers = [newViewController]
+        print("Nothing confirm")
+        guard let code = onTimeTextField.text else {
+            print("NIL CODE")
+            return
         }
-        
+        if code != "" {
+            verification(verificationCode: code)
+        }
     }
     
+    private func sendVerifyCode(phone : String){
+        let p = phone.phoneNumber
+        print(p)
+        UserDefaults.standard.set(nil, forKey: "authVerificationID")
+        Auth.auth().settings?.isAppVerificationDisabledForTesting = true
+        PhoneAuthProvider.provider().verifyPhoneNumber(p, uiDelegate: nil) { (verificationID, error) in
+            
+            if let error = error {
+                self.showMessagePrompt(error.localizedDescription)
+                UserDefaults.standard.set(nil, forKey: "authVerificationID")
+                return
+            }
+            print("VerificationID : ", verificationID ?? "WRONG ID")
+            Auth.auth().languageCode = LanguageManager.shared.language
+            UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+            
+        }
+    }
+    
+    private func verification(verificationCode : String){
+        let verificationID = UserDefaults.standard.string(forKey: "authVerificationID")
+        if let verId = verificationID {
+            let credential = PhoneAuthProvider.provider().credential(withVerificationID: verId, verificationCode: verificationCode)
+            Auth.auth().signIn(with: credential) { (authResult, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    print("Error in verification")
+                    UserDefaults.standard.set(nil, forKey: "authVerificationID")
+                    return
+                } else {
+                    print("User can login with code")
+                    User.setupUser(username: self.username, password: self.password, user: self.user)
+                    let newVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileMainTableViewControllerID") as! ProfileMainTableViewController
+                    self.navigationController?.viewControllers = [newVC]
+                }
+            }
+        } else {
+            UserDefaults.standard.set(nil, forKey: "authVerificationID")
+            print("VerId is nil")
+            let newVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewControllerID") as! LoginViewController
+            self.navigationController?.viewControllers = [newVC]
+        }
+    }
 }
 
 extension VerifyLoginViewController {
@@ -189,4 +165,85 @@ extension VerifyLoginViewController {
             let contentInset:UIEdgeInsets = UIEdgeInsets.zero
             scrollView.contentInset = contentInset
         }
+}
+
+private class SaveAlertHandle {
+  static var alertHandle: UIAlertController?
+
+  class func set(_ handle: UIAlertController) {
+    alertHandle = handle
+  }
+
+  class func clear() {
+    alertHandle = nil
+  }
+
+  class func get() -> UIAlertController? {
+    return alertHandle
+  }
+}
+
+extension UIViewController {
+  /*! @fn showMessagePrompt
+   @brief Displays an alert with an 'OK' button and a message.
+   @param message The message to display.
+   */
+  func showMessagePrompt(_ message: String) {
+    let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+    alert.addAction(okAction)
+    present(alert, animated: false, completion: nil)
+  }
+
+  /*! @fn showTextInputPromptWithMessage
+   @brief Shows a prompt with a text field and 'OK'/'Cancel' buttons.
+   @param message The message to display.
+   @param completion A block to call when the user taps 'OK' or 'Cancel'.
+   */
+  func showTextInputPrompt(withMessage message: String,
+                           completionBlock: @escaping ((Bool, String?) -> Void)) {
+    let prompt = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+      completionBlock(false, nil)
+    }
+    weak var weakPrompt = prompt
+    let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+      guard let text = weakPrompt?.textFields?.first?.text else { return }
+      completionBlock(true, text)
+    }
+    prompt.addTextField(configurationHandler: nil)
+    prompt.addAction(cancelAction)
+    prompt.addAction(okAction)
+    present(prompt, animated: true, completion: nil)
+  }
+
+  /*! @fn showSpinner
+   @brief Shows the please wait spinner.
+   @param completion Called after the spinner has been hidden.
+   */
+  func showSpinner(_ completion: (() -> Void)?) {
+    let alertController = UIAlertController(title: nil, message: "Please Wait...\n\n\n\n",
+                                            preferredStyle: .alert)
+    SaveAlertHandle.set(alertController)
+    let spinner = UIActivityIndicatorView(style: .whiteLarge)
+    spinner.color = UIColor(ciColor: .black)
+    spinner.center = CGPoint(x: alertController.view.frame.midX,
+                             y: alertController.view.frame.midY)
+    spinner.autoresizingMask = [.flexibleBottomMargin, .flexibleTopMargin,
+                                .flexibleLeftMargin, .flexibleRightMargin]
+    spinner.startAnimating()
+    alertController.view.addSubview(spinner)
+    present(alertController, animated: true, completion: completion)
+  }
+
+  /*! @fn hideSpinner
+   @brief Hides the please wait spinner.
+   @param completion Called after the spinner has been hidden.
+   */
+  func hideSpinner(_ completion: (() -> Void)?) {
+    if let controller = SaveAlertHandle.get() {
+      SaveAlertHandle.clear()
+      controller.dismiss(animated: true, completion: completion)
+    }
+  }
 }

@@ -22,9 +22,9 @@ class AdminTableViewController: UITableViewController {
     func setData() {
         let str = "https://www.turbotech.com/storages/assets/img/img_mobile/15900490041355968.png"
         print("Here Admin")
-        departmentList.append(Department(id: 0, name: "Sale", image: str, position: .Sale))
-        departmentList.append(Department(id: 1, name: "Finance", image: str, position: .Finance))
-        departmentList.append(Department(id: 2, name: "Attendance", image: str, position: .HR))
+        departmentList.append(Department(id: 0, name: "Sale".localized, image: str, position: .Sale))
+        departmentList.append(Department(id: 1, name: "Finance".localized, image: str, position: .Finance))
+        departmentList.append(Department(id: 2, name: "Attendance".localized, image: str, position: .HR))
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,9 +61,12 @@ class AdminTableViewController: UITableViewController {
             openVC.navigationItem.title = departmentList[indexPath.row].name
             self.navigationController?.pushViewController(openVC, animated: true)
         case .Finance :
-            let openVC = storyboard?.instantiateViewController(withIdentifier: CONTROLLER.SALE) as! SaleTableViewController
-            openVC.navigationItem.title = departmentList[indexPath.row].name
-            self.navigationController?.pushViewController(openVC, animated: true)
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            let vc = main.instantiateViewController(withIdentifier: "ComingSoonViewControllerID") as! ComingSoonViewController
+            self.navigationController?.pushViewController(vc, animated: false)
+//            let openVC = storyboard?.instantiateViewController(withIdentifier: CONTROLLER.SALE) as! SaleTableViewController
+//            openVC.navigationItem.title = departmentList[indexPath.row].name
+//            self.navigationController?.pushViewController(openVC, animated: true)
         case  .HR:
             // MARK: - @Sothea Attendance Screen
             print("Attendance")
@@ -73,7 +76,7 @@ class AdminTableViewController: UITableViewController {
 //            let openVC = storyboard?.instantiateViewController(identifier: CONTROLLER.SALE) as! SaleTableViewController
 //            openVC.navigationItem.title = departmentList[indexPath.row].name
 //            self.navigationController?.pushViewController(openVC, animated: true)
-        case .Admin:
+        case .Admin, .CEO:
             print("Owner hz Dear")
         }
     }

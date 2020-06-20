@@ -47,14 +47,14 @@ class LoginViewController: UIViewController {
         self.tabBarController?.tabBar.items![3].title = "profile".localized
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        let isLogin = false
-        if !isLogin {
-            self.dismiss(animated: true) {
-            }
-        }
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        let isLogin = false
+//        if !isLogin {
+//            self.dismiss(animated: true) {
+//            }
+//        }
+//    }
     
     func customLoginViewController(){
         txtLoginUsernameOutlet.layer.cornerRadius = SIZE.RADIUS
@@ -112,9 +112,6 @@ class LoginViewController: UIViewController {
                         if u.phone == "" {
                             return
                         } else {
-                            User.resetUser()
-                            UserDefaults.standard.set(nil, forKey: "authVerificationID")
-                            self.requestCode(phone: u.phone)
                             let verifyVC = self.storyboard?.instantiateViewController(withIdentifier: "VerifyLoginViewControllerID") as! VerifyLoginViewController
                             verifyVC.setUser(username, password, u)
                             self.navigationController?.pushViewController(verifyVC, animated: true)
@@ -125,21 +122,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    private func requestCode(phone : String){
-//        let p = phone.phoneNumber
-        let p = "+85593775782"
-        print("Phone is : ", p)
-        PhoneAuthProvider.provider().verifyPhoneNumber(p, uiDelegate: nil) { (verificationID, error) in
-          if let error = error {
-            User.resetUser()
-            UserDefaults.standard.set(nil, forKey: "authVerificationID")
-            self.showAndDismissAlert(title: error.localizedDescription, message: nil, style: .alert, second: 3.0)
-            return
-          }
-            Auth.auth().languageCode = LanguageManager.shared.language;
-            UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
-        }
-    }
+// End [Class]
 }
 
 extension LoginViewController : UITextFieldDelegate {
