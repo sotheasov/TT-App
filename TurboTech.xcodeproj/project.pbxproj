@@ -25,12 +25,14 @@
 		10200A36248E3D6A0024F086 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10200A35248E3D6A0024F086 /* Address.swift */; };
 		1025E5782497174700EE736B /* ChangeLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1025E5772497174700EE736B /* ChangeLanguageViewController.swift */; };
 		1025E57A2497180700EE736B /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1025E5792497180700EE736B /* ChangePasswordViewController.swift */; };
+		1026BD7E249C99DA008F607D /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1026BD7D249C99DA008F607D /* Ticket.swift */; };
 		102A77122488F06600A657AD /* InternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102A77112488F06600A657AD /* InternetConnection.swift */; };
 		102D3961249098470039BC3E /* CRMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D3960249098470039BC3E /* CRMService.swift */; };
 		102D3964249098740039BC3E /* CRMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D3963249098740039BC3E /* CRMViewModel.swift */; };
 		103F3E512477B55900367024 /* PackageDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F3E4F2477B55900367024 /* PackageDetailTableViewCell.swift */; };
 		103F3E522477B55900367024 /* PackageDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 103F3E502477B55900367024 /* PackageDetailTableViewCell.xib */; };
 		103F3E542477C56500367024 /* PackageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F3E532477C56500367024 /* PackageDetailViewController.swift */; };
+		1044A24D249C4937000EF880 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1044A24C249C4937000EF880 /* GoogleService-Info.plist */; };
 		1045AA1E247B5031003A79E9 /* PackageDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1045AA1D247B5031003A79E9 /* PackageDetailHeaderView.swift */; };
 		1045AA26247B55E3003A79E9 /* PackageDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1045AA24247B55E3003A79E9 /* PackageDetailHeaderView.xib */; };
 		1048C527249851AA00193D9D /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1048C526249851AA00193D9D /* HomeService.swift */; };
@@ -46,6 +48,7 @@
 		105226FA247E2382007B7B29 /* SpeedTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105226F9247E2382007B7B29 /* SpeedTestViewController.swift */; };
 		105226FC247E59F8007B7B29 /* PopLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105226FB247E59F8007B7B29 /* PopLocationViewController.swift */; };
 		10670006247E0240002E283E /* UserLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10670005247E0240002E283E /* UserLocationViewController.swift */; };
+		1076C768249D99A300D568A8 /* ComingSoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076C767249D99A300D568A8 /* ComingSoonViewController.swift */; };
 		1077A065249070810062EBFB /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1077A064249070810062EBFB /* Validation.swift */; };
 		1077A067249087690062EBFB /* PackageCRMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1077A066249087690062EBFB /* PackageCRMViewController.swift */; };
 		1077A06A24908C250062EBFB /* PackageCRMCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1077A06824908C250062EBFB /* PackageCRMCellTableViewCell.swift */; };
@@ -65,7 +68,6 @@
 		10A05C872498FB200043043B /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A05C862498FB200043043B /* NotificationExtension.swift */; };
 		10A05C8A2498FE7C0043043B /* NotificationExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A05C892498FE7B0043043B /* NotificationExampleViewController.swift */; };
 		10B0DD5D2494EA2600FB4F4B /* VerifyLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0DD5B2494EA2600FB4F4B /* VerifyLoginViewController.swift */; };
-		10B0DD602494F68E00FB4F4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10B0DD5F2494F68E00FB4F4B /* GoogleService-Info.plist */; };
 		10BBF921247CFCCA008DCF3A /* POP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BBF920247CFCCA008DCF3A /* POP.swift */; };
 		10BBF925247CFDF8008DCF3A /* SaleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BBF924247CFDF8008DCF3A /* SaleService.swift */; };
 		10BBF927247CFE03008DCF3A /* SaleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BBF926247CFE03008DCF3A /* SaleViewModel.swift */; };
@@ -158,18 +160,19 @@
 		1006D83B24767313000892ED /* ProductViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModelDelegate.swift; sourceTree = "<group>"; };
 		1006D83D24767322000892ED /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		1006D83F24767330000892ED /* ProductServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductServiceDelegate.swift; sourceTree = "<group>"; };
-		101A867324931AA60014D738 /* TurboTech.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TurboTech.entitlements; sourceTree = "<group>"; };
 		101FE96D24767EDF005AB106 /* PackageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageViewController.swift; sourceTree = "<group>"; };
 		10200A33248E162E0024F086 /* RegisterServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterServiceViewController.swift; sourceTree = "<group>"; };
 		10200A35248E3D6A0024F086 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		1025E5772497174700EE736B /* ChangeLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageViewController.swift; sourceTree = "<group>"; };
 		1025E5792497180700EE736B /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		1026BD7D249C99DA008F607D /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		102A77112488F06600A657AD /* InternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
 		102D3960249098470039BC3E /* CRMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRMService.swift; sourceTree = "<group>"; };
 		102D3963249098740039BC3E /* CRMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRMViewModel.swift; sourceTree = "<group>"; };
 		103F3E4F2477B55900367024 /* PackageDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailTableViewCell.swift; sourceTree = "<group>"; };
 		103F3E502477B55900367024 /* PackageDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageDetailTableViewCell.xib; sourceTree = "<group>"; };
 		103F3E532477C56500367024 /* PackageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailViewController.swift; sourceTree = "<group>"; };
+		1044A24C249C4937000EF880 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1045AA1D247B5031003A79E9 /* PackageDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailHeaderView.swift; sourceTree = "<group>"; };
 		1045AA24247B55E3003A79E9 /* PackageDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageDetailHeaderView.xib; sourceTree = "<group>"; };
 		1048C526249851AA00193D9D /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
@@ -185,6 +188,7 @@
 		105226F9247E2382007B7B29 /* SpeedTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTestViewController.swift; sourceTree = "<group>"; };
 		105226FB247E59F8007B7B29 /* PopLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopLocationViewController.swift; sourceTree = "<group>"; };
 		10670005247E0240002E283E /* UserLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationViewController.swift; sourceTree = "<group>"; };
+		1076C767249D99A300D568A8 /* ComingSoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonViewController.swift; sourceTree = "<group>"; };
 		1077A064249070810062EBFB /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		1077A066249087690062EBFB /* PackageCRMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCRMViewController.swift; sourceTree = "<group>"; };
 		1077A06824908C250062EBFB /* PackageCRMCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCRMCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -204,7 +208,6 @@
 		10A05C862498FB200043043B /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		10A05C892498FE7B0043043B /* NotificationExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExampleViewController.swift; sourceTree = "<group>"; };
 		10B0DD5B2494EA2600FB4F4B /* VerifyLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyLoginViewController.swift; sourceTree = "<group>"; };
-		10B0DD5F2494F68E00FB4F4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10BBF920247CFCCA008DCF3A /* POP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POP.swift; sourceTree = "<group>"; };
 		10BBF924247CFDF8008DCF3A /* SaleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleService.swift; sourceTree = "<group>"; };
 		10BBF926247CFE03008DCF3A /* SaleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleViewModel.swift; sourceTree = "<group>"; };
@@ -366,6 +369,14 @@
 			path = CRM;
 			sourceTree = "<group>";
 		};
+		1026BD7C249C99CD008F607D /* Ticket */ = {
+			isa = PBXGroup;
+			children = (
+				1026BD7D249C99DA008F607D /* Ticket.swift */,
+			);
+			path = Ticket;
+			sourceTree = "<group>";
+		};
 		103F3E4E2477B41300367024 /* Package Detail Card */ = {
 			isa = PBXGroup;
 			children = (
@@ -484,6 +495,14 @@
 				105226F9247E2382007B7B29 /* SpeedTestViewController.swift */,
 			);
 			path = "Speed Test";
+			sourceTree = "<group>";
+		};
+		1076C766249D995F00D568A8 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				1076C767249D99A300D568A8 /* ComingSoonViewController.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		1077A0632490706D0062EBFB /* Validation */ = {
@@ -627,7 +646,6 @@
 		10BE73B6247365A4001EFD43 /* TurboTech */ = {
 			isa = PBXGroup;
 			children = (
-				101A867324931AA60014D738 /* TurboTech.entitlements */,
 				100556C024738BC200B1F8BF /* Utils */,
 				10BE73D12473666B001EFD43 /* Configuration */,
 				10BE73CB247365E3001EFD43 /* Models */,
@@ -636,7 +654,7 @@
 				10BE73CC247365EE001EFD43 /* Views */,
 				10BE73CF24736614001EFD43 /* Supporting Files */,
 				10BE73C5247365A4001EFD43 /* Info.plist */,
-				10B0DD5F2494F68E00FB4F4B /* GoogleService-Info.plist */,
+				1044A24C249C4937000EF880 /* GoogleService-Info.plist */,
 			);
 			path = TurboTech;
 			sourceTree = "<group>";
@@ -644,6 +662,7 @@
 		10BE73CB247365E3001EFD43 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1026BD7C249C99CD008F607D /* Ticket */,
 				100506F52474D771008FDFC3 /* Menu.swift */,
 				1006D83324767152000892ED /* Product.swift */,
 				1006D8352476715D000892ED /* Package.swift */,
@@ -666,6 +685,7 @@
 		10BE73CC247365EE001EFD43 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1076C766249D995F00D568A8 /* Shared */,
 				104AAE20247E9A3700801A8F /* Department */,
 				10BE73EA247371DB001EFD43 /* Home */,
 				10BE73E52473715F001EFD43 /* Locations */,
@@ -1040,7 +1060,6 @@
 				10CD93732498A01F005E6CA6 /* TicketTableViewCell.xib in Resources */,
 				10C0B85B24920CE600D105FC /* Quicksand-Light.ttf in Resources */,
 				10C0B85A24920CE600D105FC /* Quicksand-Regular.ttf in Resources */,
-				10B0DD602494F68E00FB4F4B /* GoogleService-Info.plist in Resources */,
 				10BE73C4247365A4001EFD43 /* LaunchScreen.storyboard in Resources */,
 				1045AA26247B55E3003A79E9 /* PackageDetailHeaderView.xib in Resources */,
 				104AAE30247E9E8100801A8F /* department.json in Resources */,
@@ -1060,6 +1079,7 @@
 				10C0B85424920CDA00D105FC /* Battambang-Bold.ttf in Resources */,
 				10CFC1CC247F67EF0059AD63 /* DeviceTableViewCell.xib in Resources */,
 				10BE73BF247365A4001EFD43 /* Main.storyboard in Resources */,
+				1044A24D249C4937000EF880 /* GoogleService-Info.plist in Resources */,
 				100506F42474D4F2008FDFC3 /* MenuCollectionViewCell.xib in Resources */,
 				103F3E522477B55900367024 /* PackageDetailTableViewCell.xib in Resources */,
 			);
@@ -1135,6 +1155,7 @@
 				1077A06A24908C250062EBFB /* PackageCRMCellTableViewCell.swift in Sources */,
 				10E7F391247B7D380082901F /* WebApplicationViewController.swift in Sources */,
 				1006D83024763C1A000892ED /* CustomizeSize.swift in Sources */,
+				1076C768249D99A300D568A8 /* ComingSoonViewController.swift in Sources */,
 				1025E57A2497180700EE736B /* ChangePasswordViewController.swift in Sources */,
 				10CFC1BF247F49670059AD63 /* SaleTableViewController.swift in Sources */,
 				10D17EF0247619E10095E0AF /* ProductViewController.swift in Sources */,
@@ -1197,6 +1218,7 @@
 				105226F7247E1E5E007B7B29 /* CustomizeNavTab.swift in Sources */,
 				A909CA9B2474C03D00546CFC /* LoginViewController.swift in Sources */,
 				1025E5782497174700EE736B /* ChangeLanguageViewController.swift in Sources */,
+				1026BD7E249C99DA008F607D /* Ticket.swift in Sources */,
 				A92A23242487A3120095D4A9 /* TotalAttendanceViewController.swift in Sources */,
 				1006D83424767152000892ED /* Product.swift in Sources */,
 				10200A36248E3D6A0024F086 /* Address.swift in Sources */,

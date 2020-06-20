@@ -485,7 +485,7 @@
         <!--Profile-->
         <scene sceneID="G7n-Ap-rgx">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FRl-aO-NCR" customClass="AViewController" customModule="TurboTech" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AViewControllerID" automaticallyAdjustsScrollViewInsets="NO" id="FRl-aO-NCR" customClass="AViewController" customModule="TurboTech" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" id="Rjz-qE-9il"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

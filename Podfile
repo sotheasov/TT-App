@@ -19,6 +19,7 @@ target 'TurboTech' do
   
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'FirebaseUI/Auth'
   pod 'Firebase/Messaging'
   
   pod 'LGButton'

@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import Firebase
 
 class User : NSObject, NSCoding{
     
@@ -74,7 +75,14 @@ class User : NSObject, NSCoding{
         AppDelegate.user = nil
         userDefault.set(nil, forKey: "curUsername")
         userDefault.set(nil, forKey: "curPassword")
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out : %@ : ", signOutError)
+        }
         userDefault.synchronize()
+        
     }
     
     static func setupUser(username : String, password : String, user : User){

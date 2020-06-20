@@ -78,5 +78,13 @@ class APIManager {
     enum HOME {
         static let GET_IMAGE = MAIN_URL + "/api/sliders/"
     }
+    
+    enum TICKET {
+        static let GET_SEVERITY =  MAIN_URL + "/api/tickets/ticket_severity.php"
+        static let GET_STATUS =  MAIN_URL + "/api/tickets/ticket_status.php"
+        static let GET_CATEGORY =  MAIN_URL + "/api/tickets/ticket_category.php"
+        static let GET_PRODUCT =  MAIN_URL + "/api/tickets/ticket_product.php"
+        static let GET_CONTACT =  MAIN_URL + "/api/tickets/ticket_contact.php"
+    }
 }
 
